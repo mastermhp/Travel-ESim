@@ -1,0 +1,13 @@
+__turbopack_load_page_chunks__("/_error", [
+  "static/chunks/d0d31_next_dist_compiled_041a6537._.js",
+  "static/chunks/d0d31_next_dist_shared_lib_0a67c6cd._.js",
+  "static/chunks/d0d31_next_dist_client_574ed4d6._.js",
+  "static/chunks/d0d31_next_dist_5574fb97._.js",
+  "static/chunks/d0d31_next_error_22327d1e.js",
+  "static/chunks/[next]_entry_page-loader_ts_b387b6db._.js",
+  "static/chunks/d0d31_react-dom_a633cdda._.js",
+  "static/chunks/d0d31_2b00eacf._.js",
+  "static/chunks/[root-of-the-server]__94a46162._.js",
+  "static/chunks/Downloads_travel-e-sim-system_pages__error_2da965e7._.js",
+  "static/chunks/turbopack-Downloads_travel-e-sim-system_pages__error_6e089c5f._.js"
+])

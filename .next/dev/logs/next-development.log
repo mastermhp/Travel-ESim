@@ -1,0 +1,4606 @@
+[00:00:00.645] Server  LOG      ✓ Ready in 447ms
+[00:00:00.718] Browser LOG     [v0] Admin already exists or initialization not needed
+[00:00:02.523] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:02.715] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:02.715] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin/login","route":"/admin/login"}
+[00:00:02.715] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin/login color: rgb(120, 120, 120) color: inherit {"dp":"/admin/login","o":"http://localhost:3000/admin/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763922534806}
+[00:03:15.928] Server  LOG     [v0] Admin login attempt for: "admin@travelesim.com"
+[00:03:16.030] Server  LOG     [v0] Admin user found: true
+[00:03:16.270] Server  LOG     [v0] Password valid: true
+[00:03:16.421] Server  LOG     [v0] Admin login successful
+[00:03:16.920] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763922729008}
+[00:07:27.849] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763922979934}
+[00:26:02.913] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763924094992}
+[00:30:00.984] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin/login color: rgb(120, 120, 120) color: inherit {"dp":"/admin/login","o":"http://localhost:3000/admin/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763924333056}
+[00:30:01.896] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763924333969}
+[00:30:03.290] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:03.420] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:30:03.420] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/plans","route":"/plans"}
+[00:30:03.420] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/plans color: rgb(120, 120, 120) color: inherit {"dp":"/plans","o":"http://localhost:3000/plans","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763924335492}
+[00:35:41.878] Server  ERROR    ⨯ ReferenceError: localStorage is not defined
+[00:35:42.040] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:35:42.621] Browser ERROR   uncaughtError: Error: Switched to client rendering because the server rendering errored:
+
+localStorage is not defined
+[00:35:42.621] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:35:42.621] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin","route":"/admin"}
+[00:35:42.621] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763924674273}
+[00:36:35.298] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:35.718] Browser ERROR   ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+[00:36:35.718] Browser ERROR   ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+[00:36:35.790] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:35.819] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:35.846] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:35.858] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:35.870] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:35.882] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:35.897] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:35.909] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:35.920] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:35.932] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:35.942] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:35.951] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:35.960] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:35.970] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:35.979] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:35.989] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:36.000] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:36.008] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:36.018] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:36.026] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:36.036] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:36.048] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:36.061] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:36.071] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:36.082] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:36.091] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:36.100] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:36.110] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:36.119] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:36.128] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:36.139] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:36.148] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:36.163] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+
+
+[00:36:36.207] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.237] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.249] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.260] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.277] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.300] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.324] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.345] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.365] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.376] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.384] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.394] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.403] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.412] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.421] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.431] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.440] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.449] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.457] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.465] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.473] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.482] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.491] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.498] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.508] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.518] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.527] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.560] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.578] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.589] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.599] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.611] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.620] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.629] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.639] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.648] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.660] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.669] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.679] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.690] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.699] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.709] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.716] Browser ERROR   ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+[00:36:36.716] Browser ERROR   ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+[00:36:36.716] Browser ERROR   ./Downloads/travel-e-sim-system/package.json:81:3
+Error parsing package.json file
+  79 |     "path": "0.12.7",
+  80 |
+> 81 |   },
+     |   ^
+  82 |   "devDependencies": {
+  83 |     "@tailwindcss/postcss": "^4.1.9",
+  84 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 81 column 3
+[00:36:36.719] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.728] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.739] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.750] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.760] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.770] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.781] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.791] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.801] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.811] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.822] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.834] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.845] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.857] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.868] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.880] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:36.900] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:37.060] Browser ERROR   uncaughtError: Error: ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:36:37.671] Browser ERROR   ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+[00:36:37.671] Browser ERROR   ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+[00:36:37.671] Browser ERROR   ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+[00:36:37.671] Browser ERROR   ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+[00:36:37.671] Browser ERROR   ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+[00:36:37.671] Browser ERROR   ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+[00:36:37.671] Browser ERROR   ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+[00:36:37.671] Browser ERROR   ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+[00:36:37.872] Server  LOG      ✓ Compiled in 233ms
+[00:36:38.125] Browser ERROR   uncaughtError: Error: ./Downloads/travel-e-sim-system/package.json:82:3
+Error parsing package.json file
+  80 |     
+  81 |
+> 82 |   },
+     |   ^
+  83 |   "devDependencies": {
+  84 |     "@tailwindcss/postcss": "^4.1.9",
+  85 |     "@types/node": "^22",
+
+package.json is not parseable: invalid JSON: trailing comma at line 82 column 3
+
+
+[00:39:17.804] Server  ERROR    ⨯ ReferenceError: localStorage is not defined
+[00:39:17.806] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./Downloads/travel-e-sim-system/node_modules/next/dist/shared/lib/router/router.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:39:17.828] Server  ERROR    ⨯ ReferenceError: localStorage is not defined
+[00:39:17.945] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:39:18.730] Browser ERROR   uncaughtError: Error: Switched to client rendering because the server rendering errored:
+
+localStorage is not defined
+[00:39:18.730] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:39:18.730] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin","route":"/admin"}
+[00:39:18.730] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763924890201}
+[00:41:40.570] Server  LOG      ✓ Compiled in 110ms
+[00:41:48.352] Server  ERROR    ⨯ ReferenceError: localStorage is not defined
+[00:41:48.509] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:41:49.040] Browser ERROR   uncaughtError: Error: Switched to client rendering because the server rendering errored:
+
+localStorage is not defined
+[00:41:49.040] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:41:49.040] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin","route":"/admin"}
+[00:41:49.040] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763925040746}
+[00:41:56.098] Server  ERROR    ⨯ ReferenceError: localStorage is not defined
+[00:41:56.225] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:41:56.731] Browser ERROR   uncaughtError: Error: Switched to client rendering because the server rendering errored:
+
+localStorage is not defined
+[00:41:56.731] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:41:56.731] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin","route":"/admin"}
+[00:41:56.731] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763925048453}
+[00:42:11.380] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:42:11.496] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:42:11.496] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin/countries","route":"/admin/countries"}
+[00:42:11.496] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin/countries color: rgb(120, 120, 120) color: inherit {"dp":"/admin/countries","o":"http://localhost:3000/admin/countries","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763925063563}
+[00:44:34.259] Server  ERROR    ⨯ ReferenceError: localStorage is not defined
+[00:44:34.422] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:44:34.919] Browser ERROR   uncaughtError: Error: Switched to client rendering because the server rendering errored:
+
+localStorage is not defined
+[00:44:34.919] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:44:34.919] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin","route":"/admin"}
+[00:44:34.919] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763925206660}
+[00:50:04.834] Server  LOG      ✓ Compiled in 216ms
+[00:50:18.586] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:50:18.739] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:50:18.739] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin","route":"/admin"}
+[00:50:18.739] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763925550822}
+[00:51:13.206] Server  LOG     [Redis] Connected successfully
+[00:54:03.461] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin/login color: rgb(120, 120, 120) color: inherit {"dp":"/admin/login","o":"http://localhost:3000/admin/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763925775542}
+[00:54:10.091] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:54:10.281] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:54:10.281] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin","route":"/admin"}
+[00:54:10.281] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763925782328}
+[00:54:10.281] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin/login color: rgb(120, 120, 120) color: inherit {"dp":"/admin/login","o":"http://localhost:3000/admin/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763925782359}
+[00:54:18.216] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:54:18.420] Browser WARN    Image with src "/smartphone-showing-esim-qr-code-activation-travel-.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:54:18.420] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:54:18.420] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:54:18.420] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763925790502}
+[00:54:25.956] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:54:26.120] Server  LOG     [Countries API] Cache miss: "countries:active"
+[00:54:26.122] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:54:26.122] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/plans","route":"/plans"}
+[00:54:26.122] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/plans color: rgb(120, 120, 120) color: inherit {"dp":"/plans","o":"http://localhost:3000/plans","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763925798204}
+[00:54:42.318] Server  LOG     [Plans API] Cache miss: "plans:US"
+[00:55:46.454] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:55:46.627] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:55:46.627] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin","route":"/admin"}
+[00:55:46.627] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763925878680}
+[00:55:46.627] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin/login color: rgb(120, 120, 120) color: inherit {"dp":"/admin/login","o":"http://localhost:3000/admin/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763925878705}
+[00:55:58.208] Server  LOG     [v0] Admin login attempt for: "admin@travelesim.com"
+[00:55:58.310] Server  LOG     [v0] Admin user found: true
+[00:55:58.560] Server  LOG     [v0] Password valid: true
+[00:55:58.651] Server  LOG     [v0] Admin login successful
+[00:55:58.828] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763925890899}
+[01:04:53.795] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.800] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.809] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.814] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.823] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.829] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.832] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.834] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.840] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.842] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.844] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.849] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.852] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.855] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.858] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.861] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.864] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.868] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.871] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.874] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.877] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.880] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.882] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.884] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:04:53.890] Server  LOG      ✓ Compiled in 165ms
+[01:04:54.715] Browser ERROR   ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:04:54.715] Browser ERROR   ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:05:16.316] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:16.320] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:16.324] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:16.328] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:16.332] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:16.338] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:16.344] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:16.347] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:16.350] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:16.351] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:16.353] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:16.355] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:16.358] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:16.359] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:16.361] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:16.363] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:16.365] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/plans/page.jsx:25:1
+Module not found: Can't resolve '@/lib/countries-data'
+  23 | } from "lucide-react"
+  24 | import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+> 25 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | export default function PlansPage() {
+  28 |   const [selectedCountry, setSelectedCountry] = useState(null)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:16.366] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/plans/page.jsx:25:1
+Module not found: Can't resolve '@/lib/countries-data'
+  23 | } from "lucide-react"
+  24 | import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+> 25 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | export default function PlansPage() {
+  28 |   const [selectedCountry, setSelectedCountry] = useState(null)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:16.367] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/plans/page.jsx:25:1
+Module not found: Can't resolve '@/lib/countries-data'
+  23 | } from "lucide-react"
+  24 | import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+> 25 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | export default function PlansPage() {
+  28 |   const [selectedCountry, setSelectedCountry] = useState(null)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:16.368] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/plans/page.jsx:25:1
+Module not found: Can't resolve '@/lib/countries-data'
+  23 | } from "lucide-react"
+  24 | import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+> 25 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | export default function PlansPage() {
+  28 |   const [selectedCountry, setSelectedCountry] = useState(null)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:16.727] Browser ERROR   ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:05:16.727] Browser ERROR   ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:05:16.727] Browser ERROR   ./Downloads/travel-e-sim-system/app/plans/page.jsx:25:1
+Module not found: Can't resolve '@/lib/countries-data'
+  23 | } from "lucide-react"
+  24 | import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+> 25 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | export default function PlansPage() {
+  28 |   const [selectedCountry, setSelectedCountry] = useState(null)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:05:35.346] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:35.352] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:35.364] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:35.368] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:35.372] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:35.375] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:35.379] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:35.382] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:35.387] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:35.390] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:35.392] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:35.395] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:35.399] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:35.403] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:35.405] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:35.408] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:35.415] Server  LOG      ✓ Compiled in 154ms
+[01:05:35.719] Browser ERROR   ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Module not found: Can't resolve '@/components/country-selector'
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+Import map: aliased to relative './components/country-selector' inside of [project]/Downloads/travel-e-sim-system
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:05:35.719] Browser ERROR   ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:05:35.719] Browser ERROR   ./Downloads/travel-e-sim-system/app/plans/page.jsx:25:1
+Module not found: Can't resolve '@/lib/countries-data'
+  23 | } from "lucide-react"
+  24 | import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+> 25 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | export default function PlansPage() {
+  28 |   const [selectedCountry, setSelectedCountry] = useState(null)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:05:48.441] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:48.450] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:48.453] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:48.456] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:48.463] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:48.468] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:48.471] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:48.474] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:48.479] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:48.482] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:48.485] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:48.488] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:05:48.497] Server  LOG      ✓ Compiled in 139ms
+[01:05:48.713] Browser ERROR   ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:05:48.713] Browser ERROR   ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Export CountrySelector doesn't exist in target module
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+The export CountrySelector was not found in module [project]/Downloads/travel-e-sim-system/components/country-selector.jsx [app-client] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+[01:05:48.713] Browser ERROR   ./Downloads/travel-e-sim-system/app/admin/page.jsx:13:1
+Export CountrySelector doesn't exist in target module
+  11 | import { Checkbox } from "@/components/ui/checkbox"
+  12 | import { useToast } from "@/hooks/use-toast"
+> 13 | import { CountrySelector } from "@/components/country-selector"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  14 | import { getCountryByCode } from "@/lib/countries-data"
+  15 | import {
+  16 |   LayoutDashboard,
+
+The export CountrySelector was not found in module [project]/Downloads/travel-e-sim-system/components/country-selector.jsx [app-ssr] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+[01:05:48.713] Browser ERROR   ./Downloads/travel-e-sim-system/app/plans/page.jsx:25:1
+Module not found: Can't resolve '@/lib/countries-data'
+  23 | } from "lucide-react"
+  24 | import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+> 25 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | export default function PlansPage() {
+  28 |   const [selectedCountry, setSelectedCountry] = useState(null)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:06:15.656] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.664] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.668] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.671] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.672] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/components/country-selector.jsx:10:1
+Module not found: Can't resolve '@/lib/countries-data'
+   8 | import { Badge } from "@/components/ui/badge"
+   9 | import { Search, ChevronDown, Check, X, Globe2 } from "lucide-react"
+> 10 | import { COUNTRIES_DATA, getAllRegions } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 |
+  12 | export function CountrySelector({ value, onChange, onSelect }) {
+  13 |   const [isOpen, setIsOpen] = useState(false)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.672] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/components/country-selector.jsx:10:1
+Module not found: Can't resolve '@/lib/countries-data'
+   8 | import { Badge } from "@/components/ui/badge"
+   9 | import { Search, ChevronDown, Check, X, Globe2 } from "lucide-react"
+> 10 | import { COUNTRIES_DATA, getAllRegions } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 |
+  12 | export function CountrySelector({ value, onChange, onSelect }) {
+  13 |   const [isOpen, setIsOpen] = useState(false)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.673] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/components/country-selector.jsx:10:1
+Module not found: Can't resolve '@/lib/countries-data'
+   8 | import { Badge } from "@/components/ui/badge"
+   9 | import { Search, ChevronDown, Check, X, Globe2 } from "lucide-react"
+> 10 | import { COUNTRIES_DATA, getAllRegions } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 |
+  12 | export function CountrySelector({ value, onChange, onSelect }) {
+  13 |   const [isOpen, setIsOpen] = useState(false)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.673] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/components/country-selector.jsx:10:1
+Module not found: Can't resolve '@/lib/countries-data'
+   8 | import { Badge } from "@/components/ui/badge"
+   9 | import { Search, ChevronDown, Check, X, Globe2 } from "lucide-react"
+> 10 | import { COUNTRIES_DATA, getAllRegions } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 |
+  12 | export function CountrySelector({ value, onChange, onSelect }) {
+  13 |   const [isOpen, setIsOpen] = useState(false)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.675] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/components/country-selector.jsx:10:1
+Module not found: Can't resolve '@/lib/countries-data'
+   8 | import { Badge } from "@/components/ui/badge"
+   9 | import { Search, ChevronDown, Check, X, Globe2 } from "lucide-react"
+> 10 | import { COUNTRIES_DATA, getAllRegions } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 |
+  12 | export function CountrySelector({ value, onChange, onSelect }) {
+  13 |   const [isOpen, setIsOpen] = useState(false)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.675] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/components/country-selector.jsx:10:1
+Module not found: Can't resolve '@/lib/countries-data'
+   8 | import { Badge } from "@/components/ui/badge"
+   9 | import { Search, ChevronDown, Check, X, Globe2 } from "lucide-react"
+> 10 | import { COUNTRIES_DATA, getAllRegions } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 |
+  12 | export function CountrySelector({ value, onChange, onSelect }) {
+  13 |   const [isOpen, setIsOpen] = useState(false)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.681] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.683] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.686] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.688] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.689] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/components/country-selector.jsx:10:1
+Module not found: Can't resolve '@/lib/countries-data'
+   8 | import { Badge } from "@/components/ui/badge"
+   9 | import { Search, ChevronDown, Check, X, Globe2 } from "lucide-react"
+> 10 | import { COUNTRIES_DATA, getAllRegions } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 |
+  12 | export function CountrySelector({ value, onChange, onSelect }) {
+  13 |   const [isOpen, setIsOpen] = useState(false)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.689] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/components/country-selector.jsx:10:1
+Module not found: Can't resolve '@/lib/countries-data'
+   8 | import { Badge } from "@/components/ui/badge"
+   9 | import { Search, ChevronDown, Check, X, Globe2 } from "lucide-react"
+> 10 | import { COUNTRIES_DATA, getAllRegions } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 |
+  12 | export function CountrySelector({ value, onChange, onSelect }) {
+  13 |   const [isOpen, setIsOpen] = useState(false)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.689] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/components/country-selector.jsx:10:1
+Module not found: Can't resolve '@/lib/countries-data'
+   8 | import { Badge } from "@/components/ui/badge"
+   9 | import { Search, ChevronDown, Check, X, Globe2 } from "lucide-react"
+> 10 | import { COUNTRIES_DATA, getAllRegions } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 |
+  12 | export function CountrySelector({ value, onChange, onSelect }) {
+  13 |   const [isOpen, setIsOpen] = useState(false)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.690] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/components/country-selector.jsx:10:1
+Module not found: Can't resolve '@/lib/countries-data'
+   8 | import { Badge } from "@/components/ui/badge"
+   9 | import { Search, ChevronDown, Check, X, Globe2 } from "lucide-react"
+> 10 | import { COUNTRIES_DATA, getAllRegions } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 |
+  12 | export function CountrySelector({ value, onChange, onSelect }) {
+  13 |   const [isOpen, setIsOpen] = useState(false)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.691] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/components/country-selector.jsx:10:1
+Module not found: Can't resolve '@/lib/countries-data'
+   8 | import { Badge } from "@/components/ui/badge"
+   9 | import { Search, ChevronDown, Check, X, Globe2 } from "lucide-react"
+> 10 | import { COUNTRIES_DATA, getAllRegions } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 |
+  12 | export function CountrySelector({ value, onChange, onSelect }) {
+  13 |   const [isOpen, setIsOpen] = useState(false)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.691] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/components/country-selector.jsx:10:1
+Module not found: Can't resolve '@/lib/countries-data'
+   8 | import { Badge } from "@/components/ui/badge"
+   9 | import { Search, ChevronDown, Check, X, Globe2 } from "lucide-react"
+> 10 | import { COUNTRIES_DATA, getAllRegions } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 |
+  12 | export function CountrySelector({ value, onChange, onSelect }) {
+  13 |   const [isOpen, setIsOpen] = useState(false)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.694] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.699] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.702] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.704] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.704] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/components/country-selector.jsx:10:1
+Module not found: Can't resolve '@/lib/countries-data'
+   8 | import { Badge } from "@/components/ui/badge"
+   9 | import { Search, ChevronDown, Check, X, Globe2 } from "lucide-react"
+> 10 | import { COUNTRIES_DATA, getAllRegions } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 |
+  12 | export function CountrySelector({ value, onChange, onSelect }) {
+  13 |   const [isOpen, setIsOpen] = useState(false)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.705] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/components/country-selector.jsx:10:1
+Module not found: Can't resolve '@/lib/countries-data'
+   8 | import { Badge } from "@/components/ui/badge"
+   9 | import { Search, ChevronDown, Check, X, Globe2 } from "lucide-react"
+> 10 | import { COUNTRIES_DATA, getAllRegions } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 |
+  12 | export function CountrySelector({ value, onChange, onSelect }) {
+  13 |   const [isOpen, setIsOpen] = useState(false)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.706] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/components/country-selector.jsx:10:1
+Module not found: Can't resolve '@/lib/countries-data'
+   8 | import { Badge } from "@/components/ui/badge"
+   9 | import { Search, ChevronDown, Check, X, Globe2 } from "lucide-react"
+> 10 | import { COUNTRIES_DATA, getAllRegions } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 |
+  12 | export function CountrySelector({ value, onChange, onSelect }) {
+  13 |   const [isOpen, setIsOpen] = useState(false)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.706] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/components/country-selector.jsx:10:1
+Module not found: Can't resolve '@/lib/countries-data'
+   8 | import { Badge } from "@/components/ui/badge"
+   9 | import { Search, ChevronDown, Check, X, Globe2 } from "lucide-react"
+> 10 | import { COUNTRIES_DATA, getAllRegions } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 |
+  12 | export function CountrySelector({ value, onChange, onSelect }) {
+  13 |   const [isOpen, setIsOpen] = useState(false)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.706] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/components/country-selector.jsx:10:1
+Module not found: Can't resolve '@/lib/countries-data'
+   8 | import { Badge } from "@/components/ui/badge"
+   9 | import { Search, ChevronDown, Check, X, Globe2 } from "lucide-react"
+> 10 | import { COUNTRIES_DATA, getAllRegions } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 |
+  12 | export function CountrySelector({ value, onChange, onSelect }) {
+  13 |   const [isOpen, setIsOpen] = useState(false)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.707] Server  ERROR    ⨯ ./Downloads/travel-e-sim-system/components/country-selector.jsx:10:1
+Module not found: Can't resolve '@/lib/countries-data'
+   8 | import { Badge } from "@/components/ui/badge"
+   9 | import { Search, ChevronDown, Check, X, Globe2 } from "lucide-react"
+> 10 | import { COUNTRIES_DATA, getAllRegions } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 |
+  12 | export function CountrySelector({ value, onChange, onSelect }) {
+  13 |   const [isOpen, setIsOpen] = useState(false)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:06:15.711] Server  LOG      ✓ Compiled in 124ms
+[01:06:16.713] Browser ERROR   ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Module not found: Can't resolve '@/lib/countries-data'
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:06:16.713] Browser ERROR   ./Downloads/travel-e-sim-system/components/country-selector.jsx:10:1
+Module not found: Can't resolve '@/lib/countries-data'
+   8 | import { Badge } from "@/components/ui/badge"
+   9 | import { Search, ChevronDown, Check, X, Globe2 } from "lucide-react"
+> 10 | import { COUNTRIES_DATA, getAllRegions } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 |
+  12 | export function CountrySelector({ value, onChange, onSelect }) {
+  13 |   const [isOpen, setIsOpen] = useState(false)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:06:16.713] Browser ERROR   ./Downloads/travel-e-sim-system/app/plans/page.jsx:25:1
+Module not found: Can't resolve '@/lib/countries-data'
+  23 | } from "lucide-react"
+  24 | import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+> 25 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | export default function PlansPage() {
+  28 |   const [selectedCountry, setSelectedCountry] = useState(null)
+
+Import map: aliased to relative './lib/countries-data' inside of [project]/Downloads/travel-e-sim-system
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:06:32.510] Server  LOG      ✓ Compiled in 147ms
+[01:06:32.714] Browser ERROR   ./Downloads/travel-e-sim-system/components/country-selector.jsx:10:1
+Export COUNTRIES_DATA doesn't exist in target module
+   8 | import { Badge } from "@/components/ui/badge"
+   9 | import { Search, ChevronDown, Check, X, Globe2 } from "lucide-react"
+> 10 | import { COUNTRIES_DATA, getAllRegions } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 |
+  12 | export function CountrySelector({ value, onChange, onSelect }) {
+  13 |   const [isOpen, setIsOpen] = useState(false)
+
+The export COUNTRIES_DATA was not found in module [project]/Downloads/travel-e-sim-system/lib/countries-data.js [app-client] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+[01:06:32.714] Browser ERROR   ./Downloads/travel-e-sim-system/components/country-selector.jsx:10:1
+Export COUNTRIES_DATA doesn't exist in target module
+   8 | import { Badge } from "@/components/ui/badge"
+   9 | import { Search, ChevronDown, Check, X, Globe2 } from "lucide-react"
+> 10 | import { COUNTRIES_DATA, getAllRegions } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 |
+  12 | export function CountrySelector({ value, onChange, onSelect }) {
+  13 |   const [isOpen, setIsOpen] = useState(false)
+
+The export COUNTRIES_DATA was not found in module [project]/Downloads/travel-e-sim-system/lib/countries-data.js [app-ssr] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+[01:06:32.714] Browser ERROR   ./Downloads/travel-e-sim-system/components/country-selector.jsx:10:1
+Export getAllRegions doesn't exist in target module
+   8 | import { Badge } from "@/components/ui/badge"
+   9 | import { Search, ChevronDown, Check, X, Globe2 } from "lucide-react"
+> 10 | import { COUNTRIES_DATA, getAllRegions } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 |
+  12 | export function CountrySelector({ value, onChange, onSelect }) {
+  13 |   const [isOpen, setIsOpen] = useState(false)
+
+The export getAllRegions was not found in module [project]/Downloads/travel-e-sim-system/lib/countries-data.js [app-client] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+[01:06:32.714] Browser ERROR   ./Downloads/travel-e-sim-system/components/country-selector.jsx:10:1
+Export getAllRegions doesn't exist in target module
+   8 | import { Badge } from "@/components/ui/badge"
+   9 | import { Search, ChevronDown, Check, X, Globe2 } from "lucide-react"
+> 10 | import { COUNTRIES_DATA, getAllRegions } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  11 |
+  12 | export function CountrySelector({ value, onChange, onSelect }) {
+  13 |   const [isOpen, setIsOpen] = useState(false)
+
+The export getAllRegions was not found in module [project]/Downloads/travel-e-sim-system/lib/countries-data.js [app-ssr] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/components/country-selector.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+[01:06:32.714] Browser ERROR   ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Export getCountryByCode doesn't exist in target module
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+The export getCountryByCode was not found in module [project]/Downloads/travel-e-sim-system/lib/countries-data.js [app-client] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+[01:06:32.714] Browser ERROR   ./Downloads/travel-e-sim-system/app/admin/page.jsx:14:1
+Export getCountryByCode doesn't exist in target module
+  12 | import { useToast } from "@/hooks/use-toast"
+  13 | import { CountrySelector } from "@/components/country-selector"
+> 14 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  15 | import {
+  16 |   LayoutDashboard,
+  17 |   ShoppingCart,
+
+The export getCountryByCode was not found in module [project]/Downloads/travel-e-sim-system/lib/countries-data.js [app-ssr] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/admin/page.jsx [Server Component]
+[01:06:32.714] Browser ERROR   ./Downloads/travel-e-sim-system/app/plans/page.jsx:25:1
+Export getCountryByCode doesn't exist in target module
+  23 | } from "lucide-react"
+  24 | import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+> 25 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | export default function PlansPage() {
+  28 |   const [selectedCountry, setSelectedCountry] = useState(null)
+
+The export getCountryByCode was not found in module [project]/Downloads/travel-e-sim-system/lib/countries-data.js [app-client] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Server Component]
+[01:06:32.714] Browser ERROR   ./Downloads/travel-e-sim-system/app/plans/page.jsx:25:1
+Export getCountryByCode doesn't exist in target module
+  23 | } from "lucide-react"
+  24 | import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+> 25 | import { getCountryByCode } from "@/lib/countries-data"
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  26 |
+  27 | export default function PlansPage() {
+  28 |   const [selectedCountry, setSelectedCountry] = useState(null)
+
+The export getCountryByCode was not found in module [project]/Downloads/travel-e-sim-system/lib/countries-data.js [app-ssr] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Client Component Browser]
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Client Component SSR]
+    ./Downloads/travel-e-sim-system/app/plans/page.jsx [Server Component]
+[01:07:11.146] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:07:11.267] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:07:11.267] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin","route":"/admin"}
+[01:07:11.267] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763926563359}
+[01:07:40.908] Server  LOG     [Redis] Connected successfully
+[01:09:30.943] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin/login color: rgb(120, 120, 120) color: inherit {"dp":"/admin/login","o":"http://localhost:3000/admin/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763926703031}
+[01:09:36.665] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:09:36.750] Server  LOG     [Countries API] Cache miss: "countries:active"
+[01:09:36.866] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:09:36.866] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/plans","route":"/plans"}
+[01:09:36.866] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/plans color: rgb(120, 120, 120) color: inherit {"dp":"/plans","o":"http://localhost:3000/plans","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763926708924}
+[01:10:08.013] Server  LOG     [Plans API] Cache miss: "plans:BD"
+[01:25:16.345] Server  LOG        Reload env: .env.local
+[01:25:17.425] Server  LOG        Reload env: .env.local
+[01:27:21.115] Server  LOG        Reload env: .env.local
+[01:27:22.942] Server  LOG        Reload env: .env.local
+[01:27:37.592] Server  LOG        Reload env: .env.local
+[01:33:24.347] Server  LOG        Reload env: .env.local
+[01:33:26.227] Server  LOG        Reload env: .env.local
+[01:33:28.002] Server  LOG        Reload env: .env.local
