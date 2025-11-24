@@ -1,14 +1,14 @@
 {
   "app": {
-    "[project]/Downloads/travel-e-sim-system/app/admin/countries/page": [
+    "[project]/Downloads/travel-e-sim-system/app/_not-found/page": [
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
       "static/media/797e433ab948586e-s.p.dbea232f.woff2"
     ],
-    "[project]/Downloads/travel-e-sim-system/app/admin/login/page": [
+    "[project]/Downloads/travel-e-sim-system/app/auth/login/page": [
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
       "static/media/797e433ab948586e-s.p.dbea232f.woff2"
     ],
-    "[project]/Downloads/travel-e-sim-system/app/admin/page": [
+    "[project]/Downloads/travel-e-sim-system/app/checkout/page": [
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
       "static/media/797e433ab948586e-s.p.dbea232f.woff2"
     ],
@@ -17,6 +17,14 @@
       "static/media/797e433ab948586e-s.p.dbea232f.woff2"
     ],
     "[project]/Downloads/travel-e-sim-system/app/plans/page": [
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
+    ],
+    "[project]/Downloads/travel-e-sim-system/app/profile/page": [
+      "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
+      "static/media/797e433ab948586e-s.p.dbea232f.woff2"
+    ],
+    "[project]/Downloads/travel-e-sim-system/app/success/page": [
       "static/media/caa3a2e1cccd8315-s.p.853070df.woff2",
       "static/media/797e433ab948586e-s.p.dbea232f.woff2"
     ]

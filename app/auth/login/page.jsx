@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -13,12 +13,15 @@ import { Loader2, Mail, Phone, Lock, Globe, ShieldCheck } from "lucide-react"
 
 export default function LoginPage() {
   const router = useRouter()
+  const searchParams = useSearchParams()
   const { toast } = useToast()
   const [loading, setLoading] = useState(false)
   const [emailForm, setEmailForm] = useState({ email: "", password: "" })
   const [phoneForm, setPhoneForm] = useState({ phone: "", otp: "" })
   const [otpRequestId, setOtpRequestId] = useState(null)
   const [otpSent, setOtpSent] = useState(false)
+
+  const redirectUrl = searchParams.get("redirect") || "/plans"
 
   const handleEmailLogin = async (e) => {
     e.preventDefault()
@@ -39,18 +42,27 @@ export default function LoginPage() {
         localStorage.setItem("refreshToken", data.refreshToken)
         localStorage.setItem("user", JSON.stringify(data.user))
 
+        if (data.user.name) {
+          const nameParts = data.user.name.split(" ")
+          localStorage.setItem("firstName", nameParts[0] || "")
+          localStorage.setItem("lastName", nameParts.slice(1).join(" ") || "")
+        }
+        localStorage.setItem("userEmail", data.user.email)
+        if (data.user.phone) {
+          localStorage.setItem("userPhone", data.user.phone)
+        }
+
         toast({
           title: "Welcome back!",
           description: "Login successful",
         })
 
-        // Redirect based on role
         if (data.user.role === "admin") {
           router.push("/admin")
         } else if (data.user.role === "agent") {
           router.push("/agent")
         } else {
-          router.push("/plans")
+          router.push(redirectUrl)
         }
       } else {
         toast({
@@ -125,12 +137,22 @@ export default function LoginPage() {
         localStorage.setItem("refreshToken", data.refreshToken)
         localStorage.setItem("user", JSON.stringify(data.user))
 
+        if (data.user.name) {
+          const nameParts = data.user.name.split(" ")
+          localStorage.setItem("firstName", nameParts[0] || "")
+          localStorage.setItem("lastName", nameParts.slice(1).join(" ") || "")
+        }
+        localStorage.setItem("userEmail", data.user.email)
+        if (data.user.phone) {
+          localStorage.setItem("userPhone", data.user.phone)
+        }
+
         toast({
           title: "Welcome!",
           description: "Login successful",
         })
 
-        router.push("/plans")
+        router.push(redirectUrl)
       } else {
         toast({
           title: "Verification failed",

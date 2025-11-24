@@ -1,0 +1,476 @@
+module.exports = [
+"[externals]/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js [external] (next/dist/compiled/next-server/app-route-turbo.runtime.dev.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/compiled/next-server/app-route-turbo.runtime.dev.js", () => require("next/dist/compiled/next-server/app-route-turbo.runtime.dev.js"));
+
+module.exports = mod;
+}),
+"[externals]/next/dist/compiled/@opentelemetry/api [external] (next/dist/compiled/@opentelemetry/api, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/compiled/@opentelemetry/api", () => require("next/dist/compiled/@opentelemetry/api"));
+
+module.exports = mod;
+}),
+"[externals]/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js [external] (next/dist/compiled/next-server/app-page-turbo.runtime.dev.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/compiled/next-server/app-page-turbo.runtime.dev.js", () => require("next/dist/compiled/next-server/app-page-turbo.runtime.dev.js"));
+
+module.exports = mod;
+}),
+"[externals]/next/dist/server/app-render/work-unit-async-storage.external.js [external] (next/dist/server/app-render/work-unit-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/server/app-render/work-unit-async-storage.external.js", () => require("next/dist/server/app-render/work-unit-async-storage.external.js"));
+
+module.exports = mod;
+}),
+"[externals]/next/dist/server/app-render/work-async-storage.external.js [external] (next/dist/server/app-render/work-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/server/app-render/work-async-storage.external.js", () => require("next/dist/server/app-render/work-async-storage.external.js"));
+
+module.exports = mod;
+}),
+"[externals]/next/dist/shared/lib/no-fallback-error.external.js [external] (next/dist/shared/lib/no-fallback-error.external.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/shared/lib/no-fallback-error.external.js", () => require("next/dist/shared/lib/no-fallback-error.external.js"));
+
+module.exports = mod;
+}),
+"[externals]/next/dist/server/app-render/after-task-async-storage.external.js [external] (next/dist/server/app-render/after-task-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/server/app-render/after-task-async-storage.external.js", () => require("next/dist/server/app-render/after-task-async-storage.external.js"));
+
+module.exports = mod;
+}),
+"[externals]/mongoose [external] (mongoose, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("mongoose", () => require("mongoose"));
+
+module.exports = mod;
+}),
+"[project]/Downloads/travel-e-sim-system/lib/db.js [app-route] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "connectDB",
+    ()=>connectDB,
+    "default",
+    ()=>__TURBOPACK__default__export__,
+    "getCollection",
+    ()=>getCollection,
+    "getDb",
+    ()=>getDb
+]);
+var __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/mongoose [external] (mongoose, cjs)");
+;
+const MONGODB_URI = process.env.MONGODB_URI;
+if (!MONGODB_URI) {
+    throw new Error("Please add your Mongo URI to .env file");
+}
+let cached = /*TURBOPACK member replacement*/ __turbopack_context__.g.mongoose;
+if (!cached) {
+    cached = /*TURBOPACK member replacement*/ __turbopack_context__.g.mongoose = {
+        conn: null,
+        promise: null
+    };
+}
+async function connectDB() {
+    if (cached.conn) {
+        return cached.conn;
+    }
+    if (!cached.promise) {
+        const opts = {
+            bufferCommands: false
+        };
+        cached.promise = __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].connect(MONGODB_URI, opts).then((mongoose)=>{
+            console.log("[MongoDB] Connected successfully");
+            return mongoose;
+        });
+    }
+    try {
+        cached.conn = await cached.promise;
+    } catch (e) {
+        cached.promise = null;
+        throw e;
+    }
+    return cached.conn;
+}
+async function getDb() {
+    await connectDB();
+    return __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].connection.db;
+}
+async function getCollection(collectionName) {
+    const db = await getDb();
+    return db.collection(collectionName);
+}
+const __TURBOPACK__default__export__ = connectDB;
+}),
+"[project]/Downloads/travel-e-sim-system/lib/models/order.js [app-route] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/mongoose [external] (mongoose, cjs)");
+;
+const orderSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].Schema({
+    orderId: {
+        type: String,
+        required: true,
+        unique: true,
+        index: true
+    },
+    clientRequestId: {
+        type: String,
+        required: true,
+        unique: true,
+        index: true
+    },
+    userId: {
+        type: String,
+        required: true,
+        index: true
+    },
+    userEmail: {
+        type: String,
+        required: true
+    },
+    planId: {
+        type: String,
+        required: true
+    },
+    phoneNumber: {
+        type: String,
+        required: true
+    },
+    amount: {
+        type: Number,
+        required: true
+    },
+    currency: {
+        type: String,
+        required: true,
+        default: "USD"
+    },
+    paymentMethod: {
+        type: String,
+        enum: [
+            "card",
+            "mobile_money"
+        ],
+        default: "card"
+    },
+    paymentStatus: {
+        type: String,
+        enum: [
+            "unpaid",
+            "paid",
+            "failed",
+            "refunded"
+        ],
+        default: "unpaid",
+        index: true
+    },
+    status: {
+        type: String,
+        enum: [
+            "pending",
+            "paid",
+            "provisioning",
+            "completed",
+            "failed",
+            "cancelled"
+        ],
+        default: "pending",
+        index: true
+    },
+    provisionStatus: {
+        type: String,
+        enum: [
+            "pending",
+            "processing",
+            "provisioned",
+            "failed"
+        ],
+        default: "pending",
+        index: true
+    },
+    supplierId: {
+        type: String
+    },
+    supplierCode: {
+        type: String
+    },
+    fallbackSupplierId: {
+        type: String
+    },
+    lastError: {
+        type: String
+    },
+    supplierResponse: {
+        type: __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].Schema.Types.Mixed
+    },
+    qrUrl: {
+        type: String
+    },
+    activationCode: {
+        type: String
+    },
+    iccid: {
+        type: String
+    },
+    stripePaymentIntentId: {
+        type: String
+    },
+    stripePaymentIntentClientSecret: {
+        type: String
+    },
+    purchaseSource: {
+        type: String,
+        enum: [
+            "web",
+            "mobile",
+            "agent"
+        ],
+        default: "web"
+    },
+    agentId: {
+        type: String
+    },
+    metadata: {
+        type: __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].Schema.Types.Mixed
+    }
+}, {
+    timestamps: true
+});
+orderSchema.index({
+    userId: 1,
+    createdAt: -1
+});
+orderSchema.index({
+    status: 1,
+    createdAt: -1
+});
+orderSchema.index({
+    stripePaymentIntentId: 1
+});
+const __TURBOPACK__default__export__ = __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].models.Order || __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].model("Order", orderSchema);
+}),
+"[externals]/buffer [external] (buffer, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("buffer", () => require("buffer"));
+
+module.exports = mod;
+}),
+"[externals]/stream [external] (stream, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("stream", () => require("stream"));
+
+module.exports = mod;
+}),
+"[externals]/util [external] (util, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("util", () => require("util"));
+
+module.exports = mod;
+}),
+"[externals]/crypto [external] (crypto, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("crypto", () => require("crypto"));
+
+module.exports = mod;
+}),
+"[project]/Downloads/travel-e-sim-system/lib/auth.js [app-route] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+// JWT utilities and auth helpers
+__turbopack_context__.s([
+    "checkRateLimit",
+    ()=>checkRateLimit,
+    "createToken",
+    ()=>createToken,
+    "extractToken",
+    ()=>extractToken,
+    "generateAccessToken",
+    ()=>generateAccessToken,
+    "getCurrentUser",
+    ()=>getCurrentUser,
+    "logSecurityEvent",
+    ()=>logSecurityEvent,
+    "verifyAccessToken",
+    ()=>verifyAccessToken,
+    "verifyToken",
+    ()=>verifyToken
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$jsonwebtoken$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/travel-e-sim-system/node_modules/jsonwebtoken/index.js [app-route] (ecmascript)");
+;
+const JWT_SECRET = process.env.JWT_SECRET || "your-super-secret-jwt-key-change-in-production";
+const JWT_EXPIRES_IN = "1h";
+function generateAccessToken(user) {
+    return __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$jsonwebtoken$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].sign({
+        userId: user._id.toString(),
+        email: user.email,
+        role: user.role
+    }, JWT_SECRET, {
+        expiresIn: JWT_EXPIRES_IN
+    });
+}
+function createToken(payload) {
+    return __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$jsonwebtoken$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].sign(payload, JWT_SECRET, {
+        expiresIn: JWT_EXPIRES_IN
+    });
+}
+function verifyAccessToken(token) {
+    try {
+        console.log("[v0] Verifying token with JWT_SECRET:", ("TURBOPACK compile-time truthy", 1) ? "SET" : "TURBOPACK unreachable");
+        const decoded = __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$jsonwebtoken$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].verify(token, JWT_SECRET);
+        console.log("[v0] Token verified successfully:", decoded);
+        return decoded;
+    } catch (error) {
+        console.error("[v0] JWT verification failed:", error.message);
+        return null;
+    }
+}
+function verifyToken(token) {
+    return verifyAccessToken(token);
+}
+function extractToken(request) {
+    const authHeader = request.headers.get("authorization");
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+        return null;
+    }
+    return authHeader.substring(7);
+}
+async function getCurrentUser(request) {
+    const token = extractToken(request);
+    if (!token) {
+        return null;
+    }
+    const payload = verifyAccessToken(token);
+    if (!payload) {
+        return null;
+    }
+    return payload;
+}
+// Rate limiting helper
+const loginAttempts = new Map();
+function checkRateLimit(identifier, maxAttempts = 5, windowMs = 15 * 60 * 1000) {
+    const now = Date.now();
+    const attempts = loginAttempts.get(identifier) || [];
+    // Clean old attempts
+    const recentAttempts = attempts.filter((time)=>now - time < windowMs);
+    if (recentAttempts.length >= maxAttempts) {
+        return false;
+    }
+    recentAttempts.push(now);
+    loginAttempts.set(identifier, recentAttempts);
+    return true;
+}
+function logSecurityEvent(userId, event, details) {
+    console.log(`[v0] Security Event: ${event}`, {
+        userId,
+        timestamp: new Date().toISOString(),
+        ...details
+    });
+// In production, store in database or send to monitoring service
+}
+}),
+"[project]/Downloads/travel-e-sim-system/app/api/v1/orders/[orderId]/route.js [app-route] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "GET",
+    ()=>GET
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/travel-e-sim-system/node_modules/next/server.js [app-route] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$lib$2f$db$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/travel-e-sim-system/lib/db.js [app-route] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$lib$2f$models$2f$order$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/travel-e-sim-system/lib/models/order.js [app-route] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$lib$2f$auth$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/travel-e-sim-system/lib/auth.js [app-route] (ecmascript)");
+;
+;
+;
+;
+async function GET(request, { params }) {
+    try {
+        await (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$lib$2f$db$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["connectDB"])();
+        const { orderId } = await params;
+        console.log("[v0] Fetching order:", orderId);
+        // Verify authentication
+        const authHeader = request.headers.get("authorization");
+        if (!authHeader || !authHeader.startsWith("Bearer ")) {
+            console.log("[v0] No auth header found");
+            return __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                success: false,
+                error: "Unauthorized"
+            }, {
+                status: 401
+            });
+        }
+        const token = authHeader.split(" ")[1];
+        const decoded = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$lib$2f$auth$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["verifyAccessToken"])(token);
+        if (!decoded) {
+            console.log("[v0] Invalid token");
+            return __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                success: false,
+                error: "Invalid token"
+            }, {
+                status: 401
+            });
+        }
+        console.log("[v0] Decoded token userId:", decoded.userId);
+        // Fetch order
+        const order = await __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$lib$2f$models$2f$order$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].findOne({
+            orderId
+        }).lean();
+        if (!order) {
+            console.log("[v0] Order not found");
+            return __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                success: false,
+                error: "Order not found"
+            }, {
+                status: 404
+            });
+        }
+        console.log("[v0] Order userId:", order.userId, "Token userId:", decoded.userId);
+        const orderUserId = String(order.userId);
+        const tokenUserId = String(decoded.userId);
+        if (orderUserId !== tokenUserId) {
+            console.log("[v0] User does not own this order");
+            return __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+                success: false,
+                error: "Forbidden - You can only view your own orders"
+            }, {
+                status: 403
+            });
+        }
+        console.log("[v0] Order fetched successfully for user");
+        return __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+            success: true,
+            order: {
+                orderId: order.orderId,
+                status: order.status,
+                paymentStatus: order.paymentStatus,
+                amount: order.amount,
+                currency: order.currency,
+                planId: order.planId,
+                phoneNumber: order.phoneNumber,
+                iccid: order.iccid,
+                activationCode: order.activationCode,
+                qrUrl: order.qrUrl,
+                createdAt: order.createdAt
+            }
+        });
+    } catch (error) {
+        console.error("[Order API] Error:", error);
+        return __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+            success: false,
+            error: error.message
+        }, {
+            status: 500
+        });
+    }
+}
+}),
+];
+
+//# sourceMappingURL=%5Broot-of-the-server%5D__54d84df9._.js.map

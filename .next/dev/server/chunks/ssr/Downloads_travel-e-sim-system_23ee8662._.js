@@ -315,6 +315,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$
 ;
 function LoginPage() {
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
+    const searchParams = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSearchParams"])();
     const { toast } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useToast"])();
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [emailForm, setEmailForm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
@@ -327,6 +328,7 @@ function LoginPage() {
     });
     const [otpRequestId, setOtpRequestId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [otpSent, setOtpSent] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const redirectUrl = searchParams.get("redirect") || "/plans";
     const handleEmailLogin = async (e)=>{
         e.preventDefault();
         setLoading(true);
@@ -344,17 +346,25 @@ function LoginPage() {
                 localStorage.setItem("accessToken", data.token);
                 localStorage.setItem("refreshToken", data.refreshToken);
                 localStorage.setItem("user", JSON.stringify(data.user));
+                if (data.user.name) {
+                    const nameParts = data.user.name.split(" ");
+                    localStorage.setItem("firstName", nameParts[0] || "");
+                    localStorage.setItem("lastName", nameParts.slice(1).join(" ") || "");
+                }
+                localStorage.setItem("userEmail", data.user.email);
+                if (data.user.phone) {
+                    localStorage.setItem("userPhone", data.user.phone);
+                }
                 toast({
                     title: "Welcome back!",
                     description: "Login successful"
                 });
-                // Redirect based on role
                 if (data.user.role === "admin") {
                     router.push("/admin");
                 } else if (data.user.role === "agent") {
                     router.push("/agent");
                 } else {
-                    router.push("/plans");
+                    router.push(redirectUrl);
                 }
             } else {
                 toast({
@@ -429,11 +439,20 @@ function LoginPage() {
                 localStorage.setItem("accessToken", data.token);
                 localStorage.setItem("refreshToken", data.refreshToken);
                 localStorage.setItem("user", JSON.stringify(data.user));
+                if (data.user.name) {
+                    const nameParts = data.user.name.split(" ");
+                    localStorage.setItem("firstName", nameParts[0] || "");
+                    localStorage.setItem("lastName", nameParts.slice(1).join(" ") || "");
+                }
+                localStorage.setItem("userEmail", data.user.email);
+                if (data.user.phone) {
+                    localStorage.setItem("userPhone", data.user.phone);
+                }
                 toast({
                     title: "Welcome!",
                     description: "Login successful"
                 });
-                router.push("/plans");
+                router.push(redirectUrl);
             } else {
                 toast({
                     title: "Verification failed",
@@ -461,7 +480,7 @@ function LoginPage() {
                         className: "absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float"
                     }, void 0, false, {
                         fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                        lineNumber: 156,
+                        lineNumber: 178,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -471,20 +490,20 @@ function LoginPage() {
                         }
                     }, void 0, false, {
                         fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                        lineNumber: 157,
+                        lineNumber: 179,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl animate-pulse"
                     }, void 0, false, {
                         fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                        lineNumber: 161,
+                        lineNumber: 183,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                lineNumber: 155,
+                lineNumber: 177,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -501,12 +520,12 @@ function LoginPage() {
                                         className: "w-8 h-8 text-primary-foreground"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                        lineNumber: 169,
+                                        lineNumber: 191,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                    lineNumber: 168,
+                                    lineNumber: 190,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -514,7 +533,7 @@ function LoginPage() {
                                     children: "Welcome Back"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                    lineNumber: 171,
+                                    lineNumber: 193,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -522,13 +541,13 @@ function LoginPage() {
                                     children: "Sign in to access your eSIM dashboard"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                    lineNumber: 172,
+                                    lineNumber: 194,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                            lineNumber: 167,
+                            lineNumber: 189,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Tabs"], {
@@ -546,14 +565,14 @@ function LoginPage() {
                                                     className: "w-4 h-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                    lineNumber: 179,
+                                                    lineNumber: 201,
                                                     columnNumber: 17
                                                 }, this),
                                                 "Email"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                            lineNumber: 178,
+                                            lineNumber: 200,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -564,20 +583,20 @@ function LoginPage() {
                                                     className: "w-4 h-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                    lineNumber: 183,
+                                                    lineNumber: 205,
                                                     columnNumber: 17
                                                 }, this),
                                                 "Phone"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                            lineNumber: 182,
+                                            lineNumber: 204,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                    lineNumber: 177,
+                                    lineNumber: 199,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsContent"], {
@@ -594,7 +613,7 @@ function LoginPage() {
                                                         children: "Email Address"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                        lineNumber: 192,
+                                                        lineNumber: 214,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -604,7 +623,7 @@ function LoginPage() {
                                                                 className: "absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                                lineNumber: 194,
+                                                                lineNumber: 216,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -620,19 +639,19 @@ function LoginPage() {
                                                                 required: true
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                                lineNumber: 195,
+                                                                lineNumber: 217,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                        lineNumber: 193,
+                                                        lineNumber: 215,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                lineNumber: 191,
+                                                lineNumber: 213,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -643,7 +662,7 @@ function LoginPage() {
                                                         children: "Password"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                        lineNumber: 208,
+                                                        lineNumber: 230,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -653,7 +672,7 @@ function LoginPage() {
                                                                 className: "absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                                lineNumber: 210,
+                                                                lineNumber: 232,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -669,19 +688,19 @@ function LoginPage() {
                                                                 required: true
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                                lineNumber: 211,
+                                                                lineNumber: 233,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                        lineNumber: 209,
+                                                        lineNumber: 231,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                lineNumber: 207,
+                                                lineNumber: 229,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -692,12 +711,12 @@ function LoginPage() {
                                                     children: "Forgot password?"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                    lineNumber: 224,
+                                                    lineNumber: 246,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                lineNumber: 223,
+                                                lineNumber: 245,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -711,7 +730,7 @@ function LoginPage() {
                                                             className: "w-4 h-4 mr-2 animate-spin"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                            lineNumber: 232,
+                                                            lineNumber: 254,
                                                             columnNumber: 23
                                                         }, this),
                                                         "Signing in..."
@@ -722,7 +741,7 @@ function LoginPage() {
                                                             className: "w-4 h-4 mr-2"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                            lineNumber: 237,
+                                                            lineNumber: 259,
                                                             columnNumber: 23
                                                         }, this),
                                                         "Sign in with Email"
@@ -730,18 +749,18 @@ function LoginPage() {
                                                 }, void 0, true)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                lineNumber: 229,
+                                                lineNumber: 251,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                        lineNumber: 190,
+                                        lineNumber: 212,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                    lineNumber: 189,
+                                    lineNumber: 211,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsContent"], {
@@ -757,7 +776,7 @@ function LoginPage() {
                                                         children: "Phone Number"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                        lineNumber: 250,
+                                                        lineNumber: 272,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -767,7 +786,7 @@ function LoginPage() {
                                                                 className: "absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                                lineNumber: 252,
+                                                                lineNumber: 274,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -783,13 +802,13 @@ function LoginPage() {
                                                                 required: true
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                                lineNumber: 253,
+                                                                lineNumber: 275,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                        lineNumber: 251,
+                                                        lineNumber: 273,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -797,13 +816,13 @@ function LoginPage() {
                                                         children: "Enter with country code (e.g., +254)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                        lineNumber: 263,
+                                                        lineNumber: 285,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                lineNumber: 249,
+                                                lineNumber: 271,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -818,7 +837,7 @@ function LoginPage() {
                                                             className: "w-4 h-4 mr-2 animate-spin"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                            lineNumber: 275,
+                                                            lineNumber: 297,
                                                             columnNumber: 25
                                                         }, this),
                                                         "Sending OTP..."
@@ -826,13 +845,13 @@ function LoginPage() {
                                                 }, void 0, true) : "Send OTP"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                lineNumber: 266,
+                                                lineNumber: 288,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                        lineNumber: 248,
+                                        lineNumber: 270,
                                         columnNumber: 17
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                                         onSubmit: handleVerifyOTP,
@@ -846,7 +865,7 @@ function LoginPage() {
                                                         children: "Verification Code"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                        lineNumber: 286,
+                                                        lineNumber: 308,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -863,7 +882,7 @@ function LoginPage() {
                                                         required: true
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                        lineNumber: 287,
+                                                        lineNumber: 309,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -874,13 +893,13 @@ function LoginPage() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                        lineNumber: 297,
+                                                        lineNumber: 319,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                lineNumber: 285,
+                                                lineNumber: 307,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -894,7 +913,7 @@ function LoginPage() {
                                                             className: "w-4 h-4 mr-2 animate-spin"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                            lineNumber: 305,
+                                                            lineNumber: 327,
                                                             columnNumber: 25
                                                         }, this),
                                                         "Verifying..."
@@ -902,7 +921,7 @@ function LoginPage() {
                                                 }, void 0, true) : "Verify & Sign In"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                lineNumber: 302,
+                                                lineNumber: 324,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -920,24 +939,24 @@ function LoginPage() {
                                                 children: "Change phone number"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                lineNumber: 313,
+                                                lineNumber: 335,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                        lineNumber: 284,
+                                        lineNumber: 306,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                    lineNumber: 246,
+                                    lineNumber: 268,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                            lineNumber: 176,
+                            lineNumber: 198,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -949,12 +968,12 @@ function LoginPage() {
                                         className: "w-full border-t border-border"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                        lineNumber: 333,
+                                        lineNumber: 355,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                    lineNumber: 332,
+                                    lineNumber: 354,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -964,18 +983,18 @@ function LoginPage() {
                                         children: "Or continue with"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                        lineNumber: 336,
+                                        lineNumber: 358,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                    lineNumber: 335,
+                                    lineNumber: 357,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                            lineNumber: 331,
+                            lineNumber: 353,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -994,7 +1013,7 @@ function LoginPage() {
                                                 d: "M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                lineNumber: 344,
+                                                lineNumber: 366,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -1002,7 +1021,7 @@ function LoginPage() {
                                                 d: "M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                lineNumber: 348,
+                                                lineNumber: 370,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -1010,7 +1029,7 @@ function LoginPage() {
                                                 d: "M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                lineNumber: 352,
+                                                lineNumber: 374,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -1018,18 +1037,18 @@ function LoginPage() {
                                                 d: "M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                                lineNumber: 356,
+                                                lineNumber: 378,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                        lineNumber: 343,
+                                        lineNumber: 365,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                    lineNumber: 342,
+                                    lineNumber: 364,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1044,17 +1063,17 @@ function LoginPage() {
                                             d: "M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                            lineNumber: 364,
+                                            lineNumber: 386,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                        lineNumber: 363,
+                                        lineNumber: 385,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                    lineNumber: 362,
+                                    lineNumber: 384,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1069,23 +1088,23 @@ function LoginPage() {
                                             d: "M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                            lineNumber: 369,
+                                            lineNumber: 391,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                        lineNumber: 368,
+                                        lineNumber: 390,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                    lineNumber: 367,
+                                    lineNumber: 389,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                            lineNumber: 341,
+                            lineNumber: 363,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1098,30 +1117,30 @@ function LoginPage() {
                                     children: "Sign up"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                                    lineNumber: 377,
+                                    lineNumber: 399,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                            lineNumber: 375,
+                            lineNumber: 397,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                    lineNumber: 165,
+                    lineNumber: 187,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-                lineNumber: 164,
+                lineNumber: 186,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Downloads/travel-e-sim-system/app/auth/login/page.jsx",
-        lineNumber: 153,
+        lineNumber: 175,
         columnNumber: 5
     }, this);
 }

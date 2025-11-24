@@ -1,14 +1,16 @@
 {
-  "/admin/countries/page": "app/admin/countries/page.js",
-  "/admin/login/page": "app/admin/login/page.js",
-  "/admin/page": "app/admin/page.js",
-  "/api/v1/admin/auth-config/route": "app/api/v1/admin/auth-config/route.js",
-  "/api/v1/admin/country/route": "app/api/v1/admin/country/route.js",
-  "/api/v1/admin/init/route": "app/api/v1/admin/init/route.js",
-  "/api/v1/admin/login/route": "app/api/v1/admin/login/route.js",
-  "/api/v1/admin/plan/route": "app/api/v1/admin/plan/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/v1/auth/login/email/route": "app/api/v1/auth/login/email/route.js",
   "/api/v1/countries/route": "app/api/v1/countries/route.js",
+  "/api/v1/orders/[orderId]/route": "app/api/v1/orders/[orderId]/route.js",
+  "/api/v1/orders/route": "app/api/v1/orders/route.js",
+  "/api/v1/plans/[id]/route": "app/api/v1/plans/[id]/route.js",
   "/api/v1/plans/route": "app/api/v1/plans/route.js",
+  "/api/v1/users/me/route": "app/api/v1/users/me/route.js",
+  "/auth/login/page": "app/auth/login/page.js",
+  "/checkout/page": "app/checkout/page.js",
   "/page": "app/page.js",
-  "/plans/page": "app/plans/page.js"
+  "/plans/page": "app/plans/page.js",
+  "/profile/page": "app/profile/page.js",
+  "/success/page": "app/success/page.js"
 }

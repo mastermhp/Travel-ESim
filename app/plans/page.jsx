@@ -129,18 +129,18 @@ export default function PlansPage() {
             />
           </div>
 
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10 border bg-white/10">
             <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in text-white">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-semibold mb-6 animate-slide-in-top border border-white/30">
+              <div className="-mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-semibold mb-6 animate-slide-in-top border border-white/30">
                 <Sparkles className="h-5 w-5" />
                 <span>190+ Countries • Instant Activation • 24/7 Support</span>
               </div>
 
               {/* Heading */}
-              <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black leading-tight tracking-tight">
+              <h1 className="text-6xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tight bg-black/40 rounded-[30px]">
                 Travel
-                <br />
+                
                 Without
                 <br />
                 <span className="relative inline-block">
@@ -149,16 +149,20 @@ export default function PlansPage() {
                 </span>
               </h1>
 
-              <p className="text-xl sm:text-2xl text-white/90 font-medium leading-relaxed max-w-3xl mx-auto">
+              <p className="text-xl sm:text-xl text-white/90 font-medium leading-relaxed max-w-3xl mx-auto">
                 Stay connected anywhere in the world with instant eSIM activation. Premium data plans at unbeatable
                 prices.
               </p>
+              <div className="flex items-center justify-center gap-2 text-white font-extrabold text-sm">
+                  <Check className="h-5 w-5" />
+                  <span>No contracts • No hidden fees</span>
+                </div>
 
               {/* CTA */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 -mb-6">
                 <Button
                   size="lg"
-                  className="bg-white text-emerald-600 hover:bg-white/90 text-lg px-8 py-6 rounded-full font-bold shadow-2xl transform hover:scale-105 transition-all"
+                  className="bg-blue-900/90 text-emerald-400 hover:text-white hover:bg-white/20 text-lg px-10 py-6 rounded-full font-bold shadow-xl transform hover:scale-105 transition-all duration-700 shadow-white/40"
                   onClick={() => {
                     const element = document.getElementById("browse-plans")
                     element?.scrollIntoView({ behavior: "smooth" })
@@ -167,14 +171,11 @@ export default function PlansPage() {
                   Browse Plans
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <div className="flex items-center gap-2 text-white/90 text-sm">
-                  <Check className="h-5 w-5" />
-                  <span>No contracts • No hidden fees</span>
-                </div>
+                
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-8 pt-12 max-w-3xl mx-auto">
+              {/* <div className="grid grid-cols-3 gap-8 pt-12 max-w-3xl mx-auto">
                 <div className="space-y-2">
                   <div className="text-5xl font-black">190+</div>
                   <div className="text-sm text-white/80 font-medium">Countries</div>
@@ -187,7 +188,7 @@ export default function PlansPage() {
                   <div className="text-5xl font-black">24/7</div>
                   <div className="text-sm text-white/80 font-medium">Support</div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 

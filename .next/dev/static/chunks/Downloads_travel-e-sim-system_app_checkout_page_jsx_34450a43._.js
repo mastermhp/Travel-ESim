@@ -1,0 +1,8 @@
+(globalThis.TURBOPACK_CHUNK_LISTS || (globalThis.TURBOPACK_CHUNK_LISTS = [])).push({
+    script: typeof document === "object" ? document.currentScript : undefined,
+    chunks: [
+  "static/chunks/Downloads_travel-e-sim-system_f55feb8a._.js",
+  "static/chunks/d0d31_9baf1fdf._.js"
+],
+    source: "dynamic"
+});

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/mehedihasan/Downloads/travel-e-sim-system/app/success/loading.jsx"],"sourcesContent":["export default function SuccessLoading() {\n  return (\n    <div className=\"min-h-screen bg-gradient-to-br from-emerald-50 via-white to-blue-50 flex items-center justify-center\">\n      <div className=\"text-center space-y-4\">\n        <div className=\"animate-spin rounded-full h-16 w-16 border-b-2 border-emerald-600 mx-auto\"></div>\n        <p className=\"text-lg text-muted-foreground\">Loading your eSIM details...</p>\n      </div>\n    </div>\n  )\n}\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBACE,2RAAC;QAAI,WAAU;kBACb,cAAA,2RAAC;YAAI,WAAU;;8BACb,2RAAC;oBAAI,WAAU;;;;;;8BACf,2RAAC;oBAAE,WAAU;8BAAgC;;;;;;;;;;;;;;;;;AAIrD","debugId":null}}]
+}
