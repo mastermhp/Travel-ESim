@@ -32,7 +32,22 @@ export async function POST(request) {
       isUnlimited,
       fairUseLimitGB,
       active,
+      fallbackSupplierId, // Add fallback supplier field
+      isCustomPlan, // Add custom plan flag
     } = body
+
+    console.log("[Admin Plan API] Creating custom plan:")
+    console.log("[Admin Plan API]   Name:", name)
+    console.log("[Admin Plan API]   Country:", country)
+    console.log("[Admin Plan API]   Provider:", supplierId)
+    console.log("[Admin Plan API]   Provider Code:", supplierCode)
+    console.log("[Admin Plan API]   Retail Price:", price, currency)
+    console.log("[Admin Plan API]   Cost Price:", costPrice, currency)
+    console.log(
+      "[Admin Plan API]   Margin:",
+      costPrice ? `${(((price - costPrice) / price) * 100).toFixed(2)}%` : "N/A",
+    )
+    // </CHANGE>
 
     if (!country || !name || !validityDays || !price || !currency) {
       return NextResponse.json({ error: "Country, name, validity, price, and currency are required" }, { status: 400 })
@@ -52,13 +67,22 @@ export async function POST(request) {
       price: Number.parseFloat(price),
       currency: currency.toUpperCase(),
       costPrice: costPrice ? Number.parseFloat(costPrice) : null,
-      supplierId,
+      supplierId: supplierId || "esimgo",
       supplierCode,
+      fallbackSupplierId: fallbackSupplierId || null,
       isUnlimited: isUnlimited || false,
       fairUseLimitGB: fairUseLimitGB || null,
       active,
+      isCustomPlan: isCustomPlan !== undefined ? isCustomPlan : true, // Default true for admin-created plans
+      providerSynced: false, // Admin plans are not synced from providers
       salesCount: 0,
     })
+
+    console.log("[Admin Plan API] ✅ Custom plan created successfully!")
+    console.log("[Admin Plan API]   Plan ID:", plan._id.toString())
+    console.log("[Admin Plan API]   Provider:", plan.supplierId)
+    console.log("[Admin Plan API]   Fallback:", plan.fallbackSupplierId || "none")
+    // </CHANGE>
 
     // Clear plans cache for this country
     await cacheDelete(`plans:${country.toUpperCase()}`)

@@ -305,6 +305,9 @@ const planSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
     supplierCode: {
         type: String
     },
+    fallbackSupplierId: {
+        type: String
+    },
     isUnlimited: {
         type: Boolean,
         default: false

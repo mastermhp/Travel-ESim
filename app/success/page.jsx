@@ -68,6 +68,21 @@ export default function SuccessPage() {
     return () => clearTimeout(pollTimer)
   }, [orderData, pollingCount])
 
+  useEffect(() => {
+    if (!orderId) return
+
+    const pollInterval = setInterval(() => {
+      if (orderData?.provisionStatus !== "provisioned" && orderData?.status !== "completed") {
+        console.log("[v0] Polling for order updates...")
+        fetchOrderData(true)
+      } else {
+        clearInterval(pollInterval)
+      }
+    }, 3000) // Poll every 3 seconds
+
+    return () => clearInterval(pollInterval)
+  }, [orderId, orderData?.provisionStatus, orderData?.status])
+
   async function fetchOrderData(isPolling = false) {
     if (!orderId) {
       toast.error("Order ID missing")
@@ -230,7 +245,7 @@ export default function SuccessPage() {
                 <div className="flex-1">
                   <p className="font-medium text-lg text-blue-900">Provisioning your eSIM...</p>
                   <p className="text-sm text-blue-700">
-                    Please wait while we activate your data plan. This page will update automatically.
+                    Please wait while we activate your data plan with eSIM-Go. This usually takes 1-2 minutes.
                   </p>
                 </div>
                 <Button variant="outline" onClick={() => fetchOrderData()} size="sm">
@@ -265,7 +280,7 @@ export default function SuccessPage() {
                     <p className="text-lg font-medium text-gray-600 mb-2">Generating QR code...</p>
                     <p className="text-sm text-muted-foreground max-w-xs mx-auto">
                       {isProvisioning
-                        ? "Your eSIM is being provisioned with Twilio. This takes 1-2 minutes."
+                        ? "Your eSIM is being provisioned with eSIM-Go. This takes 1-2 minutes."
                         : "Preparing your QR code..."}
                     </p>
                   </div>

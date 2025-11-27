@@ -217,13 +217,11 @@ const Coverage = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2
     throw new Error("Attempted to call Coverage() from the server but Coverage is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.");
 }, "[project]/Downloads/travel-e-sim-system/components/coverage.jsx", "Coverage");
 }),
-"[project]/Downloads/travel-e-sim-system/components/coverage.jsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
-"use strict";
+"[project]/Downloads/travel-e-sim-system/components/coverage.jsx [app-rsc] (ecmascript)", ((__turbopack_context__, module, exports) => {
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$coverage$2e$jsx__$5b$app$2d$rsc$5d$__$28$client__reference__proxy$29$__$3c$module__evaluation$3e$__ = __turbopack_context__.i("[project]/Downloads/travel-e-sim-system/components/coverage.jsx [app-rsc] (client reference proxy) <module evaluation>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$coverage$2e$jsx__$5b$app$2d$rsc$5d$__$28$client__reference__proxy$29$__ = __turbopack_context__.i("[project]/Downloads/travel-e-sim-system/components/coverage.jsx [app-rsc] (client reference proxy)");
-;
-__turbopack_context__.n(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$coverage$2e$jsx__$5b$app$2d$rsc$5d$__$28$client__reference__proxy$29$__);
+const e = new Error("Could not parse module '[project]/Downloads/travel-e-sim-system/components/coverage.jsx'\n\nParenthesized expression cannot be empty");
+e.code = 'MODULE_UNPARSABLE';
+throw e;
 }),
 "[project]/Downloads/travel-e-sim-system/components/pricing.jsx [app-rsc] (client reference proxy) <module evaluation>", ((__turbopack_context__) => {
 "use strict";

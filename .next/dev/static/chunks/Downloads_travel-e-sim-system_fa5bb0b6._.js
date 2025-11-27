@@ -2108,6 +2108,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$
 var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$plus$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Plus$3e$__ = __turbopack_context__.i("[project]/Downloads/travel-e-sim-system/node_modules/lucide-react/dist/esm/icons/plus.js [app-client] (ecmascript) <export default as Plus>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trash$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Trash2$3e$__ = __turbopack_context__.i("[project]/Downloads/travel-e-sim-system/node_modules/lucide-react/dist/esm/icons/trash-2.js [app-client] (ecmascript) <export default as Trash2>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$save$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Save$3e$__ = __turbopack_context__.i("[project]/Downloads/travel-e-sim-system/node_modules/lucide-react/dist/esm/icons/save.js [app-client] (ecmascript) <export default as Save>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__ = __turbopack_context__.i("[project]/Downloads/travel-e-sim-system/node_modules/lucide-react/dist/esm/icons/loader-circle.js [app-client] (ecmascript) <export default as Loader2>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/travel-e-sim-system/node_modules/next/navigation.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
@@ -2143,6 +2144,63 @@ function AdminDashboard() {
     const [showPlanModal, setShowPlanModal] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [editingCountry, setEditingCountry] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [editingPlan, setEditingPlan] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [submitting, setSubmitting] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false) // New state for loading indicator
+    ;
+    const [availablePackages, setAvailablePackages] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [loadingPackages, setLoadingPackages] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    // Fetch auth settings
+    const fetchAuthSettings = async ()=>{
+        setLoadingSettings(true);
+        try {
+            const token = localStorage.getItem("adminToken");
+            const res = await fetch("/api/v1/admin/auth-config", {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            const data = await res.json();
+            if (data.success) {
+                setAuthSettings(data.config);
+            }
+        } catch (error) {
+            toast({
+                title: "Error",
+                description: "Failed to load settings",
+                variant: "destructive"
+            });
+        } finally{
+            setLoadingSettings(false);
+        }
+    };
+    const fetchAvailablePackages = async ()=>{
+        setLoadingPackages(true);
+        try {
+            const response = await fetch("/api/v1/admin/packages/esimaccess");
+            const data = await response.json();
+            if (data.success) {
+                setAvailablePackages(data.packages);
+                toast({
+                    title: "Success",
+                    description: `Found ${data.count} available packages from eSIM Access`
+                });
+            } else {
+                toast({
+                    title: "Error",
+                    description: `Failed to fetch packages: ${data.error}`,
+                    variant: "destructive"
+                });
+            }
+        } catch (error) {
+            console.error("Error fetching packages:", error);
+            toast({
+                title: "Error",
+                description: "Failed to fetch available packages",
+                variant: "destructive"
+            });
+        } finally{
+            setLoadingPackages(false);
+        }
+    };
     const [countryForm, setCountryForm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
         name: "",
         code: "",
@@ -2152,14 +2210,18 @@ function AdminDashboard() {
     });
     const [planForm, setPlanForm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
         country: "",
+        countryCode: "",
         name: "",
+        description: "",
+        features: "",
         dataGB: "",
         validityDays: "",
         price: "",
-        currency: "USD",
+        currency: "BDT",
         costPrice: "",
-        supplierId: "",
+        supplierId: "esimaccess",
         supplierCode: "",
+        fallbackSupplierId: "esimgo",
         isUnlimited: false,
         fairUseLimitGB: "",
         active: true
@@ -2295,57 +2357,86 @@ function AdminDashboard() {
     };
     const handlePlanSubmit = async (e)=>{
         e.preventDefault();
+        setSubmitting(true);
+        console.log("[v0] Submitting plan form:", planForm);
         try {
-            const token = localStorage.getItem("adminToken");
-            const method = editingPlan ? "PUT" : "POST";
-            const body = editingPlan ? {
-                id: editingPlan._id,
-                ...planForm
-            } : planForm;
-            const res = await fetch("/api/v1/admin/plan", {
-                method,
+            const token = localStorage.getItem("adminToken") // Changed from authToken to adminToken
+            ;
+            if (!token) {
+                toast({
+                    title: "Error",
+                    description: "Please log in to continue",
+                    variant: "destructive"
+                });
+                return;
+            }
+            const payload = {
+                country: planForm.countryCode,
+                name: planForm.name,
+                description: planForm.description,
+                features: planForm.features,
+                dataGB: planForm.dataGB,
+                validityDays: planForm.validityDays,
+                price: planForm.price,
+                currency: planForm.currency,
+                costPrice: planForm.costPrice,
+                supplierId: planForm.supplierId,
+                supplierCode: planForm.supplierCode,
+                fallbackSupplierId: planForm.fallbackSupplierId,
+                isUnlimited: planForm.isUnlimited,
+                fairUseLimitGB: planForm.fairUseLimitGB,
+                active: planForm.active,
+                isCustomPlan: true
+            };
+            console.log("[v0] Sending payload:", payload);
+            const response = await fetch("/api/v1/admin/plan", {
+                method: editingPlan ? "PUT" : "POST",
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: `Bearer ${token}`
                 },
-                body: JSON.stringify(body)
+                body: JSON.stringify(payload)
             });
-            const data = await res.json();
-            if (data.success) {
-                toast({
-                    title: "Success",
-                    description: data.message
-                });
-                setShowPlanModal(false);
-                setEditingPlan(null);
-                setPlanForm({
-                    country: "",
-                    name: "",
-                    dataGB: "",
-                    validityDays: "",
-                    price: "",
-                    currency: "USD",
-                    costPrice: "",
-                    supplierId: "",
-                    supplierCode: "",
-                    isUnlimited: false,
-                    fairUseLimitGB: "",
-                    active: true
-                });
-                fetchPlans();
-            } else {
-                toast({
-                    title: "Error",
-                    description: data.error,
-                    variant: "destructive"
-                });
+            const data = await response.json();
+            console.log("[v0] Response:", data);
+            if (!response.ok) {
+                throw new Error(data.error || "Failed to create plan");
             }
+            toast({
+                title: "Success",
+                description: data.message || "Plan saved successfully"
+            }); // Use toast for success
+            setShowPlanModal(false);
+            setEditingPlan(null); // Clear editing state
+            setPlanForm({
+                // Reset form to default
+                country: "",
+                countryCode: "",
+                name: "",
+                description: "",
+                features: "",
+                dataGB: "",
+                validityDays: "",
+                price: "",
+                currency: "BDT",
+                costPrice: "",
+                supplierId: "esimaccess",
+                supplierCode: "",
+                fallbackSupplierId: "esimgo",
+                isUnlimited: false,
+                fairUseLimitGB: "",
+                active: true
+            });
+            fetchPlans();
         } catch (error) {
+            console.error("[v0] Error creating/updating plan:", error);
             toast({
                 title: "Error",
-                description: "Failed to save plan",
+                description: error.message || "Failed to save plan",
                 variant: "destructive"
             });
+        } finally{
+            setSubmitting(false);
         }
     };
     const handleDeleteCountry = async (id)=>{
@@ -2410,30 +2501,6 @@ function AdminDashboard() {
                 description: "Failed to delete plan",
                 variant: "destructive"
             });
-        }
-    };
-    // Fetch auth settings
-    const fetchAuthSettings = async ()=>{
-        setLoadingSettings(true);
-        try {
-            const token = localStorage.getItem("adminToken");
-            const res = await fetch("/api/v1/admin/auth-config", {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            });
-            const data = await res.json();
-            if (data.success) {
-                setAuthSettings(data.config);
-            }
-        } catch (error) {
-            toast({
-                title: "Error",
-                description: "Failed to load settings",
-                variant: "destructive"
-            });
-        } finally{
-            setLoadingSettings(false);
         }
     };
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
@@ -2558,7 +2625,7 @@ function AdminDashboard() {
                                             children: "Admin Panel"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                            lineNumber: 333,
+                                            lineNumber: 413,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2570,18 +2637,18 @@ function AdminDashboard() {
                                                 className: "w-5 h-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 337,
+                                                lineNumber: 417,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                            lineNumber: 336,
+                                            lineNumber: 416,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                    lineNumber: 332,
+                                    lineNumber: 412,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2592,7 +2659,7 @@ function AdminDashboard() {
                                             children: adminEmail ? adminEmail.charAt(0).toUpperCase() : "A"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                            lineNumber: 341,
+                                            lineNumber: 421,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2603,7 +2670,7 @@ function AdminDashboard() {
                                                     children: adminEmail
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                    lineNumber: 345,
+                                                    lineNumber: 425,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2611,25 +2678,25 @@ function AdminDashboard() {
                                                     children: "Super Admin"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                    lineNumber: 346,
+                                                    lineNumber: 426,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                            lineNumber: 344,
+                                            lineNumber: 424,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                    lineNumber: 340,
+                                    lineNumber: 420,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                            lineNumber: 331,
+                            lineNumber: 411,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -2644,14 +2711,14 @@ function AdminDashboard() {
                                             className: "w-4 h-4 mr-2"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                            lineNumber: 357,
+                                            lineNumber: 437,
                                             columnNumber: 15
                                         }, this),
                                         "Overview"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                    lineNumber: 352,
+                                    lineNumber: 432,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2663,14 +2730,14 @@ function AdminDashboard() {
                                             className: "w-4 h-4 mr-2"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                            lineNumber: 365,
+                                            lineNumber: 445,
                                             columnNumber: 15
                                         }, this),
                                         "Orders"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                    lineNumber: 360,
+                                    lineNumber: 440,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2682,14 +2749,14 @@ function AdminDashboard() {
                                             className: "w-4 h-4 mr-2"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                            lineNumber: 373,
+                                            lineNumber: 453,
                                             columnNumber: 15
                                         }, this),
                                         "Agents"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                    lineNumber: 368,
+                                    lineNumber: 448,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2701,14 +2768,14 @@ function AdminDashboard() {
                                             className: "w-4 h-4 mr-2"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                            lineNumber: 381,
+                                            lineNumber: 461,
                                             columnNumber: 15
                                         }, this),
                                         "Countries & Plans"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                    lineNumber: 376,
+                                    lineNumber: 456,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2720,20 +2787,20 @@ function AdminDashboard() {
                                             className: "w-4 h-4 mr-2"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                            lineNumber: 389,
+                                            lineNumber: 469,
                                             columnNumber: 15
                                         }, this),
                                         "Settings"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                    lineNumber: 384,
+                                    lineNumber: 464,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                            lineNumber: 351,
+                            lineNumber: 431,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2745,23 +2812,23 @@ function AdminDashboard() {
                                 children: "Logout"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                lineNumber: 395,
+                                lineNumber: 475,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                            lineNumber: 394,
+                            lineNumber: 474,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                    lineNumber: 330,
+                    lineNumber: 410,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                lineNumber: 325,
+                lineNumber: 405,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2778,12 +2845,12 @@ function AdminDashboard() {
                                     className: "w-5 h-5"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                    lineNumber: 407,
+                                    lineNumber: 487,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                lineNumber: 406,
+                                lineNumber: 486,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -2791,20 +2858,20 @@ function AdminDashboard() {
                                 children: "Admin Panel"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                lineNumber: 409,
+                                lineNumber: 489,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "w-10"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                lineNumber: 410,
+                                lineNumber: 490,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                        lineNumber: 405,
+                        lineNumber: 485,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2820,7 +2887,7 @@ function AdminDashboard() {
                                                 children: "Dashboard Overview"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 418,
+                                                lineNumber: 498,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2828,13 +2895,13 @@ function AdminDashboard() {
                                                 children: "Welcome back! Here's what's happening today."
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 419,
+                                                lineNumber: 499,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                        lineNumber: 417,
+                                        lineNumber: 497,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2849,20 +2916,20 @@ function AdminDashboard() {
                                                                 children: stat.title
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                lineNumber: 426,
+                                                                lineNumber: 506,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(stat.icon, {
                                                                 className: "w-4 h-4 text-muted-foreground"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                lineNumber: 427,
+                                                                lineNumber: 507,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 425,
+                                                        lineNumber: 505,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -2872,7 +2939,7 @@ function AdminDashboard() {
                                                                 children: stat.value
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                lineNumber: 430,
+                                                                lineNumber: 510,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2882,7 +2949,7 @@ function AdminDashboard() {
                                                                         className: "w-3 h-3"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                        lineNumber: 432,
+                                                                        lineNumber: 512,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     stat.change,
@@ -2890,30 +2957,30 @@ function AdminDashboard() {
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                lineNumber: 431,
+                                                                lineNumber: 511,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 429,
+                                                        lineNumber: 509,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, index, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 424,
+                                                lineNumber: 504,
                                                 columnNumber: 19
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                        lineNumber: 422,
+                                        lineNumber: 502,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                lineNumber: 416,
+                                lineNumber: 496,
                                 columnNumber: 13
                             }, this),
                             selectedTab === "countries" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2929,7 +2996,7 @@ function AdminDashboard() {
                                                         children: "Countries & Plans"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 447,
+                                                        lineNumber: 527,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2937,18 +3004,50 @@ function AdminDashboard() {
                                                         children: "Manage available countries and data plans"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 448,
+                                                        lineNumber: 528,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 446,
+                                                lineNumber: 526,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "flex gap-2",
                                                 children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                                                        variant: "outline",
+                                                        onClick: fetchAvailablePackages,
+                                                        disabled: loadingPackages,
+                                                        children: loadingPackages ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__["Loader2"], {
+                                                                    className: "w-4 h-4 mr-2 animate-spin"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                    lineNumber: 534,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                "Loading..."
+                                                            ]
+                                                        }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$globe$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Globe$3e$__["Globe"], {
+                                                                    className: "w-4 h-4 mr-2"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                    lineNumber: 539,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                "Load Packages"
+                                                            ]
+                                                        }, void 0, true)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                        lineNumber: 531,
+                                                        columnNumber: 19
+                                                    }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                                         variant: "outline",
                                                         onClick: ()=>{
@@ -2967,14 +3066,14 @@ function AdminDashboard() {
                                                                 className: "w-4 h-4 mr-2"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                lineNumber: 459,
+                                                                lineNumber: 552,
                                                                 columnNumber: 21
                                                             }, this),
                                                             "Add Country"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 451,
+                                                        lineNumber: 544,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2982,14 +3081,18 @@ function AdminDashboard() {
                                                             setEditingPlan(null);
                                                             setPlanForm({
                                                                 country: "",
+                                                                countryCode: "",
                                                                 name: "",
+                                                                description: "",
+                                                                features: "",
                                                                 dataGB: "",
                                                                 validityDays: "",
                                                                 price: "",
-                                                                currency: "USD",
+                                                                currency: "BDT",
                                                                 costPrice: "",
-                                                                supplierId: "",
+                                                                supplierId: "esimaccess",
                                                                 supplierCode: "",
+                                                                fallbackSupplierId: "esimgo",
                                                                 isUnlimited: false,
                                                                 fairUseLimitGB: "",
                                                                 active: true
@@ -3001,27 +3104,142 @@ function AdminDashboard() {
                                                                 className: "w-4 h-4 mr-2"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                lineNumber: 482,
+                                                                lineNumber: 579,
                                                                 columnNumber: 21
                                                             }, this),
                                                             "Add Plan"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 462,
+                                                        lineNumber: 555,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 450,
+                                                lineNumber: 530,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                        lineNumber: 445,
+                                        lineNumber: 525,
                                         columnNumber: 15
+                                    }, this),
+                                    availablePackages.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
+                                        className: "bg-blue-50 border-blue-200",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardHeader"], {
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardTitle"], {
+                                                    className: "text-lg",
+                                                    children: "Available eSIM Access Packages"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                    lineNumber: 588,
+                                                    columnNumber: 21
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                lineNumber: 587,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "max-h-60 overflow-y-auto space-y-2",
+                                                    children: availablePackages.map((pkg, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "bg-white p-3 rounded border flex items-center justify-between",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "flex-1",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                            className: "flex items-center gap-2",
+                                                                            children: [
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "font-mono font-bold text-blue-600",
+                                                                                    children: pkg.code
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                                    lineNumber: 596,
+                                                                                    columnNumber: 31
+                                                                                }, this),
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
+                                                                                    variant: "outline",
+                                                                                    children: pkg.country
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                                    lineNumber: 597,
+                                                                                    columnNumber: 31
+                                                                                }, this)
+                                                                            ]
+                                                                        }, void 0, true, {
+                                                                            fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                            lineNumber: 595,
+                                                                            columnNumber: 29
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                            className: "text-sm text-muted-foreground mt-1",
+                                                                            children: [
+                                                                                pkg.name,
+                                                                                " - ",
+                                                                                pkg.data,
+                                                                                " - ",
+                                                                                pkg.validity,
+                                                                                " days - $",
+                                                                                pkg.price
+                                                                            ]
+                                                                        }, void 0, true, {
+                                                                            fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                            lineNumber: 599,
+                                                                            columnNumber: 29
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                    lineNumber: 594,
+                                                                    columnNumber: 27
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                                                                    size: "sm",
+                                                                    onClick: ()=>{
+                                                                        setPlanForm((prev)=>({
+                                                                                ...prev,
+                                                                                supplierCode: pkg.code,
+                                                                                countryCode: pkg.country,
+                                                                                name: pkg.name,
+                                                                                dataGB: pkg.data,
+                                                                                validityDays: pkg.validity,
+                                                                                costPrice: pkg.price
+                                                                            }));
+                                                                        setShowPlanModal(true);
+                                                                    },
+                                                                    children: "Use"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                    lineNumber: 603,
+                                                                    columnNumber: 27
+                                                                }, this)
+                                                            ]
+                                                        }, idx, true, {
+                                                            fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                            lineNumber: 593,
+                                                            columnNumber: 25
+                                                        }, this))
+                                                }, void 0, false, {
+                                                    fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                    lineNumber: 591,
+                                                    columnNumber: 21
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                lineNumber: 590,
+                                                columnNumber: 19
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                        lineNumber: 586,
+                                        columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
                                         children: [
@@ -3040,7 +3258,7 @@ function AdminDashboard() {
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                lineNumber: 492,
+                                                                lineNumber: 631,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -3052,23 +3270,23 @@ function AdminDashboard() {
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                lineNumber: 493,
+                                                                lineNumber: 632,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 491,
+                                                        lineNumber: 630,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                    lineNumber: 490,
+                                                    lineNumber: 629,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 489,
+                                                lineNumber: 628,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3080,14 +3298,14 @@ function AdminDashboard() {
                                                             children: "Loading countries..."
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                            lineNumber: 501,
+                                                            lineNumber: 640,
                                                             columnNumber: 25
                                                         }, this) : countries.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "text-center py-8 text-muted-foreground",
                                                             children: "No countries yet. Add your first country to get started."
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                            lineNumber: 503,
+                                                            lineNumber: 642,
                                                             columnNumber: 25
                                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
                                                             className: "w-full",
@@ -3101,7 +3319,7 @@ function AdminDashboard() {
                                                                                 children: "Country"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                lineNumber: 510,
+                                                                                lineNumber: 649,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -3109,7 +3327,7 @@ function AdminDashboard() {
                                                                                 children: "Code"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                lineNumber: 511,
+                                                                                lineNumber: 650,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -3117,7 +3335,7 @@ function AdminDashboard() {
                                                                                 children: "Region"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                lineNumber: 512,
+                                                                                lineNumber: 651,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -3125,7 +3343,7 @@ function AdminDashboard() {
                                                                                 children: "Status"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                lineNumber: 513,
+                                                                                lineNumber: 652,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -3133,18 +3351,18 @@ function AdminDashboard() {
                                                                                 children: "Actions"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                lineNumber: 514,
+                                                                                lineNumber: 653,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                        lineNumber: 509,
+                                                                        lineNumber: 648,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                    lineNumber: 508,
+                                                                    lineNumber: 647,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -3156,7 +3374,7 @@ function AdminDashboard() {
                                                                                     children: country.name
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                    lineNumber: 520,
+                                                                                    lineNumber: 659,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -3164,7 +3382,7 @@ function AdminDashboard() {
                                                                                     children: country.code
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                    lineNumber: 521,
+                                                                                    lineNumber: 660,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -3172,7 +3390,7 @@ function AdminDashboard() {
                                                                                     children: country.region
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                    lineNumber: 522,
+                                                                                    lineNumber: 661,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -3182,12 +3400,12 @@ function AdminDashboard() {
                                                                                         children: country.active ? "Active" : "Inactive"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                        lineNumber: 524,
+                                                                                        lineNumber: 663,
                                                                                         columnNumber: 35
                                                                                     }, this)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                    lineNumber: 523,
+                                                                                    lineNumber: 662,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -3213,12 +3431,12 @@ function AdminDashboard() {
                                                                                                     className: "w-4 h-4"
                                                                                                 }, void 0, false, {
                                                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                                    lineNumber: 545,
+                                                                                                    lineNumber: 684,
                                                                                                     columnNumber: 39
                                                                                                 }, this)
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                                lineNumber: 530,
+                                                                                                lineNumber: 669,
                                                                                                 columnNumber: 37
                                                                                             }, this),
                                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3229,45 +3447,45 @@ function AdminDashboard() {
                                                                                                     className: "w-4 h-4 text-red-500"
                                                                                                 }, void 0, false, {
                                                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                                    lineNumber: 552,
+                                                                                                    lineNumber: 691,
                                                                                                     columnNumber: 39
                                                                                                 }, this)
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                                lineNumber: 547,
+                                                                                                lineNumber: 686,
                                                                                                 columnNumber: 37
                                                                                             }, this)
                                                                                         ]
                                                                                     }, void 0, true, {
                                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                        lineNumber: 529,
+                                                                                        lineNumber: 668,
                                                                                         columnNumber: 35
                                                                                     }, this)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                    lineNumber: 528,
+                                                                                    lineNumber: 667,
                                                                                     columnNumber: 33
                                                                                 }, this)
                                                                             ]
                                                                         }, country._id, true, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                            lineNumber: 519,
+                                                                            lineNumber: 658,
                                                                             columnNumber: 31
                                                                         }, this))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                    lineNumber: 517,
+                                                                    lineNumber: 656,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                            lineNumber: 507,
+                                                            lineNumber: 646,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 499,
+                                                        lineNumber: 638,
                                                         columnNumber: 21
                                                     }, this),
                                                     countriesTab === "plans" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3277,14 +3495,14 @@ function AdminDashboard() {
                                                             children: "Loading plans..."
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                            lineNumber: 567,
+                                                            lineNumber: 706,
                                                             columnNumber: 25
                                                         }, this) : plans.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "text-center py-8 text-muted-foreground",
                                                             children: "No data plans yet. Add your first plan to get started."
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                            lineNumber: 569,
+                                                            lineNumber: 708,
                                                             columnNumber: 25
                                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
                                                             className: "w-full",
@@ -3298,7 +3516,7 @@ function AdminDashboard() {
                                                                                 children: "Plan Name"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                lineNumber: 576,
+                                                                                lineNumber: 715,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -3306,7 +3524,7 @@ function AdminDashboard() {
                                                                                 children: "Country"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                lineNumber: 577,
+                                                                                lineNumber: 716,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -3314,7 +3532,7 @@ function AdminDashboard() {
                                                                                 children: "Data"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                lineNumber: 578,
+                                                                                lineNumber: 717,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -3322,15 +3540,23 @@ function AdminDashboard() {
                                                                                 children: "Validity"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                lineNumber: 579,
+                                                                                lineNumber: 718,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                                                                 className: "text-left py-3 px-4 font-medium",
-                                                                                children: "Price"
+                                                                                children: "Provider"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                lineNumber: 580,
+                                                                                lineNumber: 719,
+                                                                                columnNumber: 31
+                                                                            }, this),
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                                                className: "text-left py-3 px-4 font-medium",
+                                                                                children: "Pricing"
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                                lineNumber: 720,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -3338,7 +3564,7 @@ function AdminDashboard() {
                                                                                 children: "Status"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                lineNumber: 581,
+                                                                                lineNumber: 721,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -3346,22 +3572,27 @@ function AdminDashboard() {
                                                                                 children: "Actions"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                lineNumber: 582,
+                                                                                lineNumber: 722,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                        lineNumber: 575,
+                                                                        lineNumber: 714,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                    lineNumber: 574,
+                                                                    lineNumber: 713,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
-                                                                    children: plans.map((plan)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                                                                    children: plans.map((plan)=>{
+                                                                        const retailPrice = Number.parseFloat(plan.price) || 0;
+                                                                        const costPrice = Number.parseFloat(plan.costPrice) || 0;
+                                                                        const profit = retailPrice - costPrice;
+                                                                        const margin = costPrice > 0 ? (profit / retailPrice * 100).toFixed(1) : 0;
+                                                                        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
                                                                             className: "border-b hover:bg-gray-50",
                                                                             children: [
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -3369,24 +3600,24 @@ function AdminDashboard() {
                                                                                     children: plan.name
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                    lineNumber: 588,
-                                                                                    columnNumber: 33
+                                                                                    lineNumber: 734,
+                                                                                    columnNumber: 35
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                                                                     className: "py-3 px-4",
                                                                                     children: plan.country
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                    lineNumber: 589,
-                                                                                    columnNumber: 33
+                                                                                    lineNumber: 735,
+                                                                                    columnNumber: 35
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                                                                     className: "py-3 px-4",
                                                                                     children: plan.isUnlimited ? "Unlimited" : `${plan.dataGB} GB`
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                    lineNumber: 590,
-                                                                                    columnNumber: 33
+                                                                                    lineNumber: 736,
+                                                                                    columnNumber: 35
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                                                                     className: "py-3 px-4",
@@ -3396,20 +3627,64 @@ function AdminDashboard() {
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                    lineNumber: 591,
-                                                                                    columnNumber: 33
+                                                                                    lineNumber: 737,
+                                                                                    columnNumber: 35
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                                                                     className: "py-3 px-4",
-                                                                                    children: [
-                                                                                        plan.currency,
-                                                                                        " ",
-                                                                                        plan.price
-                                                                                    ]
-                                                                                }, void 0, true, {
+                                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
+                                                                                        variant: "outline",
+                                                                                        children: plan.provider || "custom"
+                                                                                    }, void 0, false, {
+                                                                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                                        lineNumber: 739,
+                                                                                        columnNumber: 37
+                                                                                    }, this)
+                                                                                }, void 0, false, {
                                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                    lineNumber: 592,
-                                                                                    columnNumber: 33
+                                                                                    lineNumber: 738,
+                                                                                    columnNumber: 35
+                                                                                }, this),
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                                                    className: "py-3 px-4",
+                                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                        className: "text-sm",
+                                                                                        children: [
+                                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                                className: "font-medium",
+                                                                                                children: [
+                                                                                                    "$",
+                                                                                                    retailPrice
+                                                                                                ]
+                                                                                            }, void 0, true, {
+                                                                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                                                lineNumber: 743,
+                                                                                                columnNumber: 39
+                                                                                            }, this),
+                                                                                            costPrice > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                                                className: "text-xs text-muted-foreground",
+                                                                                                children: [
+                                                                                                    "Cost: $",
+                                                                                                    costPrice,
+                                                                                                    " (",
+                                                                                                    margin,
+                                                                                                    "% margin)"
+                                                                                                ]
+                                                                                            }, void 0, true, {
+                                                                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                                                lineNumber: 745,
+                                                                                                columnNumber: 41
+                                                                                            }, this)
+                                                                                        ]
+                                                                                    }, void 0, true, {
+                                                                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                                        lineNumber: 742,
+                                                                                        columnNumber: 37
+                                                                                    }, this)
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                                    lineNumber: 741,
+                                                                                    columnNumber: 35
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                                                                     className: "py-3 px-4",
@@ -3418,13 +3693,13 @@ function AdminDashboard() {
                                                                                         children: plan.active ? "Active" : "Inactive"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                        lineNumber: 596,
-                                                                                        columnNumber: 35
+                                                                                        lineNumber: 752,
+                                                                                        columnNumber: 37
                                                                                     }, this)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                    lineNumber: 595,
-                                                                                    columnNumber: 33
+                                                                                    lineNumber: 751,
+                                                                                    columnNumber: 35
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                                                                     className: "py-3 px-4",
@@ -3438,15 +3713,19 @@ function AdminDashboard() {
                                                                                                     setEditingPlan(plan);
                                                                                                     setPlanForm({
                                                                                                         country: plan.country,
+                                                                                                        countryCode: plan.country,
                                                                                                         name: plan.name,
+                                                                                                        description: plan.description || "",
+                                                                                                        features: Array.isArray(plan.features) ? plan.features.join(", ") : plan.features || "",
                                                                                                         dataGB: plan.dataGB,
                                                                                                         validityDays: plan.validityDays,
                                                                                                         price: plan.price,
-                                                                                                        currency: plan.currency,
-                                                                                                        costPrice: plan.costPrice,
-                                                                                                        supplierId: plan.supplierId,
-                                                                                                        supplierCode: plan.supplierCode,
-                                                                                                        isUnlimited: plan.isUnlimited,
+                                                                                                        currency: plan.currency || "USD",
+                                                                                                        costPrice: plan.costPrice || "",
+                                                                                                        supplierId: plan.provider || "esimaccess",
+                                                                                                        supplierCode: plan.supplierCode || plan.providerCode || "",
+                                                                                                        fallbackSupplierId: planForm.fallbackSupplierId,
+                                                                                                        isUnlimited: plan.isUnlimited || false,
                                                                                                         fairUseLimitGB: plan.fairUseLimitGB || "",
                                                                                                         active: plan.active
                                                                                                     });
@@ -3456,13 +3735,13 @@ function AdminDashboard() {
                                                                                                     className: "w-4 h-4"
                                                                                                 }, void 0, false, {
                                                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                                    lineNumber: 624,
-                                                                                                    columnNumber: 39
+                                                                                                    lineNumber: 786,
+                                                                                                    columnNumber: 41
                                                                                                 }, this)
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                                lineNumber: 602,
-                                                                                                columnNumber: 37
+                                                                                                lineNumber: 758,
+                                                                                                columnNumber: 39
                                                                                             }, this),
                                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                                                                                 variant: "ghost",
@@ -3472,63 +3751,64 @@ function AdminDashboard() {
                                                                                                     className: "w-4 h-4 text-red-500"
                                                                                                 }, void 0, false, {
                                                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                                    lineNumber: 627,
-                                                                                                    columnNumber: 39
+                                                                                                    lineNumber: 789,
+                                                                                                    columnNumber: 41
                                                                                                 }, this)
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                                lineNumber: 626,
-                                                                                                columnNumber: 37
+                                                                                                lineNumber: 788,
+                                                                                                columnNumber: 39
                                                                                             }, this)
                                                                                         ]
                                                                                     }, void 0, true, {
                                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                        lineNumber: 601,
-                                                                                        columnNumber: 35
+                                                                                        lineNumber: 757,
+                                                                                        columnNumber: 37
                                                                                     }, this)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                    lineNumber: 600,
-                                                                                    columnNumber: 33
+                                                                                    lineNumber: 756,
+                                                                                    columnNumber: 35
                                                                                 }, this)
                                                                             ]
                                                                         }, plan._id, true, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                            lineNumber: 587,
-                                                                            columnNumber: 31
-                                                                        }, this))
+                                                                            lineNumber: 733,
+                                                                            columnNumber: 33
+                                                                        }, this);
+                                                                    })
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                    lineNumber: 585,
+                                                                    lineNumber: 725,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                            lineNumber: 573,
+                                                            lineNumber: 712,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 565,
+                                                        lineNumber: 704,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 497,
+                                                lineNumber: 636,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                        lineNumber: 488,
+                                        lineNumber: 627,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                lineNumber: 444,
+                                lineNumber: 524,
                                 columnNumber: 13
                             }, this),
                             selectedTab === "settings" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3541,7 +3821,7 @@ function AdminDashboard() {
                                                 children: "Settings"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 647,
+                                                lineNumber: 810,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3549,13 +3829,13 @@ function AdminDashboard() {
                                                 children: "Manage platform configuration and preferences"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 648,
+                                                lineNumber: 811,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                        lineNumber: 646,
+                                        lineNumber: 809,
                                         columnNumber: 15
                                     }, this),
                                     loadingSettings ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -3564,12 +3844,12 @@ function AdminDashboard() {
                                             children: "Loading settings..."
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                            lineNumber: 653,
+                                            lineNumber: 816,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                        lineNumber: 652,
+                                        lineNumber: 815,
                                         columnNumber: 17
                                     }, this) : authSettings ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
                                         children: [
@@ -3578,12 +3858,12 @@ function AdminDashboard() {
                                                     children: "Authentication Settings"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                    lineNumber: 658,
+                                                    lineNumber: 821,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 657,
+                                                lineNumber: 820,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3600,7 +3880,7 @@ function AdminDashboard() {
                                                                             children: "Email & Password Login"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                            lineNumber: 664,
+                                                                            lineNumber: 827,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3608,13 +3888,13 @@ function AdminDashboard() {
                                                                             children: "Allow users to login with email and password"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                            lineNumber: 665,
+                                                                            lineNumber: 828,
                                                                             columnNumber: 27
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                    lineNumber: 663,
+                                                                    lineNumber: 826,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -3622,13 +3902,13 @@ function AdminDashboard() {
                                                                     onCheckedChange: (checked)=>updateAuthSetting("enableEmailPassword", checked)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                    lineNumber: 667,
+                                                                    lineNumber: 830,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                            lineNumber: 662,
+                                                            lineNumber: 825,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3640,7 +3920,7 @@ function AdminDashboard() {
                                                                             children: "Phone OTP Login"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                            lineNumber: 675,
+                                                                            lineNumber: 838,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3648,13 +3928,13 @@ function AdminDashboard() {
                                                                             children: "Allow users to login with phone OTP"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                            lineNumber: 676,
+                                                                            lineNumber: 839,
                                                                             columnNumber: 27
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                    lineNumber: 674,
+                                                                    lineNumber: 837,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -3662,13 +3942,13 @@ function AdminDashboard() {
                                                                     onCheckedChange: (checked)=>updateAuthSetting("enablePhoneOtp", checked)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                    lineNumber: 678,
+                                                                    lineNumber: 841,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                            lineNumber: 673,
+                                                            lineNumber: 836,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3680,7 +3960,7 @@ function AdminDashboard() {
                                                                             children: "Google Login"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                            lineNumber: 686,
+                                                                            lineNumber: 849,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3688,13 +3968,13 @@ function AdminDashboard() {
                                                                             children: "Enable Google OAuth authentication"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                            lineNumber: 687,
+                                                                            lineNumber: 850,
                                                                             columnNumber: 27
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                    lineNumber: 685,
+                                                                    lineNumber: 848,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -3702,13 +3982,13 @@ function AdminDashboard() {
                                                                     onCheckedChange: (checked)=>updateAuthSetting("enableSocialGoogle", checked)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                    lineNumber: 689,
+                                                                    lineNumber: 852,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                            lineNumber: 684,
+                                                            lineNumber: 847,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3720,7 +4000,7 @@ function AdminDashboard() {
                                                                             children: "Apple Login"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                            lineNumber: 697,
+                                                                            lineNumber: 860,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3728,13 +4008,13 @@ function AdminDashboard() {
                                                                             children: "Enable Apple Sign In"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                            lineNumber: 698,
+                                                                            lineNumber: 861,
                                                                             columnNumber: 27
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                    lineNumber: 696,
+                                                                    lineNumber: 859,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -3742,13 +4022,13 @@ function AdminDashboard() {
                                                                     onCheckedChange: (checked)=>updateAuthSetting("enableSocialApple", checked)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                    lineNumber: 700,
+                                                                    lineNumber: 863,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                            lineNumber: 695,
+                                                            lineNumber: 858,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3760,7 +4040,7 @@ function AdminDashboard() {
                                                                             children: "Facebook Login"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                            lineNumber: 708,
+                                                                            lineNumber: 871,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3768,13 +4048,13 @@ function AdminDashboard() {
                                                                             children: "Enable Facebook authentication"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                            lineNumber: 709,
+                                                                            lineNumber: 872,
                                                                             columnNumber: 27
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                    lineNumber: 707,
+                                                                    lineNumber: 870,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -3782,13 +4062,13 @@ function AdminDashboard() {
                                                                     onCheckedChange: (checked)=>updateAuthSetting("enableSocialFacebook", checked)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                    lineNumber: 711,
+                                                                    lineNumber: 874,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                            lineNumber: 706,
+                                                            lineNumber: 869,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3803,7 +4083,7 @@ function AdminDashboard() {
                                                                                     children: "Require MFA"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                    lineNumber: 720,
+                                                                                    lineNumber: 883,
                                                                                     columnNumber: 29
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3811,13 +4091,13 @@ function AdminDashboard() {
                                                                                     children: "Make two-factor authentication mandatory"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                    lineNumber: 721,
+                                                                                    lineNumber: 884,
                                                                                     columnNumber: 29
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                            lineNumber: 719,
+                                                                            lineNumber: 882,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -3825,13 +4105,13 @@ function AdminDashboard() {
                                                                             onCheckedChange: (checked)=>updateAuthSetting("requireMFA", checked)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                            lineNumber: 723,
+                                                                            lineNumber: 886,
                                                                             columnNumber: 27
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                    lineNumber: 718,
+                                                                    lineNumber: 881,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3841,7 +4121,7 @@ function AdminDashboard() {
                                                                             children: "Allowed MFA Methods"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                            lineNumber: 730,
+                                                                            lineNumber: 893,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3861,20 +4141,20 @@ function AdminDashboard() {
                                                                                             }
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                            lineNumber: 733,
+                                                                                            lineNumber: 896,
                                                                                             columnNumber: 31
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
                                                                                             children: "TOTP (Authenticator App)"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                            lineNumber: 742,
+                                                                                            lineNumber: 905,
                                                                                             columnNumber: 31
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                    lineNumber: 732,
+                                                                                    lineNumber: 895,
                                                                                     columnNumber: 29
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3891,20 +4171,20 @@ function AdminDashboard() {
                                                                                             }
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                            lineNumber: 745,
+                                                                                            lineNumber: 908,
                                                                                             columnNumber: 31
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
                                                                                             children: "SMS"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                            lineNumber: 754,
+                                                                                            lineNumber: 917,
                                                                                             columnNumber: 31
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                    lineNumber: 744,
+                                                                                    lineNumber: 907,
                                                                                     columnNumber: 29
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3921,73 +4201,73 @@ function AdminDashboard() {
                                                                                             }
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                            lineNumber: 757,
+                                                                                            lineNumber: 920,
                                                                                             columnNumber: 31
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
                                                                                             children: "Email"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                            lineNumber: 766,
+                                                                                            lineNumber: 929,
                                                                                             columnNumber: 31
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                                    lineNumber: 756,
+                                                                                    lineNumber: 919,
                                                                                     columnNumber: 29
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                            lineNumber: 731,
+                                                                            lineNumber: 894,
                                                                             columnNumber: 27
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                                    lineNumber: 729,
+                                                                    lineNumber: 892,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                            lineNumber: 717,
+                                                            lineNumber: 880,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                    lineNumber: 661,
+                                                    lineNumber: 824,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 660,
+                                                lineNumber: 823,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                        lineNumber: 656,
+                                        lineNumber: 819,
                                         columnNumber: 17
                                     }, this) : null
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                lineNumber: 645,
+                                lineNumber: 808,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                        lineNumber: 413,
+                        lineNumber: 493,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                lineNumber: 403,
+                lineNumber: 483,
                 columnNumber: 7
             }, this),
             showCountryModal && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4000,12 +4280,12 @@ function AdminDashboard() {
                                 children: editingCountry ? "Edit Country" : "Add Country"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                lineNumber: 787,
+                                lineNumber: 950,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                            lineNumber: 786,
+                            lineNumber: 949,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -4027,7 +4307,7 @@ function AdminDashboard() {
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                        lineNumber: 791,
+                                        lineNumber: 954,
                                         columnNumber: 17
                                     }, this),
                                     countryForm.code && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4040,7 +4320,7 @@ function AdminDashboard() {
                                                     children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$lib$2f$countries$2d$data$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getCountryByCode"])(countryForm.code)?.flag
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                    lineNumber: 808,
+                                                    lineNumber: 971,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4050,7 +4330,7 @@ function AdminDashboard() {
                                                             children: countryForm.name
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                            lineNumber: 810,
+                                                            lineNumber: 973,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4062,24 +4342,24 @@ function AdminDashboard() {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                            lineNumber: 811,
+                                                            lineNumber: 974,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                    lineNumber: 809,
+                                                    lineNumber: 972,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                            lineNumber: 807,
+                                            lineNumber: 970,
                                             columnNumber: 21
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                        lineNumber: 806,
+                                        lineNumber: 969,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4093,20 +4373,20 @@ function AdminDashboard() {
                                                     })
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 820,
+                                                lineNumber: 983,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
                                                 children: "Active"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 824,
+                                                lineNumber: 987,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                        lineNumber: 819,
+                                        lineNumber: 982,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4120,20 +4400,20 @@ function AdminDashboard() {
                                                     })
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 827,
+                                                lineNumber: 990,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
                                                 children: "Supported"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 831,
+                                                lineNumber: 994,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                        lineNumber: 826,
+                                        lineNumber: 989,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4147,14 +4427,14 @@ function AdminDashboard() {
                                                         className: "w-4 h-4 mr-2"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 835,
+                                                        lineNumber: 998,
                                                         columnNumber: 21
                                                     }, this),
                                                     "Save"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 834,
+                                                lineNumber: 997,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -4167,57 +4447,53 @@ function AdminDashboard() {
                                                 children: "Cancel"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 838,
+                                                lineNumber: 1001,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                        lineNumber: 833,
+                                        lineNumber: 996,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                lineNumber: 790,
+                                lineNumber: 953,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                            lineNumber: 789,
+                            lineNumber: 952,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                    lineNumber: 785,
+                    lineNumber: 948,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                lineNumber: 784,
+                lineNumber: 947,
                 columnNumber: 9
             }, this),
             showPlanModal && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 overflow-auto",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
-                    className: "w-full max-w-2xl my-8",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardHeader"], {
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardTitle"], {
-                                children: editingPlan ? "Edit Plan" : "Add Plan"
+                className: "fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "bg-white dark:bg-gray-950 rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "p-6",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                className: "text-xl font-bold mb-4",
+                                children: editingPlan ? "Edit Plan" : "Add New Plan"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                lineNumber: 860,
+                                lineNumber: 1023,
                                 columnNumber: 15
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                            lineNumber: 859,
-                            columnNumber: 13
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                                 onSubmit: handlePlanSubmit,
                                 className: "space-y-4",
                                 children: [
@@ -4225,176 +4501,284 @@ function AdminDashboard() {
                                         className: "grid grid-cols-2 gap-4",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "col-span-2",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
-                                                        children: "Country Code"
+                                                        htmlFor: "plan-name",
+                                                        children: "Plan Name *"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 866,
+                                                        lineNumber: 1027,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
-                                                        value: planForm.country,
-                                                        onChange: (e)=>setPlanForm({
-                                                                ...planForm,
-                                                                country: e.target.value.toUpperCase()
-                                                            }),
-                                                        placeholder: "US",
-                                                        required: true
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 867,
-                                                        columnNumber: 21
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 865,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
-                                                        children: "Plan Name"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 875,
-                                                        columnNumber: 21
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
+                                                        id: "plan-name",
                                                         value: planForm.name,
                                                         onChange: (e)=>setPlanForm({
                                                                 ...planForm,
                                                                 name: e.target.value
                                                             }),
-                                                        placeholder: "USA 3GB 7 days",
+                                                        placeholder: "Kenya Travel Package",
                                                         required: true
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 876,
+                                                        lineNumber: 1028,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 874,
+                                                lineNumber: 1026,
                                                 columnNumber: 19
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                        lineNumber: 864,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "grid grid-cols-3 gap-4",
-                                        children: [
+                                            }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "col-span-2",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
-                                                        children: "Data (GB)"
+                                                        htmlFor: "plan-description",
+                                                        children: "Description"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 887,
+                                                        lineNumber: 1038,
                                                         columnNumber: 21
                                                     }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
-                                                        type: "number",
-                                                        value: planForm.dataGB,
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
+                                                        id: "plan-description",
+                                                        className: "w-full min-h-[80px] px-3 py-2 border rounded-md dark:bg-gray-900 dark:border-gray-700",
+                                                        value: planForm.description,
                                                         onChange: (e)=>setPlanForm({
                                                                 ...planForm,
-                                                                dataGB: e.target.value
+                                                                description: e.target.value
                                                             }),
-                                                        placeholder: "3",
-                                                        disabled: planForm.isUnlimited,
-                                                        required: !planForm.isUnlimited
+                                                        placeholder: "Perfect for Kenya safari adventures"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 888,
+                                                        lineNumber: 1039,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 886,
+                                                lineNumber: 1037,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "col-span-2",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
+                                                        htmlFor: "plan-country",
+                                                        children: "Country *"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                        lineNumber: 1049,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$country$2d$selector$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CountrySelector"], {
+                                                        value: planForm.countryCode,
+                                                        onSelect: (country)=>{
+                                                            if (country) {
+                                                                setPlanForm({
+                                                                    ...planForm,
+                                                                    country: country.name,
+                                                                    countryCode: country.code
+                                                                });
+                                                            }
+                                                        }
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                        lineNumber: 1050,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    planForm.countryCode && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "mt-2 p-3 bg-emerald-50 dark:bg-emerald-950/30 rounded-lg border border-emerald-200 dark:border-emerald-800",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "flex items-center gap-2",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "text-2xl",
+                                                                    children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$lib$2f$countries$2d$data$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getCountryByCode"])(planForm.countryCode)?.flag
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                    lineNumber: 1065,
+                                                                    columnNumber: 27
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "font-semibold",
+                                                                    children: planForm.country
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                    lineNumber: 1066,
+                                                                    columnNumber: 27
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "text-sm text-muted-foreground",
+                                                                    children: [
+                                                                        "(",
+                                                                        planForm.countryCode,
+                                                                        ")"
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                    lineNumber: 1067,
+                                                                    columnNumber: 27
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                            lineNumber: 1064,
+                                                            columnNumber: 25
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                        lineNumber: 1063,
+                                                        columnNumber: 23
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                lineNumber: 1048,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
-                                                        children: "Validity (Days)"
+                                                        htmlFor: "plan-data",
+                                                        children: "Data (GB) *"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 898,
+                                                        lineNumber: 1074,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
+                                                        id: "plan-data",
+                                                        type: "number",
+                                                        step: "0.1",
+                                                        value: planForm.dataGB,
+                                                        onChange: (e)=>setPlanForm({
+                                                                ...planForm,
+                                                                dataGB: e.target.value
+                                                            }),
+                                                        placeholder: "5",
+                                                        required: !planForm.isUnlimited,
+                                                        disabled: planForm.isUnlimited
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                        lineNumber: 1075,
+                                                        columnNumber: 21
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                lineNumber: 1073,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
+                                                        htmlFor: "plan-validity",
+                                                        children: "Validity (Days) *"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                        lineNumber: 1088,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
+                                                        id: "plan-validity",
                                                         type: "number",
                                                         value: planForm.validityDays,
                                                         onChange: (e)=>setPlanForm({
                                                                 ...planForm,
                                                                 validityDays: e.target.value
                                                             }),
-                                                        placeholder: "7",
+                                                        placeholder: "30",
                                                         required: true
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 899,
+                                                        lineNumber: 1089,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 897,
+                                                lineNumber: 1087,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
-                                                        children: "Currency"
+                                                        htmlFor: "plan-currency",
+                                                        children: "Currency *"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 908,
+                                                        lineNumber: 1100,
                                                         columnNumber: 21
                                                     }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                                        id: "plan-currency",
+                                                        className: "w-full px-3 py-2 border rounded-md dark:bg-gray-900 dark:border-gray-700",
                                                         value: planForm.currency,
                                                         onChange: (e)=>setPlanForm({
                                                                 ...planForm,
-                                                                currency: e.target.value.toUpperCase()
+                                                                currency: e.target.value
                                                             }),
-                                                        placeholder: "USD",
-                                                        required: true
-                                                    }, void 0, false, {
+                                                        required: true,
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                value: "USD",
+                                                                children: "USD"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                lineNumber: 1108,
+                                                                columnNumber: 23
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                value: "BDT",
+                                                                children: "BDT"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                lineNumber: 1109,
+                                                                columnNumber: 23
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                value: "EUR",
+                                                                children: "EUR"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                lineNumber: 1110,
+                                                                columnNumber: 23
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                value: "GBP",
+                                                                children: "GBP"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                lineNumber: 1111,
+                                                                columnNumber: 23
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 909,
+                                                        lineNumber: 1101,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 907,
+                                                lineNumber: 1099,
                                                 columnNumber: 19
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                        lineNumber: 885,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "grid grid-cols-2 gap-4",
-                                        children: [
+                                            }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
-                                                        children: "Price"
+                                                        htmlFor: "plan-price",
+                                                        children: "Retail Price * (Customer Pays)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 920,
+                                                        lineNumber: 1116,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
+                                                        id: "plan-price",
                                                         type: "number",
                                                         step: "0.01",
                                                         value: planForm.price,
@@ -4402,29 +4786,31 @@ function AdminDashboard() {
                                                                 ...planForm,
                                                                 price: e.target.value
                                                             }),
-                                                        placeholder: "7.99",
+                                                        placeholder: "24.99",
                                                         required: true
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 921,
+                                                        lineNumber: 1117,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 919,
+                                                lineNumber: 1115,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
-                                                        children: "Cost Price"
+                                                        htmlFor: "plan-cost",
+                                                        children: "Cost Price (You Pay Provider)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 931,
+                                                        lineNumber: 1129,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
+                                                        id: "plan-cost",
                                                         type: "number",
                                                         step: "0.01",
                                                         value: planForm.costPrice,
@@ -4432,252 +4818,417 @@ function AdminDashboard() {
                                                                 ...planForm,
                                                                 costPrice: e.target.value
                                                             }),
-                                                        placeholder: "3.50",
-                                                        required: true
+                                                        placeholder: "7.30"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 932,
+                                                        lineNumber: 1130,
                                                         columnNumber: 21
+                                                    }, this),
+                                                    planForm.price && planForm.costPrice && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-sm text-emerald-600 dark:text-emerald-400 mt-1 font-semibold",
+                                                        children: [
+                                                            "Profit: $",
+                                                            (Number.parseFloat(planForm.price) - Number.parseFloat(planForm.costPrice)).toFixed(2),
+                                                            " (",
+                                                            ((Number.parseFloat(planForm.price) - Number.parseFloat(planForm.costPrice)) / Number.parseFloat(planForm.price) * 100).toFixed(1),
+                                                            "% margin)"
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                        lineNumber: 1139,
+                                                        columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 930,
+                                                lineNumber: 1128,
                                                 columnNumber: 19
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                        lineNumber: 918,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "grid grid-cols-2 gap-4",
-                                        children: [
+                                            }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
-                                                        children: "Supplier ID"
+                                                        htmlFor: "plan-provider",
+                                                        children: "Primary Provider *"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 945,
+                                                        lineNumber: 1153,
                                                         columnNumber: 21
                                                     }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                                        id: "plan-provider",
+                                                        className: "w-full px-3 py-2 border rounded-md dark:bg-gray-900 dark:border-gray-700",
                                                         value: planForm.supplierId,
                                                         onChange: (e)=>setPlanForm({
                                                                 ...planForm,
                                                                 supplierId: e.target.value
                                                             }),
-                                                        placeholder: "SUPPLIER_A",
-                                                        required: true
-                                                    }, void 0, false, {
+                                                        required: true,
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                value: "esimaccess",
+                                                                children: "eSIM Access"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                lineNumber: 1161,
+                                                                columnNumber: 23
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                value: "esimgo",
+                                                                children: "eSIM-Go"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                lineNumber: 1162,
+                                                                columnNumber: 23
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 946,
+                                                        lineNumber: 1154,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 944,
+                                                lineNumber: 1152,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
-                                                        children: "Supplier Code"
+                                                        htmlFor: "plan-fallback",
+                                                        children: "Fallback Provider"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 954,
+                                                        lineNumber: 1167,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                                        id: "plan-fallback",
+                                                        className: "w-full px-3 py-2 border rounded-md dark:bg-gray-900 dark:border-gray-700",
+                                                        value: planForm.fallbackSupplierId,
+                                                        onChange: (e)=>setPlanForm({
+                                                                ...planForm,
+                                                                fallbackSupplierId: e.target.value
+                                                            }),
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                value: "",
+                                                                children: "None"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                lineNumber: 1174,
+                                                                columnNumber: 23
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                value: "esimaccess",
+                                                                children: "eSIM Access"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                lineNumber: 1175,
+                                                                columnNumber: 23
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                value: "esimgo",
+                                                                children: "eSIM-Go"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                lineNumber: 1176,
+                                                                columnNumber: 23
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                        lineNumber: 1168,
+                                                        columnNumber: 21
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                lineNumber: 1166,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "col-span-2",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
+                                                        htmlFor: "plan-code",
+                                                        children: "Provider Code * (e.g., KE_5GB_30 or CCKU491)"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                        lineNumber: 1181,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
+                                                        id: "plan-code",
                                                         value: planForm.supplierCode,
                                                         onChange: (e)=>setPlanForm({
                                                                 ...planForm,
                                                                 supplierCode: e.target.value
                                                             }),
-                                                        placeholder: "SUP-USA-3GB",
+                                                        placeholder: "KE_5GB_30",
                                                         required: true
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 955,
-                                                        columnNumber: 21
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 953,
-                                                columnNumber: 19
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                        lineNumber: 943,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex items-center gap-4",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "flex items-center gap-2",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
-                                                        checked: planForm.isUnlimited,
-                                                        onCheckedChange: (checked)=>setPlanForm({
-                                                                ...planForm,
-                                                                isUnlimited: checked
-                                                            })
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 966,
+                                                        lineNumber: 1182,
                                                         columnNumber: 21
                                                     }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
-                                                        children: "Unlimited Data"
-                                                    }, void 0, false, {
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-xs text-muted-foreground mt-1",
+                                                        children: [
+                                                            "Get this packageCode from ",
+                                                            planForm.supplierId === "esimaccess" ? "eSIM Access" : "eSIM-Go",
+                                                            " ",
+                                                            "portal"
+                                                        ]
+                                                    }, void 0, true, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 970,
+                                                        lineNumber: 1189,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 965,
+                                                lineNumber: 1180,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "col-span-2",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
+                                                        htmlFor: "plan-features",
+                                                        children: "Features (comma-separated)"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                        lineNumber: 1196,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
+                                                        id: "plan-features",
+                                                        value: planForm.features,
+                                                        onChange: (e)=>setPlanForm({
+                                                                ...planForm,
+                                                                features: e.target.value
+                                                            }),
+                                                        placeholder: "4G LTE Speed, Instant Activation, 24/7 Support"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                        lineNumber: 1197,
+                                                        columnNumber: 21
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                lineNumber: 1195,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "col-span-2 flex items-center gap-4",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "flex items-center gap-2",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$checkbox$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Checkbox"], {
+                                                                id: "plan-unlimited",
+                                                                checked: planForm.isUnlimited,
+                                                                onCheckedChange: (checked)=>setPlanForm({
+                                                                        ...planForm,
+                                                                        isUnlimited: checked
+                                                                    })
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                lineNumber: 1207,
+                                                                columnNumber: 23
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
+                                                                htmlFor: "plan-unlimited",
+                                                                children: "Unlimited Data"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                lineNumber: 1212,
+                                                                columnNumber: 23
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                        lineNumber: 1206,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "flex items-center gap-2",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$checkbox$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Checkbox"], {
+                                                                id: "plan-active",
+                                                                checked: planForm.active,
+                                                                onCheckedChange: (checked)=>setPlanForm({
+                                                                        ...planForm,
+                                                                        active: checked
+                                                                    })
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                lineNumber: 1216,
+                                                                columnNumber: 23
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
+                                                                htmlFor: "plan-active",
+                                                                children: "Active"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                                lineNumber: 1221,
+                                                                columnNumber: 23
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                        lineNumber: 1215,
+                                                        columnNumber: 21
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                lineNumber: 1205,
                                                 columnNumber: 19
                                             }, this),
                                             planForm.isUnlimited && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "flex-1",
+                                                className: "col-span-2",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
+                                                        htmlFor: "plan-fair-use",
                                                         children: "Fair Use Limit (GB)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 974,
+                                                        lineNumber: 1227,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
+                                                        id: "plan-fair-use",
                                                         type: "number",
+                                                        step: "0.1",
                                                         value: planForm.fairUseLimitGB,
                                                         onChange: (e)=>setPlanForm({
                                                                 ...planForm,
                                                                 fairUseLimitGB: e.target.value
                                                             }),
-                                                        placeholder: "50"
+                                                        placeholder: "100"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 975,
+                                                        lineNumber: 1228,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 973,
+                                                lineNumber: 1226,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                        lineNumber: 964,
+                                        lineNumber: 1025,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex items-center gap-2",
+                                        className: "flex gap-2 justify-end pt-4 border-t",
                                         children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
-                                                checked: planForm.active,
-                                                onCheckedChange: (checked)=>setPlanForm({
-                                                        ...planForm,
-                                                        active: checked
-                                                    })
-                                            }, void 0, false, {
-                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 986,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
-                                                children: "Active"
-                                            }, void 0, false, {
-                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 990,
-                                                columnNumber: 19
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                        lineNumber: 985,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex gap-2",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
-                                                type: "submit",
-                                                className: "flex-1",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$save$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Save$3e$__["Save"], {
-                                                        className: "w-4 h-4 mr-2"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                        lineNumber: 995,
-                                                        columnNumber: 21
-                                                    }, this),
-                                                    "Save Plan"
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 994,
-                                                columnNumber: 19
-                                            }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                                 type: "button",
                                                 variant: "outline",
                                                 onClick: ()=>{
                                                     setShowPlanModal(false);
                                                     setEditingPlan(null);
+                                                    // Reset form on cancel to ensure clean state
+                                                    setPlanForm({
+                                                        country: "",
+                                                        countryCode: "",
+                                                        name: "",
+                                                        description: "",
+                                                        features: "",
+                                                        dataGB: "",
+                                                        validityDays: "",
+                                                        price: "",
+                                                        currency: "BDT",
+                                                        costPrice: "",
+                                                        supplierId: "esimaccess",
+                                                        supplierCode: "",
+                                                        fallbackSupplierId: "esimgo",
+                                                        isUnlimited: false,
+                                                        fairUseLimitGB: "",
+                                                        active: true
+                                                    });
                                                 },
+                                                disabled: submitting,
                                                 children: "Cancel"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                                lineNumber: 998,
+                                                lineNumber: 1241,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                                                type: "submit",
+                                                disabled: submitting,
+                                                children: submitting ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__["Loader2"], {
+                                                            className: "w-4 h-4 mr-2 animate-spin"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                            lineNumber: 1274,
+                                                            columnNumber: 25
+                                                        }, this),
+                                                        "Creating..."
+                                                    ]
+                                                }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$save$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Save$3e$__["Save"], {
+                                                            className: "w-4 h-4 mr-2"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                            lineNumber: 1279,
+                                                            columnNumber: 25
+                                                        }, this),
+                                                        editingPlan ? "Update Plan" : "Create Plan"
+                                                    ]
+                                                }, void 0, true)
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                                                lineNumber: 1271,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                        lineNumber: 993,
+                                        lineNumber: 1240,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                                lineNumber: 863,
+                                lineNumber: 1024,
                                 columnNumber: 15
                             }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                            lineNumber: 862,
-                            columnNumber: 13
-                        }, this)
-                    ]
-                }, void 0, true, {
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
+                        lineNumber: 1022,
+                        columnNumber: 13
+                    }, this)
+                }, void 0, false, {
                     fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                    lineNumber: 858,
+                    lineNumber: 1021,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-                lineNumber: 857,
+                lineNumber: 1020,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Downloads/travel-e-sim-system/app/admin/page.jsx",
-        lineNumber: 323,
+        lineNumber: 403,
         columnNumber: 5
     }, this);
 }
-_s(AdminDashboard, "D1xTgVVWVjLjsPZ8DFLr28PKeIQ=", false, function() {
+_s(AdminDashboard, "Li65Em0URSYBYjYpgTolEMDa4NY=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"],
         __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useToast"]

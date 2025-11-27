@@ -3,7 +3,7 @@ import { Hero } from "@/components/hero"
 import { Features } from "@/components/features"
 import { HowItWorks } from "@/components/how-it-works"
 import { CountriesSection } from "@/components/countries-section"
-import { Coverage } from "@/components/coverage"
+// import { Coverage } from "@/components/coverage"
 import { Pricing } from "@/components/pricing"
 import { AgentSection } from "@/components/agent-section"
 import { Testimonials } from "@/components/testimonials"
@@ -16,10 +16,11 @@ export default function HomePage() {
       <main>
         <Hero />
         <Features />
-        <HowItWorks />
+        
         <CountriesSection />
-        <Coverage />
-        <Pricing />
+        <HowItWorks />
+        {/* <Coverage /> */}
+        {/* <Pricing /> */}
         <AgentSection />
         <Testimonials />
       </main>

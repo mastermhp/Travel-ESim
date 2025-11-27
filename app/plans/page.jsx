@@ -110,7 +110,7 @@ export default function PlansPage() {
       <Header />
 
       <main className="pt-20">
-        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+         <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
           {/* Animated gradient background */}
           <div className="absolute inset-0 bg-gradient-to-br from-emerald-600 via-blue-600 to-purple-600 animate-gradient-shift">
             <div className="absolute inset-0 opacity-30 bg-[url('/abstract-network-connections-global-map.jpg')] bg-cover bg-center mix-blend-overlay" />
@@ -202,6 +202,8 @@ export default function PlansPage() {
 
         <section id="browse-plans" className="py-20 bg-gradient-to-b from-background to-secondary/20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-6 flex justify-end">{/* Removed sync button */}</div>
+
             <div className="grid lg:grid-cols-3 gap-8">
               {/* Left Sidebar - Country Selection */}
               <div className="lg:col-span-1 space-y-6">
@@ -306,14 +308,16 @@ export default function PlansPage() {
                                   onClick={() => setSelectedCountry(country)}
                                   className={`w-full flex items-center gap-3 p-3 rounded-xl border-2 transition-all duration-300 ${
                                     selectedCountry?._id === country._id
-                                      ? "bg-emerald-50 dark:bg-emerald-950/50 border-emerald-500 shadow-lg"
+                                      ? "bg-emerald-50 dark:bg-emerald-900/50 border-emerald-500 shadow-lg"
                                       : "bg-card border-border/50 hover:bg-secondary hover:border-emerald-300 dark:hover:border-emerald-700 hover:shadow-md"
                                   }`}
                                 >
                                   <span className="text-2xl">{country.flag || "🌍"}</span>
                                   <span className="flex-1 text-left font-semibold text-sm">{country.name}</span>
                                   {selectedCountry?._id === country._id && (
-                                    <Check className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+                                    <div className="relative z-10 bg-emerald-600 text-white rounded-full p-1.5">
+                                      <Check className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+                                    </div>
                                   )}
                                 </button>
                               ))}
@@ -446,74 +450,71 @@ export default function PlansPage() {
                     </CardContent>
                   </Card>
                 ) : (
-                  <div className="space-y-6">
-                    {sortedPlans.map((plan, index) => (
+                  <div className="grid gap-6">
+                    {sortedPlans.map((plan) => (
                       <Card
                         key={plan._id}
-                        className="group relative hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 border-border/50 hover:border-emerald-300 dark:hover:border-emerald-700 overflow-hidden animate-slide-in-bottom"
-                        style={{ animationDelay: `${index * 100}ms` }}
+                        className="group hover:shadow-2xl transition-all duration-500 border-2 border-border/50 hover:border-emerald-300 dark:hover:border-emerald-700 overflow-hidden"
                       >
-                        {/* Animated gradient on hover */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/0 via-blue-500/0 to-purple-500/0 group-hover:from-emerald-500/5 group-hover:via-blue-500/5 group-hover:to-purple-500/5 transition-all duration-500" />
-
-                        {/* Top accent line */}
-                        <div className="h-2 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                        <CardContent className="p-8 relative">
-                          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
-                            {/* Plan Details */}
-                            <div className="flex-1 space-y-5">
-                              <div className="flex items-start justify-between gap-6 flex-wrap">
-                                <div className="space-y-4">
-                                  <div className="flex items-center gap-4 flex-wrap">
-                                    {/* Data Amount Badge */}
-                                    <div className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-gradient-to-r from-emerald-500 to-blue-500 text-white font-black text-2xl shadow-lg">
-                                      {plan.isUnlimited ? (
-                                        <>
-                                          <Zap className="h-6 w-6" />
-                                          Unlimited
-                                        </>
-                                      ) : (
-                                        <>
-                                          <Wifi className="h-6 w-6" />
-                                          {plan.dataGB} GB
-                                        </>
-                                      )}
-                                    </div>
-
-                                    {/* Best Seller Badge */}
-                                    {plan.salesCount > 100 && (
-                                      <Badge className="bg-gradient-to-r from-amber-500 to-orange-500 text-white border-0 px-4 py-2 text-sm font-bold">
-                                        <TrendingUp className="h-4 w-4 mr-1.5" />
-                                        Best Seller
+                        <div className="h-2 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500" />
+                        <CardContent className="p-8">
+                          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+                            <div className="flex-1 space-y-6">
+                              <div className="flex items-start gap-4">
+                                <div className="flex-1">
+                                  <div className="flex items-center gap-3 mb-3">
+                                    <h3 className="text-3xl font-black">{plan.name}</h3>
+                                    {plan.popular && (
+                                      <Badge className="bg-amber-500 text-white">
+                                        <Star className="h-3 w-3 mr-1 fill-white" />
+                                        Popular
+                                      </Badge>
+                                    )}
+                                    {plan.isCustomPlan !== false && (
+                                      <Badge variant="outline" className="gap-1">
+                                        <Zap className="h-3 w-3" />
+                                        Custom Plan
+                                      </Badge>
+                                    )}
+                                    {plan.supplierId && (
+                                      <Badge variant="secondary" className="gap-1">
+                                        <Wifi className="h-3 w-3" />
+                                        {plan.supplierId === "esimgo"
+                                          ? "eSIM-Go"
+                                          : plan.supplierId === "esimaccess"
+                                            ? "eSIM Access"
+                                            : "Provider"}
                                       </Badge>
                                     )}
                                   </div>
-
-                                  <h4 className="text-2xl font-bold text-foreground leading-tight">{plan.name}</h4>
-
-                                  {/* Features */}
-                                  <div className="flex items-center gap-6 text-sm text-muted-foreground flex-wrap">
-                                    <span className="flex items-center gap-2 font-semibold">
-                                      <div className="h-8 w-8 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
-                                        <Zap className="h-4 w-4 text-emerald-600" />
-                                      </div>
-                                      Valid {plan.validityDays} days
-                                    </span>
-                                    <span className="flex items-center gap-2 font-semibold">
-                                      <div className="h-8 w-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
-                                        <Wifi className="h-4 w-4 text-blue-600" />
-                                      </div>
-                                      High-speed 4G/5G
-                                    </span>
-                                    <span className="flex items-center gap-2 font-semibold">
-                                      <div className="h-8 w-8 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
-                                        <Check className="h-4 w-4 text-purple-600" />
-                                      </div>
-                                      Instant Activation
-                                    </span>
-                                  </div>
+                                  {plan.description && (
+                                    <p className="text-base text-muted-foreground leading-relaxed">
+                                      {plan.description}
+                                    </p>
+                                  )}
                                 </div>
+                              </div>
+
+                              {/* Features */}
+                              <div className="flex items-center gap-6 text-sm text-muted-foreground flex-wrap">
+                                <span className="flex items-center gap-2 font-semibold">
+                                  <div className="h-8 w-8 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
+                                    <Zap className="h-4 w-4 text-emerald-600" />
+                                  </div>
+                                  Valid {plan.validityDays} days
+                                </span>
+                                <span className="flex items-center gap-2 font-semibold">
+                                  <div className="h-8 w-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                                    <Wifi className="h-4 w-4 text-blue-600" />
+                                  </div>
+                                  High-speed 4G/5G
+                                </span>
+                                <span className="flex items-center gap-2 font-semibold">
+                                  <div className="h-8 w-8 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+                                    <Check className="h-4 w-4 text-purple-600" />
+                                  </div>
+                                  Instant Activation
+                                </span>
                               </div>
                             </div>
 

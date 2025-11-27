@@ -148,10 +148,34 @@ const planSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
         type: Number
     },
     supplierId: {
-        type: String
+        type: String,
+        enum: [
+            "esimgo",
+            "esimaccess",
+            "custom"
+        ],
+        default: "custom"
     },
     supplierCode: {
         type: String
+    },
+    fallbackSupplierId: {
+        type: String,
+        enum: [
+            "esimgo",
+            "esimaccess",
+            null
+        ]
+    },
+    fallbackSupplierCode: {
+        type: String
+    },
+    providerSynced: {
+        type: Boolean,
+        default: false
+    },
+    lastSyncedAt: {
+        type: Date
     },
     isUnlimited: {
         type: Boolean,
@@ -168,6 +192,10 @@ const planSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
     salesCount: {
         type: Number,
         default: 0
+    },
+    isCustomPlan: {
+        type: Boolean,
+        default: false
     }
 }, {
     timestamps: true

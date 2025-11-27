@@ -26,6 +26,7 @@ import {
   Plus,
   Trash2,
   Save,
+  Loader2,
 } from "lucide-react"
 import { useRouter } from "next/navigation"
 
@@ -47,6 +48,61 @@ export default function AdminDashboard() {
   const [showPlanModal, setShowPlanModal] = useState(false)
   const [editingCountry, setEditingCountry] = useState(null)
   const [editingPlan, setEditingPlan] = useState(null)
+  const [submitting, setSubmitting] = useState(false) // New state for loading indicator
+
+  const [availablePackages, setAvailablePackages] = useState([])
+  const [loadingPackages, setLoadingPackages] = useState(false)
+
+  // Fetch auth settings
+  const fetchAuthSettings = async () => {
+    setLoadingSettings(true)
+    try {
+      const token = localStorage.getItem("adminToken")
+      const res = await fetch("/api/v1/admin/auth-config", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      const data = await res.json()
+      if (data.success) {
+        setAuthSettings(data.config)
+      }
+    } catch (error) {
+      toast({ title: "Error", description: "Failed to load settings", variant: "destructive" })
+    } finally {
+      setLoadingSettings(false)
+    }
+  }
+
+  const fetchAvailablePackages = async () => {
+    setLoadingPackages(true)
+    try {
+      const response = await fetch("/api/v1/admin/packages/esimaccess")
+      const data = await response.json()
+
+      if (data.success) {
+        setAvailablePackages(data.packages)
+        toast({
+          title: "Success",
+          description: `Found ${data.count} available packages from eSIM Access`,
+        })
+      } else {
+        toast({
+          title: "Error",
+          description: `Failed to fetch packages: ${data.error}`,
+          variant: "destructive",
+        })
+      }
+    } catch (error) {
+      console.error("Error fetching packages:", error)
+      toast({
+        title: "Error",
+        description: "Failed to fetch available packages",
+        variant: "destructive",
+      })
+    } finally {
+      setLoadingPackages(false)
+    }
+  }
+
   const [countryForm, setCountryForm] = useState({
     name: "",
     code: "",
@@ -54,20 +110,26 @@ export default function AdminDashboard() {
     active: true,
     supported: true,
   })
+
   const [planForm, setPlanForm] = useState({
     country: "",
+    countryCode: "",
     name: "",
+    description: "",
+    features: "",
     dataGB: "",
     validityDays: "",
     price: "",
-    currency: "USD",
+    currency: "BDT",
     costPrice: "",
-    supplierId: "",
+    supplierId: "esimaccess",
     supplierCode: "",
+    fallbackSupplierId: "esimgo",
     isUnlimited: false,
     fairUseLimitGB: "",
     active: true,
   })
+
   const [countriesTab, setCountriesTab] = useState("countries")
 
   useEffect(() => {
@@ -160,45 +222,82 @@ export default function AdminDashboard() {
 
   const handlePlanSubmit = async (e) => {
     e.preventDefault()
-    try {
-      const token = localStorage.getItem("adminToken")
-      const method = editingPlan ? "PUT" : "POST"
-      const body = editingPlan ? { id: editingPlan._id, ...planForm } : planForm
+    setSubmitting(true)
 
-      const res = await fetch("/api/v1/admin/plan", {
-        method,
+    console.log("[v0] Submitting plan form:", planForm)
+
+    try {
+      const token = localStorage.getItem("adminToken") // Changed from authToken to adminToken
+      if (!token) {
+        toast({ title: "Error", description: "Please log in to continue", variant: "destructive" })
+        return
+      }
+
+      const payload = {
+        country: planForm.countryCode, // Changed from planForm.country to planForm.countryCode
+        name: planForm.name,
+        description: planForm.description,
+        features: planForm.features, // Added features to payload
+        dataGB: planForm.dataGB,
+        validityDays: planForm.validityDays,
+        price: planForm.price,
+        currency: planForm.currency,
+        costPrice: planForm.costPrice,
+        supplierId: planForm.supplierId, // Changed from planForm.supplierId to planForm.supplierId
+        supplierCode: planForm.supplierCode, // Changed from planForm.supplierCode to planForm.supplierCode
+        fallbackSupplierId: planForm.fallbackSupplierId, // Changed from planForm.fallbackSupplierId to planForm.fallbackSupplierId
+        isUnlimited: planForm.isUnlimited,
+        fairUseLimitGB: planForm.fairUseLimitGB,
+        active: planForm.active,
+        isCustomPlan: true, // Assuming this is a new field added based on context
+      }
+
+      console.log("[v0] Sending payload:", payload)
+
+      const response = await fetch("/api/v1/admin/plan", {
+        method: editingPlan ? "PUT" : "POST", // Handle both POST and PUT for editing
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(body),
+        body: JSON.stringify(payload),
       })
 
-      const data = await res.json()
-      if (data.success) {
-        toast({ title: "Success", description: data.message })
-        setShowPlanModal(false)
-        setEditingPlan(null)
-        setPlanForm({
-          country: "",
-          name: "",
-          dataGB: "",
-          validityDays: "",
-          price: "",
-          currency: "USD",
-          costPrice: "",
-          supplierId: "",
-          supplierCode: "",
-          isUnlimited: false,
-          fairUseLimitGB: "",
-          active: true,
-        })
-        fetchPlans()
-      } else {
-        toast({ title: "Error", description: data.error, variant: "destructive" })
+      const data = await response.json()
+      console.log("[v0] Response:", data)
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to create plan")
       }
+
+      toast({ title: "Success", description: data.message || "Plan saved successfully" }) // Use toast for success
+      setShowPlanModal(false)
+      setEditingPlan(null) // Clear editing state
+      setPlanForm({
+        // Reset form to default
+        country: "",
+        countryCode: "",
+        name: "",
+        description: "",
+        features: "",
+        dataGB: "",
+        validityDays: "",
+        price: "",
+        currency: "BDT",
+        costPrice: "",
+        supplierId: "esimaccess",
+        supplierCode: "",
+        fallbackSupplierId: "esimgo",
+        isUnlimited: false,
+        fairUseLimitGB: "",
+        active: true,
+      })
+      fetchPlans()
     } catch (error) {
-      toast({ title: "Error", description: "Failed to save plan", variant: "destructive" })
+      console.error("[v0] Error creating/updating plan:", error)
+      toast({ title: "Error", description: error.message || "Failed to save plan", variant: "destructive" })
+    } finally {
+      setSubmitting(false)
     }
   }
 
@@ -243,25 +342,6 @@ export default function AdminDashboard() {
       }
     } catch (error) {
       toast({ title: "Error", description: "Failed to delete plan", variant: "destructive" })
-    }
-  }
-
-  // Fetch auth settings
-  const fetchAuthSettings = async () => {
-    setLoadingSettings(true)
-    try {
-      const token = localStorage.getItem("adminToken")
-      const res = await fetch("/api/v1/admin/auth-config", {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      const data = await res.json()
-      if (data.success) {
-        setAuthSettings(data.config)
-      }
-    } catch (error) {
-      toast({ title: "Error", description: "Failed to load settings", variant: "destructive" })
-    } finally {
-      setLoadingSettings(false)
     }
   }
 
@@ -448,6 +528,19 @@ export default function AdminDashboard() {
                   <p className="text-muted-foreground">Manage available countries and data plans</p>
                 </div>
                 <div className="flex gap-2">
+                  <Button variant="outline" onClick={fetchAvailablePackages} disabled={loadingPackages}>
+                    {loadingPackages ? (
+                      <>
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        Loading...
+                      </>
+                    ) : (
+                      <>
+                        <Globe className="w-4 h-4 mr-2" />
+                        Load Packages
+                      </>
+                    )}
+                  </Button>
                   <Button
                     variant="outline"
                     onClick={() => {
@@ -464,14 +557,18 @@ export default function AdminDashboard() {
                       setEditingPlan(null)
                       setPlanForm({
                         country: "",
+                        countryCode: "",
                         name: "",
+                        description: "",
+                        features: "",
                         dataGB: "",
                         validityDays: "",
                         price: "",
-                        currency: "USD",
+                        currency: "BDT",
                         costPrice: "",
-                        supplierId: "",
+                        supplierId: "esimaccess",
                         supplierCode: "",
+                        fallbackSupplierId: "esimgo",
                         isUnlimited: false,
                         fairUseLimitGB: "",
                         active: true,
@@ -484,6 +581,48 @@ export default function AdminDashboard() {
                   </Button>
                 </div>
               </div>
+
+              {availablePackages.length > 0 && (
+                <Card className="bg-blue-50 border-blue-200">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Available eSIM Access Packages</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="max-h-60 overflow-y-auto space-y-2">
+                      {availablePackages.map((pkg, idx) => (
+                        <div key={idx} className="bg-white p-3 rounded border flex items-center justify-between">
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2">
+                              <span className="font-mono font-bold text-blue-600">{pkg.code}</span>
+                              <Badge variant="outline">{pkg.country}</Badge>
+                            </div>
+                            <div className="text-sm text-muted-foreground mt-1">
+                              {pkg.name} - {pkg.data} - {pkg.validity} days - ${pkg.price}
+                            </div>
+                          </div>
+                          <Button
+                            size="sm"
+                            onClick={() => {
+                              setPlanForm((prev) => ({
+                                ...prev,
+                                supplierCode: pkg.code,
+                                countryCode: pkg.country,
+                                name: pkg.name,
+                                dataGB: pkg.data,
+                                validityDays: pkg.validity,
+                                costPrice: pkg.price,
+                              }))
+                              setShowPlanModal(true)
+                            }}
+                          >
+                            Use
+                          </Button>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
 
               <Card>
                 <CardHeader>
@@ -577,59 +716,83 @@ export default function AdminDashboard() {
                               <th className="text-left py-3 px-4 font-medium">Country</th>
                               <th className="text-left py-3 px-4 font-medium">Data</th>
                               <th className="text-left py-3 px-4 font-medium">Validity</th>
-                              <th className="text-left py-3 px-4 font-medium">Price</th>
+                              <th className="text-left py-3 px-4 font-medium">Provider</th>
+                              <th className="text-left py-3 px-4 font-medium">Pricing</th>
                               <th className="text-left py-3 px-4 font-medium">Status</th>
                               <th className="text-right py-3 px-4 font-medium">Actions</th>
                             </tr>
                           </thead>
                           <tbody>
-                            {plans.map((plan) => (
-                              <tr key={plan._id} className="border-b hover:bg-gray-50">
-                                <td className="py-3 px-4 font-medium">{plan.name}</td>
-                                <td className="py-3 px-4">{plan.country}</td>
-                                <td className="py-3 px-4">{plan.isUnlimited ? "Unlimited" : `${plan.dataGB} GB`}</td>
-                                <td className="py-3 px-4">{plan.validityDays} days</td>
-                                <td className="py-3 px-4">
-                                  {plan.currency} {plan.price}
-                                </td>
-                                <td className="py-3 px-4">
-                                  <Badge variant={plan.active ? "default" : "secondary"}>
-                                    {plan.active ? "Active" : "Inactive"}
-                                  </Badge>
-                                </td>
-                                <td className="py-3 px-4">
-                                  <div className="flex items-center justify-end gap-2">
-                                    <Button
-                                      variant="ghost"
-                                      size="icon"
-                                      onClick={() => {
-                                        setEditingPlan(plan)
-                                        setPlanForm({
-                                          country: plan.country,
-                                          name: plan.name,
-                                          dataGB: plan.dataGB,
-                                          validityDays: plan.validityDays,
-                                          price: plan.price,
-                                          currency: plan.currency,
-                                          costPrice: plan.costPrice,
-                                          supplierId: plan.supplierId,
-                                          supplierCode: plan.supplierCode,
-                                          isUnlimited: plan.isUnlimited,
-                                          fairUseLimitGB: plan.fairUseLimitGB || "",
-                                          active: plan.active,
-                                        })
-                                        setShowPlanModal(true)
-                                      }}
-                                    >
-                                      <Edit className="w-4 h-4" />
-                                    </Button>
-                                    <Button variant="ghost" size="icon" onClick={() => handleDeletePlan(plan._id)}>
-                                      <Trash2 className="w-4 h-4 text-red-500" />
-                                    </Button>
-                                  </div>
-                                </td>
-                              </tr>
-                            ))}
+                            {plans.map((plan) => {
+                              const retailPrice = Number.parseFloat(plan.price) || 0
+                              const costPrice = Number.parseFloat(plan.costPrice) || 0
+                              const profit = retailPrice - costPrice
+                              const margin = costPrice > 0 ? ((profit / retailPrice) * 100).toFixed(1) : 0
+
+                              return (
+                                <tr key={plan._id} className="border-b hover:bg-gray-50">
+                                  <td className="py-3 px-4 font-medium">{plan.name}</td>
+                                  <td className="py-3 px-4">{plan.country}</td>
+                                  <td className="py-3 px-4">{plan.isUnlimited ? "Unlimited" : `${plan.dataGB} GB`}</td>
+                                  <td className="py-3 px-4">{plan.validityDays} days</td>
+                                  <td className="py-3 px-4">
+                                    <Badge variant="outline">{plan.provider || "custom"}</Badge>
+                                  </td>
+                                  <td className="py-3 px-4">
+                                    <div className="text-sm">
+                                      <div className="font-medium">${retailPrice}</div>
+                                      {costPrice > 0 && (
+                                        <div className="text-xs text-muted-foreground">
+                                          Cost: ${costPrice} ({margin}% margin)
+                                        </div>
+                                      )}
+                                    </div>
+                                  </td>
+                                  <td className="py-3 px-4">
+                                    <Badge variant={plan.active ? "default" : "secondary"}>
+                                      {plan.active ? "Active" : "Inactive"}
+                                    </Badge>
+                                  </td>
+                                  <td className="py-3 px-4">
+                                    <div className="flex items-center justify-end gap-2">
+                                      <Button
+                                        variant="ghost"
+                                        size="icon"
+                                        onClick={() => {
+                                          setEditingPlan(plan)
+                                          setPlanForm({
+                                            country: plan.country,
+                                            countryCode: plan.country, // Assuming country field can be used for code here
+                                            name: plan.name,
+                                            description: plan.description || "",
+                                            features: Array.isArray(plan.features)
+                                              ? plan.features.join(", ")
+                                              : plan.features || "", // Handle features as string
+                                            dataGB: plan.dataGB,
+                                            validityDays: plan.validityDays,
+                                            price: plan.price,
+                                            currency: plan.currency || "USD",
+                                            costPrice: plan.costPrice || "",
+                                            supplierId: plan.provider || "esimaccess", // Renamed from provider
+                                            supplierCode: plan.supplierCode || plan.providerCode || "", // Renamed from providerCode
+                                            fallbackSupplierId: planForm.fallbackSupplierId, // Keep default or fetch if available
+                                            isUnlimited: plan.isUnlimited || false,
+                                            fairUseLimitGB: plan.fairUseLimitGB || "",
+                                            active: plan.active,
+                                          })
+                                          setShowPlanModal(true)
+                                        }}
+                                      >
+                                        <Edit className="w-4 h-4" />
+                                      </Button>
+                                      <Button variant="ghost" size="icon" onClick={() => handleDeletePlan(plan._id)}>
+                                        <Trash2 className="w-4 h-4 text-red-500" />
+                                      </Button>
+                                    </div>
+                                  </td>
+                                </tr>
+                              )
+                            })}
                           </tbody>
                         </table>
                       )}
@@ -854,161 +1017,274 @@ export default function AdminDashboard() {
 
       {/* Plan Modal */}
       {showPlanModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 overflow-auto">
-          <Card className="w-full max-w-2xl my-8">
-            <CardHeader>
-              <CardTitle>{editingPlan ? "Edit Plan" : "Add Plan"}</CardTitle>
-            </CardHeader>
-            <CardContent>
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white dark:bg-gray-950 rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-6">
+              <h3 className="text-xl font-bold mb-4">{editingPlan ? "Edit Plan" : "Add New Plan"}</h3>
               <form onSubmit={handlePlanSubmit} className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <Label>Country Code</Label>
+                  <div className="col-span-2">
+                    <Label htmlFor="plan-name">Plan Name *</Label>
                     <Input
-                      value={planForm.country}
-                      onChange={(e) => setPlanForm({ ...planForm, country: e.target.value.toUpperCase() })}
-                      placeholder="US"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label>Plan Name</Label>
-                    <Input
+                      id="plan-name"
                       value={planForm.name}
                       onChange={(e) => setPlanForm({ ...planForm, name: e.target.value })}
-                      placeholder="USA 3GB 7 days"
+                      placeholder="Kenya Travel Package"
                       required
                     />
                   </div>
-                </div>
 
-                <div className="grid grid-cols-3 gap-4">
-                  <div>
-                    <Label>Data (GB)</Label>
-                    <Input
-                      type="number"
-                      value={planForm.dataGB}
-                      onChange={(e) => setPlanForm({ ...planForm, dataGB: e.target.value })}
-                      placeholder="3"
-                      disabled={planForm.isUnlimited}
-                      required={!planForm.isUnlimited}
+                  <div className="col-span-2">
+                    <Label htmlFor="plan-description">Description</Label>
+                    <textarea
+                      id="plan-description"
+                      className="w-full min-h-[80px] px-3 py-2 border rounded-md dark:bg-gray-900 dark:border-gray-700"
+                      value={planForm.description}
+                      onChange={(e) => setPlanForm({ ...planForm, description: e.target.value })}
+                      placeholder="Perfect for Kenya safari adventures"
                     />
                   </div>
+
+                  <div className="col-span-2">
+                    <Label htmlFor="plan-country">Country *</Label>
+                    <CountrySelector
+                      value={planForm.countryCode} // Use countryCode for value
+                      onSelect={(country) => {
+                        if (country) {
+                          setPlanForm({
+                            ...planForm,
+                            country: country.name,
+                            countryCode: country.code, // Set countryCode here
+                          })
+                        }
+                      }}
+                    />
+                    {planForm.countryCode && (
+                      <div className="mt-2 p-3 bg-emerald-50 dark:bg-emerald-950/30 rounded-lg border border-emerald-200 dark:border-emerald-800">
+                        <div className="flex items-center gap-2">
+                          <span className="text-2xl">{getCountryByCode(planForm.countryCode)?.flag}</span>
+                          <span className="font-semibold">{planForm.country}</span>
+                          <span className="text-sm text-muted-foreground">({planForm.countryCode})</span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
                   <div>
-                    <Label>Validity (Days)</Label>
+                    <Label htmlFor="plan-data">Data (GB) *</Label>
                     <Input
+                      id="plan-data"
+                      type="number"
+                      step="0.1"
+                      value={planForm.dataGB}
+                      onChange={(e) => setPlanForm({ ...planForm, dataGB: e.target.value })}
+                      placeholder="5"
+                      required={!planForm.isUnlimited}
+                      disabled={planForm.isUnlimited}
+                    />
+                  </div>
+
+                  <div>
+                    <Label htmlFor="plan-validity">Validity (Days) *</Label>
+                    <Input
+                      id="plan-validity"
                       type="number"
                       value={planForm.validityDays}
                       onChange={(e) => setPlanForm({ ...planForm, validityDays: e.target.value })}
-                      placeholder="7"
+                      placeholder="30"
                       required
                     />
                   </div>
-                  <div>
-                    <Label>Currency</Label>
-                    <Input
-                      value={planForm.currency}
-                      onChange={(e) => setPlanForm({ ...planForm, currency: e.target.value.toUpperCase() })}
-                      placeholder="USD"
-                      required
-                    />
-                  </div>
-                </div>
 
-                <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <Label>Price</Label>
+                    <Label htmlFor="plan-currency">Currency *</Label>
+                    <select
+                      id="plan-currency"
+                      className="w-full px-3 py-2 border rounded-md dark:bg-gray-900 dark:border-gray-700"
+                      value={planForm.currency}
+                      onChange={(e) => setPlanForm({ ...planForm, currency: e.target.value })}
+                      required
+                    >
+                      <option value="USD">USD</option>
+                      <option value="BDT">BDT</option>
+                      <option value="EUR">EUR</option>
+                      <option value="GBP">GBP</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <Label htmlFor="plan-price">Retail Price * (Customer Pays)</Label>
                     <Input
+                      id="plan-price"
                       type="number"
                       step="0.01"
                       value={planForm.price}
                       onChange={(e) => setPlanForm({ ...planForm, price: e.target.value })}
-                      placeholder="7.99"
+                      placeholder="24.99"
                       required
                     />
                   </div>
+
                   <div>
-                    <Label>Cost Price</Label>
+                    <Label htmlFor="plan-cost">Cost Price (You Pay Provider)</Label>
                     <Input
+                      id="plan-cost"
                       type="number"
                       step="0.01"
                       value={planForm.costPrice}
                       onChange={(e) => setPlanForm({ ...planForm, costPrice: e.target.value })}
-                      placeholder="3.50"
-                      required
+                      placeholder="7.30"
                     />
+                    {planForm.price && planForm.costPrice && (
+                      <p className="text-sm text-emerald-600 dark:text-emerald-400 mt-1 font-semibold">
+                        Profit: $
+                        {(Number.parseFloat(planForm.price) - Number.parseFloat(planForm.costPrice)).toFixed(2)} (
+                        {(
+                          ((Number.parseFloat(planForm.price) - Number.parseFloat(planForm.costPrice)) /
+                            Number.parseFloat(planForm.price)) *
+                          100
+                        ).toFixed(1)}
+                        % margin)
+                      </p>
+                    )}
                   </div>
-                </div>
 
-                <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <Label>Supplier ID</Label>
-                    <Input
-                      value={planForm.supplierId}
+                    <Label htmlFor="plan-provider">Primary Provider *</Label>
+                    <select
+                      id="plan-provider"
+                      className="w-full px-3 py-2 border rounded-md dark:bg-gray-900 dark:border-gray-700"
+                      value={planForm.supplierId} // Use supplierId
                       onChange={(e) => setPlanForm({ ...planForm, supplierId: e.target.value })}
-                      placeholder="SUPPLIER_A"
                       required
-                    />
+                    >
+                      <option value="esimaccess">eSIM Access</option>
+                      <option value="esimgo">eSIM-Go</option>
+                    </select>
                   </div>
-                  <div>
-                    <Label>Supplier Code</Label>
-                    <Input
-                      value={planForm.supplierCode}
-                      onChange={(e) => setPlanForm({ ...planForm, supplierCode: e.target.value })}
-                      placeholder="SUP-USA-3GB"
-                      required
-                    />
-                  </div>
-                </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-2">
-                    <Switch
-                      checked={planForm.isUnlimited}
-                      onCheckedChange={(checked) => setPlanForm({ ...planForm, isUnlimited: checked })}
-                    />
-                    <Label>Unlimited Data</Label>
+                  <div>
+                    <Label htmlFor="plan-fallback">Fallback Provider</Label>
+                    <select
+                      id="plan-fallback"
+                      className="w-full px-3 py-2 border rounded-md dark:bg-gray-900 dark:border-gray-700"
+                      value={planForm.fallbackSupplierId}
+                      onChange={(e) => setPlanForm({ ...planForm, fallbackSupplierId: e.target.value })}
+                    >
+                      <option value="">None</option>
+                      <option value="esimaccess">eSIM Access</option>
+                      <option value="esimgo">eSIM-Go</option>
+                    </select>
                   </div>
+
+                  <div className="col-span-2">
+                    <Label htmlFor="plan-code">Provider Code * (e.g., KE_5GB_30 or CCKU491)</Label>
+                    <Input
+                      id="plan-code"
+                      value={planForm.supplierCode} // Use supplierCode
+                      onChange={(e) => setPlanForm({ ...planForm, supplierCode: e.target.value })}
+                      placeholder="KE_5GB_30"
+                      required
+                    />
+                    <p className="text-xs text-muted-foreground mt-1">
+                      Get this packageCode from {planForm.supplierId === "esimaccess" ? "eSIM Access" : "eSIM-Go"}{" "}
+                      portal
+                    </p>
+                  </div>
+
+                  <div className="col-span-2">
+                    <Label htmlFor="plan-features">Features (comma-separated)</Label>
+                    <Input
+                      id="plan-features"
+                      value={planForm.features}
+                      onChange={(e) => setPlanForm({ ...planForm, features: e.target.value })}
+                      placeholder="4G LTE Speed, Instant Activation, 24/7 Support"
+                    />
+                  </div>
+
+                  <div className="col-span-2 flex items-center gap-4">
+                    <div className="flex items-center gap-2">
+                      <Checkbox
+                        id="plan-unlimited"
+                        checked={planForm.isUnlimited}
+                        onCheckedChange={(checked) => setPlanForm({ ...planForm, isUnlimited: checked })}
+                      />
+                      <Label htmlFor="plan-unlimited">Unlimited Data</Label>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <Checkbox
+                        id="plan-active"
+                        checked={planForm.active}
+                        onCheckedChange={(checked) => setPlanForm({ ...planForm, active: checked })}
+                      />
+                      <Label htmlFor="plan-active">Active</Label>
+                    </div>
+                  </div>
+
                   {planForm.isUnlimited && (
-                    <div className="flex-1">
-                      <Label>Fair Use Limit (GB)</Label>
+                    <div className="col-span-2">
+                      <Label htmlFor="plan-fair-use">Fair Use Limit (GB)</Label>
                       <Input
+                        id="plan-fair-use"
                         type="number"
+                        step="0.1"
                         value={planForm.fairUseLimitGB}
                         onChange={(e) => setPlanForm({ ...planForm, fairUseLimitGB: e.target.value })}
-                        placeholder="50"
+                        placeholder="100"
                       />
                     </div>
                   )}
                 </div>
 
-                <div className="flex items-center gap-2">
-                  <Switch
-                    checked={planForm.active}
-                    onCheckedChange={(checked) => setPlanForm({ ...planForm, active: checked })}
-                  />
-                  <Label>Active</Label>
-                </div>
-
-                <div className="flex gap-2">
-                  <Button type="submit" className="flex-1">
-                    <Save className="w-4 h-4 mr-2" />
-                    Save Plan
-                  </Button>
+                <div className="flex gap-2 justify-end pt-4 border-t">
                   <Button
                     type="button"
                     variant="outline"
                     onClick={() => {
                       setShowPlanModal(false)
                       setEditingPlan(null)
+                      // Reset form on cancel to ensure clean state
+                      setPlanForm({
+                        country: "",
+                        countryCode: "",
+                        name: "",
+                        description: "",
+                        features: "",
+                        dataGB: "",
+                        validityDays: "",
+                        price: "",
+                        currency: "BDT",
+                        costPrice: "",
+                        supplierId: "esimaccess",
+                        supplierCode: "",
+                        fallbackSupplierId: "esimgo",
+                        isUnlimited: false,
+                        fairUseLimitGB: "",
+                        active: true,
+                      })
                     }}
+                    disabled={submitting}
                   >
                     Cancel
                   </Button>
+                  <Button type="submit" disabled={submitting}>
+                    {submitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        Creating...
+                      </>
+                    ) : (
+                      <>
+                        <Save className="w-4 h-4 mr-2" />
+                        {editingPlan ? "Update Plan" : "Create Plan"}
+                      </>
+                    )}
+                  </Button>
                 </div>
               </form>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
       )}
     </div>

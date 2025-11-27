@@ -4,6 +4,7 @@ import Order from "@/lib/models/order"
 import Plan from "@/lib/models/plan"
 import { verifyToken } from "@/lib/auth"
 import { createPaymentIntent } from "@/lib/stripe"
+import { queueManager, QUEUE_NAMES } from "@/lib/queue"
 
 export async function POST(request) {
   try {
@@ -97,6 +98,26 @@ export async function POST(request) {
     await order.save()
 
     console.log("[Orders] Created new order:", orderId)
+
+    // DEV MODE: Marking order as paid and enqueueing provisioning job
+    if (process.env.NODE_ENV === "development" || !process.env.STRIPE_WEBHOOK_SECRET) {
+      console.log("[Orders] DEV MODE: Marking order as paid and enqueueing provisioning job")
+      order.paymentStatus = "paid"
+      order.status = "paid"
+      await order.save()
+
+      await queueManager.enqueue(QUEUE_NAMES.PROVISION_HIGH, {
+        orderId: order.orderId,
+        planId: order.planId,
+        userId: order.userId,
+        supplierId: order.supplierId,
+        supplierCode: order.supplierCode,
+        phoneNumber: order.phoneNumber,
+        attempt: 0,
+      })
+
+      console.log("[Orders] Provisioning job enqueued for order:", orderId)
+    }
 
     return NextResponse.json(
       {

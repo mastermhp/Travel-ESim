@@ -2,12 +2,13 @@ import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { Toaster } from "@/components/ui/toaster"
+import { WhatsAppChatbot } from "@/components/whatsapp-chatbot"
 
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "RoamConnect - Travel eSIM & Global Data Plans",
+  title: "Travel Esim - Travel eSIM & Global Data Plans",
   description: "Instant eSIM activation for 190+ countries. Stay connected worldwide with affordable data plans.",
   generator: "v0.app",
   icons: {
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
         {children}
         <Toaster />
         <Analytics />
+        <WhatsAppChatbot />
       </body>
     </html>
   )

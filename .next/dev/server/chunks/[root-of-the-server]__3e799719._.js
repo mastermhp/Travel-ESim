@@ -91,10 +91,34 @@ const planSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
         type: Number
     },
     supplierId: {
-        type: String
+        type: String,
+        enum: [
+            "esimgo",
+            "esimaccess",
+            "custom"
+        ],
+        default: "custom"
     },
     supplierCode: {
         type: String
+    },
+    fallbackSupplierId: {
+        type: String,
+        enum: [
+            "esimgo",
+            "esimaccess",
+            null
+        ]
+    },
+    fallbackSupplierCode: {
+        type: String
+    },
+    providerSynced: {
+        type: Boolean,
+        default: false
+    },
+    lastSyncedAt: {
+        type: Date
     },
     isUnlimited: {
         type: Boolean,
@@ -111,6 +135,10 @@ const planSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoos
     salesCount: {
         type: Number,
         default: 0
+    },
+    isCustomPlan: {
+        type: Boolean,
+        default: false
     }
 }, {
     timestamps: true
@@ -381,7 +409,7 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$jsonwebtoken$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/travel-e-sim-system/node_modules/jsonwebtoken/index.js [app-route] (ecmascript)");
 ;
 const JWT_SECRET = process.env.JWT_SECRET || "your-super-secret-jwt-key-change-in-production";
-const JWT_EXPIRES_IN = "1h";
+const JWT_EXPIRES_IN = "7d";
 function generateAccessToken(user) {
     return __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$jsonwebtoken$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].sign({
         userId: user._id.toString(),
@@ -398,8 +426,12 @@ function createToken(payload) {
 }
 function verifyAccessToken(token) {
     try {
-        return __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$jsonwebtoken$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].verify(token, JWT_SECRET);
+        console.log("[v0] Verifying token with JWT_SECRET:", ("TURBOPACK compile-time truthy", 1) ? "SET" : "TURBOPACK unreachable");
+        const decoded = __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$jsonwebtoken$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].verify(token, JWT_SECRET);
+        console.log("[v0] Token verified successfully:", decoded);
+        return decoded;
     } catch (error) {
+        console.error("[v0] JWT verification failed:", error.message);
         return null;
     }
 }
@@ -619,7 +651,16 @@ async function POST(request) {
             });
         }
         const body = await request.json();
-        const { country, name, dataGB, validityDays, price, currency, costPrice, supplierId, supplierCode, isUnlimited, fairUseLimitGB, active } = body;
+        const { country, name, dataGB, validityDays, price, currency, costPrice, supplierId, supplierCode, isUnlimited, fairUseLimitGB, active, fallbackSupplierId, isCustomPlan } = body;
+        console.log("[Admin Plan API] Creating custom plan:");
+        console.log("[Admin Plan API]   Name:", name);
+        console.log("[Admin Plan API]   Country:", country);
+        console.log("[Admin Plan API]   Provider:", supplierId);
+        console.log("[Admin Plan API]   Provider Code:", supplierCode);
+        console.log("[Admin Plan API]   Retail Price:", price, currency);
+        console.log("[Admin Plan API]   Cost Price:", costPrice, currency);
+        console.log("[Admin Plan API]   Margin:", costPrice ? `${((price - costPrice) / price * 100).toFixed(2)}%` : "N/A");
+        // </CHANGE>
         if (!country || !name || !validityDays || !price || !currency) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 error: "Country, name, validity, price, and currency are required"
@@ -644,13 +685,21 @@ async function POST(request) {
             price: Number.parseFloat(price),
             currency: currency.toUpperCase(),
             costPrice: costPrice ? Number.parseFloat(costPrice) : null,
-            supplierId,
+            supplierId: supplierId || "esimgo",
             supplierCode,
+            fallbackSupplierId: fallbackSupplierId || null,
             isUnlimited: isUnlimited || false,
             fairUseLimitGB: fairUseLimitGB || null,
             active,
+            isCustomPlan: isCustomPlan !== undefined ? isCustomPlan : true,
+            providerSynced: false,
             salesCount: 0
         });
+        console.log("[Admin Plan API] ✅ Custom plan created successfully!");
+        console.log("[Admin Plan API]   Plan ID:", plan._id.toString());
+        console.log("[Admin Plan API]   Provider:", plan.supplierId);
+        console.log("[Admin Plan API]   Fallback:", plan.fallbackSupplierId || "none");
+        // </CHANGE>
         // Clear plans cache for this country
         await (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$lib$2f$redis$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["cacheDelete"])(`plans:${country.toUpperCase()}`);
         await (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$lib$2f$redis$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["cacheDelete"])("plans:all");

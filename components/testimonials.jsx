@@ -11,7 +11,7 @@ const testimonials = [
     location: "Bali, Indonesia",
     avatar: "/placeholder.svg?height=80&width=80",
     rating: 5,
-    text: "Absolutely game-changing! I travel to 4-5 countries every month and RoamConnect has saved me so much time and money. The eSIM activates instantly and the data speeds are excellent.",
+    text: "Absolutely game-changing! I travel to 4-5 countries every month and Travel Esim has saved me so much time and money. The eSIM activates instantly and the data speeds are excellent.",
   },
   {
     name: "Michael Chen",
@@ -19,7 +19,7 @@ const testimonials = [
     location: "Singapore",
     avatar: "/placeholder.svg?height=80&width=80",
     rating: 5,
-    text: "As someone who travels frequently for work, having reliable internet is crucial. RoamConnect never disappoints. The coverage is fantastic and customer support is top-notch.",
+    text: "As someone who travels frequently for work, having reliable internet is crucial. Travel Esim never disappoints. The coverage is fantastic and customer support is top-notch.",
   },
   {
     name: "Ahmed Hassan",

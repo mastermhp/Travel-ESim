@@ -368,6 +368,29 @@ function SuccessPage() {
         orderData,
         pollingCount
     ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "SuccessPage.useEffect": ()=>{
+            if (!orderId) return;
+            const pollInterval = setInterval({
+                "SuccessPage.useEffect.pollInterval": ()=>{
+                    if (orderData?.provisionStatus !== "provisioned" && orderData?.status !== "completed") {
+                        console.log("[v0] Polling for order updates...");
+                        fetchOrderData(true);
+                    } else {
+                        clearInterval(pollInterval);
+                    }
+                }
+            }["SuccessPage.useEffect.pollInterval"], 3000) // Poll every 3 seconds
+            ;
+            return ({
+                "SuccessPage.useEffect": ()=>clearInterval(pollInterval)
+            })["SuccessPage.useEffect"];
+        }
+    }["SuccessPage.useEffect"], [
+        orderId,
+        orderData?.provisionStatus,
+        orderData?.status
+    ]);
     async function fetchOrderData(isPolling = false) {
         if (!orderId) {
             __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$sonner$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"].error("Order ID missing");
@@ -471,7 +494,7 @@ function SuccessPage() {
                         className: "w-12 h-12 animate-spin text-emerald-600 mx-auto mb-4"
                     }, void 0, false, {
                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                        lineNumber: 169,
+                        lineNumber: 184,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -479,18 +502,18 @@ function SuccessPage() {
                         children: "Loading your eSIM details..."
                     }, void 0, false, {
                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                        lineNumber: 170,
+                        lineNumber: 185,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                lineNumber: 168,
+                lineNumber: 183,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-            lineNumber: 167,
+            lineNumber: 182,
             columnNumber: 7
         }, this);
     }
@@ -506,20 +529,20 @@ function SuccessPage() {
                                 children: "Order Not Found"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                lineNumber: 181,
+                                lineNumber: 196,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardDescription"], {
                                 children: "We couldn't find your order details."
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                lineNumber: 182,
+                                lineNumber: 197,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                        lineNumber: 180,
+                        lineNumber: 195,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -531,28 +554,28 @@ function SuccessPage() {
                                 children: "Browse Plans"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                lineNumber: 186,
+                                lineNumber: 201,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                            lineNumber: 185,
+                            lineNumber: 200,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                        lineNumber: 184,
+                        lineNumber: 199,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                lineNumber: 179,
+                lineNumber: 194,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-            lineNumber: 178,
+            lineNumber: 193,
             columnNumber: 7
         }, this);
     }
@@ -571,17 +594,17 @@ function SuccessPage() {
                         children: "TraveleSIM"
                     }, void 0, false, {
                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                        lineNumber: 202,
+                        lineNumber: 217,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                    lineNumber: 201,
+                    lineNumber: 216,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                lineNumber: 200,
+                lineNumber: 215,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -596,12 +619,12 @@ function SuccessPage() {
                                     className: "w-12 h-12 text-emerald-600"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                    lineNumber: 215,
+                                    lineNumber: 230,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                lineNumber: 214,
+                                lineNumber: 229,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -609,7 +632,7 @@ function SuccessPage() {
                                 children: "Payment Successful!"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                lineNumber: 217,
+                                lineNumber: 232,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -617,13 +640,13 @@ function SuccessPage() {
                                 children: isProvisioning ? "Your eSIM is being provisioned. This usually takes 1-2 minutes." : "Your eSIM is ready to use. Follow the instructions below to activate your data plan."
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                lineNumber: 218,
+                                lineNumber: 233,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                        lineNumber: 213,
+                        lineNumber: 228,
                         columnNumber: 9
                     }, this),
                     isProvisioning && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -637,7 +660,7 @@ function SuccessPage() {
                                         className: "w-8 h-8 animate-spin text-blue-600"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                        lineNumber: 229,
+                                        lineNumber: 244,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -648,21 +671,21 @@ function SuccessPage() {
                                                 children: "Provisioning your eSIM..."
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                lineNumber: 231,
+                                                lineNumber: 246,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-sm text-blue-700",
-                                                children: "Please wait while we activate your data plan. This page will update automatically."
+                                                children: "Please wait while we activate your data plan with eSIM-Go. This usually takes 1-2 minutes."
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                lineNumber: 232,
+                                                lineNumber: 247,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                        lineNumber: 230,
+                                        lineNumber: 245,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -672,23 +695,23 @@ function SuccessPage() {
                                         children: "Refresh"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                        lineNumber: 236,
+                                        lineNumber: 251,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                lineNumber: 228,
+                                lineNumber: 243,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                            lineNumber: 227,
+                            lineNumber: 242,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                        lineNumber: 226,
+                        lineNumber: 241,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -706,27 +729,27 @@ function SuccessPage() {
                                                         className: "w-5 h-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                        lineNumber: 249,
+                                                        lineNumber: 264,
                                                         columnNumber: 17
                                                     }, this),
                                                     "Your eSIM QR Code"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                lineNumber: 248,
+                                                lineNumber: 263,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardDescription"], {
                                                 children: "Scan this code with your device to install the eSIM"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                lineNumber: 252,
+                                                lineNumber: 267,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                        lineNumber: 247,
+                                        lineNumber: 262,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -740,7 +763,7 @@ function SuccessPage() {
                                                     className: "w-full max-w-[350px] h-auto"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                    lineNumber: 257,
+                                                    lineNumber: 272,
                                                     columnNumber: 19
                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "text-center py-12",
@@ -749,7 +772,7 @@ function SuccessPage() {
                                                             className: "w-16 h-16 animate-spin text-gray-400 mx-auto mb-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 264,
+                                                            lineNumber: 279,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -757,26 +780,26 @@ function SuccessPage() {
                                                             children: "Generating QR code..."
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 265,
+                                                            lineNumber: 280,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             className: "text-sm text-muted-foreground max-w-xs mx-auto",
-                                                            children: isProvisioning ? "Your eSIM is being provisioned with Twilio. This takes 1-2 minutes." : "Preparing your QR code..."
+                                                            children: isProvisioning ? "Your eSIM is being provisioned with eSIM-Go. This takes 1-2 minutes." : "Preparing your QR code..."
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 266,
+                                                            lineNumber: 281,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                    lineNumber: 263,
+                                                    lineNumber: 278,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                lineNumber: 255,
+                                                lineNumber: 270,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -789,14 +812,14 @@ function SuccessPage() {
                                                         className: "w-4 h-4 mr-2"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                        lineNumber: 277,
+                                                        lineNumber: 292,
                                                         columnNumber: 17
                                                     }, this),
                                                     "Download QR Code"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                lineNumber: 276,
+                                                lineNumber: 291,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -812,7 +835,7 @@ function SuccessPage() {
                                                                         className: "w-5 h-5 text-blue-600"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                        lineNumber: 285,
+                                                                        lineNumber: 300,
                                                                         columnNumber: 21
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -820,13 +843,13 @@ function SuccessPage() {
                                                                         children: "Access expires in:"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                        lineNumber: 286,
+                                                                        lineNumber: 301,
                                                                         columnNumber: 21
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                lineNumber: 284,
+                                                                lineNumber: 299,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -834,13 +857,13 @@ function SuccessPage() {
                                                                 children: formatTime(timeLeft)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                lineNumber: 288,
+                                                                lineNumber: 303,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                        lineNumber: 283,
+                                                        lineNumber: 298,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -848,13 +871,13 @@ function SuccessPage() {
                                                         children: "QR code also sent to your email for future reference"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                        lineNumber: 290,
+                                                        lineNumber: 305,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                lineNumber: 282,
+                                                lineNumber: 297,
                                                 columnNumber: 15
                                             }, this),
                                             (orderData.iccid || orderData.activationCode) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -869,14 +892,14 @@ function SuccessPage() {
                                                                         className: "w-4 h-4"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                        lineNumber: 298,
+                                                                        lineNumber: 313,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     "ICCID Number"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                lineNumber: 297,
+                                                                lineNumber: 312,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -887,7 +910,7 @@ function SuccessPage() {
                                                                         children: orderData.iccid
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                        lineNumber: 302,
+                                                                        lineNumber: 317,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -898,30 +921,30 @@ function SuccessPage() {
                                                                             className: "w-4 h-4"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                            lineNumber: 304,
+                                                                            lineNumber: 319,
                                                                             columnNumber: 37
                                                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$copy$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Copy$3e$__["Copy"], {
                                                                             className: "w-4 h-4"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                            lineNumber: 304,
+                                                                            lineNumber: 319,
                                                                             columnNumber: 69
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                        lineNumber: 303,
+                                                                        lineNumber: 318,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                lineNumber: 301,
+                                                                lineNumber: 316,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                        lineNumber: 296,
+                                                        lineNumber: 311,
                                                         columnNumber: 21
                                                     }, this),
                                                     orderData.activationCode && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -931,7 +954,7 @@ function SuccessPage() {
                                                                 children: "Manual Activation Code"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                lineNumber: 312,
+                                                                lineNumber: 327,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -942,7 +965,7 @@ function SuccessPage() {
                                                                         children: orderData.activationCode
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                        lineNumber: 314,
+                                                                        lineNumber: 329,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -953,48 +976,48 @@ function SuccessPage() {
                                                                             className: "w-4 h-4"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                            lineNumber: 318,
+                                                                            lineNumber: 333,
                                                                             columnNumber: 37
                                                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$copy$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Copy$3e$__["Copy"], {
                                                                             className: "w-4 h-4"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                            lineNumber: 318,
+                                                                            lineNumber: 333,
                                                                             columnNumber: 69
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                        lineNumber: 317,
+                                                                        lineNumber: 332,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                lineNumber: 313,
+                                                                lineNumber: 328,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                        lineNumber: 311,
+                                                        lineNumber: 326,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                lineNumber: 294,
+                                                lineNumber: 309,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                        lineNumber: 254,
+                                        lineNumber: 269,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                lineNumber: 246,
+                                lineNumber: 261,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -1006,7 +1029,7 @@ function SuccessPage() {
                                                 children: "Order Summary"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                lineNumber: 330,
+                                                lineNumber: 345,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardDescription"], {
@@ -1017,13 +1040,13 @@ function SuccessPage() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                lineNumber: 331,
+                                                lineNumber: 346,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                        lineNumber: 329,
+                                        lineNumber: 344,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -1036,7 +1059,7 @@ function SuccessPage() {
                                                         children: "Customer Information"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                        lineNumber: 335,
+                                                        lineNumber: 350,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1049,7 +1072,7 @@ function SuccessPage() {
                                                                         className: "w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                        lineNumber: 340,
+                                                                        lineNumber: 355,
                                                                         columnNumber: 21
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1060,7 +1083,7 @@ function SuccessPage() {
                                                                                 children: "Name"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                                lineNumber: 342,
+                                                                                lineNumber: 357,
                                                                                 columnNumber: 23
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1068,19 +1091,19 @@ function SuccessPage() {
                                                                                 children: userData?.firstName && userData?.lastName ? `${userData.firstName} ${userData.lastName}` : orderData.customerName || "N/A"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                                lineNumber: 343,
+                                                                                lineNumber: 358,
                                                                                 columnNumber: 23
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                        lineNumber: 341,
+                                                                        lineNumber: 356,
                                                                         columnNumber: 21
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                lineNumber: 339,
+                                                                lineNumber: 354,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1090,7 +1113,7 @@ function SuccessPage() {
                                                                         className: "w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                        lineNumber: 352,
+                                                                        lineNumber: 367,
                                                                         columnNumber: 21
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1101,7 +1124,7 @@ function SuccessPage() {
                                                                                 children: "Email Address"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                                lineNumber: 354,
+                                                                                lineNumber: 369,
                                                                                 columnNumber: 23
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1109,19 +1132,19 @@ function SuccessPage() {
                                                                                 children: userData?.email || orderData.customerEmail || "N/A"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                                lineNumber: 355,
+                                                                                lineNumber: 370,
                                                                                 columnNumber: 23
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                        lineNumber: 353,
+                                                                        lineNumber: 368,
                                                                         columnNumber: 21
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                lineNumber: 351,
+                                                                lineNumber: 366,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1131,7 +1154,7 @@ function SuccessPage() {
                                                                         className: "w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                        lineNumber: 362,
+                                                                        lineNumber: 377,
                                                                         columnNumber: 21
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1142,7 +1165,7 @@ function SuccessPage() {
                                                                                 children: "Phone Number"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                                lineNumber: 364,
+                                                                                lineNumber: 379,
                                                                                 columnNumber: 23
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1150,36 +1173,36 @@ function SuccessPage() {
                                                                                 children: userData?.phone || orderData.phoneNumber || "N/A"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                                lineNumber: 365,
+                                                                                lineNumber: 380,
                                                                                 columnNumber: 23
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                        lineNumber: 363,
+                                                                        lineNumber: 378,
                                                                         columnNumber: 21
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                lineNumber: 361,
+                                                                lineNumber: 376,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                        lineNumber: 338,
+                                                        lineNumber: 353,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                lineNumber: 334,
+                                                lineNumber: 349,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                lineNumber: 371,
+                                                lineNumber: 386,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1189,7 +1212,7 @@ function SuccessPage() {
                                                         children: "Plan Details"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                        lineNumber: 374,
+                                                        lineNumber: 389,
                                                         columnNumber: 17
                                                     }, this),
                                                     planData && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1205,7 +1228,7 @@ function SuccessPage() {
                                                                                 className: "w-5 h-5 text-emerald-600"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                                lineNumber: 381,
+                                                                                lineNumber: 396,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1213,13 +1236,13 @@ function SuccessPage() {
                                                                                 children: "Country"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                                lineNumber: 382,
+                                                                                lineNumber: 397,
                                                                                 columnNumber: 25
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                        lineNumber: 380,
+                                                                        lineNumber: 395,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1228,13 +1251,13 @@ function SuccessPage() {
                                                                         children: planData.country
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                        lineNumber: 384,
+                                                                        lineNumber: 399,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                lineNumber: 379,
+                                                                lineNumber: 394,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1248,7 +1271,7 @@ function SuccessPage() {
                                                                                 children: "Data"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                                lineNumber: 391,
+                                                                                lineNumber: 406,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1259,13 +1282,13 @@ function SuccessPage() {
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                                lineNumber: 392,
+                                                                                lineNumber: 407,
                                                                                 columnNumber: 25
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                        lineNumber: 390,
+                                                                        lineNumber: 405,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1276,7 +1299,7 @@ function SuccessPage() {
                                                                                 children: "Validity"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                                lineNumber: 395,
+                                                                                lineNumber: 410,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1287,19 +1310,19 @@ function SuccessPage() {
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                                lineNumber: 396,
+                                                                                lineNumber: 411,
                                                                                 columnNumber: 25
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                        lineNumber: 394,
+                                                                        lineNumber: 409,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                lineNumber: 389,
+                                                                lineNumber: 404,
                                                                 columnNumber: 21
                                                             }, this),
                                                             planData.features && planData.features.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1310,7 +1333,7 @@ function SuccessPage() {
                                                                         children: "Features"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                        lineNumber: 402,
+                                                                        lineNumber: 417,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     planData.features.map((feature, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1320,43 +1343,43 @@ function SuccessPage() {
                                                                                     className: "w-4 h-4 text-emerald-600 flex-shrink-0"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                                    lineNumber: 405,
+                                                                                    lineNumber: 420,
                                                                                     columnNumber: 29
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                     children: feature
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                                    lineNumber: 406,
+                                                                                    lineNumber: 421,
                                                                                     columnNumber: 29
                                                                                 }, this)
                                                                             ]
                                                                         }, idx, true, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                            lineNumber: 404,
+                                                                            lineNumber: 419,
                                                                             columnNumber: 27
                                                                         }, this))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                lineNumber: 401,
+                                                                lineNumber: 416,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                        lineNumber: 378,
+                                                        lineNumber: 393,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                lineNumber: 373,
+                                                lineNumber: 388,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                lineNumber: 415,
+                                                lineNumber: 430,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1366,7 +1389,7 @@ function SuccessPage() {
                                                         children: "Payment Summary"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                        lineNumber: 418,
+                                                        lineNumber: 433,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1380,7 +1403,7 @@ function SuccessPage() {
                                                                         children: "Plan Price"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                        lineNumber: 423,
+                                                                        lineNumber: 438,
                                                                         columnNumber: 21
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1393,13 +1416,13 @@ function SuccessPage() {
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                        lineNumber: 424,
+                                                                        lineNumber: 439,
                                                                         columnNumber: 21
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                lineNumber: 422,
+                                                                lineNumber: 437,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1410,7 +1433,7 @@ function SuccessPage() {
                                                                         children: "Tax (10%)"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                        lineNumber: 429,
+                                                                        lineNumber: 444,
                                                                         columnNumber: 21
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1423,24 +1446,24 @@ function SuccessPage() {
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                        lineNumber: 430,
+                                                                        lineNumber: 445,
                                                                         columnNumber: 21
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                lineNumber: 428,
+                                                                lineNumber: 443,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                        lineNumber: 421,
+                                                        lineNumber: 436,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                        lineNumber: 435,
+                                                        lineNumber: 450,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1451,7 +1474,7 @@ function SuccessPage() {
                                                                 children: "Total Paid"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                lineNumber: 437,
+                                                                lineNumber: 452,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1464,13 +1487,13 @@ function SuccessPage() {
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                lineNumber: 438,
+                                                                lineNumber: 453,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                        lineNumber: 436,
+                                                        lineNumber: 451,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1480,7 +1503,7 @@ function SuccessPage() {
                                                                 className: "w-3 h-3"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                lineNumber: 443,
+                                                                lineNumber: 458,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1493,19 +1516,19 @@ function SuccessPage() {
                                                                 })
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                lineNumber: 444,
+                                                                lineNumber: 459,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                        lineNumber: 442,
+                                                        lineNumber: 457,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                lineNumber: 417,
+                                                lineNumber: 432,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1518,7 +1541,7 @@ function SuccessPage() {
                                                             children: "Order Status"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 458,
+                                                            lineNumber: 473,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1527,36 +1550,36 @@ function SuccessPage() {
                                                             children: orderData.status === "pending" ? "Provisioning" : orderData.status
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 459,
+                                                            lineNumber: 474,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                    lineNumber: 457,
+                                                    lineNumber: 472,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                lineNumber: 456,
+                                                lineNumber: 471,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                        lineNumber: 333,
+                                        lineNumber: 348,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                lineNumber: 328,
+                                lineNumber: 343,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                        lineNumber: 244,
+                        lineNumber: 259,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -1568,20 +1591,20 @@ function SuccessPage() {
                                         children: "Installation Instructions"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                        lineNumber: 474,
+                                        lineNumber: 489,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardDescription"], {
                                         children: "Follow these steps to activate your eSIM on your device"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                        lineNumber: 475,
+                                        lineNumber: 490,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                lineNumber: 473,
+                                lineNumber: 488,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -1598,12 +1621,12 @@ function SuccessPage() {
                                                         children: "iOS / iPhone"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                        lineNumber: 482,
+                                                        lineNumber: 497,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                    lineNumber: 481,
+                                                    lineNumber: 496,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -1617,7 +1640,7 @@ function SuccessPage() {
                                                                     children: "1"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                    lineNumber: 486,
+                                                                    lineNumber: 501,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1627,7 +1650,7 @@ function SuccessPage() {
                                                                             children: "Settings"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                            lineNumber: 490,
+                                                                            lineNumber: 505,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         " → ",
@@ -1635,7 +1658,7 @@ function SuccessPage() {
                                                                             children: "Cellular"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                            lineNumber: 490,
+                                                                            lineNumber: 505,
                                                                             columnNumber: 57
                                                                         }, this),
                                                                         " → ",
@@ -1643,19 +1666,19 @@ function SuccessPage() {
                                                                             children: "Add eSIM"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                            lineNumber: 490,
+                                                                            lineNumber: 505,
                                                                             columnNumber: 85
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                    lineNumber: 489,
+                                                                    lineNumber: 504,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 485,
+                                                            lineNumber: 500,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1666,7 +1689,7 @@ function SuccessPage() {
                                                                     children: "2"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                    lineNumber: 494,
+                                                                    lineNumber: 509,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1676,19 +1699,19 @@ function SuccessPage() {
                                                                             children: "Use QR Code"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                            lineNumber: 498,
+                                                                            lineNumber: 513,
                                                                             columnNumber: 30
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                    lineNumber: 497,
+                                                                    lineNumber: 512,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 493,
+                                                            lineNumber: 508,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1699,20 +1722,20 @@ function SuccessPage() {
                                                                     children: "3"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                    lineNumber: 502,
+                                                                    lineNumber: 517,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     children: "Scan the QR code displayed above"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                    lineNumber: 505,
+                                                                    lineNumber: 520,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 501,
+                                                            lineNumber: 516,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1723,20 +1746,20 @@ function SuccessPage() {
                                                                     children: "4"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                    lineNumber: 508,
+                                                                    lineNumber: 523,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     children: "Label your plan and set as default if needed"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                    lineNumber: 511,
+                                                                    lineNumber: 526,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 507,
+                                                            lineNumber: 522,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1747,7 +1770,7 @@ function SuccessPage() {
                                                                     children: "5"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                    lineNumber: 514,
+                                                                    lineNumber: 529,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1757,32 +1780,32 @@ function SuccessPage() {
                                                                             children: "Data Roaming"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                            lineNumber: 518,
+                                                                            lineNumber: 533,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         " for the eSIM"
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                    lineNumber: 517,
+                                                                    lineNumber: 532,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 513,
+                                                            lineNumber: 528,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                    lineNumber: 484,
+                                                    lineNumber: 499,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                            lineNumber: 480,
+                                            lineNumber: 495,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1795,12 +1818,12 @@ function SuccessPage() {
                                                         children: "Android"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                        lineNumber: 527,
+                                                        lineNumber: 542,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                    lineNumber: 526,
+                                                    lineNumber: 541,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -1814,7 +1837,7 @@ function SuccessPage() {
                                                                     children: "1"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                    lineNumber: 531,
+                                                                    lineNumber: 546,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1824,7 +1847,7 @@ function SuccessPage() {
                                                                             children: "Settings"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                            lineNumber: 535,
+                                                                            lineNumber: 550,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         " → ",
@@ -1832,19 +1855,19 @@ function SuccessPage() {
                                                                             children: "Network & Internet"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                            lineNumber: 535,
+                                                                            lineNumber: 550,
                                                                             columnNumber: 57
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                    lineNumber: 534,
+                                                                    lineNumber: 549,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 530,
+                                                            lineNumber: 545,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1855,7 +1878,7 @@ function SuccessPage() {
                                                                     children: "2"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                    lineNumber: 539,
+                                                                    lineNumber: 554,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1865,7 +1888,7 @@ function SuccessPage() {
                                                                             children: "Mobile Network"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                            lineNumber: 543,
+                                                                            lineNumber: 558,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         " → ",
@@ -1873,19 +1896,19 @@ function SuccessPage() {
                                                                             children: "Add Carrier"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                            lineNumber: 543,
+                                                                            lineNumber: 558,
                                                                             columnNumber: 61
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                    lineNumber: 542,
+                                                                    lineNumber: 557,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 538,
+                                                            lineNumber: 553,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1896,7 +1919,7 @@ function SuccessPage() {
                                                                     children: "3"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                    lineNumber: 547,
+                                                                    lineNumber: 562,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1906,19 +1929,19 @@ function SuccessPage() {
                                                                             children: "Download a SIM instead"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                            lineNumber: 551,
+                                                                            lineNumber: 566,
                                                                             columnNumber: 30
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                    lineNumber: 550,
+                                                                    lineNumber: 565,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 546,
+                                                            lineNumber: 561,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1929,20 +1952,20 @@ function SuccessPage() {
                                                                     children: "4"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                    lineNumber: 555,
+                                                                    lineNumber: 570,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     children: "Scan the QR code or enter activation code manually"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                    lineNumber: 558,
+                                                                    lineNumber: 573,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 554,
+                                                            lineNumber: 569,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1953,7 +1976,7 @@ function SuccessPage() {
                                                                     children: "5"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                    lineNumber: 561,
+                                                                    lineNumber: 576,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1963,49 +1986,49 @@ function SuccessPage() {
                                                                             children: "Roaming"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                            lineNumber: 565,
+                                                                            lineNumber: 580,
                                                                             columnNumber: 30
                                                                         }, this),
                                                                         " and select as active SIM"
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                                    lineNumber: 564,
+                                                                    lineNumber: 579,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 560,
+                                                            lineNumber: 575,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                    lineNumber: 529,
+                                                    lineNumber: 544,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                            lineNumber: 525,
+                                            lineNumber: 540,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                    lineNumber: 478,
+                                    lineNumber: 493,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                lineNumber: 477,
+                                lineNumber: 492,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                        lineNumber: 472,
+                        lineNumber: 487,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -2019,19 +2042,19 @@ function SuccessPage() {
                                             className: "w-5 h-5"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                            lineNumber: 578,
+                                            lineNumber: 593,
                                             columnNumber: 15
                                         }, this),
                                         "Need Help?"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                    lineNumber: 577,
+                                    lineNumber: 592,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                lineNumber: 576,
+                                lineNumber: 591,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -2051,7 +2074,7 @@ function SuccessPage() {
                                                             className: "w-5 h-5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 586,
+                                                            lineNumber: 601,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2059,7 +2082,7 @@ function SuccessPage() {
                                                             children: "Contact Support"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 587,
+                                                            lineNumber: 602,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2067,18 +2090,18 @@ function SuccessPage() {
                                                             children: "24/7 Available"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 588,
+                                                            lineNumber: 603,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                    lineNumber: 585,
+                                                    lineNumber: 600,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                lineNumber: 584,
+                                                lineNumber: 599,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2092,7 +2115,7 @@ function SuccessPage() {
                                                             className: "w-5 h-5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 593,
+                                                            lineNumber: 608,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2100,7 +2123,7 @@ function SuccessPage() {
                                                             children: "Video Guides"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 594,
+                                                            lineNumber: 609,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2108,18 +2131,18 @@ function SuccessPage() {
                                                             children: "Step-by-step tutorials"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 595,
+                                                            lineNumber: 610,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                    lineNumber: 592,
+                                                    lineNumber: 607,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                lineNumber: 591,
+                                                lineNumber: 606,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2133,7 +2156,7 @@ function SuccessPage() {
                                                             className: "w-5 h-5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 600,
+                                                            lineNumber: 615,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2141,7 +2164,7 @@ function SuccessPage() {
                                                             children: "FAQs"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 601,
+                                                            lineNumber: 616,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2149,24 +2172,24 @@ function SuccessPage() {
                                                             children: "Common questions"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                            lineNumber: 602,
+                                                            lineNumber: 617,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                    lineNumber: 599,
+                                                    lineNumber: 614,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                lineNumber: 598,
+                                                lineNumber: 613,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                        lineNumber: 583,
+                                        lineNumber: 598,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2177,7 +2200,7 @@ function SuccessPage() {
                                                 children: "Important Notes:"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                lineNumber: 608,
+                                                lineNumber: 623,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -2187,40 +2210,40 @@ function SuccessPage() {
                                                         children: "Your device must be eSIM compatible and carrier unlocked"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                        lineNumber: 610,
+                                                        lineNumber: 625,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                         children: "eSIM can only be installed once - download QR code for backup"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                        lineNumber: 611,
+                                                        lineNumber: 626,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                         children: "Data plan activates upon first connection to the network"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                        lineNumber: 612,
+                                                        lineNumber: 627,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                         children: "Keep your ICCID number for reference and support inquiries"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                        lineNumber: 613,
+                                                        lineNumber: 628,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                lineNumber: 609,
+                                                lineNumber: 624,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                        lineNumber: 607,
+                                        lineNumber: 622,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2235,12 +2258,12 @@ function SuccessPage() {
                                                     children: "Buy Another eSIM"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                    lineNumber: 619,
+                                                    lineNumber: 634,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                lineNumber: 618,
+                                                lineNumber: 633,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2253,46 +2276,46 @@ function SuccessPage() {
                                                     children: "Back to Home"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                    lineNumber: 622,
+                                                    lineNumber: 637,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                                lineNumber: 621,
+                                                lineNumber: 636,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                        lineNumber: 617,
+                                        lineNumber: 632,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                                lineNumber: 582,
+                                lineNumber: 597,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                        lineNumber: 575,
+                        lineNumber: 590,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-                lineNumber: 211,
+                lineNumber: 226,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Downloads/travel-e-sim-system/app/success/page.jsx",
-        lineNumber: 198,
+        lineNumber: 213,
         columnNumber: 5
     }, this);
 }
-_s(SuccessPage, "vi1Vt27G/Nd8Br4gUXXdLfSTu1c=", false, function() {
+_s(SuccessPage, "qulWxvVMXxAM3FJeszb5CdWrXb0=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSearchParams"]
     ];
