@@ -29834,3 +29834,2198 @@ It can also happen if the client has a browser extension installed which messes 
 [02:59:00.074] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
 [02:59:02.076] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
 [02:59:02.076] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:04.087] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:04.087] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:06.091] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:06.091] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:08.103] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:08.103] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:10.112] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:10.113] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:12.117] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:12.117] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:14.128] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:14.129] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:16.132] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:16.132] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:18.140] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:18.141] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:20.147] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:20.167] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:22.150] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:22.168] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:24.153] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:24.171] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:26.156] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:26.173] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:28.173] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:28.174] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:30.175] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:30.176] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:32.182] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:32.183] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:34.185] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:34.186] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:36.189] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:36.190] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:38.193] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:38.193] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:40.197] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:40.197] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:42.199] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:42.199] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:44.203] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:44.204] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:46.207] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:46.207] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:48.213] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:48.213] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:50.215] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:50.216] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:52.218] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:52.218] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:54.222] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:54.222] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:56.226] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:56.226] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:58.228] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[02:59:58.228] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:00.231] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:00.232] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:02.234] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:02.235] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:04.237] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:04.238] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:06.242] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:06.242] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:08.247] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:08.247] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:10.250] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:10.250] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:12.252] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:12.253] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:14.255] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:14.255] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:16.259] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:16.260] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:18.262] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:18.267] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:20.264] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:20.269] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:22.266] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:22.270] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:24.269] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:24.271] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:26.272] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:26.272] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:28.278] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:28.278] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:30.284] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:30.284] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:32.287] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:32.287] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:34.289] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:34.290] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:36.291] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:36.292] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:38.294] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:38.294] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:40.295] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:40.296] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:42.300] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:42.300] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:44.303] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:44.304] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:46.306] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:46.306] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:48.309] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:48.310] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:50.317] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:50.317] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:52.319] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:52.319] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:54.321] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:54.322] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:56.323] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:56.323] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:58.333] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:00:58.333] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:00.340] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:00.340] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:02.344] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:02.344] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:04.360] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:04.360] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:06.362] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:06.362] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:08.370] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:08.370] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:10.374] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:10.374] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:12.377] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:12.378] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:14.380] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:14.380] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:16.382] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:16.382] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:18.385] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:18.385] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:20.389] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:20.389] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:22.395] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:22.395] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:24.401] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:24.401] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:26.408] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:26.409] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:28.411] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:28.411] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:30.416] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:30.416] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:32.421] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:32.421] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:34.426] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:34.426] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:36.432] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:36.432] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:38.435] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:38.436] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:40.440] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:40.440] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:42.443] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:42.443] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:44.446] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:44.446] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:46.449] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:46.450] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:48.452] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:48.453] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:50.457] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:50.457] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:52.460] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:52.460] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:54.464] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:54.465] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:56.467] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:56.467] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:58.470] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:01:58.470] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:00.473] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:00.474] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:02.482] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:02.482] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:04.486] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:04.486] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:06.491] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:06.491] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:08.495] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:08.495] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:10.501] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:10.501] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:12.503] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:12.504] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:14.507] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:14.508] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:16.514] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:16.514] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:18.519] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:18.519] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:20.522] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:20.523] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:22.526] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:22.526] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:24.529] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:24.529] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:26.532] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:26.537] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:28.536] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:28.538] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:30.538] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:30.539] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:32.543] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:32.544] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:34.545] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:34.546] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:36.548] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:36.549] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:38.552] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:38.552] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:40.555] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:40.556] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:42.558] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:42.558] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:44.563] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:44.566] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:46.565] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:46.568] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:48.568] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:48.570] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:50.571] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:50.572] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:52.580] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:52.581] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:54.583] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:54.583] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:56.588] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:56.588] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:58.591] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:02:58.592] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:00.594] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:00.594] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:02.598] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:02.599] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:04.602] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:04.603] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:06.606] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:06.606] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:08.612] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:08.612] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:10.617] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:10.617] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:12.619] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:12.620] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:14.623] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:14.623] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:16.628] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:16.629] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:17.169] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./Downloads/travel-e-sim-system/lib/i18n/translations/am.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:03:17.187] Server  LOG      ✓ Compiled in 133ms
+[03:03:17.791] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:03:17.943] Server  ERROR   [Languages API] Error: TypeError: db.collection is not a function
+[03:03:18.632] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:18.632] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:18.982] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <LoadingBoundary name="/" loading={null}>
+      <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+        <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+          <RedirectBoundary>
+            <RedirectErrorBoundary router={{...}}>
+              <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} segmentPath={[...]} ...>
+                <SegmentViewNode type="page" pagePath="/Downloads...">
+                  <SegmentTrieNode>
+                  <HomePage>
+                    <div className="min-h-screen">
+                      <Header>
+                      <main>
+                        <Hero>
+                          <section className="relative m...">
+                            <div className="absolute i...">
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div className="absolute i...">
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "66.75757514113204%"
+-                                   left: "25.0135%"
++                                   top: "60.41266847042591%"
+-                                   top: "84.4335%"
++                                   animationDelay: "0.5906278976484874s"
++                                   animationDuration: "5.851742706013909s"
+-                                   animation-delay: "1.97837s"
+-                                   animation-duration: "11.5999s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "41.52873017023939%"
+-                                   left: "76.2268%"
++                                   top: "83.1829866131197%"
+-                                   top: "51.7594%"
++                                   animationDelay: "3.664550197401332s"
++                                   animationDuration: "12.261495397140962s"
+-                                   animation-delay: "2.44576s"
+-                                   animation-duration: "6.75649s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "97.18420480816351%"
+-                                   left: "2.06718%"
++                                   top: "23.576146245739004%"
+-                                   top: "2.99093%"
++                                   animationDelay: "0.4692339072634488s"
++                                   animationDuration: "13.984596442276919s"
+-                                   animation-delay: "1.72643s"
+-                                   animation-duration: "10.48s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "74.0304263082745%"
+-                                   left: "5.2909%"
++                                   top: "7.881966962358744%"
+-                                   top: "23.228%"
++                                   animationDelay: "1.9465087587014325s"
++                                   animationDuration: "12.835795577199297s"
+-                                   animation-delay: "2.88985s"
+-                                   animation-duration: "14.2549s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "86.70414047225398%"
+-                                   left: "71.4738%"
++                                   top: "15.127565890143623%"
+-                                   top: "67.3566%"
++                                   animationDelay: "3.5027124176378415s"
++                                   animationDuration: "7.9349170569696215s"
+-                                   animation-delay: "2.69249s"
+-                                   animation-duration: "13.9402s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "56.33038767852542%"
+-                                   left: "3.93252%"
++                                   top: "24.949239417080825%"
+-                                   top: "8.21756%"
++                                   animationDelay: "2.2948288046292946s"
++                                   animationDuration: "12.452844327393453s"
+-                                   animation-delay: "2.65163s"
+-                                   animation-duration: "14.4711s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "54.03563090960486%"
+-                                   left: "67.7085%"
++                                   top: "20.623850837393586%"
+-                                   top: "73.3726%"
++                                   animationDelay: "3.9458551738018297s"
++                                   animationDuration: "6.725930957552471s"
+-                                   animation-delay: "0.783957s"
+-                                   animation-duration: "10.7107s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "82.89633030627797%"
+-                                   left: "50.7278%"
++                                   top: "7.508586865390166%"
+-                                   top: "78.5694%"
++                                   animationDelay: "4.303137723730615s"
++                                   animationDuration: "13.672026476894832s"
+-                                   animation-delay: "3.01475s"
+-                                   animation-duration: "12.6692s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "8.409489311059659%"
+-                                   left: "97.423%"
++                                   top: "3.0040478434090634%"
+-                                   top: "18.6764%"
++                                   animationDelay: "4.920919485784533s"
++                                   animationDuration: "7.709949878559509s"
+-                                   animation-delay: "3.91094s"
+-                                   animation-duration: "9.14684s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "40.20259195383483%"
+-                                   left: "42.2233%"
++                                   top: "54.95988945591844%"
+-                                   top: "26.6934%"
++                                   animationDelay: "0.06938988768852239s"
++                                   animationDuration: "9.415546647341907s"
+-                                   animation-delay: "4.72508s"
+-                                   animation-duration: "7.73045s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "4.399174162071162%"
+-                                   left: "39.5606%"
++                                   top: "47.484696086959964%"
+-                                   top: "60.4527%"
++                                   animationDelay: "3.8420031742978322s"
++                                   animationDuration: "11.55475390593153s"
+-                                   animation-delay: "4.47693s"
+-                                   animation-duration: "12.3195s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "85.96181568992%"
+-                                   left: "1.39111%"
++                                   top: "29.847946375190972%"
+-                                   top: "91.6654%"
++                                   animationDelay: "4.729072084359343s"
++                                   animationDuration: "13.588638778730731s"
+-                                   animation-delay: "1.78389s"
+-                                   animation-duration: "14.9233s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "80.15504948782069%"
+-                                   left: "71.3185%"
++                                   top: "38.82748435882538%"
+-                                   top: "26.6472%"
++                                   animationDelay: "4.680690322870566s"
++                                   animationDuration: "6.9474002583860734s"
+-                                   animation-delay: "0.469746s"
+-                                   animation-duration: "12.0747s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "62.16633624171541%"
+-                                   left: "39.7193%"
++                                   top: "15.958386945753256%"
+-                                   top: "95.5324%"
++                                   animationDelay: "3.8810231939184305s"
++                                   animationDuration: "10.851238349678034s"
+-                                   animation-delay: "2.9014s"
+-                                   animation-duration: "9.9892s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "94.11010311817078%"
+-                                   left: "35.8751%"
++                                   top: "91.36202990819415%"
+-                                   top: "13.139%"
++                                   animationDelay: "1.4773489969513158s"
++                                   animationDuration: "10.152106441753745s"
+-                                   animation-delay: "4.99218s"
+-                                   animation-duration: "8.9797s"
+                                  }}
+                                >
+                            ...
+                        ...
+                      ...
+                ...
+              ...
+
+[03:03:18.982] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[03:03:18.982] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[03:03:18.982] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764362583707}
+[03:03:20.636] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:20.637] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:20.637] Server  ERROR   [Redis] Cache get error: "Reached the max retries per request limit (which is 3). Refer to \"maxRetriesPerRequest\" option for details."
+[03:03:20.639] Server  LOG     [Countries API] Cache miss: "countries:active"
+[03:03:22.642] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:22.643] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:24.647] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:24.648] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:26.650] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:26.650] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:28.655] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:28.656] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:28.656] Server  ERROR   [Redis] Cache set error: "Reached the max retries per request limit (which is 3). Refer to \"maxRetriesPerRequest\" option for details."
+[03:03:30.659] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:30.659] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:32.662] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:32.662] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:34.665] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:34.665] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:36.668] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:36.668] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:38.671] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:38.672] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:40.673] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:40.673] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:40.743] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./Downloads/travel-e-sim-system/lib/i18n/translations/ar.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:03:40.892] Server  LOG      ✓ Compiled in 49ms
+[03:03:41.171] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:03:41.268] Server  ERROR   [Languages API] Error: TypeError: db.collection is not a function
+[03:03:41.979] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <LoadingBoundary name="/" loading={null}>
+      <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+        <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+          <RedirectBoundary>
+            <RedirectErrorBoundary router={{...}}>
+              <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} segmentPath={[...]} ...>
+                <SegmentViewNode type="page" pagePath="/Downloads...">
+                  <SegmentTrieNode>
+                  <HomePage>
+                    <div className="min-h-screen">
+                      <Header>
+                      <main>
+                        <Hero>
+                          <section className="relative m...">
+                            <div className="absolute i...">
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div className="absolute i...">
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "36.77628647262474%"
+-                                   left: "21.1045%"
++                                   top: "97.80696613021257%"
+-                                   top: "33.9656%"
++                                   animationDelay: "1.3663535604628096s"
++                                   animationDuration: "6.715038513942117s"
+-                                   animation-delay: "3.15083s"
+-                                   animation-duration: "6.2226s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "72.84213101581418%"
+-                                   left: "50.105%"
++                                   top: "78.59636958071322%"
+-                                   top: "99.6574%"
++                                   animationDelay: "2.482125787871417s"
++                                   animationDuration: "5.736496024687407s"
+-                                   animation-delay: "1.89706s"
+-                                   animation-duration: "5.63687s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "94.14028661285168%"
+-                                   left: "84.3855%"
++                                   top: "66.31456966987328%"
+-                                   top: "80.7916%"
++                                   animationDelay: "4.498419611315342s"
++                                   animationDuration: "8.287668357233015s"
+-                                   animation-delay: "2.43332s"
+-                                   animation-duration: "10.5375s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "55.86910534139384%"
+-                                   left: "9.58941%"
++                                   top: "19.734739217032992%"
+-                                   top: "62.6826%"
++                                   animationDelay: "1.210353077578446s"
++                                   animationDuration: "11.332004877702262s"
+-                                   animation-delay: "4.05185s"
+-                                   animation-duration: "12.5684s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "89.61093996296758%"
+-                                   left: "31.6092%"
++                                   top: "4.153791715379418%"
+-                                   top: "34.3489%"
++                                   animationDelay: "3.479978064805394s"
++                                   animationDuration: "8.882344793200332s"
+-                                   animation-delay: "3.94353s"
+-                                   animation-duration: "13.4626s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "32.317620699965275%"
+-                                   left: "65.7837%"
++                                   top: "48.52126007572566%"
+-                                   top: "28.4885%"
++                                   animationDelay: "2.5938711554339577s"
++                                   animationDuration: "14.03048172518209s"
+-                                   animation-delay: "3.34161s"
+-                                   animation-duration: "11.9045s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "83.05698294430059%"
+-                                   left: "68.7369%"
++                                   top: "64.10439720302715%"
+-                                   top: "42.9141%"
++                                   animationDelay: "3.6363916345509617s"
++                                   animationDuration: "11.180772185614142s"
+-                                   animation-delay: "2.50043s"
+-                                   animation-duration: "13.2693s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "1.3123649770299672%"
+-                                   left: "87.3281%"
++                                   top: "81.71437142123594%"
+-                                   top: "58.9165%"
++                                   animationDelay: "1.0318523056832196s"
++                                   animationDuration: "12.75370733627184s"
+-                                   animation-delay: "0.968111s"
+-                                   animation-duration: "6.80608s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "52.78232645743374%"
+-                                   left: "92.7629%"
++                                   top: "78.80429666780712%"
+-                                   top: "28.1509%"
++                                   animationDelay: "1.6802120782496621s"
++                                   animationDuration: "7.376586959811936s"
+-                                   animation-delay: "4.14601s"
+-                                   animation-duration: "6.20181s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "87.14248788389047%"
+-                                   left: "32.2443%"
++                                   top: "24.946401832527165%"
+-                                   top: "53.4628%"
++                                   animationDelay: "3.8007027709823755s"
++                                   animationDuration: "14.603782932379763s"
+-                                   animation-delay: "0.566073s"
+-                                   animation-duration: "8.64395s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "57.50530531904481%"
+-                                   left: "1.00988%"
++                                   top: "21.712521532072525%"
+-                                   top: "96.4041%"
++                                   animationDelay: "4.560878456460499s"
++                                   animationDuration: "8.163924882804428s"
+-                                   animation-delay: "4.54203s"
+-                                   animation-duration: "13.5523s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "89.87501111976255%"
+-                                   left: "68.2706%"
++                                   top: "16.46424070008822%"
+-                                   top: "93.7949%"
++                                   animationDelay: "3.4163381970641393s"
++                                   animationDuration: "6.858195864428814s"
+-                                   animation-delay: "2.93254s"
+-                                   animation-duration: "13.2903s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "57.66645757748066%"
+-                                   left: "95.3%"
++                                   top: "66.4075384937088%"
+-                                   top: "63.7209%"
++                                   animationDelay: "2.8379485963978945s"
++                                   animationDuration: "7.22253205096173s"
+-                                   animation-delay: "1.49736s"
+-                                   animation-duration: "9.77167s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "18.94417525455533%"
+-                                   left: "6.79834%"
++                                   top: "20.238438031382344%"
+-                                   top: "24.308%"
++                                   animationDelay: "4.054629085957338s"
++                                   animationDuration: "10.2217083889105s"
+-                                   animation-delay: "2.93032s"
+-                                   animation-duration: "7.44326s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "69.67815125031622%"
+-                                   left: "75.6081%"
++                                   top: "42.30108687312571%"
+-                                   top: "48.9886%"
++                                   animationDelay: "0.8931058355690763s"
++                                   animationDuration: "12.91251366723818s"
+-                                   animation-delay: "4.22586s"
+-                                   animation-duration: "9.65985s"
+                                  }}
+                                >
+                            ...
+                        ...
+                      ...
+                ...
+              ...
+
+[03:03:41.979] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[03:03:41.979] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[03:03:41.979] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764362607026}
+[03:03:42.677] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:42.677] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:44.682] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:44.683] Server  ERROR   [Redis] Cache get error: "Reached the max retries per request limit (which is 3). Refer to \"maxRetriesPerRequest\" option for details."
+[03:03:44.686] Server  LOG     [Countries API] Cache miss: "countries:active"
+[03:03:44.701] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:46.684] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:46.704] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:48.687] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:48.707] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:50.691] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:50.708] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:52.694] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:52.694] Server  ERROR   [Redis] Cache set error: "Reached the max retries per request limit (which is 3). Refer to \"maxRetriesPerRequest\" option for details."
+[03:03:52.711] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:54.700] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:54.713] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:56.703] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:56.717] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:58.705] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:03:58.718] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:00.708] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:00.721] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:02.710] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:02.723] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:03.376] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./Downloads/travel-e-sim-system/lib/i18n/translations/es.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:04:03.502] Server  LOG      ✓ Compiled in 63ms
+[03:04:03.748] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:04:03.899] Server  ERROR   [Languages API] Error: TypeError: db.collection is not a function
+[03:04:03.976] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <LoadingBoundary name="/" loading={null}>
+      <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+        <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+          <RedirectBoundary>
+            <RedirectErrorBoundary router={{...}}>
+              <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} segmentPath={[...]} ...>
+                <SegmentViewNode type="page" pagePath="/Downloads...">
+                  <SegmentTrieNode>
+                  <HomePage>
+                    <div className="min-h-screen">
+                      <Header>
+                      <main>
+                        <Hero>
+                          <section className="relative m...">
+                            <div className="absolute i...">
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div className="absolute i...">
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "5.3219435275221105%"
+-                                   left: "58.5648%"
++                                   top: "78.32744685602621%"
+-                                   top: "88.1619%"
++                                   animationDelay: "3.5118743563891046s"
++                                   animationDuration: "8.888416405559926s"
+-                                   animation-delay: "3.45143s"
+-                                   animation-duration: "9.99944s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "9.47183112055786%"
+-                                   left: "51.1817%"
++                                   top: "86.38776124343876%"
+-                                   top: "78.2433%"
++                                   animationDelay: "1.6150996639901394s"
++                                   animationDuration: "6.543798037224841s"
+-                                   animation-delay: "1.80896s"
+-                                   animation-duration: "8.19302s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "70.86879910651292%"
+-                                   left: "50.1089%"
++                                   top: "54.79735278900911%"
+-                                   top: "17.687%"
++                                   animationDelay: "1.7958780444462192s"
++                                   animationDuration: "5.359916531083721s"
+-                                   animation-delay: "2.98041s"
+-                                   animation-duration: "10.8802s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "11.907116172195131%"
+-                                   left: "31.1477%"
++                                   top: "84.69433559157629%"
+-                                   top: "44.4925%"
++                                   animationDelay: "4.594148503549399s"
++                                   animationDuration: "6.5655173174119055s"
+-                                   animation-delay: "0.67776s"
+-                                   animation-duration: "6.17347s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "24.315655095468024%"
+-                                   left: "55.9691%"
++                                   top: "96.67010164520994%"
+-                                   top: "57.706%"
++                                   animationDelay: "3.2665243336730923s"
++                                   animationDuration: "6.4509468776589065s"
+-                                   animation-delay: "4.75676s"
+-                                   animation-duration: "9.06604s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "36.45421114214326%"
+-                                   left: "17.1384%"
++                                   top: "38.20421815543489%"
+-                                   top: "22.7146%"
++                                   animationDelay: "0.9467673602035998s"
++                                   animationDuration: "9.526778619445418s"
+-                                   animation-delay: "1.39731s"
+-                                   animation-duration: "13.5822s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "56.86108852015661%"
+-                                   left: "90.1452%"
++                                   top: "86.93770454224713%"
+-                                   top: "77.3423%"
++                                   animationDelay: "2.3369224200143917s"
++                                   animationDuration: "11.881598350639045s"
+-                                   animation-delay: "1.41639s"
+-                                   animation-duration: "11.8314s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "56.8426410685298%"
+-                                   left: "35.3032%"
++                                   top: "23.757840576350254%"
+-                                   top: "31.8427%"
++                                   animationDelay: "2.3703723122271327s"
++                                   animationDuration: "8.483070268548932s"
+-                                   animation-delay: "4.17991s"
+-                                   animation-duration: "13.5213s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "43.4998191504385%"
+-                                   left: "33.2786%"
++                                   top: "52.4190865587861%"
+-                                   top: "57.092%"
++                                   animationDelay: "2.222839949264012s"
++                                   animationDuration: "9.546226875904061s"
+-                                   animation-delay: "2.47708s"
+-                                   animation-duration: "5.9509s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "75.09008374001486%"
+-                                   left: "14.0531%"
++                                   top: "56.648816417904044%"
+-                                   top: "42.3307%"
++                                   animationDelay: "2.575471892226022s"
++                                   animationDuration: "11.722687179019704s"
+-                                   animation-delay: "3.51359s"
+-                                   animation-duration: "11.751s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "83.70854824604015%"
+-                                   left: "89.8363%"
++                                   top: "87.15965326159167%"
+-                                   top: "62.5401%"
++                                   animationDelay: "1.4015569134216093s"
++                                   animationDuration: "8.180376037638137s"
+-                                   animation-delay: "3.51749s"
+-                                   animation-duration: "7.99253s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "13.768830410677523%"
+-                                   left: "41.8554%"
++                                   top: "94.89881399308177%"
+-                                   top: "83.6016%"
++                                   animationDelay: "4.638031862492574s"
++                                   animationDuration: "10.395168762674391s"
+-                                   animation-delay: "4.33406s"
+-                                   animation-duration: "6.58076s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "96.94106128320354%"
+-                                   left: "93.3944%"
++                                   top: "42.60027553976972%"
+-                                   top: "74.897%"
++                                   animationDelay: "1.3844411535649277s"
++                                   animationDuration: "6.137351053494773s"
+-                                   animation-delay: "3.68244s"
+-                                   animation-duration: "8.2574s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "89.44801981616685%"
+-                                   left: "71.4938%"
++                                   top: "50.610142593854704%"
+-                                   top: "67.0911%"
++                                   animationDelay: "4.713506447511343s"
++                                   animationDuration: "14.03639625553912s"
+-                                   animation-delay: "4.24156s"
+-                                   animation-duration: "10.1572s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "76.5913703513111%"
+-                                   left: "5.99467%"
++                                   top: "17.68460339005672%"
+-                                   top: "1.97387%"
++                                   animationDelay: "0.9400098618761865s"
++                                   animationDuration: "5.932096292848784s"
+-                                   animation-delay: "2.0076s"
+-                                   animation-duration: "12.8167s"
+                                  }}
+                                >
+                            ...
+                        ...
+                      ...
+                ...
+              ...
+
+[03:04:03.977] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[03:04:03.977] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[03:04:03.977] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764362629612}
+[03:04:04.712] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:04.724] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:06.714] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:06.727] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:08.717] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:08.718] Server  ERROR   [Redis] Cache get error: "Reached the max retries per request limit (which is 3). Refer to \"maxRetriesPerRequest\" option for details."
+[03:04:08.718] Server  LOG     [Countries API] Cache miss: "countries:active"
+[03:04:08.729] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:10.719] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:10.731] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:12.720] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:12.737] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:14.723] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:14.739] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:16.725] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:16.726] Server  ERROR   [Redis] Cache set error: "Reached the max retries per request limit (which is 3). Refer to \"maxRetriesPerRequest\" option for details."
+[03:04:16.741] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:18.728] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:18.743] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:20.732] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:20.746] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:22.736] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:22.749] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:24.739] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:24.751] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:26.742] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:26.754] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:28.746] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:28.757] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:30.749] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:30.760] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:32.753] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:32.763] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:34.757] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:34.766] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:36.775] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:36.777] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:38.779] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:38.779] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:40.086] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./Downloads/travel-e-sim-system/lib/i18n/translations/pt.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:04:40.226] Server  LOG      ✓ Compiled in 63ms
+[03:04:40.487] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:04:40.626] Server  ERROR   [Languages API] Error: TypeError: db.collection is not a function
+[03:04:40.781] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:40.781] Server  ERROR   [Redis] Cache get error: "Reached the max retries per request limit (which is 3). Refer to \"maxRetriesPerRequest\" option for details."
+[03:04:40.781] Server  LOG     [Countries API] Cache miss: "countries:active"
+[03:04:40.782] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:40.977] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <LoadingBoundary name="/" loading={null}>
+      <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+        <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+          <RedirectBoundary>
+            <RedirectErrorBoundary router={{...}}>
+              <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} segmentPath={[...]} ...>
+                <SegmentViewNode type="page" pagePath="/Downloads...">
+                  <SegmentTrieNode>
+                  <HomePage>
+                    <div className="min-h-screen">
+                      <Header>
+                      <main>
+                        <Hero>
+                          <section className="relative m...">
+                            <div className="absolute i...">
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div className="absolute i...">
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "55.86480041927403%"
+-                                   left: "97.1601%"
++                                   top: "78.52929872657987%"
+-                                   top: "21.5598%"
++                                   animationDelay: "1.9056869475151683s"
++                                   animationDuration: "5.4450829513097645s"
+-                                   animation-delay: "3.84792s"
+-                                   animation-duration: "10.9473s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "14.549569030689414%"
+-                                   left: "7.12699%"
++                                   top: "31.73368570409849%"
+-                                   top: "82.7826%"
++                                   animationDelay: "2.082316350703347s"
++                                   animationDuration: "12.837754427532028s"
+-                                   animation-delay: "1.57864s"
+-                                   animation-duration: "11.7313s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "24.305493943461297%"
+-                                   left: "10.0101%"
++                                   top: "84.81439573276202%"
+-                                   top: "80.8784%"
++                                   animationDelay: "3.6052586876168564s"
++                                   animationDuration: "9.075559423591251s"
+-                                   animation-delay: "2.99196s"
+-                                   animation-duration: "14.2557s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "1.4300206403358384%"
+-                                   left: "89.8184%"
++                                   top: "34.37878135572715%"
+-                                   top: "80.7017%"
++                                   animationDelay: "0.015281055559082657s"
++                                   animationDuration: "8.961561013136418s"
+-                                   animation-delay: "1.84014s"
+-                                   animation-duration: "11.3764s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "15.11856629915549%"
+-                                   left: "49.9946%"
++                                   top: "23.5748111982928%"
+-                                   top: "99.3106%"
++                                   animationDelay: "4.978366429073545s"
++                                   animationDuration: "11.616911198243152s"
+-                                   animation-delay: "4.52874s"
+-                                   animation-duration: "8.93363s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "84.17703513961212%"
+-                                   left: "13.2174%"
++                                   top: "37.14473401446886%"
+-                                   top: "38.5749%"
++                                   animationDelay: "1.3769816209374492s"
++                                   animationDuration: "14.402203453450456s"
+-                                   animation-delay: "2.94808s"
+-                                   animation-duration: "14.0795s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "22.49735070611113%"
+-                                   left: "63.9646%"
++                                   top: "32.15326794489314%"
+-                                   top: "3.89412%"
++                                   animationDelay: "1.740341900759777s"
++                                   animationDuration: "13.703079026173503s"
+-                                   animation-delay: "1.67399s"
+-                                   animation-duration: "9.7532s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "37.16378030159832%"
+-                                   left: "99.712%"
++                                   top: "68.60277868983974%"
+-                                   top: "75.9868%"
++                                   animationDelay: "4.4494843935178965s"
++                                   animationDuration: "13.41964078960013s"
+-                                   animation-delay: "3.6379s"
+-                                   animation-duration: "10.3287s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "66.36309166079867%"
+-                                   left: "49.8994%"
++                                   top: "44.96917787300634%"
+-                                   top: "86.7803%"
++                                   animationDelay: "0.027964030326684264s"
++                                   animationDuration: "10.793750165618501s"
+-                                   animation-delay: "3.79621s"
+-                                   animation-duration: "13.9056s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "14.02227537956099%"
+-                                   left: "82.706%"
++                                   top: "13.64581088327579%"
+-                                   top: "66.0395%"
++                                   animationDelay: "2.1820339157699946s"
++                                   animationDuration: "10.413078999948821s"
+-                                   animation-delay: "1.1165s"
+-                                   animation-duration: "12.5923s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "72.35327195712625%"
+-                                   left: "81.8702%"
++                                   top: "4.718187439416033%"
+-                                   top: "99.3134%"
++                                   animationDelay: "4.772876653462205s"
++                                   animationDuration: "13.285157886911117s"
+-                                   animation-delay: "3.47206s"
+-                                   animation-duration: "13.2682s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "21.049178654410305%"
+-                                   left: "37.6664%"
++                                   top: "31.039269946407344%"
+-                                   top: "32.6926%"
++                                   animationDelay: "1.9680727234389672s"
++                                   animationDuration: "6.825287365575765s"
+-                                   animation-delay: "1.67951s"
+-                                   animation-duration: "13.5065s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "91.99474612111106%"
+-                                   left: "36.9089%"
++                                   top: "30.105668686513088%"
+-                                   top: "51.243%"
++                                   animationDelay: "2.7840680817521015s"
++                                   animationDuration: "12.864518215898409s"
+-                                   animation-delay: "2.32014s"
+-                                   animation-duration: "6.98433s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "98.93999968604484%"
+-                                   left: "28.9018%"
++                                   top: "52.53984567773401%"
+-                                   top: "50.8936%"
++                                   animationDelay: "1.9471473071488492s"
++                                   animationDuration: "7.091903466428594s"
+-                                   animation-delay: "2.83229s"
+-                                   animation-duration: "7.9077s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "46.72143616038422%"
+-                                   left: "94.2358%"
++                                   top: "23.746985144100584%"
+-                                   top: "93.6514%"
++                                   animationDelay: "3.4057646365694016s"
++                                   animationDuration: "9.022972529462665s"
+-                                   animation-delay: "3.76507s"
+-                                   animation-duration: "14.0366s"
+                                  }}
+                                >
+                            ...
+                        ...
+                      ...
+                ...
+              ...
+
+[03:04:40.977] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[03:04:40.977] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[03:04:40.977] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764362666387}
+[03:04:42.785] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:42.785] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:44.793] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:44.793] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:46.797] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:46.797] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:48.799] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:48.800] Server  ERROR   [Redis] Cache set error: "Reached the max retries per request limit (which is 3). Refer to \"maxRetriesPerRequest\" option for details."
+[03:04:48.812] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:50.802] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:50.815] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:52.806] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:52.819] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:54.810] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:54.820] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:56.814] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:56.824] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:58.817] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:04:58.827] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:00.821] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:00.829] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:02.823] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:02.831] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:04.826] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:04.832] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:06.830] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:06.833] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:08.832] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:08.834] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:10.834] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:10.836] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:12.836] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:12.837] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:13.031] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./Downloads/travel-e-sim-system/lib/i18n/translations/sw.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:05:13.161] Server  LOG      ✓ Compiled in 63ms
+[03:05:13.405] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:05:13.539] Server  ERROR   [Languages API] Error: TypeError: db.collection is not a function
+[03:05:13.984] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <LoadingBoundary name="/" loading={null}>
+      <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+        <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+          <RedirectBoundary>
+            <RedirectErrorBoundary router={{...}}>
+              <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} segmentPath={[...]} ...>
+                <SegmentViewNode type="page" pagePath="/Downloads...">
+                  <SegmentTrieNode>
+                  <HomePage>
+                    <div className="min-h-screen">
+                      <Header>
+                      <main>
+                        <Hero>
+                          <section className="relative m...">
+                            <div className="absolute i...">
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div className="absolute i...">
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "62.686580399817856%"
+-                                   left: "61.9202%"
++                                   top: "98.01563578276753%"
+-                                   top: "42.8108%"
++                                   animationDelay: "4.905289192024261s"
++                                   animationDuration: "8.40498487887017s"
+-                                   animation-delay: "3.1333s"
+-                                   animation-duration: "13.5604s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "53.59766656654422%"
+-                                   left: "23.4757%"
++                                   top: "1.4081819691671438%"
+-                                   top: "43.2171%"
++                                   animationDelay: "0.7650808559565542s"
++                                   animationDuration: "14.818670600315972s"
+-                                   animation-delay: "2.76202s"
+-                                   animation-duration: "7.20688s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "82.72380901948749%"
+-                                   left: "99.6861%"
++                                   top: "31.88646404292623%"
+-                                   top: "49.3243%"
++                                   animationDelay: "0.7533154752072768s"
++                                   animationDuration: "7.915096569642821s"
+-                                   animation-delay: "1.03123s"
+-                                   animation-duration: "12.1116s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "54.168640384609255%"
+-                                   left: "15.3329%"
++                                   top: "18.25339713568489%"
+-                                   top: "51.9874%"
++                                   animationDelay: "0.654296589626252s"
++                                   animationDuration: "8.756322189803845s"
+-                                   animation-delay: "0.345316s"
+-                                   animation-duration: "10.7697s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "66.00196257381491%"
+-                                   left: "79.8165%"
++                                   top: "30.55203589184733%"
+-                                   top: "89.1828%"
++                                   animationDelay: "3.2321341422888548s"
++                                   animationDuration: "6.409091722894516s"
+-                                   animation-delay: "4.1359s"
+-                                   animation-duration: "10.9887s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "2.2156538796314407%"
+-                                   left: "75.5207%"
++                                   top: "42.698267704735436%"
+-                                   top: "12.8694%"
++                                   animationDelay: "0.8931715910921212s"
++                                   animationDuration: "7.847576178929105s"
+-                                   animation-delay: "3.82508s"
+-                                   animation-duration: "8.01462s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "6.793814349530292%"
+-                                   left: "51.1749%"
++                                   top: "79.99859551387735%"
+-                                   top: "31.5227%"
++                                   animationDelay: "2.270058192279423s"
++                                   animationDuration: "7.423760327473947s"
+-                                   animation-delay: "3.70525s"
+-                                   animation-duration: "7.76491s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "63.14688825833955%"
+-                                   left: "54.582%"
++                                   top: "24.759645796733587%"
+-                                   top: "38.5864%"
++                                   animationDelay: "4.289416832288973s"
++                                   animationDuration: "7.39703518165713s"
+-                                   animation-delay: "1.06215s"
+-                                   animation-duration: "10.9575s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "83.3880567796386%"
+-                                   left: "82.7188%"
++                                   top: "36.583527434244864%"
+-                                   top: "44.6824%"
++                                   animationDelay: "4.734115290311021s"
++                                   animationDuration: "14.233701544075414s"
+-                                   animation-delay: "4.61388s"
+-                                   animation-duration: "13.0573s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "76.90008705798233%"
+-                                   left: "56.524%"
++                                   top: "95.75635034674754%"
+-                                   top: "28.2077%"
++                                   animationDelay: "3.842844938036874s"
++                                   animationDuration: "7.839422790901152s"
+-                                   animation-delay: "0.508466s"
+-                                   animation-duration: "13.043s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "92.01788193896617%"
+-                                   left: "38.1133%"
++                                   top: "20.323378925939096%"
+-                                   top: "83.3305%"
++                                   animationDelay: "2.908338484118811s"
++                                   animationDuration: "13.596344576187466s"
+-                                   animation-delay: "2.0045s"
+-                                   animation-duration: "10.292s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "7.967810175023693%"
+-                                   left: "44.3462%"
++                                   top: "29.04905686904973%"
+-                                   top: "2.48057%"
++                                   animationDelay: "4.926096578266408s"
++                                   animationDuration: "7.5203322942188775s"
+-                                   animation-delay: "2.30131s"
+-                                   animation-duration: "8.54858s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "52.077725245110116%"
+-                                   left: "81.0799%"
++                                   top: "33.13435991405701%"
+-                                   top: "76.5543%"
++                                   animationDelay: "1.2129658078786443s"
++                                   animationDuration: "7.226767930134712s"
+-                                   animation-delay: "2.26444s"
+-                                   animation-duration: "13.4759s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "14.65524596273492%"
+-                                   left: "5.06504%"
++                                   top: "75.14750794026317%"
+-                                   top: "50.3301%"
++                                   animationDelay: "3.7701816226414113s"
++                                   animationDuration: "8.939172503304444s"
+-                                   animation-delay: "0.108021s"
+-                                   animation-duration: "14.1121s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "32.96121292485422%"
+-                                   left: "26.4568%"
++                                   top: "0.03521668872609185%"
+-                                   top: "46.6248%"
++                                   animationDelay: "3.2261371271654706s"
++                                   animationDuration: "10.812916988312603s"
+-                                   animation-delay: "3.22449s"
+-                                   animation-duration: "6.79662s"
+                                  }}
+                                >
+                            ...
+                        ...
+                      ...
+                ...
+              ...
+
+[03:05:13.984] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[03:05:13.984] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[03:05:13.984] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764362699298}
+[03:05:14.859] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:14.861] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:16.865] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:16.866] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:18.870] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:18.870] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:20.875] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:20.876] Server  ERROR   [Redis] Cache get error: "Reached the max retries per request limit (which is 3). Refer to \"maxRetriesPerRequest\" option for details."
+[03:05:20.877] Server  LOG     [Countries API] Cache miss: "countries:active"
+[03:05:20.883] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:22.880] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:22.887] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:24.884] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:24.888] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:26.886] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:26.888] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:28.889] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:28.889] Server  ERROR   [Redis] Cache set error: "Reached the max retries per request limit (which is 3). Refer to \"maxRetriesPerRequest\" option for details."
+[03:05:28.894] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:30.147] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./Downloads/travel-e-sim-system/lib/i18n/translations/zh.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[03:05:30.277] Server  LOG      ✓ Compiled in 53ms
+[03:05:30.554] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:05:30.658] Server  ERROR   [Languages API] Error: TypeError: db.collection is not a function
+[03:05:30.891] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:30.895] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:30.977] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <LoadingBoundary name="/" loading={null}>
+      <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+        <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+          <RedirectBoundary>
+            <RedirectErrorBoundary router={{...}}>
+              <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} segmentPath={[...]} ...>
+                <SegmentViewNode type="page" pagePath="/Downloads...">
+                  <SegmentTrieNode>
+                  <HomePage>
+                    <div className="min-h-screen">
+                      <Header>
+                      <main>
+                        <Hero>
+                          <section className="relative m...">
+                            <div className="absolute i...">
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div className="absolute i...">
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "91.12504454854727%"
+-                                   left: "40.9284%"
++                                   top: "54.39559411820394%"
+-                                   top: "30.5165%"
++                                   animationDelay: "1.9756537841793764s"
++                                   animationDuration: "8.049350532086677s"
+-                                   animation-delay: "2.06424s"
+-                                   animation-duration: "10.8567s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "42.221609089981115%"
+-                                   left: "29.7443%"
++                                   top: "5.080451771201333%"
+-                                   top: "44.7746%"
++                                   animationDelay: "1.715317496027005s"
++                                   animationDuration: "8.81427792584711s"
+-                                   animation-delay: "0.947562s"
+-                                   animation-duration: "7.06947s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "18.42799304770397%"
+-                                   left: "89.2641%"
++                                   top: "22.8134805770579%"
+-                                   top: "16.3643%"
++                                   animationDelay: "4.8126559777623505s"
++                                   animationDuration: "12.543493570157626s"
+-                                   animation-delay: "4.4447s"
+-                                   animation-duration: "6.85403s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "20.275175784429933%"
+-                                   left: "93.7387%"
++                                   top: "10.819136038586441%"
+-                                   top: "39.0938%"
++                                   animationDelay: "2.7598372965467894s"
++                                   animationDuration: "6.3046690430539805s"
+-                                   animation-delay: "3.8179s"
+-                                   animation-duration: "10.5876s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "86.04312466606305%"
+-                                   left: "81.1702%"
++                                   top: "94.46814120558797%"
+-                                   top: "90.0783%"
++                                   animationDelay: "0.29214271204773046s"
++                                   animationDuration: "12.989179136458635s"
+-                                   animation-delay: "4.21098s"
+-                                   animation-duration: "14.7086s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "87.3983993103629%"
+-                                   left: "96.4489%"
++                                   top: "97.50558038463177%"
+-                                   top: "72.9106%"
++                                   animationDelay: "4.217044678022046s"
++                                   animationDuration: "7.77531911372818s"
+-                                   animation-delay: "3.64375s"
+-                                   animation-duration: "13.4017s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "37.116036558635415%"
+-                                   left: "70.8638%"
++                                   top: "13.918080723919356%"
+-                                   top: "14.6275%"
++                                   animationDelay: "3.360826262998986s"
++                                   animationDuration: "13.609668406903275s"
+-                                   animation-delay: "4.40872s"
+-                                   animation-duration: "14.8415s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "10.377221318003539%"
+-                                   left: "59.8269%"
++                                   top: "95.32020329460055%"
+-                                   top: "90.3329%"
++                                   animationDelay: "2.1534660477869765s"
++                                   animationDuration: "7.655476153563962s"
+-                                   animation-delay: "4.35678s"
+-                                   animation-duration: "12.5383s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "66.18933103941733%"
+-                                   left: "13.599%"
++                                   top: "61.97243277803127%"
+-                                   top: "27.4608%"
++                                   animationDelay: "3.715745531740468s"
++                                   animationDuration: "11.62835423468554s"
+-                                   animation-delay: "1.28184s"
+-                                   animation-duration: "7.87176s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "11.893606646120203%"
+-                                   left: "92.7459%"
++                                   top: "92.25194882445348%"
+-                                   top: "72.773%"
++                                   animationDelay: "1.8511102642333876s"
++                                   animationDuration: "12.40805275406846s"
+-                                   animation-delay: "0.95688s"
+-                                   animation-duration: "8.18436s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "21.638951638039885%"
+-                                   left: "11.0199%"
++                                   top: "63.831164392472694%"
+-                                   top: "89.3509%"
++                                   animationDelay: "1.9135349755057347s"
++                                   animationDuration: "12.292285525466589s"
+-                                   animation-delay: "2.1792s"
+-                                   animation-duration: "6.46977s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "82.71855155866102%"
+-                                   left: "99.7001%"
++                                   top: "53.422842998375316%"
+-                                   top: "56.7573%"
++                                   animationDelay: "4.830738707278469s"
++                                   animationDuration: "9.807831069972607s"
+-                                   animation-delay: "4.78798s"
+-                                   animation-duration: "8.89163s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "29.155776225194696%"
+-                                   left: "17.3502%"
++                                   top: "56.965501624640105%"
+-                                   top: "16.3108%"
++                                   animationDelay: "4.048464345387809s"
++                                   animationDuration: "13.001583303773941s"
+-                                   animation-delay: "4.15615s"
+-                                   animation-duration: "7.41465s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "52.22790866013297%"
+-                                   left: "20.7136%"
++                                   top: "15.297143826727499%"
+-                                   top: "1.15535%"
++                                   animationDelay: "4.994919516903386s"
++                                   animationDuration: "6.05541201105734s"
+-                                   animation-delay: "4.12391s"
+-                                   animation-duration: "14.7323s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "61.66647045831267%"
+-                                   left: "42.3475%"
++                                   top: "57.02700722694662%"
+-                                   top: "76.5747%"
++                                   animationDelay: "0.9303660027488786s"
++                                   animationDuration: "5.253144168020202s"
+-                                   animation-delay: "4.86096s"
+-                                   animation-duration: "7.18702s"
+                                  }}
+                                >
+                            ...
+                        ...
+                      ...
+                ...
+              ...
+
+[03:05:30.977] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[03:05:30.977] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[03:05:30.977] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764362716411}
+[03:05:32.926] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:32.927] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:34.931] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:34.932] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:35.282] Browser WARN    Image with src "/smartphone-showing-esim-qr-code-activation-travel-.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[03:05:36.935] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:36.936] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:36.937] Server  ERROR   [Redis] Cache get error: "Reached the max retries per request limit (which is 3). Refer to \"maxRetriesPerRequest\" option for details."
+[03:05:36.939] Server  LOG     [Countries API] Cache miss: "countries:active"
+[03:05:37.324] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:05:37.402] Server  ERROR   [Languages API] Error: TypeError: db.collection is not a function
+[03:05:37.491] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <LoadingBoundary name="/" loading={null}>
+      <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+        <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+          <RedirectBoundary>
+            <RedirectErrorBoundary router={{...}}>
+              <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} segmentPath={[...]} ...>
+                <SegmentViewNode type="page" pagePath="/Downloads...">
+                  <SegmentTrieNode>
+                  <HomePage>
+                    <div className="min-h-screen">
+                      <Header>
+                      <main>
+                        <Hero>
+                          <section className="relative m...">
+                            <div className="absolute i...">
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div>
+                              <div className="absolute i...">
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "58.59735668580912%"
+-                                   left: "84.4081%"
++                                   top: "90.85386622521125%"
+-                                   top: "50.7217%"
++                                   animationDelay: "3.523087974083929s"
++                                   animationDuration: "13.087311480140011s"
+-                                   animation-delay: "0.338694s"
+-                                   animation-duration: "8.0042s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "79.6727024307304%"
+-                                   left: "78.4368%"
++                                   top: "29.91203406934957%"
+-                                   top: "10.3586%"
++                                   animationDelay: "3.339924915673863s"
++                                   animationDuration: "7.5106795497362375s"
+-                                   animation-delay: "3.27399s"
+-                                   animation-duration: "11.2507s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "98.44788421220765%"
+-                                   left: "75.9417%"
++                                   top: "39.4752842050201%"
+-                                   top: "29.5467%"
++                                   animationDelay: "1.4496927410203369s"
++                                   animationDuration: "14.994349260469749s"
+-                                   animation-delay: "4.03949s"
+-                                   animation-duration: "13.4463s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "82.46657135870096%"
+-                                   left: "26.9049%"
++                                   top: "40.32448884038734%"
+-                                   top: "98.3055%"
++                                   animationDelay: "3.628082307733332s"
++                                   animationDuration: "6.171711399357232s"
+-                                   animation-delay: "1.95021s"
+-                                   animation-duration: "10.7374s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "16.89081857933743%"
+-                                   left: "46.888%"
++                                   top: "81.90467243228755%"
+-                                   top: "88.366%"
++                                   animationDelay: "1.7865131094803006s"
++                                   animationDuration: "12.634847507122045s"
+-                                   animation-delay: "0.233453s"
+-                                   animation-duration: "8.31375s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "81.47356848228033%"
+-                                   left: "94.6466%"
++                                   top: "41.65586797801609%"
+-                                   top: "7.10036%"
++                                   animationDelay: "2.240989675159104s"
++                                   animationDuration: "13.32611894803555s"
+-                                   animation-delay: "2.64531s"
+-                                   animation-duration: "14.9603s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "97.9826136169587%"
+-                                   left: "19.7976%"
++                                   top: "32.29574548871462%"
+-                                   top: "32.8287%"
++                                   animationDelay: "1.3820731237863875s"
++                                   animationDuration: "13.37435812712034s"
+-                                   animation-delay: "1.41615s"
+-                                   animation-duration: "7.47257s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "52.5213609837039%"
+-                                   left: "96.0905%"
++                                   top: "85.5798786047434%"
+-                                   top: "64.5466%"
++                                   animationDelay: "1.9374395867953975s"
++                                   animationDuration: "5.702266292024247s"
+-                                   animation-delay: "3.70455s"
+-                                   animation-duration: "7.88787s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "70.88449931449344%"
+-                                   left: "41.2481%"
++                                   top: "12.884515731854929%"
+-                                   top: "53.3095%"
++                                   animationDelay: "1.819608678675374s"
++                                   animationDuration: "6.044750695234075s"
+-                                   animation-delay: "1.22845s"
+-                                   animation-duration: "10.1727s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "93.30374790819303%"
+-                                   left: "57.2567%"
++                                   top: "56.50241844132137%"
+-                                   top: "12.1235%"
++                                   animationDelay: "3.5786704934844615s"
++                                   animationDuration: "14.3576428669821s"
+-                                   animation-delay: "2.68697s"
+-                                   animation-duration: "9.85051s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "87.64732744689856%"
+-                                   left: "19.3952%"
++                                   top: "54.45662161910444%"
+-                                   top: "65.7625%"
++                                   animationDelay: "3.7754378706939393s"
++                                   animationDuration: "14.498164323210009s"
+-                                   animation-delay: "0.371573s"
+-                                   animation-duration: "10.4848s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "73.56873220930437%"
+-                                   left: "25.5266%"
++                                   top: "50.225446367894044%"
+-                                   top: "44.1672%"
++                                   animationDelay: "3.2454530031775857s"
++                                   animationDuration: "7.151842199658772s"
+-                                   animation-delay: "3.32323s"
+-                                   animation-duration: "8.2114s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "93.78530239554782%"
+-                                   left: "29.0606%"
++                                   top: "66.0044006991864%"
+-                                   top: "6.1492%"
++                                   animationDelay: "1.8409097350242938s"
++                                   animationDuration: "6.474802286696803s"
+-                                   animation-delay: "3.11268s"
+-                                   animation-duration: "13.9976s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "9.042864136795515%"
+-                                   left: "63.181%"
++                                   top: "3.006651500890012%"
+-                                   top: "14.7965%"
++                                   animationDelay: "0.11250620088080199s"
++                                   animationDuration: "10.27830662873814s"
+-                                   animation-delay: "3.61595s"
+-                                   animation-duration: "8.52856s"
+                                  }}
+                                >
+                                <div
+                                  className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+                                  style={{
++                                   left: "57.428539630440625%"
+-                                   left: "56.2531%"
++                                   top: "40.55419507388215%"
+-                                   top: "1.62248%"
++                                   animationDelay: "0.41041069161030397s"
++                                   animationDuration: "7.623214954318495s"
+-                                   animation-delay: "1.48093s"
+-                                   animation-duration: "6.34536s"
+                                  }}
+                                >
+                            ...
+                        ...
+                      ...
+                ...
+              ...
+
+[03:05:37.491] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[03:05:37.491] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[03:05:37.491] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1764362723169}
+[03:05:38.939] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:38.947] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:40.943] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:40.950] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:42.945] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:42.953] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:44.950] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:44.950] Server  ERROR   [Redis] Cache set error: "Reached the max retries per request limit (which is 3). Refer to \"maxRetriesPerRequest\" option for details."
+[03:05:44.951] Server  ERROR   [Redis] Cache get error: "Reached the max retries per request limit (which is 3). Refer to \"maxRetriesPerRequest\" option for details."
+[03:05:44.952] Server  LOG     [Countries API] Cache miss: "countries:active"
+[03:05:44.955] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:46.953] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:46.956] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:48.956] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:48.957] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:50.960] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:50.960] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:52.964] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:52.964] Server  ERROR   [Redis] Cache set error: "Reached the max retries per request limit (which is 3). Refer to \"maxRetriesPerRequest\" option for details."
+[03:05:52.968] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:54.965] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:54.971] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:56.969] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:56.973] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:58.972] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:05:58.974] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:00.975] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:00.978] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:02.984] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:02.985] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:04.986] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:04.986] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:06.989] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:06.990] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:08.992] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:08.992] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:10.996] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:10.996] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:12.999] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:12.999] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:15.003] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:15.003] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:17.007] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:17.007] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:19.014] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:19.014] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:21.018] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:21.019] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:23.020] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:23.021] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:25.024] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:25.025] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:27.029] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:27.029] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:29.035] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:29.035] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:31.039] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:31.039] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:33.043] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:33.043] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:35.049] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:35.049] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:37.053] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:37.054] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:39.057] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:39.057] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:41.061] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:41.062] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:43.065] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:43.065] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:45.066] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:45.066] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:47.069] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:47.069] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:49.073] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"
+[03:06:49.073] Server  ERROR   [Redis] Connection error: "connect ECONNREFUSED 127.0.0.1:6379"

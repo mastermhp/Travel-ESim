@@ -1582,33 +1582,70 @@ const ar = {
     },
     home: {
         hero: {
-            title: "سافر حول العالم",
-            subtitle: "ابق متصلاً مع eSIM العالمية",
+            badge: "تفعيل فوري",
+            typewriterText: "ابق متصلاً في أي مكان",
+            title: "حول العالم",
+            subtitle: "خطط بيانات eSIM فورية لأكثر من 190 دولة. لا حاجة لبطاقة SIM فعلية. قم بالتفعيل في ثوانٍ واستمتع باتصال عالمي سلس أينما ذهبت.",
+            browsePlans: "تصفح الخطط",
+            exploreCoverage: "استكشف التغطية",
             description: "احصل على اتصال فوري في أكثر من 150 دولة. لا حاجة لبطاقة SIM فعلية. تفعيل في ثوانٍ.",
             cta: "تصفح الخطط",
-            ctaSecondary: "اعرف المزيد"
+            ctaSecondary: "اعرف المزيد",
+            stat1Label: "دولة",
+            stat2Label: "مسافرون سعداء",
+            stat3Label: "تقييم المستخدم",
+            secureBadge: "آمن",
+            secureDesc: "تشفير 256 بت",
+            instantBadge: "فوري",
+            instantDesc: "تفعيل في دقيقتين"
         },
         features: {
-            title: "لماذا تختار eSIM الخاصة بنا",
+            badge: "لماذا تختارنا",
+            title: "كل ما تحتاجه",
+            titleHighlight: "للسفر السلس",
+            subtitle: "استمتع باتصال خالٍ من المتاعب مع ميزات مصممة للمسافرين العصريين",
             instant: {
                 title: "تفعيل فوري",
-                description: "اتصل في ثوانٍ باستخدام رمز QR"
+                description: "اتصل في أقل من دقيقتين. امسح رمز QR وابدأ استخدام البيانات فوراً."
             },
             global: {
                 title: "تغطية عالمية",
                 description: "الوصول في أكثر من 150 دولة حول العالم"
             },
             affordable: {
-                title: "أسعار معقولة",
-                description: "وفر حتى 90٪ على رسوم التجوال"
+                title: "خطط بأسعار معقولة",
+                description: "أسعار تنافسية بدون رسوم مخفية. ادفع فقط مقابل ما تحتاجه."
             },
             support: {
                 title: "دعم 24/7",
-                description: "مساعدة العملاء على مدار الساعة"
+                description: "دعم العملاء على مدار الساعة بلغات متعددة. نحن هنا للمساعدة."
+            },
+            countries: {
+                title: "أكثر من 190 دولة",
+                description: "تغطية عالمية عبر جميع القارات. منصة واحدة لجميع احتياجات الاتصال أثناء السفر."
+            },
+            management: {
+                title: "إدارة سهلة",
+                description: "أدر جميع بطاقات eSIM الخاصة بك في تطبيق واحد. تحقق من الاستخدام، أعد الشحن، وبدل الخطط على الفور."
+            },
+            secure: {
+                title: "آمن وموثوق",
+                description: "تشفير على مستوى البنوك ووقت تشغيل 99.9٪. بياناتك وخصوصيتك محمية."
             }
         },
         howItWorks: {
-            title: "كيف يعمل",
+            badge: "عملية بسيطة",
+            title: "اتصل في",
+            titleHighlight: "4 خطوات سهلة",
+            subtitle: "من الشراء إلى التفعيل، جعلنا الأمر بسيطاً بشكل لا يصدق",
+            step1Title: "اختر خطتك",
+            step1Desc: "حدد وجهتك واختر خطة البيانات المثالية لمدة رحلتك.",
+            step2Title: "احصل على رمز QR",
+            step2Desc: "احصل على رمز QR الخاص بـ eSIM فوراً عبر البريد الإلكتروني أو في التطبيق بعد الدفع.",
+            step3Title: "امسح وفعّل",
+            step3Desc: "امسح رمز QR في إعدادات هاتفك وفعّل eSIM في ثوانٍ.",
+            step4Title: "ابدأ التجوال",
+            step4Desc: "أنت متصل! استمتع ببيانات عالية السرعة أينما سافرت.",
             step1: {
                 title: "اختر خطتك",
                 description: "اختر من خطط البيانات المرنة لدينا"
@@ -1621,6 +1658,67 @@ const ar = {
                 title: "امسح واتصل",
                 description: "قم بالتفعيل وابدأ الاستخدام على الفور"
             }
+        },
+        countries: {
+            badge: "تغطية عالمية",
+            title: "اتصل في",
+            titleHighlight: "أكثر من 190 دولة",
+            subtitle: "من المدن الصاخبة إلى الوجهات النائية، ابق متصلاً أينما أخذتك رحلتك",
+            popularTitle: "الوجهات الشعبية",
+            viewAll: "عرض الكل",
+            searchPlaceholder: "البحث عن الدول...",
+            allRegions: "جميع المناطق",
+            showingResults: "عرض",
+            country: "دولة",
+            countries: "دول",
+            plan: "خطة",
+            plans: "خطط",
+            exploreAll: "استكشف جميع الدول",
+            loadingCountries: "تحميل الدول..."
+        },
+        coverage: {
+            badge: "تغطية عالمية",
+            title: "متاح في",
+            titleHighlight: "أكثر من 190 دولة",
+            subtitle: "من المدن الصاخبة إلى الوجهات النائية، ابق متصلاً في كل مكان",
+            searchPlaceholder: "البحث عن دولة...",
+            viewAllCountries: "عرض جميع الدول"
+        },
+        pricing: {
+            badge: "أسعار مرنة",
+            title: "اختر",
+            titleHighlight: "خطتك المثالية",
+            subtitle: "خطط بيانات بأسعار معقولة لكل نوع من المسافرين. بدون رسوم مخفية، إلغاء في أي وقت.",
+            mostPopular: "الأكثر شعبية",
+            selected: "محدد",
+            selectPlan: "اختر الخطة",
+            customPlan: "هل تحتاج خطة مخصصة؟ اتصل بفريق المبيعات لدينا",
+            contactSales: "اتصل بالمبيعات"
+        },
+        agent: {
+            badge: "برنامج الوكلاء",
+            title: "كن وكيلاً،",
+            titleHighlight: "اربح أكثر",
+            subtitle: "انضم إلى آلاف سائقي سيارات الأجرة والمرشدين السياحيين ورجال الأعمال الذين يكسبون دخلاً إضافياً ببيع eSIMs للمسافرين.",
+            earnTitle: "اكسب عمولة",
+            earnDesc: "احصل على عمولة 15-25٪ على كل عملية بيع eSIM تقوم بها",
+            payoutsTitle: "دفعات فورية",
+            payoutsDesc: "احصل على أموالك مباشرة إلى محفظتك أو حساب الأموال عبر الهاتف المحمول",
+            appTitle: "تطبيق سهل الاستخدام",
+            appDesc: "بيع eSIMs في ثوانٍ باستخدام تطبيق الوكيل البديهي الخاص بنا",
+            verifiedTitle: "وكيل موثق",
+            verifiedDesc: "احصل على حالة الوكيل الرسمية والمواد التسويقية",
+            becomeAgent: "كن وكيلاً",
+            agentLogin: "تسجيل دخول الوكيل",
+            stat1: "الوكلاء النشطون",
+            stat2: "المدفوعات في العمولات",
+            stat3: "الدول"
+        },
+        testimonials: {
+            badge: "شهادات",
+            title: "محبوب من",
+            titleHighlight: "المسافرين في جميع أنحاء العالم",
+            subtitle: "انظر ما يقوله عملاؤنا ووكلاؤنا عن تجربتهم"
         }
     },
     plans: {
@@ -1730,6 +1828,38 @@ const ar = {
         totalEarnings: "إجمالي الأرباح",
         availableBalance: "الرصيد المتاح",
         pendingCommission: "العمولة المعلقة"
+    },
+    footer: {
+        description: "تفعيل eSIM فوري للمسافرين العالميين. ابق متصلاً في أكثر من 190 دولة بخطط بيانات بأسعار معقولة.",
+        contactSupport: "اتصل بالدعم",
+        subscribe: "اشترك في نشرتنا الإخبارية",
+        emailPlaceholder: "أدخل بريدك الإلكتروني",
+        product: "المنتج",
+        company: "الشركة",
+        forAgents: "للوكلاء",
+        support: "الدعم",
+        copyright: "جميع الحقوق محفوظة.",
+        privacyPolicy: "سياسة الخصوصية",
+        termsOfService: "شروط الخدمة",
+        cookiePolicy: "سياسة ملفات تعريف الارتباط",
+        links: {
+            coverage: "التغطية",
+            pricing: "الأسعار",
+            howItWorks: "كيف يعمل",
+            devices: "الأجهزة المتوافقة مع eSIM",
+            about: "من نحن",
+            blog: "المدونة",
+            careers: "الوظائف",
+            press: "المطبوعات",
+            becomeAgent: "كن وكيلاً",
+            agentLogin: "تسجيل دخول الوكيل",
+            agentResources: "موارد الوكيل",
+            commission: "هيكل العمولة",
+            helpCenter: "مركز المساعدة",
+            contactUs: "اتصل بنا",
+            faqs: "الأسئلة الشائعة",
+            installGuide: "دليل التثبيت"
+        }
     }
 };
 }),
@@ -1932,37 +2062,294 @@ __turbopack_context__.s([
 ]);
 const es = {
     common: {
-        welcome: "Bienvenido",
-        login: "Iniciar sesión",
-        logout: "Cerrar sesión",
-        register: "Registrarse",
-        email: "Correo electrónico",
-        password: "Contraseña",
-        submit: "Enviar",
-        cancel: "Cancelar",
-        save: "Guardar",
-        delete: "Eliminar",
-        edit: "Editar",
-        view: "Ver",
-        search: "Buscar",
-        filter: "Filtrar",
         loading: "Cargando...",
         error: "Error",
-        success: "Éxito"
+        success: "Éxito",
+        save: "Guardar",
+        cancel: "Cancelar",
+        delete: "Eliminar",
+        edit: "Editar",
+        search: "Buscar",
+        filter: "Filtrar",
+        viewDetails: "Ver Detalles",
+        close: "Cerrar",
+        confirm: "Confirmar",
+        back: "Atrás",
+        next: "Siguiente",
+        submit: "Enviar",
+        or: "o"
     },
     nav: {
         home: "Inicio",
         plans: "Planes",
         about: "Acerca de",
         contact: "Contacto",
-        dashboard: "Panel",
-        profile: "Perfil"
+        login: "Iniciar Sesión",
+        register: "Registrarse",
+        profile: "Perfil",
+        logout: "Cerrar Sesión",
+        dashboard: "Panel"
     },
     home: {
         hero: {
-            title: "Conéctate al Mundo",
-            subtitle: "eSIMs Globales para Viajeros",
-            cta: "Ver Planes"
+            badge: "Activación Instantánea",
+            typewriterText: "Mantente Conectado en Cualquier Lugar",
+            title: "Alrededor del Mundo",
+            subtitle: "Planes de datos eSIM instantáneos para más de 190 países. No se necesita SIM física. Activa en segundos y disfruta de conectividad global sin interrupciones dondequiera que vayas.",
+            browsePlans: "Explorar Planes",
+            exploreCoverage: "Explorar Cobertura",
+            stat1Label: "Países",
+            stat2Label: "Viajeros Felices",
+            stat3Label: "Calificación de Usuario",
+            secureBadge: "Seguro",
+            secureDesc: "Cifrado de 256 bits",
+            instantBadge: "Instantáneo",
+            instantDesc: "Activación en 2 min"
+        },
+        features: {
+            badge: "Por Qué Elegirnos",
+            title: "Todo lo que Necesitas para",
+            titleHighlight: "Viajes Sin Interrupciones",
+            subtitle: "Experimenta conectividad sin complicaciones con características diseñadas para viajeros modernos",
+            instant: {
+                title: "Activación Instantánea",
+                description: "Conéctate en menos de 2 minutos. Escanea el código QR y comienza a usar datos inmediatamente."
+            },
+            countries: {
+                title: "Más de 190 Países",
+                description: "Cobertura global en todos los continentes. Una plataforma para todas tus necesidades de conectividad de viaje."
+            },
+            secure: {
+                title: "Seguro y Confiable",
+                description: "Cifrado de nivel bancario y 99.9% de tiempo de actividad. Tus datos y privacidad están protegidos."
+            },
+            affordable: {
+                title: "Planes Asequibles",
+                description: "Precios competitivos sin tarifas ocultas. Paga solo por lo que necesitas."
+            },
+            management: {
+                title: "Gestión Fácil",
+                description: "Administra todas tus eSIMs en una aplicación. Verifica el uso, recarga y cambia de planes al instante."
+            },
+            support: {
+                title: "Soporte 24/7",
+                description: "Atención al cliente las 24 horas en múltiples idiomas. Estamos aquí para ayudar."
+            }
+        },
+        howItWorks: {
+            badge: "Proceso Simple",
+            title: "Conéctate en",
+            titleHighlight: "4 Pasos Fáciles",
+            subtitle: "Desde la compra hasta la activación, lo hemos hecho increíblemente simple",
+            step1Title: "Elige Tu Plan",
+            step1Desc: "Selecciona tu destino y elige el plan de datos perfecto para la duración de tu viaje.",
+            step2Title: "Recibe el Código QR",
+            step2Desc: "Obtén tu código QR de eSIM instantáneamente por correo electrónico o en la aplicación después del pago.",
+            step3Title: "Escanea y Activa",
+            step3Desc: "Escanea el código QR en la configuración de tu teléfono y activa tu eSIM en segundos.",
+            step4Title: "Comienza a Navegar",
+            step4Desc: "¡Estás conectado! Disfruta de datos de alta velocidad donde sea que viajes."
+        },
+        countries: {
+            badge: "Cobertura Global",
+            title: "Conéctate en",
+            titleHighlight: "Más de 190 Países",
+            subtitle: "Desde ciudades bulliciosas hasta destinos remotos, mantente conectado donde sea que te lleve tu viaje",
+            popularTitle: "Destinos Populares",
+            viewAll: "Ver Todo",
+            searchPlaceholder: "Buscar países...",
+            allRegions: "Todas las Regiones",
+            showingResults: "Mostrando",
+            country: "país",
+            countries: "países",
+            plan: "plan",
+            plans: "planes",
+            exploreAll: "Explorar Todos los Países",
+            loadingCountries: "Cargando países..."
+        },
+        coverage: {
+            badge: "Cobertura Global",
+            title: "Disponible en",
+            titleHighlight: "Más de 190 Países",
+            subtitle: "Desde ciudades bulliciosas hasta destinos remotos, mantente conectado en todas partes",
+            searchPlaceholder: "Buscar un país...",
+            viewAllCountries: "Ver Todos los Países"
+        },
+        pricing: {
+            badge: "Precios Flexibles",
+            title: "Elige Tu",
+            titleHighlight: "Plan Perfecto",
+            subtitle: "Planes de datos asequibles para cada tipo de viajero. Sin tarifas ocultas, cancela en cualquier momento.",
+            mostPopular: "Más Popular",
+            selected: "Seleccionado",
+            selectPlan: "Seleccionar Plan",
+            customPlan: "¿Necesitas un plan personalizado? Contacta a nuestro equipo de ventas",
+            contactSales: "Contactar Ventas"
+        },
+        agent: {
+            badge: "Programa de Agentes",
+            title: "Conviértete en Agente,",
+            titleHighlight: "Gana Más",
+            subtitle: "Únete a miles de taxistas, guías turísticos y emprendedores que ganan ingresos adicionales vendiendo eSIMs a viajeros.",
+            earnTitle: "Gana Comisión",
+            earnDesc: "Gana 15-25% de comisión en cada venta de eSIM que hagas",
+            payoutsTitle: "Pagos Instantáneos",
+            payoutsDesc: "Recibe pagos directamente en tu billetera o cuenta de dinero móvil",
+            appTitle: "Aplicación Fácil de Usar",
+            appDesc: "Vende eSIMs en segundos con nuestra intuitiva aplicación para agentes",
+            verifiedTitle: "Agente Verificado",
+            verifiedDesc: "Obtén el estado de agente oficial y materiales de marketing",
+            becomeAgent: "Conviértete en Agente",
+            agentLogin: "Inicio de Sesión de Agente",
+            stat1: "Agentes Activos",
+            stat2: "Pagado en Comisiones",
+            stat3: "Países"
+        },
+        testimonials: {
+            badge: "Testimonios",
+            title: "Amado por",
+            titleHighlight: "Viajeros de Todo el Mundo",
+            subtitle: "Mira lo que nuestros clientes y agentes dicen sobre su experiencia"
+        }
+    },
+    plans: {
+        title: "Elige Tu Plan",
+        subtitle: "Encuentra el plan de datos perfecto para tu viaje",
+        filters: {
+            country: "País",
+            dataAmount: "Cantidad de Datos",
+            duration: "Duración",
+            all: "Todos"
+        },
+        card: {
+            popular: "Popular",
+            validity: "días",
+            selectPlan: "Seleccionar Plan",
+            details: "Ver Detalles",
+            coverage: "Cobertura",
+            data: "Datos",
+            speed: "Velocidad"
+        }
+    },
+    auth: {
+        login: {
+            title: "Bienvenido de Nuevo",
+            subtitle: "Inicia sesión en tu cuenta",
+            email: "Correo Electrónico",
+            phone: "Número de Teléfono",
+            password: "Contraseña",
+            loginButton: "Iniciar Sesión",
+            forgotPassword: "¿Olvidaste tu contraseña?",
+            noAccount: "¿No tienes una cuenta?",
+            signUp: "Regístrate",
+            emailTab: "Correo",
+            phoneTab: "Teléfono",
+            requestOtp: "Solicitar OTP",
+            verifyOtp: "Verificar OTP",
+            enterOtp: "Ingresar OTP"
+        },
+        register: {
+            title: "Crear Cuenta",
+            subtitle: "Únete a nosotros hoy",
+            name: "Nombre Completo",
+            email: "Correo Electrónico",
+            phone: "Número de Teléfono",
+            password: "Contraseña",
+            confirmPassword: "Confirmar Contraseña",
+            registerButton: "Crear Cuenta",
+            haveAccount: "¿Ya tienes una cuenta?",
+            signIn: "Iniciar sesión"
+        }
+    },
+    checkout: {
+        title: "Completa Tu Pedido",
+        customerInfo: "Información del Cliente",
+        email: "Correo Electrónico",
+        phone: "Número de Teléfono",
+        optional: "opcional",
+        orderSummary: "Resumen del Pedido",
+        plan: "Plan",
+        country: "País",
+        data: "Datos",
+        validity: "Validez",
+        days: "días",
+        price: "Precio",
+        total: "Total",
+        payNow: "Pagar Ahora",
+        securePayment: "Pago seguro con Stripe"
+    },
+    profile: {
+        title: "Mi Perfil",
+        personalInfo: "Información Personal",
+        name: "Nombre",
+        email: "Correo",
+        phone: "Teléfono",
+        myOrders: "Mis Pedidos",
+        orderHistory: "Historial de Pedidos",
+        noOrders: "Aún no hay pedidos",
+        orderId: "ID de Pedido",
+        date: "Fecha",
+        status: "Estado",
+        amount: "Monto",
+        viewDetails: "Ver Detalles"
+    },
+    admin: {
+        dashboard: "Panel de Control",
+        overview: "Resumen",
+        orders: "Pedidos",
+        agents: "Agentes",
+        plans: "Planes",
+        settings: "Configuración",
+        totalRevenue: "Ingresos Totales",
+        totalOrders: "Pedidos",
+        activeAgents: "Agentes Activos",
+        countries: "Países",
+        fromLastMonth: "del mes pasado",
+        revenueByCountry: "Ingresos por País",
+        orderStatus: "Estado del Pedido",
+        monthlyTrend: "Tendencia de Ingresos Mensuales"
+    },
+    agent: {
+        dashboard: "Panel de Agente",
+        createSale: "Crear Venta",
+        myOrders: "Mis Pedidos",
+        earnings: "Ganancias",
+        wallet: "Billetera",
+        requestPayout: "Solicitar Pago",
+        totalEarnings: "Ganancias Totales",
+        availableBalance: "Saldo Disponible",
+        pendingCommission: "Comisión Pendiente"
+    },
+    footer: {
+        description: "Activación instantánea de eSIM para viajeros globales. Mantente conectado en más de 190 países con planes de datos asequibles.",
+        contactSupport: "Contactar Soporte",
+        subscribe: "Suscríbete a nuestro boletín",
+        emailPlaceholder: "Ingresa tu correo",
+        product: "Producto",
+        company: "Empresa",
+        forAgents: "Para Agentes",
+        support: "Soporte",
+        copyright: "Todos los derechos reservados.",
+        privacyPolicy: "Política de Privacidad",
+        termsOfService: "Términos de Servicio",
+        cookiePolicy: "Política de Cookies",
+        links: {
+            coverage: "Cobertura",
+            pricing: "Precios",
+            howItWorks: "Cómo Funciona",
+            devices: "Dispositivos Compatibles con eSIM",
+            about: "Acerca de Nosotros",
+            blog: "Blog",
+            careers: "Carreras",
+            press: "Kit de Prensa",
+            becomeAgent: "Conviértete en Agente",
+            agentLogin: "Inicio de Sesión de Agente",
+            agentResources: "Recursos para Agentes",
+            commission: "Estructura de Comisión",
+            helpCenter: "Centro de Ayuda",
+            contactUs: "Contáctanos",
+            faqs: "Preguntas Frecuentes",
+            installGuide: "Guía de Instalación"
         }
     }
 };
@@ -1976,37 +2363,294 @@ __turbopack_context__.s([
 ]);
 const pt = {
     common: {
-        welcome: "Bem-vindo",
-        login: "Entrar",
-        logout: "Sair",
-        register: "Registrar",
-        email: "E-mail",
-        password: "Senha",
-        submit: "Enviar",
-        cancel: "Cancelar",
-        save: "Salvar",
-        delete: "Excluir",
-        edit: "Editar",
-        view: "Ver",
-        search: "Pesquisar",
-        filter: "Filtrar",
         loading: "Carregando...",
         error: "Erro",
-        success: "Sucesso"
+        success: "Sucesso",
+        save: "Salvar",
+        cancel: "Cancelar",
+        delete: "Excluir",
+        edit: "Editar",
+        search: "Pesquisar",
+        filter: "Filtrar",
+        viewDetails: "Ver Detalhes",
+        close: "Fechar",
+        confirm: "Confirmar",
+        back: "Voltar",
+        next: "Próximo",
+        submit: "Enviar",
+        or: "ou"
     },
     nav: {
         home: "Início",
         plans: "Planos",
         about: "Sobre",
         contact: "Contato",
-        dashboard: "Painel",
-        profile: "Perfil"
+        login: "Entrar",
+        register: "Registrar",
+        profile: "Perfil",
+        logout: "Sair",
+        dashboard: "Painel"
     },
     home: {
         hero: {
-            title: "Conecte-se ao Mundo",
-            subtitle: "eSIMs Globais para Viajantes",
-            cta: "Ver Planos"
+            badge: "Ativação Instantânea",
+            typewriterText: "Mantenha-se Conectado em Qualquer Lugar",
+            title: "Ao Redor do Mundo",
+            subtitle: "Planos de dados eSIM instantâneos para mais de 190 países. Não é necessário SIM físico. Ative em segundos e desfrute de conectividade global perfeita onde quer que vá.",
+            browsePlans: "Explorar Planos",
+            exploreCoverage: "Explorar Cobertura",
+            stat1Label: "Países",
+            stat2Label: "Viajantes Felizes",
+            stat3Label: "Avaliação do Usuário",
+            secureBadge: "Seguro",
+            secureDesc: "Criptografia de 256 bits",
+            instantBadge: "Instantâneo",
+            instantDesc: "Ativação em 2 min"
+        },
+        features: {
+            badge: "Por Que Nos Escolher",
+            title: "Tudo o Que Você Precisa para",
+            titleHighlight: "Viagens Sem Interrupções",
+            subtitle: "Experimente conectividade sem complicações com recursos projetados para viajantes modernos",
+            instant: {
+                title: "Ativação Instantânea",
+                description: "Conecte-se em menos de 2 minutos. Escaneie o código QR e comece a usar dados imediatamente."
+            },
+            countries: {
+                title: "Mais de 190 Países",
+                description: "Cobertura global em todos os continentes. Uma plataforma para todas as suas necessidades de conectividade de viagem."
+            },
+            secure: {
+                title: "Seguro e Confiável",
+                description: "Criptografia de nível bancário e 99,9% de tempo de atividade. Seus dados e privacidade estão protegidos."
+            },
+            affordable: {
+                title: "Planos Acessíveis",
+                description: "Preços competitivos sem taxas ocultas. Pague apenas pelo que você precisa."
+            },
+            management: {
+                title: "Gerenciamento Fácil",
+                description: "Gerencie todos os seus eSIMs em um aplicativo. Verifique o uso, recarregue e mude de planos instantaneamente."
+            },
+            support: {
+                title: "Suporte 24/7",
+                description: "Atendimento ao cliente 24 horas em vários idiomas. Estamos aqui para ajudar."
+            }
+        },
+        howItWorks: {
+            badge: "Processo Simples",
+            title: "Conecte-se em",
+            titleHighlight: "4 Passos Fáceis",
+            subtitle: "Da compra à ativação, tornamos incrivelmente simples",
+            step1Title: "Escolha Seu Plano",
+            step1Desc: "Selecione seu destino e escolha o plano de dados perfeito para a duração da sua viagem.",
+            step2Title: "Receba o Código QR",
+            step2Desc: "Obtenha seu código QR eSIM instantaneamente por e-mail ou no aplicativo após o pagamento.",
+            step3Title: "Escaneie e Ative",
+            step3Desc: "Escaneie o código QR nas configurações do seu telefone e ative seu eSIM em segundos.",
+            step4Title: "Comece a Navegar",
+            step4Desc: "Você está conectado! Desfrute de dados de alta velocidade onde quer que viaje."
+        },
+        countries: {
+            badge: "Cobertura Global",
+            title: "Conecte-se em",
+            titleHighlight: "Mais de 190 Países",
+            subtitle: "De cidades movimentadas a destinos remotos, mantenha-se conectado onde quer que sua jornada o leve",
+            popularTitle: "Destinos Populares",
+            viewAll: "Ver Tudo",
+            searchPlaceholder: "Pesquisar países...",
+            allRegions: "Todas as Regiões",
+            showingResults: "Mostrando",
+            country: "país",
+            countries: "países",
+            plan: "plano",
+            plans: "planos",
+            exploreAll: "Explorar Todos os Países",
+            loadingCountries: "Carregando países..."
+        },
+        coverage: {
+            badge: "Cobertura Global",
+            title: "Disponível em",
+            titleHighlight: "Mais de 190 Países",
+            subtitle: "De cidades movimentadas a destinos remotos, mantenha-se conectado em todos os lugares",
+            searchPlaceholder: "Pesquisar um país...",
+            viewAllCountries: "Ver Todos os Países"
+        },
+        pricing: {
+            badge: "Preços Flexíveis",
+            title: "Escolha Seu",
+            titleHighlight: "Plano Perfeito",
+            subtitle: "Planos de dados acessíveis para cada tipo de viajante. Sem taxas ocultas, cancele a qualquer momento.",
+            mostPopular: "Mais Popular",
+            selected: "Selecionado",
+            selectPlan: "Selecionar Plano",
+            customPlan: "Precisa de um plano personalizado? Entre em contato com nossa equipe de vendas",
+            contactSales: "Contatar Vendas"
+        },
+        agent: {
+            badge: "Programa de Agentes",
+            title: "Torne-se um Agente,",
+            titleHighlight: "Ganhe Mais",
+            subtitle: "Junte-se a milhares de motoristas de táxi, guias turísticos e empreendedores que ganham renda extra vendendo eSIMs para viajantes.",
+            earnTitle: "Ganhe Comissão",
+            earnDesc: "Ganhe 15-25% de comissão em cada venda de eSIM que você fizer",
+            payoutsTitle: "Pagamentos Instantâneos",
+            payoutsDesc: "Receba diretamente em sua carteira ou conta de dinheiro móvel",
+            appTitle: "Aplicativo Fácil de Usar",
+            appDesc: "Venda eSIMs em segundos com nosso aplicativo intuitivo para agentes",
+            verifiedTitle: "Agente Verificado",
+            verifiedDesc: "Obtenha o status de agente oficial e materiais de marketing",
+            becomeAgent: "Torne-se um Agente",
+            agentLogin: "Login do Agente",
+            stat1: "Agentes Ativos",
+            stat2: "Pago em Comissões",
+            stat3: "Países"
+        },
+        testimonials: {
+            badge: "Depoimentos",
+            title: "Amado por",
+            titleHighlight: "Viajantes do Mundo Todo",
+            subtitle: "Veja o que nossos clientes e agentes dizem sobre sua experiência"
+        }
+    },
+    plans: {
+        title: "Escolha Seu Plano",
+        subtitle: "Encontre o plano de dados perfeito para sua jornada",
+        filters: {
+            country: "País",
+            dataAmount: "Quantidade de Dados",
+            duration: "Duração",
+            all: "Todos"
+        },
+        card: {
+            popular: "Popular",
+            validity: "dias",
+            selectPlan: "Selecionar Plano",
+            details: "Ver Detalhes",
+            coverage: "Cobertura",
+            data: "Dados",
+            speed: "Velocidade"
+        }
+    },
+    auth: {
+        login: {
+            title: "Bem-vindo de Volta",
+            subtitle: "Entre na sua conta",
+            email: "Endereço de E-mail",
+            phone: "Número de Telefone",
+            password: "Senha",
+            loginButton: "Entrar",
+            forgotPassword: "Esqueceu a senha?",
+            noAccount: "Não tem uma conta?",
+            signUp: "Inscrever-se",
+            emailTab: "E-mail",
+            phoneTab: "Telefone",
+            requestOtp: "Solicitar OTP",
+            verifyOtp: "Verificar OTP",
+            enterOtp: "Inserir OTP"
+        },
+        register: {
+            title: "Criar Conta",
+            subtitle: "Junte-se a nós hoje",
+            name: "Nome Completo",
+            email: "Endereço de E-mail",
+            phone: "Número de Telefone",
+            password: "Senha",
+            confirmPassword: "Confirmar Senha",
+            registerButton: "Criar Conta",
+            haveAccount: "Já tem uma conta?",
+            signIn: "Entrar"
+        }
+    },
+    checkout: {
+        title: "Complete Seu Pedido",
+        customerInfo: "Informações do Cliente",
+        email: "Endereço de E-mail",
+        phone: "Número de Telefone",
+        optional: "opcional",
+        orderSummary: "Resumo do Pedido",
+        plan: "Plano",
+        country: "País",
+        data: "Dados",
+        validity: "Validade",
+        days: "dias",
+        price: "Preço",
+        total: "Total",
+        payNow: "Pagar Agora",
+        securePayment: "Pagamento seguro com Stripe"
+    },
+    profile: {
+        title: "Meu Perfil",
+        personalInfo: "Informações Pessoais",
+        name: "Nome",
+        email: "E-mail",
+        phone: "Telefone",
+        myOrders: "Meus Pedidos",
+        orderHistory: "Histórico de Pedidos",
+        noOrders: "Ainda sem pedidos",
+        orderId: "ID do Pedido",
+        date: "Data",
+        status: "Status",
+        amount: "Valor",
+        viewDetails: "Ver Detalhes"
+    },
+    admin: {
+        dashboard: "Painel de Controle",
+        overview: "Visão Geral",
+        orders: "Pedidos",
+        agents: "Agentes",
+        plans: "Planos",
+        settings: "Configurações",
+        totalRevenue: "Receita Total",
+        totalOrders: "Pedidos",
+        activeAgents: "Agentes Ativos",
+        countries: "Países",
+        fromLastMonth: "do mês passado",
+        revenueByCountry: "Receita por País",
+        orderStatus: "Status do Pedido",
+        monthlyTrend: "Tendência de Receita Mensal"
+    },
+    agent: {
+        dashboard: "Painel do Agente",
+        createSale: "Criar Venda",
+        myOrders: "Meus Pedidos",
+        earnings: "Ganhos",
+        wallet: "Carteira",
+        requestPayout: "Solicitar Pagamento",
+        totalEarnings: "Ganhos Totais",
+        availableBalance: "Saldo Disponível",
+        pendingCommission: "Comissão Pendente"
+    },
+    footer: {
+        description: "Ativação instantânea de eSIM para viajantes globais. Mantenha-se conectado em mais de 190 países com planos de dados acessíveis.",
+        contactSupport: "Contatar Suporte",
+        subscribe: "Inscreva-se em nossa newsletter",
+        emailPlaceholder: "Digite seu e-mail",
+        product: "Produto",
+        company: "Empresa",
+        forAgents: "Para Agentes",
+        support: "Suporte",
+        copyright: "Todos os direitos reservados.",
+        privacyPolicy: "Política de Privacidade",
+        termsOfService: "Termos de Serviço",
+        cookiePolicy: "Política de Cookies",
+        links: {
+            coverage: "Cobertura",
+            pricing: "Preços",
+            howItWorks: "Como Funciona",
+            devices: "Dispositivos Compatíveis com eSIM",
+            about: "Sobre Nós",
+            blog: "Blog",
+            careers: "Carreiras",
+            press: "Kit de Imprensa",
+            becomeAgent: "Torne-se um Agente",
+            agentLogin: "Login do Agente",
+            agentResources: "Recursos para Agentes",
+            commission: "Estrutura de Comissão",
+            helpCenter: "Central de Ajuda",
+            contactUs: "Fale Conosco",
+            faqs: "Perguntas Frequentes",
+            installGuide: "Guia de Instalação"
         }
     }
 };
@@ -2020,37 +2664,294 @@ __turbopack_context__.s([
 ]);
 const zh = {
     common: {
-        welcome: "欢迎",
-        login: "登录",
-        logout: "退出",
-        register: "注册",
-        email: "电子邮件",
-        password: "密码",
-        submit: "提交",
-        cancel: "取消",
-        save: "保存",
-        delete: "删除",
-        edit: "编辑",
-        view: "查看",
-        search: "搜索",
-        filter: "筛选",
         loading: "加载中...",
         error: "错误",
-        success: "成功"
+        success: "成功",
+        save: "保存",
+        cancel: "取消",
+        delete: "删除",
+        edit: "编辑",
+        search: "搜索",
+        filter: "筛选",
+        viewDetails: "查看详情",
+        close: "关闭",
+        confirm: "确认",
+        back: "返回",
+        next: "下一步",
+        submit: "提交",
+        or: "或"
     },
     nav: {
         home: "首页",
         plans: "套餐",
         about: "关于",
         contact: "联系",
-        dashboard: "仪表板",
-        profile: "个人资料"
+        login: "登录",
+        register: "注册",
+        profile: "个人资料",
+        logout: "退出",
+        dashboard: "仪表板"
     },
     home: {
         hero: {
-            title: "连接世界",
-            subtitle: "全球旅行者的eSIM",
-            cta: "查看套餐"
+            badge: "即时激活",
+            typewriterText: "随时随地保持连接",
+            title: "环游世界",
+            subtitle: "超过190个国家的即时eSIM数据套餐。无需实体SIM卡。几秒钟内激活，享受无缝全球连接。",
+            browsePlans: "浏览套餐",
+            exploreCoverage: "探索覆盖范围",
+            stat1Label: "国家",
+            stat2Label: "快乐旅行者",
+            stat3Label: "用户评分",
+            secureBadge: "安全",
+            secureDesc: "256位加密",
+            instantBadge: "即时",
+            instantDesc: "2分钟激活"
+        },
+        features: {
+            badge: "为什么选择我们",
+            title: "您需要的一切",
+            titleHighlight: "无缝旅行",
+            subtitle: "体验为现代旅行者设计的无忧连接功能",
+            instant: {
+                title: "即时激活",
+                description: "不到2分钟即可连接。扫描二维码立即开始使用数据。"
+            },
+            countries: {
+                title: "190+个国家",
+                description: "覆盖所有大洲。一个平台满足您所有的旅行连接需求。"
+            },
+            secure: {
+                title: "安全可靠",
+                description: "银行级加密和99.9%正常运行时间。您的数据和隐私受到保护。"
+            },
+            affordable: {
+                title: "实惠套餐",
+                description: "具有竞争力的价格，无隐藏费用。只为您需要的付费。"
+            },
+            management: {
+                title: "轻松管理",
+                description: "在一个应用中管理所有eSIM。即时查看使用情况、充值和切换套餐。"
+            },
+            support: {
+                title: "24/7支持",
+                description: "全天候多语言客户支持。我们随时为您服务。"
+            }
+        },
+        howItWorks: {
+            badge: "简单流程",
+            title: "只需",
+            titleHighlight: "4个简单步骤",
+            subtitle: "从购买到激活，我们让一切变得极其简单",
+            step1Title: "选择您的套餐",
+            step1Desc: "选择您的目的地并为您的旅行期间选择完美的数据套餐。",
+            step2Title: "接收二维码",
+            step2Desc: "付款后立即通过电子邮件或应用程序获取您的eSIM二维码。",
+            step3Title: "扫描并激活",
+            step3Desc: "在手机设置中扫描二维码，几秒钟内激活您的eSIM。",
+            step4Title: "开始漫游",
+            step4Desc: "您已连接！无论您到哪里旅行，都能享受高速数据。"
+        },
+        countries: {
+            badge: "全球覆盖",
+            title: "连接到",
+            titleHighlight: "190+个国家",
+            subtitle: "从繁华都市到偏远目的地，无论您的旅程将您带到哪里，都能保持连接",
+            popularTitle: "热门目的地",
+            viewAll: "查看全部",
+            searchPlaceholder: "搜索国家...",
+            allRegions: "所有地区",
+            showingResults: "显示",
+            country: "国家",
+            countries: "国家",
+            plan: "套餐",
+            plans: "套餐",
+            exploreAll: "探索所有国家",
+            loadingCountries: "加载国家中..."
+        },
+        coverage: {
+            badge: "全球覆盖",
+            title: "可用于",
+            titleHighlight: "190+个国家",
+            subtitle: "从繁华都市到偏远目的地，随处保持连接",
+            searchPlaceholder: "搜索国家...",
+            viewAllCountries: "查看所有国家"
+        },
+        pricing: {
+            badge: "灵活定价",
+            title: "选择您的",
+            titleHighlight: "完美套餐",
+            subtitle: "适合每种类型旅行者的实惠数据套餐。无隐藏费用，随时取消。",
+            mostPopular: "最受欢迎",
+            selected: "已选择",
+            selectPlan: "选择套餐",
+            customPlan: "需要定制套餐？联系我们的销售团队",
+            contactSales: "联系销售"
+        },
+        agent: {
+            badge: "代理计划",
+            title: "成为代理，",
+            titleHighlight: "赚取更多",
+            subtitle: "加入数千名出租车司机、导游和企业家，通过向旅行者销售eSIM赚取额外收入。",
+            earnTitle: "赚取佣金",
+            earnDesc: "每笔eSIM销售赚取15-25%的佣金",
+            payoutsTitle: "即时付款",
+            payoutsDesc: "直接支付到您的钱包或移动钱包账户",
+            appTitle: "易于使用的应用",
+            appDesc: "使用我们直观的代理应用程序在几秒钟内销售eSIM",
+            verifiedTitle: "认证代理",
+            verifiedDesc: "获得官方代理身份和营销材料",
+            becomeAgent: "成为代理",
+            agentLogin: "代理登录",
+            stat1: "活跃代理",
+            stat2: "已支付佣金",
+            stat3: "国家"
+        },
+        testimonials: {
+            badge: "推荐",
+            title: "受到",
+            titleHighlight: "全球旅行者的喜爱",
+            subtitle: "看看我们的客户和代理对他们体验的评价"
+        }
+    },
+    plans: {
+        title: "选择您的套餐",
+        subtitle: "为您的旅程找到完美的数据套餐",
+        filters: {
+            country: "国家",
+            dataAmount: "数据量",
+            duration: "期限",
+            all: "全部"
+        },
+        card: {
+            popular: "热门",
+            validity: "天",
+            selectPlan: "选择套餐",
+            details: "查看详情",
+            coverage: "覆盖范围",
+            data: "数据",
+            speed: "速度"
+        }
+    },
+    auth: {
+        login: {
+            title: "欢迎回来",
+            subtitle: "登录您的账户",
+            email: "电子邮件地址",
+            phone: "电话号码",
+            password: "密码",
+            loginButton: "登录",
+            forgotPassword: "忘记密码？",
+            noAccount: "没有账户？",
+            signUp: "注册",
+            emailTab: "电子邮件",
+            phoneTab: "电话",
+            requestOtp: "请求OTP",
+            verifyOtp: "验证OTP",
+            enterOtp: "输入OTP"
+        },
+        register: {
+            title: "创建账户",
+            subtitle: "立即加入我们",
+            name: "全名",
+            email: "电子邮件地址",
+            phone: "电话号码",
+            password: "密码",
+            confirmPassword: "确认密码",
+            registerButton: "创建账户",
+            haveAccount: "已有账户？",
+            signIn: "登录"
+        }
+    },
+    checkout: {
+        title: "完成您的订单",
+        customerInfo: "客户信息",
+        email: "电子邮件地址",
+        phone: "电话号码",
+        optional: "可选",
+        orderSummary: "订单摘要",
+        plan: "套餐",
+        country: "国家",
+        data: "数据",
+        validity: "有效期",
+        days: "天",
+        price: "价格",
+        total: "总计",
+        payNow: "立即支付",
+        securePayment: "由Stripe提供的安全支付"
+    },
+    profile: {
+        title: "我的个人资料",
+        personalInfo: "个人信息",
+        name: "姓名",
+        email: "电子邮件",
+        phone: "电话",
+        myOrders: "我的订单",
+        orderHistory: "订单历史",
+        noOrders: "暂无订单",
+        orderId: "订单号",
+        date: "日期",
+        status: "状态",
+        amount: "金额",
+        viewDetails: "查看详情"
+    },
+    admin: {
+        dashboard: "仪表板",
+        overview: "概览",
+        orders: "订单",
+        agents: "代理",
+        plans: "套餐",
+        settings: "设置",
+        totalRevenue: "总收入",
+        totalOrders: "订单",
+        activeAgents: "活跃代理",
+        countries: "国家",
+        fromLastMonth: "与上月相比",
+        revenueByCountry: "按国家收入",
+        orderStatus: "订单状态",
+        monthlyTrend: "月度收入趋势"
+    },
+    agent: {
+        dashboard: "代理仪表板",
+        createSale: "创建销售",
+        myOrders: "我的订单",
+        earnings: "收入",
+        wallet: "钱包",
+        requestPayout: "请求付款",
+        totalEarnings: "总收入",
+        availableBalance: "可用余额",
+        pendingCommission: "待处理佣金"
+    },
+    footer: {
+        description: "为全球旅行者提供即时eSIM激活。通过实惠的数据套餐在超过190个国家保持连接。",
+        contactSupport: "联系支持",
+        subscribe: "订阅我们的新闻通讯",
+        emailPlaceholder: "输入您的电子邮件",
+        product: "产品",
+        company: "公司",
+        forAgents: "代理专区",
+        support: "支持",
+        copyright: "保留所有权利。",
+        privacyPolicy: "隐私政策",
+        termsOfService: "服务条款",
+        cookiePolicy: "Cookie政策",
+        links: {
+            coverage: "覆盖范围",
+            pricing: "定价",
+            howItWorks: "如何运作",
+            devices: "eSIM兼容设备",
+            about: "关于我们",
+            blog: "博客",
+            careers: "职业",
+            press: "新闻资料",
+            becomeAgent: "成为代理",
+            agentLogin: "代理登录",
+            agentResources: "代理资源",
+            commission: "佣金结构",
+            helpCenter: "帮助中心",
+            contactUs: "联系我们",
+            faqs: "常见问题",
+            installGuide: "安装指南"
         }
     }
 };
@@ -2064,37 +2965,294 @@ __turbopack_context__.s([
 ]);
 const sw = {
     common: {
-        welcome: "Karibu",
-        login: "Ingia",
-        logout: "Toka",
-        register: "Jisajili",
-        email: "Barua pepe",
-        password: "Nenosiri",
-        submit: "Wasilisha",
-        cancel: "Ghairi",
-        save: "Hifadhi",
-        delete: "Futa",
-        edit: "Hariri",
-        view: "Tazama",
-        search: "Tafuta",
-        filter: "Chuja",
         loading: "Inapakia...",
         error: "Hitilafu",
-        success: "Mafanikio"
+        success: "Mafanikio",
+        save: "Hifadhi",
+        cancel: "Ghairi",
+        delete: "Futa",
+        edit: "Hariri",
+        search: "Tafuta",
+        filter: "Chuja",
+        viewDetails: "Tazama Maelezo",
+        close: "Funga",
+        confirm: "Thibitisha",
+        back: "Rudi",
+        next: "Ifuatayo",
+        submit: "Wasilisha",
+        or: "au"
     },
     nav: {
         home: "Nyumbani",
         plans: "Mipango",
         about: "Kuhusu",
         contact: "Wasiliana",
-        dashboard: "Dashibodi",
-        profile: "Wasifu"
+        login: "Ingia",
+        register: "Jisajili",
+        profile: "Wasifu",
+        logout: "Toka",
+        dashboard: "Dashibodi"
     },
     home: {
         hero: {
-            title: "Unganisha Ulimwengu",
-            subtitle: "eSIMs za Kimataifa kwa Wasafiri",
-            cta: "Tazama Mipango"
+            badge: "Uamilishaji wa Haraka",
+            typewriterText: "Kuwa Umeunganishwa Popote",
+            title: "Duniani Kote",
+            subtitle: "Mipango ya data ya eSIM ya papo hapo kwa nchi zaidi ya 190. Hakuna haja ya SIM ya kimwili. Amilisha katika sekunde na furahia muunganisho wa kimataifa bila matatizo popote unapoenda.",
+            browsePlans: "Angalia Mipango",
+            exploreCoverage: "Gundua Upatikanaji",
+            stat1Label: "Nchi",
+            stat2Label: "Wasafiri Wenye Furaha",
+            stat3Label: "Ukadiriaji wa Mtumiaji",
+            secureBadge: "Salama",
+            secureDesc: "Usimbaji wa vipande 256",
+            instantBadge: "Haraka",
+            instantDesc: "Uamilishaji wa dakika 2"
+        },
+        features: {
+            badge: "Kwa Nini Utuchague",
+            title: "Kila Kitu Unachohitaji kwa",
+            titleHighlight: "Safari Bila Matatizo",
+            subtitle: "Furahia muunganisho bila wasiwasi na vipengele vilivyoundwa kwa wasafiri wa kisasa",
+            instant: {
+                title: "Uamilishaji wa Haraka",
+                description: "Unganishwa katika chini ya dakika 2. Changanua msimbo wa QR na uanze kutumia data mara moja."
+            },
+            countries: {
+                title: "Nchi Zaidi ya 190",
+                description: "Upatikanaji wa kimataifa kwenye kontinenti zote. Jukwaa moja kwa mahitaji yako yote ya muunganisho wa safari."
+            },
+            secure: {
+                title: "Salama na ya Kuaminika",
+                description: "Usimbaji wa kiwango cha benki na wakati wa kuwa hai wa 99.9%. Data yako na faragha yako vinalindwa."
+            },
+            affordable: {
+                title: "Mipango ya Bei Nafuu",
+                description: "Bei za ushindani bila ada zilizofichwa. Lipa tu kwa unachohitaji."
+            },
+            management: {
+                title: "Usimamizi Rahisi",
+                description: "Simamia eSIM zako zote katika programu moja. Angalia matumizi, jaza tena, na badilisha mipango papo hapo."
+            },
+            support: {
+                title: "Msaada wa Saa 24/7",
+                description: "Msaada wa wateja usiku na mchana katika lugha nyingi. Tuko hapa kusaidia."
+            }
+        },
+        howItWorks: {
+            badge: "Mchakato Rahisi",
+            title: "Unganishwa katika",
+            titleHighlight: "Hatua 4 Rahisi",
+            subtitle: "Kutoka ununuzi hadi uamilishaji, tumefanya iwe rahisi sana",
+            step1Title: "Chagua Mpango Wako",
+            step1Desc: "Chagua marudio yako na uchague mpango kamili wa data kwa muda wa safari yako.",
+            step2Title: "Pokea Msimbo wa QR",
+            step2Desc: "Pata msimbo wako wa QR wa eSIM papo hapo kupitia barua pepe au programu baada ya malipo.",
+            step3Title: "Changanua na Uamilishe",
+            step3Desc: "Changanua msimbo wa QR katika mipangilio ya simu yako na uamilishe eSIM yako katika sekunde.",
+            step4Title: "Anza Kutumia",
+            step4Desc: "Umeunganishwa! Furahia data ya kasi kubwa popote unakosafiri."
+        },
+        countries: {
+            badge: "Upatikanaji wa Kimataifa",
+            title: "Unganisha katika",
+            titleHighlight: "Nchi Zaidi ya 190",
+            subtitle: "Kutoka miji yenye msongamano hadi maeneo ya mbali, baki umeunganishwa popote safari yako inakupeleka",
+            popularTitle: "Maeneo Maarufu",
+            viewAll: "Tazama Yote",
+            searchPlaceholder: "Tafuta nchi...",
+            allRegions: "Mikoa Yote",
+            showingResults: "Inaonyesha",
+            country: "nchi",
+            countries: "nchi",
+            plan: "mpango",
+            plans: "mipango",
+            exploreAll: "Gundua Nchi Zote",
+            loadingCountries: "Inapakia nchi..."
+        },
+        coverage: {
+            badge: "Upatikanaji wa Kimataifa",
+            title: "Inapatikana katika",
+            titleHighlight: "Nchi Zaidi ya 190",
+            subtitle: "Kutoka miji yenye msongamano hadi maeneo ya mbali, baki umeunganishwa kila mahali",
+            searchPlaceholder: "Tafuta nchi...",
+            viewAllCountries: "Tazama Nchi Zote"
+        },
+        pricing: {
+            badge: "Bei za Kubadilika",
+            title: "Chagua",
+            titleHighlight: "Mpango Wako Kamili",
+            subtitle: "Mipango ya data ya bei nafuu kwa kila aina ya msafiri. Hakuna ada zilizofichwa, futa wakati wowote.",
+            mostPopular: "Maarufu Zaidi",
+            selected: "Imechaguliwa",
+            selectPlan: "Chagua Mpango",
+            customPlan: "Unahitaji mpango maalum? Wasiliana na timu yetu ya mauzo",
+            contactSales: "Wasiliana na Mauzo"
+        },
+        agent: {
+            badge: "Programu ya Mawakala",
+            title: "Kuwa Wakala,",
+            titleHighlight: "Pata Zaidi",
+            subtitle: "Jiunge na maelfu ya madereva wa teksi, waongozaji wa utalii, na wajasiriamali wanaopata mapato ya ziada kwa kuuza eSIM kwa wasafiri.",
+            earnTitle: "Pata Tume",
+            earnDesc: "Pata tume ya 15-25% kwa kila mauzo ya eSIM unayofanya",
+            payoutsTitle: "Malipo ya Haraka",
+            payoutsDesc: "Pata malipo moja kwa moja kwenye pochi yako au akaunti ya pesa ya simu",
+            appTitle: "Programu Rahisi Kutumia",
+            appDesc: "Uza eSIM katika sekunde kwa programu yetu ya kielimu ya mawakala",
+            verifiedTitle: "Wakala Aliyethibitishwa",
+            verifiedDesc: "Pata hadhi ya wakala rasmi na nyenzo za uuzaji",
+            becomeAgent: "Kuwa Wakala",
+            agentLogin: "Kuingia kwa Wakala",
+            stat1: "Mawakala Hai",
+            stat2: "Imelipwa katika Tume",
+            stat3: "Nchi"
+        },
+        testimonials: {
+            badge: "Ushuhuda",
+            title: "Inapendwa na",
+            titleHighlight: "Wasafiri Duniani Kote",
+            subtitle: "Tazama wateja wetu na mawakala wanavyosema kuhusu uzoefu wao"
+        }
+    },
+    plans: {
+        title: "Chagua Mpango Wako",
+        subtitle: "Pata mpango kamili wa data kwa safari yako",
+        filters: {
+            country: "Nchi",
+            dataAmount: "Kiasi cha Data",
+            duration: "Muda",
+            all: "Yote"
+        },
+        card: {
+            popular: "Maarufu",
+            validity: "siku",
+            selectPlan: "Chagua Mpango",
+            details: "Tazama Maelezo",
+            coverage: "Upatikanaji",
+            data: "Data",
+            speed: "Kasi"
+        }
+    },
+    auth: {
+        login: {
+            title: "Karibu Tena",
+            subtitle: "Ingia kwenye akaunti yako",
+            email: "Anwani ya Barua Pepe",
+            phone: "Nambari ya Simu",
+            password: "Nenosiri",
+            loginButton: "Ingia",
+            forgotPassword: "Umesahau nenosiri?",
+            noAccount: "Huna akaunti?",
+            signUp: "Jisajili",
+            emailTab: "Barua Pepe",
+            phoneTab: "Simu",
+            requestOtp: "Omba OTP",
+            verifyOtp: "Thibitisha OTP",
+            enterOtp: "Weka OTP"
+        },
+        register: {
+            title: "Unda Akaunti",
+            subtitle: "Jiunge nasi leo",
+            name: "Jina Kamili",
+            email: "Anwani ya Barua Pepe",
+            phone: "Nambari ya Simu",
+            password: "Nenosiri",
+            confirmPassword: "Thibitisha Nenosiri",
+            registerButton: "Unda Akaunti",
+            haveAccount: "Tayari una akaunti?",
+            signIn: "Ingia"
+        }
+    },
+    checkout: {
+        title: "Kamilisha Agizo Lako",
+        customerInfo: "Taarifa za Mteja",
+        email: "Anwani ya Barua Pepe",
+        phone: "Nambari ya Simu",
+        optional: "si lazima",
+        orderSummary: "Muhtasari wa Agizo",
+        plan: "Mpango",
+        country: "Nchi",
+        data: "Data",
+        validity: "Uhalali",
+        days: "siku",
+        price: "Bei",
+        total: "Jumla",
+        payNow: "Lipa Sasa",
+        securePayment: "Malipo salama yanayoendeshwa na Stripe"
+    },
+    profile: {
+        title: "Wasifu Wangu",
+        personalInfo: "Taarifa Binafsi",
+        name: "Jina",
+        email: "Barua Pepe",
+        phone: "Simu",
+        myOrders: "Maagizo Yangu",
+        orderHistory: "Historia ya Maagizo",
+        noOrders: "Hakuna maagizo bado",
+        orderId: "Nambari ya Agizo",
+        date: "Tarehe",
+        status: "Hali",
+        amount: "Kiasi",
+        viewDetails: "Tazama Maelezo"
+    },
+    admin: {
+        dashboard: "Dashibodi",
+        overview: "Maelezo",
+        orders: "Maagizo",
+        agents: "Mawakala",
+        plans: "Mipango",
+        settings: "Mipangilio",
+        totalRevenue: "Mapato Jumla",
+        totalOrders: "Maagizo",
+        activeAgents: "Mawakala Hai",
+        countries: "Nchi",
+        fromLastMonth: "kutoka mwezi uliopita",
+        revenueByCountry: "Mapato kwa Nchi",
+        orderStatus: "Hali ya Agizo",
+        monthlyTrend: "Mwelekeo wa Mapato ya Kila Mwezi"
+    },
+    agent: {
+        dashboard: "Dashibodi ya Wakala",
+        createSale: "Unda Mauzo",
+        myOrders: "Maagizo Yangu",
+        earnings: "Mapato",
+        wallet: "Pochi",
+        requestPayout: "Omba Malipo",
+        totalEarnings: "Mapato Jumla",
+        availableBalance: "Salio Linalopo",
+        pendingCommission: "Tume Inayosubiri"
+    },
+    footer: {
+        description: "Uamilishaji wa eSIM wa papo hapo kwa wasafiri wa kimataifa. Baki umeunganishwa katika nchi zaidi ya 190 na mipango ya data ya bei nafuu.",
+        contactSupport: "Wasiliana na Msaada",
+        subscribe: "Jiandikishe kwenye jarida letu",
+        emailPlaceholder: "Weka barua pepe yako",
+        product: "Bidhaa",
+        company: "Kampuni",
+        forAgents: "Kwa Mawakala",
+        support: "Msaada",
+        copyright: "Haki zote zimehifadhiwa.",
+        privacyPolicy: "Sera ya Faragha",
+        termsOfService: "Masharti ya Huduma",
+        cookiePolicy: "Sera ya Vidakuzi",
+        links: {
+            coverage: "Upatikanaji",
+            pricing: "Bei",
+            howItWorks: "Jinsi Inavyofanya Kazi",
+            devices: "Vifaa Vinavyoendana na eSIM",
+            about: "Kuhusu Sisi",
+            blog: "Blogu",
+            careers: "Kazi",
+            press: "Vifurushi vya Habari",
+            becomeAgent: "Kuwa Wakala",
+            agentLogin: "Kuingia kwa Wakala",
+            agentResources: "Rasilimali za Mawakala",
+            commission: "Muundo wa Tume",
+            helpCenter: "Kituo cha Msaada",
+            contactUs: "Wasiliana Nasi",
+            faqs: "Maswali Yanayoulizwa Sana",
+            installGuide: "Mwongozo wa Kusakinisha"
         }
     }
 };
@@ -2108,37 +3266,294 @@ __turbopack_context__.s([
 ]);
 const am = {
     common: {
-        welcome: "እንኳን ደህና መጡ",
-        login: "ግባ",
-        logout: "ውጣ",
-        register: "ተመዝገብ",
-        email: "ኢሜይል",
-        password: "የይለፍ ቃል",
-        submit: "ላክ",
-        cancel: "ሰርዝ",
-        save: "አስቀምጥ",
-        delete: "ሰርዝ",
-        edit: "አስተካክል",
-        view: "ተመልከት",
-        search: "ፈልግ",
-        filter: "አጣራ",
         loading: "በመጫን ላይ...",
         error: "ስህተት",
-        success: "ተሳክቷል"
+        success: "ተሳክቷል",
+        save: "አስቀምጥ",
+        cancel: "ሰርዝ",
+        delete: "ሰርዝ",
+        edit: "አስተካክል",
+        search: "ፈልግ",
+        filter: "አጣራ",
+        viewDetails: "ዝርዝር ይመልከቱ",
+        close: "ዝጋ",
+        confirm: "አረጋግጥ",
+        back: "ተመለስ",
+        next: "ቀጣይ",
+        submit: "ላክ",
+        or: "ወይም"
     },
     nav: {
         home: "መነሻ",
-        plans: "ዕቅዶች",
+        plans: "እቅዶች",
         about: "ስለእኛ",
         contact: "አግኙን",
-        dashboard: "ዳሽቦርድ",
-        profile: "መገለጫ"
+        login: "ግባ",
+        register: "ተመዝገብ",
+        profile: "መገለጫ",
+        logout: "ውጣ",
+        dashboard: "ዳሽቦርድ"
     },
     home: {
         hero: {
-            title: "ከአለም ጋር ተገናኝ",
-            subtitle: "ለተጓዦች ዓለም አቀፍ eSIMs",
-            cta: "ዕቅዶችን ይመልከቱ"
+            badge: "ፈጣን ማግበሪያ",
+            typewriterText: "በየትኛውም ቦታ ተገናኝ",
+            title: "በዓለም ዙሪያ",
+            subtitle: "ከ190 በላይ አገሮች ለፈጣን eSIM መረጃ እቅዶች። የአካል SIM አያስፈልግም። በሰከንዶች ውስጥ ያግብሩ እና ያለችግር ዓለም አቀፍ ግንኙነት ያግኙ።",
+            browsePlans: "እቅዶችን ያስሱ",
+            exploreCoverage: "ሽፋንን ያስሱ",
+            stat1Label: "አገሮች",
+            stat2Label: "ደስተኛ ተጓዦች",
+            stat3Label: "የተጠቃሚ ደረጃ",
+            secureBadge: "ደህንነቱ የተጠበቀ",
+            secureDesc: "256-ቢት ምስጠራ",
+            instantBadge: "ፈጣን",
+            instantDesc: "በ2 ደቂቃ ማግበር"
+        },
+        features: {
+            badge: "ለምን እኛን ይምረጡ",
+            title: "የሚፈልጉት ሁሉ",
+            titleHighlight: "ለቀልጣፋ ጉዞ",
+            subtitle: "ለዘመናዊ ተጓዦች የተነደፉ ባህሪያት ያለችግር ግንኙነት ይለማመዱ",
+            instant: {
+                title: "ፈጣን ማግበሪያ",
+                description: "በ2 ደቂቃ ውስጥ ይገናኙ። QR ኮድን ይቃኙ እና ወዲያውኑ መረጃ መጠቀም ይጀምሩ።"
+            },
+            countries: {
+                title: "ከ190+ አገሮች",
+                description: "በሁሉም አህጉራት ዓለም አቀፍ ሽፋን። ለሁሉም የጉዞ ግንኙነት ፍላጎቶችዎ አንድ መድረክ።"
+            },
+            secure: {
+                title: "ደህንነቱ የተጠበቀ እና አስተማማኝ",
+                description: "የባንክ ደረጃ ምስጠራ እና 99.9% የመስራት ጊዜ። የእርስዎ መረጃ እና ግላዊነት የተጠበቀ ነው።"
+            },
+            affordable: {
+                title: "ተመጣጣኝ እቅዶች",
+                description: "ተወዳዳሪ ዋጋዎች ያለተደበቁ ክፍያዎች። የሚፈልጉትን ብቻ ይክፈሉ።"
+            },
+            management: {
+                title: "ቀላል አስተዳደር",
+                description: "ሁሉንም eSIMs በአንድ መተግበሪያ ያስተዳድሩ። አጠቃቀምን ይፈትሹ፣ እንደገና ይሙሉ እና ወዲያውኑ እቅዶችን ይቀይሩ።"
+            },
+            support: {
+                title: "24/7 ድጋፍ",
+                description: "በበርካታ ቋንቋዎች የ24 ሰዓት የደንበኛ ድጋፍ። እኛ እዚህ ለመርዳት ነን።"
+            }
+        },
+        howItWorks: {
+            badge: "ቀላል ሂደት",
+            title: "ይገናኙ በ",
+            titleHighlight: "4 ቀላል ደረጃዎች",
+            subtitle: "ከግዢ እስከ ማግበር ድረስ፣ በጣም ቀላል አድርገናል",
+            step1Title: "እቅድዎን ይምረጡ",
+            step1Desc: "መድረሻዎን ይምረጡ እና ለጉዞዎ ጊዜ ፍጹም የመረጃ እቅድ ይምረጡ።",
+            step2Title: "QR ኮድ ይቀበሉ",
+            step2Desc: "ከክፍያ በኋላ የእርስዎን eSIM QR ኮድ ወዲያውኑ በኢሜይል ወይም በመተግበሪያ ያግኙ።",
+            step3Title: "ይቃኙ እና ያግብሩ",
+            step3Desc: "በስልክዎ ቅንብሮች ውስጥ QR ኮድን ይቃኙ እና eSIMዎን በሰከንዶች ያግብሩ።",
+            step4Title: "ማዘዋወር ይጀምሩ",
+            step4Desc: "ተገናኝተዋል! ወደ የትኛውም ቦታ በሚጓዙበት ጊዜ ከፍተኛ ፍጥነት መረጃ ያግኙ።"
+        },
+        countries: {
+            badge: "ዓለም አቀፍ ሽፋን",
+            title: "ይገናኙ በ",
+            titleHighlight: "ከ190+ አገሮች",
+            subtitle: "ከተንቀሳቃሽ ከተሞች እስከ ሩቅ መድረሻዎች፣ ጉዞዎ የት እንደሚወስድዎ ተገናኝተው ይቆዩ",
+            popularTitle: "ታዋቂ መድረሻዎች",
+            viewAll: "ሁሉንም ይመልከቱ",
+            searchPlaceholder: "አገሮችን ይፈልጉ...",
+            allRegions: "ሁሉም ክልሎች",
+            showingResults: "በማሳየት ላይ",
+            country: "አገር",
+            countries: "አገሮች",
+            plan: "እቅድ",
+            plans: "እቅዶች",
+            exploreAll: "ሁሉንም አገሮች ያስሱ",
+            loadingCountries: "አገሮች በመጫን ላይ..."
+        },
+        coverage: {
+            badge: "ዓለም አቀፍ ሽፋን",
+            title: "ይገኛል በ",
+            titleHighlight: "ከ190+ አገሮች",
+            subtitle: "ከተንቀሳቃሽ ከተሞች እስከ ሩቅ መድረሻዎች፣ በየትኛውም ቦታ ተገናኝተው ይቆዩ",
+            searchPlaceholder: "አገር ይፈልጉ...",
+            viewAllCountries: "ሁሉንም አገሮች ይመልከቱ"
+        },
+        pricing: {
+            badge: "ተለዋዋጭ ዋጋ",
+            title: "ይምረጡ",
+            titleHighlight: "ፍጹም እቅድዎን",
+            subtitle: "ለእያንዳንዱ አይነት ተጓዥ ተመጣጣኝ የመረጃ እቅዶች። ያልተደበቁ ክፍያዎች፣ በማንኛውም ጊዜ ይሰርዙ።",
+            mostPopular: "በጣም ታዋቂ",
+            selected: "ተመርጧል",
+            selectPlan: "እቅድ ይምረጡ",
+            customPlan: "ብጁ እቅድ ያስፈልግዎታል? የሽያጭ ቡድናችንን ያነጋግሩ",
+            contactSales: "ሽያጭን ያነጋግሩ"
+        },
+        agent: {
+            badge: "የወኪል ፕሮግራም",
+            title: "ወኪል ይሁኑ፣",
+            titleHighlight: "የበለጠ ያግኙ",
+            subtitle: "ለተጓዦች eSIMዎችን በመሸጥ ተጨማሪ ገቢ የሚያገኙ በሺዎች የሚቆጠሩ የታክሲ ሹፌሮች፣ የቱሪስት መመሪያዎች እና ሥራ ፈጣሪዎች ይቀላቀሉ።",
+            earnTitle: "ኮሚሽን ያግኙ",
+            earnDesc: "በሚሸጡት እያንዳንዱ eSIM ሽያጭ 15-25% ኮሚሽን ያግኙ",
+            payoutsTitle: "ፈጣን ክፍያዎች",
+            payoutsDesc: "በቀጥታ ወደ ቦርሳዎ ወይም የሞባይል ገንዘብ መለያዎ ይከፈሉ",
+            appTitle: "ለመጠቀም ቀላል መተግበሪያ",
+            appDesc: "በእኛ ቀላል የወኪል መተግበሪያ በሰከንዶች eSIMዎችን ይሽጡ",
+            verifiedTitle: "የተረጋገጠ ወኪል",
+            verifiedDesc: "ይፋዊ የወኪል ሁኔታ እና የግብይት ቁሳቁሶችን ያግኙ",
+            becomeAgent: "ወኪል ይሁኑ",
+            agentLogin: "የወኪል መግቢያ",
+            stat1: "ንቁ ወኪሎች",
+            stat2: "በኮሚሽን የተከፈለ",
+            stat3: "አገሮች"
+        },
+        testimonials: {
+            badge: "ምስክርነቶች",
+            title: "የተወደደ በ",
+            titleHighlight: "በዓለም ዙሪያ ተጓዦች",
+            subtitle: "ደንበኞቻችን እና ወኪሎቻችን ስለ ልምዳቸው የሚሉትን ይመልከቱ"
+        }
+    },
+    plans: {
+        title: "እቅድዎን ይምረጡ",
+        subtitle: "ለጉዞዎ ፍጹም የመረጃ እቅድ ያግኙ",
+        filters: {
+            country: "አገር",
+            dataAmount: "የመረጃ መጠን",
+            duration: "ጊዜ",
+            all: "ሁሉም"
+        },
+        card: {
+            popular: "ታዋቂ",
+            validity: "ቀናት",
+            selectPlan: "እቅድ ይምረጡ",
+            details: "ዝርዝር ይመልከቱ",
+            coverage: "ሽፋን",
+            data: "መረጃ",
+            speed: "ፍጥነት"
+        }
+    },
+    auth: {
+        login: {
+            title: "እንኳን ደህና መጡ",
+            subtitle: "ወደ መለያዎ ይግቡ",
+            email: "የኢሜይል አድራሻ",
+            phone: "የስልክ ቁጥር",
+            password: "የይለፍ ቃል",
+            loginButton: "ግባ",
+            forgotPassword: "የይለፍ ቃል ረስተዋል?",
+            noAccount: "መለያ የለዎትም?",
+            signUp: "ይመዝገቡ",
+            emailTab: "ኢሜይል",
+            phoneTab: "ስልክ",
+            requestOtp: "OTP ይጠይቁ",
+            verifyOtp: "OTP ያረጋግጡ",
+            enterOtp: "OTP ያስገቡ"
+        },
+        register: {
+            title: "መለያ ይፍጠሩ",
+            subtitle: "ዛሬ ይቀላቀሉን",
+            name: "ሙሉ ስም",
+            email: "የኢሜይል አድራሻ",
+            phone: "የስልክ ቁጥር",
+            password: "የይለፍ ቃል",
+            confirmPassword: "የይለፍ ቃል ያረጋግጡ",
+            registerButton: "መለያ ይፍጠሩ",
+            haveAccount: "አስቀድመው መለያ አለዎት?",
+            signIn: "ይግቡ"
+        }
+    },
+    checkout: {
+        title: "ትዕዛዝዎን ያጠናቅቁ",
+        customerInfo: "የደንበኛ መረጃ",
+        email: "የኢሜይል አድራሻ",
+        phone: "የስልክ ቁጥር",
+        optional: "አማራጭ",
+        orderSummary: "የትዕዛዝ ማጠቃለያ",
+        plan: "እቅድ",
+        country: "አገር",
+        data: "መረጃ",
+        validity: "ትክክለኛነት",
+        days: "ቀናት",
+        price: "ዋጋ",
+        total: "ጠቅላላ",
+        payNow: "አሁን ይክፈሉ",
+        securePayment: "በStripe የሚደገፍ ደህንነቱ የተጠበቀ ክፍያ"
+    },
+    profile: {
+        title: "የእኔ መገለጫ",
+        personalInfo: "የግል መረጃ",
+        name: "ስም",
+        email: "ኢሜይል",
+        phone: "ስልክ",
+        myOrders: "የእኔ ትዕዛዞች",
+        orderHistory: "የትዕዛዝ ታሪክ",
+        noOrders: "እስካሁን ትዕዛዞች የሉም",
+        orderId: "የትዕዛዝ መታወቂያ",
+        date: "ቀን",
+        status: "ሁኔታ",
+        amount: "መጠን",
+        viewDetails: "ዝርዝር ይመልከቱ"
+    },
+    admin: {
+        dashboard: "ዳሽቦርድ",
+        overview: "አጠቃላይ እይታ",
+        orders: "ትዕዛዞች",
+        agents: "ወኪሎች",
+        plans: "እቅዶች",
+        settings: "ቅንብሮች",
+        totalRevenue: "ጠቅላላ ገቢ",
+        totalOrders: "ትዕዛዞች",
+        activeAgents: "ንቁ ወኪሎች",
+        countries: "አገሮች",
+        fromLastMonth: "ካለፈው ወር",
+        revenueByCountry: "በአገር ገቢ",
+        orderStatus: "የትዕዛዝ ሁኔታ",
+        monthlyTrend: "ወርሃዊ የገቢ አዝማሚያ"
+    },
+    agent: {
+        dashboard: "የወኪል ዳሽቦርድ",
+        createSale: "ሽያጭ ይፍጠሩ",
+        myOrders: "የእኔ ትዕዛዞች",
+        earnings: "ገቢዎች",
+        wallet: "ቦርሳ",
+        requestPayout: "ክፍያ ይጠይቁ",
+        totalEarnings: "ጠቅላላ ገቢዎች",
+        availableBalance: "ያለ ቀሪ ሂሳብ",
+        pendingCommission: "በመጠባበቅ ላይ ያለ ኮሚሽን"
+    },
+    footer: {
+        description: "ለዓለም አቀፍ ተጓዦች ፈጣን የeSIM ማግበሪያ። በተመጣጣኝ የመረጃ እቅዶች በ190+ አገሮች ተገናኝተው ይቆዩ።",
+        contactSupport: "ድጋፍን ያነጋግሩ",
+        subscribe: "ለጋዜጣችን ይመዝገቡ",
+        emailPlaceholder: "ኢሜይልዎን ያስገቡ",
+        product: "ምርት",
+        company: "ድርጅት",
+        forAgents: "ለወኪሎች",
+        support: "ድጋፍ",
+        copyright: "ሁሉም መብቶች የተጠበቁ ናቸው።",
+        privacyPolicy: "የግላዊነት ፖሊሲ",
+        termsOfService: "የአገልግሎት ውሎች",
+        cookiePolicy: "የኩኪ ፖሊሲ",
+        links: {
+            coverage: "ሽፋን",
+            pricing: "ዋጋ",
+            howItWorks: "እንዴት እንደሚሰራ",
+            devices: "eSIM ተኮር መሳሪያዎች",
+            about: "ስለእኛ",
+            blog: "ብሎግ",
+            careers: "ሙያዎች",
+            press: "የፕሬስ ኪት",
+            becomeAgent: "ወኪል ይሁኑ",
+            agentLogin: "የወኪል መግቢያ",
+            agentResources: "የወኪል ግብዓቶች",
+            commission: "የኮሚሽን መዋቅር",
+            helpCenter: "የእገዛ ማዕከል",
+            contactUs: "አግኙን",
+            faqs: "ተደጋጋሚ ጥያቄዎች",
+            installGuide: "የመጫኛ መመሪያ"
         }
     }
 };
