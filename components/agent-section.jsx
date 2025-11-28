@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Users, Wallet, TrendingUp, Smartphone, ArrowRight, BadgeCheck } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 const benefits = [
   {
@@ -69,12 +70,14 @@ export function AgentSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-gradient-to-r from-primary to-accent hover:shadow-lg group">
-                Become an Agent
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <Button size="lg" className="bg-gradient-to-r from-primary to-accent hover:shadow-lg group" asChild>
+                <Link href="/agent/register">
+                  Become an Agent
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </Button>
-              <Button size="lg" variant="outline">
-                Learn More
+              <Button size="lg" variant="outline" asChild>
+                <Link href="/agent/login">Agent Login</Link>
               </Button>
             </div>
 

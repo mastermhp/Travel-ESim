@@ -8,18 +8,58 @@ import { Label } from "@/components/ui/label"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Lock, Mail, ArrowRight } from "lucide-react"
+import { useToast } from "@/hooks/use-toast"
 
 export default function AgentLogin() {
   const router = useRouter()
+  const { toast } = useToast()
   const [loading, setLoading] = useState(false)
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  })
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault()
     setLoading(true)
-    // Mock login - redirect to agent dashboard
-    setTimeout(() => {
+
+    console.log("[v0] Agent login attempt:", formData.email)
+
+    try {
+      const res = await fetch("/api/v1/agent/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await res.json()
+      console.log("[v0] Login response:", data)
+
+      if (!res.ok) {
+        throw new Error(data.error || "Login failed")
+      }
+
+      // Store agent token in localStorage
+      localStorage.setItem("agentToken", data.token)
+      localStorage.setItem("agentData", JSON.stringify(data.agent))
+
+      toast({
+        title: "Login Successful",
+        description: `Welcome back, ${data.agent.name}!`,
+      })
+
+      // Redirect to agent dashboard
       router.push("/agent")
-    }, 1000)
+    } catch (error) {
+      console.error("[v0] Login error:", error)
+      toast({
+        variant: "destructive",
+        title: "Login Failed",
+        description: error.message || "Invalid email or password",
+      })
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -44,10 +84,18 @@ export default function AgentLogin() {
           <CardContent>
             <form onSubmit={handleLogin} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Email or Agent ID</Label>
+                <Label htmlFor="email">Email</Label>
                 <div className="relative">
                   <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                  <Input id="email" type="text" placeholder="agent@example.com or AG-12345" className="pl-9" required />
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="agent@example.com"
+                    className="pl-9"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  />
                 </div>
               </div>
 
@@ -60,7 +108,15 @@ export default function AgentLogin() {
                 </div>
                 <div className="relative">
                   <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                  <Input id="password" type="password" placeholder="Enter your password" className="pl-9" required />
+                  <Input
+                    id="password"
+                    type="password"
+                    placeholder="Enter your password"
+                    className="pl-9"
+                    required
+                    value={formData.password}
+                    onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                  />
                 </div>
               </div>
 
