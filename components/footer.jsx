@@ -4,35 +4,38 @@ import { Globe, Facebook, Twitter, Instagram, Linkedin, Mail, Sparkles } from "l
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-
-const footerLinks = {
-  product: [
-    { label: "Coverage", href: "#coverage" },
-    { label: "Pricing", href: "#plans" },
-    { label: "How It Works", href: "#how-it-works" },
-    { label: "eSIM Compatible Devices", href: "#" },
-  ],
-  company: [
-    { label: "About Us", href: "#" },
-    { label: "Blog", href: "#" },
-    { label: "Careers", href: "#" },
-    { label: "Press Kit", href: "#" },
-  ],
-  agents: [
-    { label: "Become an Agent", href: "#agents" },
-    { label: "Agent Login", href: "#" },
-    { label: "Agent Resources", href: "#" },
-    { label: "Commission Structure", href: "#" },
-  ],
-  support: [
-    { label: "Help Center", href: "#" },
-    { label: "Contact Us", href: "#" },
-    { label: "FAQs", href: "#" },
-    { label: "Installation Guide", href: "#" },
-  ],
-}
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export function Footer() {
+  const { t } = useLanguage()
+
+  const footerLinks = {
+    product: [
+      { label: t("footer.links.coverage"), href: "#coverage" },
+      { label: t("footer.links.pricing"), href: "#plans" },
+      { label: t("footer.links.howItWorks"), href: "#how-it-works" },
+      { label: t("footer.links.devices"), href: "#" },
+    ],
+    company: [
+      { label: t("footer.links.about"), href: "#" },
+      { label: t("footer.links.blog"), href: "#" },
+      { label: t("footer.links.careers"), href: "#" },
+      { label: t("footer.links.press"), href: "#" },
+    ],
+    agents: [
+      { label: t("footer.links.becomeAgent"), href: "#agents" },
+      { label: t("footer.links.agentLogin"), href: "#" },
+      { label: t("footer.links.agentResources"), href: "#" },
+      { label: t("footer.links.commission"), href: "#" },
+    ],
+    support: [
+      { label: t("footer.links.helpCenter"), href: "#" },
+      { label: t("footer.links.contactUs"), href: "#" },
+      { label: t("footer.links.faqs"), href: "#" },
+      { label: t("footer.links.installGuide"), href: "#" },
+    ],
+  }
+
   return (
     <footer className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-black border-t border-slate-800 overflow-hidden">
       {/* Animated background elements */}
@@ -53,15 +56,13 @@ export function Footer() {
                 Travel Esim
               </span>
             </Link>
-            <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
-              Instant eSIM activation for global travelers. Stay connected in 190+ countries with affordable data plans.
-            </p>
+            <p className="text-sm text-slate-400 leading-relaxed max-w-sm">{t("footer.description")}</p>
 
             {/* Contact Support with gradient accent */}
             <div className="space-y-3 p-4 rounded-xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 backdrop-blur-sm">
               <div className="flex items-center gap-2">
                 <Sparkles className="h-4 w-4 text-primary" />
-                <p className="font-semibold text-white text-sm">Contact Support</p>
+                <p className="font-semibold text-white text-sm">{t("footer.contactSupport")}</p>
               </div>
               <div className="space-y-2 text-sm text-slate-300">
                 <p className="flex items-center gap-2">
@@ -79,12 +80,12 @@ export function Footer() {
             <div className="space-y-3">
               <h3 className="text-sm font-semibold text-white flex items-center gap-2">
                 <Mail className="h-4 w-4 text-accent" />
-                Subscribe to our newsletter
+                {t("footer.subscribe")}
               </h3>
               <div className="flex gap-2">
                 <Input
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder={t("footer.emailPlaceholder")}
                   className="bg-slate-800/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-primary focus:ring-primary/20"
                 />
                 <Button
@@ -114,7 +115,7 @@ export function Footer() {
           {/* Links Columns with enhanced styling */}
           <div className="space-y-4">
             <h3 className="text-sm font-semibold text-white relative inline-block">
-              Product
+              {t("footer.product")}
               <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-gradient-to-r from-primary to-transparent" />
             </h3>
             <ul className="space-y-3">
@@ -134,7 +135,7 @@ export function Footer() {
 
           <div className="space-y-4">
             <h3 className="text-sm font-semibold text-white relative inline-block">
-              Company
+              {t("footer.company")}
               <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-gradient-to-r from-accent to-transparent" />
             </h3>
             <ul className="space-y-3">
@@ -154,7 +155,7 @@ export function Footer() {
 
           <div className="space-y-4">
             <h3 className="text-sm font-semibold text-white relative inline-block">
-              For Agents
+              {t("footer.forAgents")}
               <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-gradient-to-r from-primary to-transparent" />
             </h3>
             <ul className="space-y-3">
@@ -174,7 +175,7 @@ export function Footer() {
 
           <div className="space-y-4">
             <h3 className="text-sm font-semibold text-white relative inline-block">
-              Support
+              {t("footer.support")}
               <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-gradient-to-r from-accent to-transparent" />
             </h3>
             <ul className="space-y-3">
@@ -196,17 +197,17 @@ export function Footer() {
         {/* Bottom Bar with gradient border */}
         <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-slate-500">
-            © 2025 <span className="text-primary font-medium">Travel Esim</span>. All rights reserved.
+            © 2025 <span className="text-primary font-medium">Travel Esim</span>. {t("footer.copyright")}
           </p>
           <div className="flex gap-6 text-sm">
             <Link href="#" className="text-slate-500 hover:text-primary transition-colors duration-200">
-              Privacy Policy
+              {t("footer.privacyPolicy")}
             </Link>
             <Link href="#" className="text-slate-500 hover:text-primary transition-colors duration-200">
-              Terms of Service
+              {t("footer.termsOfService")}
             </Link>
             <Link href="#" className="text-slate-500 hover:text-primary transition-colors duration-200">
-              Cookie Policy
+              {t("footer.cookiePolicy")}
             </Link>
           </div>
         </div>

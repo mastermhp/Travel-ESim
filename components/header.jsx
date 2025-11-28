@@ -14,12 +14,15 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { useRouter } from "next/navigation"
+import { LanguageSwitcher } from "@/components/LanguageSwitcher"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [user, setUser] = useState(null)
   const router = useRouter()
+  const { t } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,20 +83,21 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <Link href="/#coverage" className="text-sm font-medium hover:text-primary transition-colors">
-              Coverage
+              {t("nav.home")}
             </Link>
             <Link href="/plans" className="text-sm font-medium hover:text-primary transition-colors">
-              Plans
+              {t("nav.plans")}
             </Link>
             <Link href="/#how-it-works" className="text-sm font-medium hover:text-primary transition-colors">
-              How It Works
+              {t("nav.about")}
             </Link>
             <Link href="/#agents" className="text-sm font-medium hover:text-primary transition-colors">
-              For Agents
+              {t("nav.contact")}
             </Link>
           </nav>
 
           <div className="hidden md:flex items-center gap-3">
+            <LanguageSwitcher />
             {user ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -118,35 +122,35 @@ export function Header() {
                   <DropdownMenuItem asChild>
                     <Link href="/profile" className="cursor-pointer">
                       <User className="mr-2 h-4 w-4" />
-                      <span>Profile</span>
+                      <span>{t("nav.profile")}</span>
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link href="/profile?tab=orders" className="cursor-pointer">
                       <Package className="mr-2 h-4 w-4" />
-                      <span>My Orders</span>
+                      <span>{t("profile.myOrders")}</span>
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link href="/profile?tab=settings" className="cursor-pointer">
                       <Settings className="mr-2 h-4 w-4" />
-                      <span>Settings</span>
+                      <span>{t("admin.settings")}</span>
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={handleLogout} className="cursor-pointer text-red-600">
                     <LogOut className="mr-2 h-4 w-4" />
-                    <span>Log out</span>
+                    <span>{t("nav.logout")}</span>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
               <>
                 <Button variant="ghost" size="sm" asChild>
-                  <Link href="/auth/login">Sign In</Link>
+                  <Link href="/auth/login">{t("nav.login")}</Link>
                 </Button>
                 <Button size="sm" className="bg-accent hover:bg-accent/90" asChild>
-                  <Link href="/auth/register">Get Started</Link>
+                  <Link href="/auth/register">{t("nav.register")}</Link>
                 </Button>
               </>
             )}
@@ -166,33 +170,36 @@ export function Header() {
       {isMobileMenuOpen && (
         <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-lg">
           <div className="container mx-auto px-4 py-4 space-y-3">
+            <div className="px-4 py-2">
+              <LanguageSwitcher />
+            </div>
             <Link
               href="/#coverage"
               className="block px-4 py-2 text-sm font-medium hover:bg-secondary rounded-lg transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Coverage
+              {t("nav.home")}
             </Link>
             <Link
               href="/plans"
               className="block px-4 py-2 text-sm font-medium hover:bg-secondary rounded-lg transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Plans
+              {t("nav.plans")}
             </Link>
             <Link
               href="/#how-it-works"
               className="block px-4 py-2 text-sm font-medium hover:bg-secondary rounded-lg transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              How It Works
+              {t("nav.about")}
             </Link>
             <Link
               href="/#agents"
               className="block px-4 py-2 text-sm font-medium hover:bg-secondary rounded-lg transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              For Agents
+              {t("nav.contact")}
             </Link>
             {user ? (
               <>
@@ -207,7 +214,7 @@ export function Header() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <User className="inline-block mr-2 h-4 w-4" />
-                  Profile
+                  {t("nav.profile")}
                 </Link>
                 <Link
                   href="/profile?tab=orders"
@@ -215,7 +222,7 @@ export function Header() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <Package className="inline-block mr-2 h-4 w-4" />
-                  My Orders
+                  {t("profile.myOrders")}
                 </Link>
                 <button
                   onClick={() => {
@@ -225,16 +232,16 @@ export function Header() {
                   className="w-full text-left block px-4 py-2 text-sm font-medium text-red-600 hover:bg-secondary rounded-lg transition-colors"
                 >
                   <LogOut className="inline-block mr-2 h-4 w-4" />
-                  Log out
+                  {t("nav.logout")}
                 </button>
               </>
             ) : (
               <div className="pt-3 space-y-2">
                 <Button variant="outline" size="sm" className="w-full bg-transparent" asChild>
-                  <Link href="/auth/login">Sign In</Link>
+                  <Link href="/auth/login">{t("nav.login")}</Link>
                 </Button>
                 <Button size="sm" className="w-full bg-accent hover:bg-accent/90" asChild>
-                  <Link href="/auth/register">Get Started</Link>
+                  <Link href="/auth/register">{t("nav.register")}</Link>
                 </Button>
               </div>
             )}

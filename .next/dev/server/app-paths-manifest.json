@@ -21,5 +21,8 @@
   "/api/v1/agent/orders/route": "app/api/v1/agent/orders/route.js",
   "/api/v1/agent/settlement/request/route": "app/api/v1/agent/settlement/request/route.js",
   "/api/v1/agent/wallet/route": "app/api/v1/agent/wallet/route.js",
-  "/api/v1/plans/route": "app/api/v1/plans/route.js"
+  "/api/v1/countries/route": "app/api/v1/countries/route.js",
+  "/api/v1/plans/route": "app/api/v1/plans/route.js",
+  "/api/v1/settings/languages/route": "app/api/v1/settings/languages/route.js",
+  "/page": "app/page.js"
 }

@@ -2,41 +2,44 @@
 
 import { Zap, Shield, Globe, Smartphone, DollarSign, Headphones } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-
-const features = [
-  {
-    icon: Zap,
-    title: "Instant Activation",
-    description: "Get connected in under 2 minutes. Scan QR code and start using data immediately.",
-  },
-  {
-    icon: Globe,
-    title: "190+ Countries",
-    description: "Global coverage across all continents. One platform for all your travel connectivity needs.",
-  },
-  {
-    icon: Shield,
-    title: "Secure & Reliable",
-    description: "Bank-level encryption and 99.9% uptime. Your data and privacy are protected.",
-  },
-  {
-    icon: DollarSign,
-    title: "Affordable Plans",
-    description: "Competitive pricing with no hidden fees. Pay only for what you need.",
-  },
-  {
-    icon: Smartphone,
-    title: "Easy Management",
-    description: "Manage all your eSIMs in one app. Check usage, top up, and switch plans instantly.",
-  },
-  {
-    icon: Headphones,
-    title: "24/7 Support",
-    description: "Round-the-clock customer support in multiple languages. We are here to help.",
-  },
-]
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export function Features() {
+  const { t } = useLanguage()
+
+  const features = [
+    {
+      icon: Zap,
+      title: t("home.features.instant.title"),
+      description: t("home.features.instant.description"),
+    },
+    {
+      icon: Globe,
+      title: t("home.features.countries.title"),
+      description: t("home.features.countries.description"),
+    },
+    {
+      icon: Shield,
+      title: t("home.features.secure.title"),
+      description: t("home.features.secure.description"),
+    },
+    {
+      icon: DollarSign,
+      title: t("home.features.affordable.title"),
+      description: t("home.features.affordable.description"),
+    },
+    {
+      icon: Smartphone,
+      title: t("home.features.management.title"),
+      description: t("home.features.management.description"),
+    },
+    {
+      icon: Headphones,
+      title: t("home.features.support.title"),
+      description: t("home.features.support.description"),
+    },
+  ]
+
   return (
     <section className="relative py-20 lg:py-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
       {/* Animated Background Grid */}
@@ -138,18 +141,16 @@ export function Features() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full border border-primary/30 backdrop-blur-sm shadow-[0_0_20px_rgba(6,182,212,0.2)]">
-            <span className="text-sm font-medium text-primary">Why Choose Us</span>
+            <span className="text-sm font-medium text-primary">{t("home.features.badge")}</span>
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance text-white">
-            Everything You Need for{" "}
+            {t("home.features.title")}{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Seamless Travel
+              {t("home.features.titleHighlight")}
             </span>
           </h2>
-          <p className="text-lg text-slate-300 text-pretty">
-            Experience hassle-free connectivity with features designed for modern travelers
-          </p>
+          <p className="text-lg text-slate-300 text-pretty">{t("home.features.subtitle")}</p>
         </div>
 
         {/* Features Grid */}

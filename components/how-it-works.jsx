@@ -1,44 +1,39 @@
 "use client"
 
-import { QrCode, Download, Zap, Check, Scan, Network, TowerControl, TowerControlIcon, RadioTower, LucideAperture, PrinterIcon, LocateOffIcon, LocateFixed } from "lucide-react"
+import { QrCode, Download, Zap, Check } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-
-const steps = [
-  {
-    number: "01",
-    icon: LocateFixed,
-    title: "Choose Your Plan",
-    description: "Select your destination and pick the perfect data plan for your trip duration.",
-    gradient: "from-violet-500 to-purple-600",
-    glowColor: "rgba(139, 92, 246, 0.5)",
-  },
-  {
-    number: "02",
-    icon: QrCode,
-    title: "Receive QR Code",
-    description: "Get your eSIM QR code instantly via email or in the app after payment.",
-    gradient: "from-cyan-500 to-blue-600",
-    glowColor: "rgba(6, 182, 212, 0.5)",
-  },
-  {
-    number: "03",
-    icon: Scan,
-    title: "Scan & Activate",
-    description: "Scan the QR code in your phone settings and activate your eSIM in seconds.",
-    gradient: "from-pink-500 to-rose-600",
-    glowColor: "rgba(236, 72, 153, 0.5)",
-  },
-  {
-    number: "04",
-    icon: RadioTower,
-    title: "Start Roaming",
-    description: "You are connected! Enjoy high-speed data wherever you travel.",
-    gradient: "from-emerald-500 to-teal-600",
-    glowColor: "rgba(16, 185, 129, 0.5)",
-  },
-]
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export function HowItWorks() {
+  const { t } = useLanguage()
+
+  const steps = [
+    {
+      number: "01",
+      icon: Download,
+      title: t("home.howItWorks.step1Title"),
+      description: t("home.howItWorks.step1Desc"),
+    },
+    {
+      number: "02",
+      icon: QrCode,
+      title: t("home.howItWorks.step2Title"),
+      description: t("home.howItWorks.step2Desc"),
+    },
+    {
+      number: "03",
+      icon: Zap,
+      title: t("home.howItWorks.step3Title"),
+      description: t("home.howItWorks.step3Desc"),
+    },
+    {
+      number: "04",
+      icon: Check,
+      title: t("home.howItWorks.step4Title"),
+      description: t("home.howItWorks.step4Desc"),
+    },
+  ]
+
   return (
     <section
       id="how-it-works"
@@ -55,14 +50,14 @@ export function HowItWorks() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full border border-primary/20 backdrop-blur-sm">
-            <span className="text-sm font-medium text-primary font-semibold">Simple Process</span>
+            <span className="text-sm font-medium text-primary font-semibold">{t("home.howItWorks.badge")}</span>
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance">
-            Get Connected in{" "}
+            {t("home.howItWorks.title")}{" "}
             <span className="relative inline-block">
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                4 Easy Steps
+                {t("home.howItWorks.titleHighlight")}
               </span>
               <svg className="absolute -bottom-2 left-0 w-full" height="8" viewBox="0 0 200 8" fill="none">
                 <path d="M0 4 Q50 0, 100 4 T200 4" stroke="url(#underlineGradient)" strokeWidth="3" fill="none" />
@@ -75,9 +70,7 @@ export function HowItWorks() {
               </svg>
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground text-pretty">
-            From purchase to activation, we have made it incredibly simple
-          </p>
+          <p className="text-lg text-muted-foreground text-pretty">{t("home.howItWorks.subtitle")}</p>
         </div>
 
         {/* Steps - 3D Card Layout */}
@@ -115,11 +108,11 @@ export function HowItWorks() {
                   {/* Glowing border effect */}
                   <div className="absolute -inset-0.5 bg-gradient-to-br from-primary to-accent opacity-0 group-hover:opacity-20 blur-lg transition-all duration-500" />
 
-                  <CardContent className="relative p- space-y-8">
+                  <CardContent className="relative p-6 lg:p-8 space-y-6">
                     {/* Step Number - 3D Effect */}
                     <div className="relative inline-flex">
-                      <div className=" relative h-20 w-20 mb-4 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center font-bold text-3xl text-white shadow-2xl transform transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
-                        <step.icon className="h-10 w-10 z-10" />
+                      <div className="relative h-20 w-20 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center font-bold text-3xl text-white shadow-2xl transform transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
+                        <span className="relative z-10">{step.number}</span>
 
                         {/* 3D depth layers */}
                         <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary to-accent opacity-50 transform translate-x-1 translate-y-1 -z-10" />
@@ -130,12 +123,16 @@ export function HowItWorks() {
                       <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-2xl blur-2xl opacity-0 group-hover:opacity-60 transition-all duration-500 animate-pulse-slow" />
                     </div>
 
-                   
+                    {/* Icon with background */}
+                    <div className="relative h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <step.icon className="h-7 w-7 text-primary" />
+                      <div className="absolute inset-0 rounded-xl bg-primary opacity-0 group-hover:opacity-20 blur-md transition-opacity duration-300" />
+                    </div>
 
                     {/* Content */}
                     <div className="space-y-3">
                       <h3 className="text-xl font-bold">{step.title}</h3>
-                      <p className="text-muted-foreground leading-relaxed text-md">{step.description}</p>
+                      <p className="text-muted-foreground leading-relaxed text-sm">{step.description}</p>
                     </div>
 
                     {/* Progress indicator */}

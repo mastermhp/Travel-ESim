@@ -70,7 +70,7 @@ export default function AdminPage() {
   const [agentFilter, setAgentFilter] = useState("pending")
   const [settlements, setSettlements] = useState([])
   const [loadingSettlements, setLoadingSettlements] = useState(false)
-  const [settlementFilter, setSettlementFilter] = useState("pending")
+  const [settlementFilter, setSettlementFilter] = useState("pending") // Changed from "requested" to "pending" to match API
   const [agentTab, setAgentTab] = useState("applications")
   const [allAgents, setAllAgents] = useState([])
   const [loadingAllAgents, setLoadingAllAgents] = useState(false)
@@ -1601,11 +1601,11 @@ export default function AdminPage() {
                     <div className="space-y-4">
                       <div className="flex gap-2">
                         <Button
-                          variant={settlementFilter === "requested" ? "default" : "outline"}
+                          variant={settlementFilter === "pending" ? "default" : "outline"} // Changed from "requested" to "pending"
                           size="sm"
-                          onClick={() => setSettlementFilter("requested")}
+                          onClick={() => setSettlementFilter("pending")}
                         >
-                          Requested
+                          Pending
                         </Button>
                         <Button
                           variant={settlementFilter === "approved" ? "default" : "outline"}
@@ -1691,7 +1691,7 @@ export default function AdminPage() {
                                     </div>
                                   </div>
                                   <div className="flex gap-2">
-                                    {settlement.status === "requested" && (
+                                    {settlement.status === "pending" && ( // Changed from "requested" to "pending"
                                       <>
                                         <Button
                                           size="sm"
