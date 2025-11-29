@@ -54,6 +54,7 @@ export async function GET(request, { params }) {
         orderId: order.orderId,
         status: order.status,
         paymentStatus: order.paymentStatus,
+        provisionStatus: order.provisionStatus,
         amount: order.amount,
         currency: order.currency,
         planId: order.planId,
@@ -62,6 +63,9 @@ export async function GET(request, { params }) {
         activationCode: order.activationCode,
         qrUrl: order.qrUrl,
         createdAt: order.createdAt,
+        customerName: order.metadata?.customerName || null,
+        customerEmail: order.metadata?.customerEmail || order.userEmail || null,
+        customerPhone: order.phoneNumber || null,
       },
     })
   } catch (error) {

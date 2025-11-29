@@ -16,10 +16,19 @@ export async function GET(request) {
   try {
     await connectDB()
 
-    // Find all pending orders (payment completed but not provisioned)
     const pendingOrders = await Order.find({
-      paymentStatus: "paid",
-      provisionStatus: { $in: ["pending", "processing"] },
+      $and: [
+        { $or: [{ paymentStatus: "paid" }, { status: "paid" }] },
+        {
+          $or: [
+            { provisionStatus: { $exists: false } },
+            { provisionStatus: "pending" },
+            { provisionStatus: null },
+            { status: { $in: ["paid", "pending"] } },
+          ],
+        },
+        { $or: [{ qrUrl: { $exists: false } }, { qrUrl: null }, { qrUrl: "" }] },
+      ],
     })
       .sort({ createdAt: 1 })
       .limit(10) // Process up to 10 orders per minute
@@ -54,7 +63,7 @@ export async function GET(request) {
         }
 
         // Skip if already provisioned
-        if (order.provisionStatus === "provisioned") {
+        if (order.provisionStatus === "provisioned" || order.status === "completed") {
           console.log(`[Cron] Order ${order.orderId} already provisioned, skipping`)
           continue
         }

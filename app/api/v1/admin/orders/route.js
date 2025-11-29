@@ -53,10 +53,16 @@ export async function GET(request) {
             plan: { $arrayElemAt: ["$planDetails", 0] },
             agentOrder: { $arrayElemAt: ["$agentOrderDetails", 0] },
             customerEmail: {
-              $ifNull: ["$email", { $arrayElemAt: ["$agentOrderDetails.customerEmail", 0] }],
+              $ifNull: [
+                "$metadata.customerEmail",
+                { $ifNull: ["$userEmail", { $arrayElemAt: ["$agentOrderDetails.customerEmail", 0] }] },
+              ],
             },
             customerPhone: {
-              $ifNull: ["$phone", { $arrayElemAt: ["$agentOrderDetails.customerPhone", 0] }],
+              $ifNull: ["$phoneNumber", { $arrayElemAt: ["$agentOrderDetails.customerPhone", 0] }],
+            },
+            customerName: {
+              $ifNull: ["$metadata.customerName", { $arrayElemAt: ["$agentOrderDetails.customerName", 0] }],
             },
           },
         },
@@ -73,7 +79,6 @@ export async function GET(request) {
     const total = await ordersCol.countDocuments(filter)
 
     console.log(`[Admin Orders] Fetched ${orders.length} orders`)
-    console.log("[Admin Orders] Sample order:", JSON.stringify(orders[0], null, 2))
 
     return NextResponse.json({
       success: true,
