@@ -16,13 +16,12 @@ export default function HomePage() {
       <main>
         <Hero />
         <Features />
-        
         <CountriesSection />
         <HowItWorks />
         {/* <Coverage /> */}
         {/* <Pricing /> */}
         <AgentSection />
-        <Testimonials />
+        {/* <Testimonials /> */}
       </main>
       <Footer />
     </div>

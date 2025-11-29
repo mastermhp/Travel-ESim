@@ -66,7 +66,7 @@ export function CountriesSection() {
     <>
       
       <section
-        id="coverage"
+        id="countries"
         className="py-20 lg:py-32 bg-secondary/30 relative overflow-hidden"
       >
         {/* Background */}
@@ -88,34 +88,34 @@ export function CountriesSection() {
                 Global Coverage
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance">
+            <h2 className="text-xl sm:text-xl lg:text-5xl font-bold text-balance">
               Available in{" "}
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 190+ Countries
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground text-pretty">
+            <p className="text-sm md:text-lg text-muted-foreground text-pretty">
               From bustling cities to remote destinations, stay connected
               everywhere
             </p>
           </div>
 
           {/* Search */}
-          <div className="max-w-xl mx-auto mb-12">
+          <div className="max-w-xl h-10 mx-auto mb-12">
             <div className="relative">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground z-10" />
               <Input
                 type="text"
                 placeholder="Search for a country..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-12 h-14 text-lg bg-card border-border/50"
+                className="pl-12 h-10 md:h-14 text-sm md:text-lg bg-background/20 backdrop-blur-sm hover:bg-background/80 border-border/50"
               />
             </div>
           </div>
 
           {/* Popular Countries Grid */}
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-3 md:grid-cols-8 lg:grid-cols-8 gap-4">
             {filteredCountries.slice(0, 24).map((country, index) => (
               <Link
                 key={country._id}
@@ -125,22 +125,21 @@ export function CountriesSection() {
               >
                 <Card
                   key={index}
-                  className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer border-border/50 bg-card/10 backdrop-blur-sm border-8"
+                  className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer border-border/50 bg-card/10 backdrop-blur-sm border-4 py-2 px-1"
                 >
                   <CardContent className="">
-                    <div className="flex items-center justify-center">
-                      <div className="flex items-center justify-center gap-8">
-                        <span className="text-[60px]">{country.flag}</span>
-                        <div>
-                          <div className="font-semibold text-[20px] group-hover:text-primary transition-colors">
+                    <div className="flex flex-col items-center justify-center gap-0">
+                      <span className="text-[35px]">{country.flag}</span>
+                      <div className="flex flex-col items-center justify-center">
+                        
+                          <div className="font-semibold text-[10px] md:text-[14px] group-hover:text-primary transition-colors">
                             {country.name}
                           </div>
-                          <div className="text-sm text-muted-foreground">
+                          <div className="text-[8px] md:text-[10px] text-muted-foreground">
                             {country.region}
                           </div>
-                        </div>
                       </div>
-                      <Check className="h-5 w-5 text-primary opacity-0 group-hover:opacity-100 group-hover:border-primary transition-opacity border-[1px] p-1 ml-6 rounded-full" />
+                      {/* <Check className="h-5 w-5 text-primary opacity-0 group-hover:opacity-100 group-hover:border-primary transition-opacity border-[1px] p-1 ml-6 rounded-full" /> */}
                     </div>
                   </CardContent>
                 </Card>
@@ -149,7 +148,7 @@ export function CountriesSection() {
           </div>
 
           {/* View All CTA */}
-          <div className="text-center mt-12">
+          <div className="text-center mt-12 mb-10">
             <Link href="/plans">
               <Button
                 size="lg"

@@ -6,10 +6,9 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { Loader2, User, Package, Settings, Mail, Phone, Calendar, Globe, ExternalLink } from "lucide-react"
+import { Loader2, User, Package, Settings, Mail, Phone, Calendar, Globe, ExternalLink, ArrowLeft } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 import Link from "next/link"
 
@@ -21,7 +20,7 @@ function ProfileContent() {
   const [updating, setUpdating] = useState(false)
   const [user, setUser] = useState(null)
   const [orders, setOrders] = useState([])
-  const [activeTab, setActiveTab] = useState(searchParams.get("tab") || "profile")
+  const [activeSection, setActiveSection] = useState(searchParams.get("section") || "profile")
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -132,7 +131,6 @@ function ProfileContent() {
       const data = await response.json()
       setUser(data.user)
 
-      // Update localStorage
       localStorage.setItem("firstName", data.user.firstName)
       localStorage.setItem("lastName", data.user.lastName)
       localStorage.setItem("userPhone", data.user.phone)
@@ -179,10 +177,24 @@ function ProfileContent() {
     )
   }
 
+  const navigationItems = [
+    { id: "profile", label: "Personal Info", icon: User },
+    { id: "orders", label: "My Orders", icon: Package },
+    { id: "settings", label: "Settings", icon: Settings },
+  ]
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20 py-24 px-4">
-      <div className="container mx-auto max-w-6xl">
-        {/* Profile Header */}
+      <div className="container mx-auto max-w-7xl">
+        <div className="mb-6">
+          <Button variant="ghost" asChild className="gap-2">
+            <Link href="/">
+              <ArrowLeft className="h-4 w-4" />
+              Back to Home
+            </Link>
+          </Button>
+        </div>
+
         <Card className="mb-8 border-none shadow-lg">
           <CardContent className="pt-8">
             <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
@@ -211,204 +223,214 @@ function ProfileContent() {
           </CardContent>
         </Card>
 
-        {/* Tabs */}
-        <Tabs value={activeTab} onValueChange={setActiveTab}>
-          <TabsList className="grid w-full grid-cols-3 mb-8">
-            <TabsTrigger value="profile">
-              <User className="h-4 w-4 mr-2" />
-              Profile
-            </TabsTrigger>
-            <TabsTrigger value="orders">
-              <Package className="h-4 w-4 mr-2" />
-              My Orders
-            </TabsTrigger>
-            <TabsTrigger value="settings">
-              <Settings className="h-4 w-4 mr-2" />
-              Settings
-            </TabsTrigger>
-          </TabsList>
-
-          {/* Profile Tab */}
-          <TabsContent value="profile">
-            <Card className="border-none shadow-lg">
-              <CardHeader>
-                <CardTitle>Personal Information</CardTitle>
-                <CardDescription>Update your personal details</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleUpdateProfile} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="firstName">First Name</Label>
-                      <Input
-                        id="firstName"
-                        value={formData.firstName}
-                        onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                        placeholder="John"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="lastName">Last Name</Label>
-                      <Input
-                        id="lastName"
-                        value={formData.lastName}
-                        onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                        placeholder="Doe"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email Address</Label>
-                    <div className="relative">
-                      <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                      <Input id="email" value={user?.email} disabled className="pl-10 bg-secondary/50" />
-                    </div>
-                    <p className="text-xs text-muted-foreground">Email cannot be changed</p>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Phone Number</Label>
-                    <div className="relative">
-                      <Phone className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                      <Input
-                        id="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+1 (555) 000-0000"
-                        className="pl-10"
-                      />
-                    </div>
-                  </div>
-
-                  <Button type="submit" disabled={updating} className="w-full md:w-auto">
-                    {updating ? (
-                      <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                        Updating...
-                      </>
-                    ) : (
-                      "Update Profile"
-                    )}
-                  </Button>
-                </form>
+        <div className="grid lg:grid-cols-4 gap-8">
+          <div className="lg:col-span-1">
+            <Card className="border-none shadow-lg sticky top-24">
+              <CardContent className="p-4">
+                <nav className="space-y-2">
+                  {navigationItems.map((item) => {
+                    const Icon = item.icon
+                    const isActive = activeSection === item.id
+                    return (
+                      <button
+                        key={item.id}
+                        onClick={() => setActiveSection(item.id)}
+                        className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
+                          isActive
+                            ? "bg-primary text-primary-foreground shadow-md"
+                            : "hover:bg-secondary text-muted-foreground hover:text-foreground"
+                        }`}
+                      >
+                        <Icon className="h-5 w-5" />
+                        <span className="font-medium">{item.label}</span>
+                      </button>
+                    )
+                  })}
+                </nav>
               </CardContent>
             </Card>
-          </TabsContent>
+          </div>
 
-          {/* Orders Tab */}
-          <TabsContent value="orders">
-            <Card className="border-none shadow-lg">
-              <CardHeader>
-                <CardTitle>Order History</CardTitle>
-                <CardDescription>View and manage your eSIM orders</CardDescription>
-              </CardHeader>
-              <CardContent>
-                {orders.length === 0 ? (
-                  <div className="text-center py-12">
-                    <Package className="h-16 w-16 mx-auto text-muted-foreground mb-4" />
-                    <h3 className="text-lg font-semibold mb-2">No orders yet</h3>
-                    <p className="text-muted-foreground mb-6">Start your journey by purchasing an eSIM plan</p>
-                    <Button asChild>
-                      <Link href="/plans">Browse Plans</Link>
+          <div className="lg:col-span-3">
+            {activeSection === "profile" && (
+              <Card className="border-none shadow-lg">
+                <CardHeader>
+                  <CardTitle>Personal Information</CardTitle>
+                  <CardDescription>Update your personal details</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <form onSubmit={handleUpdateProfile} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <Label htmlFor="firstName">First Name</Label>
+                        <Input
+                          id="firstName"
+                          value={formData.firstName}
+                          onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                          placeholder="John"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="lastName">Last Name</Label>
+                        <Input
+                          id="lastName"
+                          value={formData.lastName}
+                          onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                          placeholder="Doe"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email Address</Label>
+                      <div className="relative">
+                        <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                        <Input id="email" value={user?.email} disabled className="pl-10 bg-secondary/50" />
+                      </div>
+                      <p className="text-xs text-muted-foreground">Email cannot be changed</p>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Phone Number</Label>
+                      <div className="relative">
+                        <Phone className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                        <Input
+                          id="phone"
+                          type="tel"
+                          value={formData.phone}
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          placeholder="+1 (555) 000-0000"
+                          className="pl-10"
+                        />
+                      </div>
+                    </div>
+
+                    <Button type="submit" disabled={updating} className="w-full md:w-auto">
+                      {updating ? (
+                        <>
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                          Updating...
+                        </>
+                      ) : (
+                        "Update Profile"
+                      )}
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+            )}
+
+            {activeSection === "orders" && (
+              <Card className="border-none shadow-lg">
+                <CardHeader>
+                  <CardTitle>Order History</CardTitle>
+                  <CardDescription>View and manage your eSIM orders</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  {orders.length === 0 ? (
+                    <div className="text-center py-12">
+                      <Package className="h-16 w-16 mx-auto text-muted-foreground mb-4" />
+                      <h3 className="text-lg font-semibold mb-2">No orders yet</h3>
+                      <p className="text-muted-foreground mb-6">Start your journey by purchasing an eSIM plan</p>
+                      <Button asChild>
+                        <Link href="/plans">Browse Plans</Link>
+                      </Button>
+                    </div>
+                  ) : (
+                    <div className="space-y-4">
+                      {orders.map((order) => (
+                        <Card key={order.orderId} className="border">
+                          <CardContent className="p-6">
+                            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                              <div className="flex-1">
+                                <div className="flex items-center gap-3 mb-3">
+                                  <Globe className="h-5 w-5 text-primary" />
+                                  <div>
+                                    <h3 className="font-semibold">{order.metadata?.planName || "eSIM Plan"}</h3>
+                                    <p className="text-sm text-muted-foreground">Order #{order.orderId}</p>
+                                  </div>
+                                </div>
+                                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                                  <div>
+                                    <p className="text-muted-foreground">Data</p>
+                                    <p className="font-medium">{order.metadata?.dataGB} GB</p>
+                                  </div>
+                                  <div>
+                                    <p className="text-muted-foreground">Validity</p>
+                                    <p className="font-medium">{order.metadata?.validityDays} Days</p>
+                                  </div>
+                                  <div>
+                                    <p className="text-muted-foreground">Amount</p>
+                                    <p className="font-medium">
+                                      {order.currency.toUpperCase()} {order.amount.toFixed(2)}
+                                    </p>
+                                  </div>
+                                  <div>
+                                    <p className="text-muted-foreground">Date</p>
+                                    <p className="font-medium">{new Date(order.createdAt).toLocaleDateString()}</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="flex flex-col items-end gap-3">
+                                {getStatusBadge(order.status)}
+                                {order.status === "provisioned" && (
+                                  <Button size="sm" variant="outline" asChild>
+                                    <Link href={`/success?orderId=${order.orderId}`}>
+                                      <ExternalLink className="h-4 w-4 mr-2" />
+                                      View eSIM
+                                    </Link>
+                                  </Button>
+                                )}
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      ))}
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            )}
+
+            {activeSection === "settings" && (
+              <Card className="border-none shadow-lg">
+                <CardHeader>
+                  <CardTitle>Account Settings</CardTitle>
+                  <CardDescription>Manage your account preferences</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold">Account Information</h3>
+                    <div className="grid gap-4">
+                      <div className="flex items-center justify-between p-4 border rounded-lg">
+                        <div>
+                          <p className="font-medium">Account Type</p>
+                          <p className="text-sm text-muted-foreground capitalize">{user?.role || "Customer"}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between p-4 border rounded-lg">
+                        <div>
+                          <p className="font-medium">Account Status</p>
+                          <p className="text-sm text-green-600">Active</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pt-6 border-t">
+                    <h3 className="text-lg font-semibold mb-4 text-red-600">Danger Zone</h3>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Need to delete your account? Contact our support team for assistance.
+                    </p>
+                    <Button variant="destructive" disabled>
+                      Delete Account
                     </Button>
                   </div>
-                ) : (
-                  <div className="space-y-4">
-                    {orders.map((order) => (
-                      <Card key={order.orderId} className="border">
-                        <CardContent className="p-6">
-                          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                            <div className="flex-1">
-                              <div className="flex items-center gap-3 mb-3">
-                                <Globe className="h-5 w-5 text-primary" />
-                                <div>
-                                  <h3 className="font-semibold">{order.metadata?.planName || "eSIM Plan"}</h3>
-                                  <p className="text-sm text-muted-foreground">Order #{order.orderId}</p>
-                                </div>
-                              </div>
-                              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                                <div>
-                                  <p className="text-muted-foreground">Data</p>
-                                  <p className="font-medium">{order.metadata?.dataGB} GB</p>
-                                </div>
-                                <div>
-                                  <p className="text-muted-foreground">Validity</p>
-                                  <p className="font-medium">{order.metadata?.validityDays} Days</p>
-                                </div>
-                                <div>
-                                  <p className="text-muted-foreground">Amount</p>
-                                  <p className="font-medium">
-                                    {order.currency.toUpperCase()} {order.amount.toFixed(2)}
-                                  </p>
-                                </div>
-                                <div>
-                                  <p className="text-muted-foreground">Date</p>
-                                  <p className="font-medium">{new Date(order.createdAt).toLocaleDateString()}</p>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="flex flex-col items-end gap-3">
-                              {getStatusBadge(order.status)}
-                              {order.status === "provisioned" && (
-                                <Button size="sm" variant="outline" asChild>
-                                  <Link href={`/success?orderId=${order.orderId}`}>
-                                    <ExternalLink className="h-4 w-4 mr-2" />
-                                    View eSIM
-                                  </Link>
-                                </Button>
-                              )}
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          </TabsContent>
-
-          {/* Settings Tab */}
-          <TabsContent value="settings">
-            <Card className="border-none shadow-lg">
-              <CardHeader>
-                <CardTitle>Account Settings</CardTitle>
-                <CardDescription>Manage your account preferences</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold">Account Information</h3>
-                  <div className="grid gap-4">
-                    <div className="flex items-center justify-between p-4 border rounded-lg">
-                      <div>
-                        <p className="font-medium">Account Type</p>
-                        <p className="text-sm text-muted-foreground capitalize">{user?.role || "Customer"}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between p-4 border rounded-lg">
-                      <div>
-                        <p className="font-medium">Account Status</p>
-                        <p className="text-sm text-green-600">Active</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="pt-6 border-t">
-                  <h3 className="text-lg font-semibold mb-4 text-red-600">Danger Zone</h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Need to delete your account? Contact our support team for assistance.
-                  </p>
-                  <Button variant="destructive" disabled>
-                    Delete Account
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-        </Tabs>
+                </CardContent>
+              </Card>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   )

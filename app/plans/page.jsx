@@ -20,6 +20,10 @@ import {
   Sparkles,
   ArrowRight,
   Wifi,
+  Columns3,
+  Route,
+  Timer,
+  ShieldPlus,
 } from "lucide-react"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { getCountryByCode } from "@/lib/countries-data"
@@ -132,15 +136,14 @@ export default function PlansPage() {
           <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10 border bg-white/10">
             <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in text-white">
               {/* Badge */}
-              <div className="-mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/20 backdrop-blur-md text-white text-sm font-semibold mb-6 animate-slide-in-top border border-white/30">
-                <Sparkles className="h-5 w-5" />
+              <div className="-mt-8 inline-flex items-center gap-2 px-2 md:px-6 py-1 md:py-3 rounded-full bg-white/20 backdrop-blur-md text-white md:text-sm text-[8px] font-semibold mb-6 animate-slide-in-top border border-white/30">
+                <Sparkles className="h-3 w-3 md:h-5 md:w-5" />
                 <span>190+ Countries • Instant Activation • 24/7 Support</span>
               </div>
 
               {/* Heading */}
-              <h1 className="text-6xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tight bg-black/40 rounded-[30px]">
+              <h1 className="text-xl sm:text-xl lg:text-7xl font-black py-4 md:py-0 leading-tight tracking-tight bg-black/40 md:rounded-[30px]">
                 Travel
-                
                 Without
                 <br />
                 <span className="relative inline-block">
@@ -149,11 +152,11 @@ export default function PlansPage() {
                 </span>
               </h1>
 
-              <p className="text-xl sm:text-xl text-white/90 font-medium leading-relaxed max-w-3xl mx-auto">
+              <p className="text-sm sm:text-xl text-white/90 font-medium leading-relaxed max-w-3xl mx-auto">
                 Stay connected anywhere in the world with instant eSIM activation. Premium data plans at unbeatable
                 prices.
               </p>
-              <div className="flex items-center justify-center gap-2 text-white font-extrabold text-sm">
+              <div className="flex items-center justify-center gap-2 text-white font-extrabold text-xs">
                   <Check className="h-5 w-5" />
                   <span>No contracts • No hidden fees</span>
                 </div>
@@ -162,7 +165,7 @@ export default function PlansPage() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 -mb-6">
                 <Button
                   size="lg"
-                  className="bg-blue-900/90 text-emerald-400 hover:text-white hover:bg-white/20 text-lg px-10 py-6 rounded-full font-bold shadow-xl transform hover:scale-105 transition-all duration-700 shadow-white/40"
+                  className="bg-blue-900/90 text-emerald-400 hover:text-white hover:bg-white/20 text-sm md:text-lg px-10 py-6 rounded-full font-bold shadow-xl transform hover:scale-105 transition-all duration-700 shadow-white/40"
                   onClick={() => {
                     const element = document.getElementById("browse-plans")
                     element?.scrollIntoView({ behavior: "smooth" })
@@ -462,8 +465,8 @@ export default function PlansPage() {
                             <div className="flex-1 space-y-6">
                               <div className="flex items-start gap-4">
                                 <div className="flex-1">
-                                  <div className="flex items-center gap-3 mb-3">
-                                    <h3 className="text-3xl font-black">{plan.name}</h3>
+                                  <div className="flex flex-col md:flex-row items-center gap-3 mb-3">
+                                    <h3 className="text-xl md:text-3xl font-black">{plan.name}</h3>
                                     {plan.popular && (
                                       <Badge className="bg-amber-500 text-white">
                                         <Star className="h-3 w-3 mr-1 fill-white" />
@@ -472,7 +475,7 @@ export default function PlansPage() {
                                     )}
                                     {plan.isCustomPlan !== false && (
                                       <Badge variant="outline" className="gap-1">
-                                        <Zap className="h-3 w-3" />
+                                        <Route className="h-3 w-3" />
                                         Custom Plan
                                       </Badge>
                                     )}
@@ -499,19 +502,19 @@ export default function PlansPage() {
                               <div className="flex items-center gap-6 text-sm text-muted-foreground flex-wrap">
                                 <span className="flex items-center gap-2 font-semibold">
                                   <div className="h-8 w-8 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center">
-                                    <Zap className="h-4 w-4 text-emerald-600" />
+                                    <Timer className="h-5 w-5 text-emerald-600" />
                                   </div>
                                   Valid {plan.validityDays} days
                                 </span>
                                 <span className="flex items-center gap-2 font-semibold">
                                   <div className="h-8 w-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
-                                    <Wifi className="h-4 w-4 text-blue-600" />
+                                    <Wifi className="h-5 w-5 text-blue-600" />
                                   </div>
                                   High-speed 4G/5G
                                 </span>
                                 <span className="flex items-center gap-2 font-semibold">
                                   <div className="h-8 w-8 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
-                                    <Check className="h-4 w-4 text-purple-600" />
+                                    <ShieldPlus className="h-5 w-5 text-purple-600" />
                                   </div>
                                   Instant Activation
                                 </span>
@@ -520,7 +523,7 @@ export default function PlansPage() {
 
                             {/* Price & CTA */}
                             <div className="lg:text-right space-y-4 lg:min-w-[240px]">
-                              <div>
+                              <div className="flex justify-end">
                                 <div className="text-5xl font-black bg-gradient-to-r from-emerald-600 to-blue-600 dark:from-emerald-400 dark:to-blue-400 bg-clip-text text-transparent mb-2">
                                   ${plan.price.toFixed(2)}
                                 </div>

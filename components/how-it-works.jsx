@@ -1,6 +1,6 @@
 "use client"
 
-import { QrCode, Download, Zap, Check } from "lucide-react"
+import { QrCode, Download, Zap, Check, LandPlot, ScanQrCode, Earth } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { useLanguage } from "@/contexts/LanguageContext"
 
@@ -10,7 +10,7 @@ export function HowItWorks() {
   const steps = [
     {
       number: "01",
-      icon: Download,
+      icon: LandPlot,
       title: t("home.howItWorks.step1Title"),
       description: t("home.howItWorks.step1Desc"),
     },
@@ -22,13 +22,13 @@ export function HowItWorks() {
     },
     {
       number: "03",
-      icon: Zap,
+      icon: ScanQrCode,
       title: t("home.howItWorks.step3Title"),
       description: t("home.howItWorks.step3Desc"),
     },
     {
       number: "04",
-      icon: Check,
+      icon: Earth,
       title: t("home.howItWorks.step4Title"),
       description: t("home.howItWorks.step4Desc"),
     },
@@ -37,7 +37,7 @@ export function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="relative py-20 lg:py-32 bg-gradient-to-b from-background via-secondary/30 to-background overflow-hidden"
+      className="relative py-0 lg:py-32 bg-gradient-to-b from-background via-secondary/30 to-background overflow-hidden"
     >
       {/* Animated background orbs */}
       <div className="absolute inset-0 overflow-hidden">
@@ -70,7 +70,7 @@ export function HowItWorks() {
               </svg>
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground text-pretty">{t("home.howItWorks.subtitle")}</p>
+          <p className="text-sm md:text-lg text-muted-foreground text-pretty">{t("home.howItWorks.subtitle")}</p>
         </div>
 
         {/* Steps - 3D Card Layout */}
@@ -94,25 +94,25 @@ export function HowItWorks() {
             </path>
           </svg>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative" style={{ zIndex: 1 }}>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative p-8" style={{ zIndex: 1 }}>
             {steps.map((step, index) => (
               <div
                 key={index}
                 className="relative group animate-fade-in-up"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <Card className="relative h-full hover:shadow-2xl transition-all duration-500 border-border/50 bg-card backdrop-blur-sm overflow-hidden group-hover:-translate-y-3 group-hover:scale-105">
+                <div className="relative hover:shadow-2xl transition-all duration-500 border-border/50 bg-card backdrop-blur-sm overflow-hidden group-hover:-translate-y-3 group-hover:scale-105">
                   {/* Gradient overlay on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                   {/* Glowing border effect */}
                   <div className="absolute -inset-0.5 bg-gradient-to-br from-primary to-accent opacity-0 group-hover:opacity-20 blur-lg transition-all duration-500" />
 
-                  <CardContent className="relative p-6 lg:p-8 space-y-6">
+                  <div className="relative p-4 lg:p-8 space-y-6">
                     {/* Step Number - 3D Effect */}
                     <div className="relative inline-flex">
                       <div className="relative h-20 w-20 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center font-bold text-3xl text-white shadow-2xl transform transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
-                        <span className="relative z-10">{step.number}</span>
+                        <step.icon className="h-7 w-7 text-white" />
 
                         {/* 3D depth layers */}
                         <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary to-accent opacity-50 transform translate-x-1 translate-y-1 -z-10" />
@@ -124,10 +124,10 @@ export function HowItWorks() {
                     </div>
 
                     {/* Icon with background */}
-                    <div className="relative h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    {/* <div className="relative h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <step.icon className="h-7 w-7 text-primary" />
                       <div className="absolute inset-0 rounded-xl bg-primary opacity-0 group-hover:opacity-20 blur-md transition-opacity duration-300" />
-                    </div>
+                    </div> */}
 
                     {/* Content */}
                     <div className="space-y-3">
@@ -136,11 +136,11 @@ export function HowItWorks() {
                     </div>
 
                     {/* Progress indicator */}
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-secondary">
+                    <div className="absolute bottom-2 left-0 right-0 h-1 bg-secondary">
                       <div className="h-full bg-gradient-to-r from-primary to-accent transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
 
                 {/* Connecting arrow for mobile */}
                 {index < steps.length - 1 && (

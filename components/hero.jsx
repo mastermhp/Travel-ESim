@@ -1,14 +1,16 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Globe, Zap, Shield, ArrowRight } from "lucide-react"
+import { Globe, Zap, Shield, ArrowRight, Expand, ExpandIcon } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export function Hero() {
+  const { t } = useLanguage()
   const [typewriterText, setTypewriterText] = useState("")
-  const fullText = "Stay Connected Anywhere"
+  const fullText = t("home.hero.typewriterText")
 
   useEffect(() => {
     let currentIndex = 0
@@ -22,7 +24,7 @@ export function Hero() {
     }, 100)
 
     return () => clearInterval(interval)
-  }, [])
+  }, [fullText])
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
@@ -76,36 +78,36 @@ export function Hero() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 rounded-full border border-primary/20 backdrop-blur-sm">
               <Zap className="h-4 w-4 text-primary animate-pulse" />
-              <span className="text-sm font-medium text-primary">Instant Activation</span>
+              <span className="text-sm font-medium text-primary">{t("home.hero.badge")}</span>
             </div>
 
             <div className="space-y-4">
-              <h1 className="text-4xl sm:text-4xl lg:text-5xl xl:text-5xl font-bold leading-tight text-balance min-h-[1.2em]">
+              <h1 className="text-xl sm:text-xl lg:text-5xl xl:text-5xl font-bold leading-tight text-balance min-h-[1.2em]">
                 <span className="inline-block">
                   {typewriterText}
                   <span className="inline-block w-1 h-[0.9em] bg-primary ml-1 animate-pulse" />
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-primary via-blue-500 to-accent bg-clip-text text-transparent animate-gradient-x">
-                  Around the World
+                 {t("home.hero.title")}
                 </span>
               </h1>
-              <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed text-pretty max-w-2xl mx-auto lg:mx-0">
-                Instant eSIM data plans for 190+ countries. No physical SIM needed. Activate in seconds and enjoy
-                seamless global connectivity wherever you go.
+              <p className="text-sm sm:text-sm text-muted-foreground leading-relaxed text-pretty max-w-2xl mx-auto lg:mx-0">
+                {t("home.hero.subtitle")}
               </p>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-20 md:mt-0">
               <Button
                 size="lg"
-                className="bg-accent hover:bg-accent/90 text-lg h-14 px-8 group shadow-xl hover:shadow-2xl transition-all"
+                className="bg-background/50 backdrop-blur-sm hover:bg-background/80 md:bg-accent md:hover:bg-accent/90 text-lg text-accent md:text-white h-14 px-8 group shadow-xl hover:shadow-2xl transition-all"
                 asChild
               >
                 <Link href="/plans">
-                  Browse Plans
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <Globe className="mr-1 h-10 w-10 text-accent md:text-white" />
+                  {t("home.hero.browsePlans")}
+                  <ArrowRight className="ml-2 h-10 w-10 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
               <Button
@@ -115,28 +117,28 @@ export function Hero() {
                 asChild
               >
                 <Link href="/#countries">
-                  <Globe className="mr-2 h-5 w-5" />
-                  Explore Coverage
+                  <ExpandIcon className="mr-2 h-5 w-5" />
+                  {t("home.hero.exploreCoverage")}
                 </Link>
               </Button>
             </div>
 
             {/* Stats */}
-            <div className="flex flex-wrap gap-8 justify-center lg:justify-start pt-8">
+            <div className="flex flex-wrap gap-8 justify-center lg:justify-start md:pt-8">
               <div className="space-y-1">
-                <div className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <div className="text-xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   190+
                 </div>
                 <div className="text-sm text-muted-foreground">Countries</div>
               </div>
               <div className="space-y-1">
-                <div className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <div className="text-xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   500K+
                 </div>
                 <div className="text-sm text-muted-foreground">Happy Travelers</div>
               </div>
               <div className="space-y-1">
-                <div className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                <div className="text-xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   4.9/5
                 </div>
                 <div className="text-sm text-muted-foreground">User Rating</div>
@@ -145,7 +147,7 @@ export function Hero() {
           </div>
 
           <div className="relative lg:h-[600px] animate-slide-in-up" style={{ animationDelay: "0.2s" }}>
-            <div className="relative z-10">
+            <div className="relative z-10 px-8 py-12 md:px-0 md:py-0">
               {/* Phone Mockup */}
               <div className="relative ml-auto w-full max-w-sm group">
                 <div className="relative rounded-[3rem] border-8 border-foreground/10 bg-background shadow-2xl overflow-hidden aspect-12/20 group-hover:scale-105 transition-transform duration-500">
@@ -170,8 +172,8 @@ export function Hero() {
                       <Shield className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <div className="text-sm font-semibold">Secure</div>
-                      <div className="text-xs text-muted-foreground">256-bit encryption</div>
+                      <div className="text-sm font-semibold">{t("home.hero.secureBadge")}</div>
+                      <div className="text-xs text-muted-foreground">{t("home.hero.secureDesc")}</div>
                     </div>
                   </div>
                 </div>
@@ -185,8 +187,8 @@ export function Hero() {
                       <Zap className="h-6 w-6 text-accent" />
                     </div>
                     <div>
-                      <div className="text-sm font-semibold">Instant</div>
-                      <div className="text-xs text-muted-foreground">2 min activation</div>
+                      <div className="text-sm font-semibold">{t("home.hero.instantBadge")}</div>
+                      <div className="text-xs text-muted-foreground">{t("home.hero.instantDesc")}</div>
                     </div>
                   </div>
                 </div>

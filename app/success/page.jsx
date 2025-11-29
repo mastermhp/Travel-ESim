@@ -229,8 +229,8 @@ export default function SuccessPage() {
           <div className="inline-flex items-center justify-center w-20 h-20 bg-emerald-100 rounded-full mb-6">
             <CheckCircle2 className="w-12 h-12 text-emerald-600" />
           </div>
-          <h1 className="text-4xl font-bold mb-4 text-balance">Payment Successful!</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
+          <h1 className="text-xl md:text-4xl font-bold mb-4 text-balance">Payment Successful!</h1>
+          <p className="text-sm md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
             {isProvisioning
               ? "Your eSIM is being provisioned. This usually takes 1-2 minutes."
               : "Your eSIM is ready to use. Follow the instructions below to activate your data plan."}
@@ -245,7 +245,7 @@ export default function SuccessPage() {
                 <div className="flex-1">
                   <p className="font-medium text-lg text-blue-900">Provisioning your eSIM...</p>
                   <p className="text-sm text-blue-700">
-                    Please wait while we activate your data plan with eSIM-Go. This usually takes 1-2 minutes.
+                    Please wait while we activate your data plan. This usually takes 1-2 minutes.
                   </p>
                 </div>
                 <Button variant="outline" onClick={() => fetchOrderData()} size="sm">
@@ -298,7 +298,7 @@ export default function SuccessPage() {
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
                     <Clock className="w-5 h-5 text-blue-600" />
-                    <span className="font-semibold text-lg">Access expires in:</span>
+                    <span className="font-semibold text-sm md:text-lg">Access expires in:</span>
                   </div>
                   <span className="text-3xl font-bold text-blue-600 font-mono">{formatTime(timeLeft)}</span>
                 </div>

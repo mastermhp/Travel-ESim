@@ -2,6 +2,7 @@ import { NextResponse } from "next/server"
 import { getCollection } from "@/lib/db"
 import { ObjectId } from "mongodb"
 import bcrypt from "bcryptjs"
+import { sendAgentApprovalEmail } from "@/lib/notifications"
 
 // GET - Fetch all agent applications with optional status filter
 export async function GET(request) {
@@ -143,11 +144,14 @@ export async function POST(request) {
 
       console.log("[Admin] ✅ Application approved:", application.email)
 
+      await sendAgentApprovalEmail(application.email, application.name, tempPassword, newAgentId)
+      console.log("[Admin] 📧 Approval email sent to:", application.email)
+
       return NextResponse.json({
         success: true,
         agent: { ...newAgent, _id: agentResult.insertedId },
         tempPassword: tempPassword,
-        message: `Agent approved. Temporary password: ${tempPassword}`,
+        message: `Agent approved. Temporary password: ${tempPassword}. Email sent to agent.`,
       })
     } else if (action === "reject") {
       await agentApplications.updateOne(

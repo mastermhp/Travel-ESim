@@ -113,6 +113,10 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/mongoose [external] (mongoose, cjs)");
 ;
+if (__TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].models.Order) {
+    delete __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].models.Order;
+    delete __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].connection.models.Order;
+}
 const orderSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].Schema({
     orderId: {
         type: String,
@@ -156,7 +160,9 @@ const orderSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoo
         type: String,
         enum: [
             "card",
-            "mobile_money"
+            "mobile_money",
+            "agent_cash",
+            "agent_remote"
         ],
         default: "card"
     },
@@ -254,7 +260,7 @@ orderSchema.index({
 orderSchema.index({
     stripePaymentIntentId: 1
 });
-const __TURBOPACK__default__export__ = __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].models.Order || __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].model("Order", orderSchema);
+const __TURBOPACK__default__export__ = __TURBOPACK__imported__module__$5b$externals$5d2f$mongoose__$5b$external$5d$__$28$mongoose$2c$__cjs$29$__["default"].model("Order", orderSchema);
 }),
 "[project]/Downloads/travel-e-sim-system/lib/models/plan.js [app-route] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
@@ -452,6 +458,8 @@ __turbopack_context__.s([
     ()=>logSecurityEvent,
     "verifyAccessToken",
     ()=>verifyAccessToken,
+    "verifyAdminAuth",
+    ()=>verifyAdminAuth,
     "verifyToken",
     ()=>verifyToken
 ]);
@@ -526,6 +534,33 @@ function logSecurityEvent(userId, event, details) {
         ...details
     });
 // In production, store in database or send to monitoring service
+}
+async function verifyAdminAuth(request) {
+    const token = extractToken(request);
+    if (!token) {
+        return {
+            isValid: false,
+            error: "No token provided"
+        };
+    }
+    const payload = verifyAccessToken(token);
+    if (!payload) {
+        return {
+            isValid: false,
+            error: "Invalid token"
+        };
+    }
+    // Check if user has admin role
+    if (payload.role !== "admin") {
+        return {
+            isValid: false,
+            error: "Admin access required"
+        };
+    }
+    return {
+        isValid: true,
+        user: payload
+    };
 }
 }),
 "[externals]/events [external] (events, cjs)", ((__turbopack_context__, module, exports) => {
@@ -777,10 +812,8 @@ class QueueManager {
                 });
                 console.log(`[Queue] Enqueued job to in-memory queue:`, job.orderId);
                 console.log(`[Queue] Total jobs in queue: ${this.inMemoryQueue.length}`);
-                if ("TURBOPACK compile-time truthy", 1) {
-                    console.log(`[Queue] Auto-processing enabled, starting job...`);
-                    setImmediate(()=>this.processNextJob());
-                }
+                console.log(`[Queue] Auto-processing enabled, starting job...`);
+                setImmediate(()=>this.processNextJob());
             }
         } catch (error) {
             console.error("[Queue] Error enqueueing job:", error);
@@ -789,10 +822,8 @@ class QueueManager {
                 job,
                 timestamp: Date.now()
             });
-            if ("TURBOPACK compile-time truthy", 1) {
-                console.log(`[Queue] Auto-processing after error, starting job...`);
-                setImmediate(()=>this.processNextJob());
-            }
+            console.log(`[Queue] Auto-processing after error, starting job...`);
+            setImmediate(()=>this.processNextJob());
         }
     }
     async processNextJob() {

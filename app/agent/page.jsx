@@ -23,6 +23,7 @@ import {
 } from "lucide-react"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table" // Import Table components
 
 export default function AgentDashboard() {
   const router = useRouter()
@@ -50,6 +51,9 @@ export default function AgentDashboard() {
   const [selectedOrder, setSelectedOrder] = useState(null)
   const [showOrderDetailsDialog, setShowOrderDetailsDialog] = useState(false)
   const [pollingOrderId, setPollingOrderId] = useState(null)
+
+  // Define showRequestSettlementDialog state
+  const [showRequestSettlementDialog, setShowRequestSettlementDialog] = useState(false)
 
   useEffect(() => {
     checkAuth()
@@ -353,7 +357,7 @@ export default function AgentDashboard() {
     <div className="min-h-screen bg-gray-50">
       {/* Mobile Header */}
       <header className="lg:hidden bg-white border-b p-4 flex items-center justify-between sticky top-0 z-50">
-        <div className="text-xl font-bold bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
+        <div className="text-lg font-bold bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
           Agent Portal
         </div>
         <Button variant="ghost" size="icon" onClick={() => setSidebarOpen(!sidebarOpen)}>
@@ -365,11 +369,11 @@ export default function AgentDashboard() {
         {/* Sidebar */}
         <aside
           className={`
-          fixed lg:sticky top-0 left-0 h-screen w-64 bg-white border-r z-40 transition-transform duration-300
+          fixed lg:sticky top-0 left-0 h-screen w-92 bg-white border-r z-40 transition-transform duration-300
           ${sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
         `}
         >
-          <div className="p-6 border-b">
+          <div className="p-6 border-b hidden lg:block">
             <h1 className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
               TraveleSIM
             </h1>
@@ -438,22 +442,22 @@ export default function AgentDashboard() {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 p-6 lg:p-8 overflow-auto">
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 overflow-auto lg:mt-0 mt-0 w-full">
           {/* Dashboard Tab */}
           {selectedTab === "dashboard" && (
             <div className="space-y-6">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div>
-                  <h2 className="text-3xl font-bold mb-2">Dashboard</h2>
-                  <p className="text-muted-foreground">Welcome back, {agentData.name}!</p>
+                  <h2 className="text-2xl sm:text-3xl font-bold mb-2">Dashboard</h2>
+                  <p className="text-sm sm:text-base text-muted-foreground">Welcome back, {agentData.name}!</p>
                 </div>
-                <Button onClick={() => setShowNewSaleDialog(true)} size="lg">
+                <Button onClick={() => setShowNewSaleDialog(true)} size="lg" className="w-full sm:w-auto">
                   <Plus className="w-4 h-4 mr-2" />
                   New Sale
                 </Button>
               </div>
 
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <Card className="bg-gradient-to-br from-emerald-500 to-emerald-600 text-white border-0">
                   <CardHeader className="pb-2">
                     <CardDescription className="text-emerald-100">Today's Commission</CardDescription>
@@ -535,9 +539,12 @@ export default function AgentDashboard() {
           {/* Sales Tab */}
           {selectedTab === "sales" && (
             <div className="space-y-6">
-              <div className="flex items-center justify-between">
-                <h2 className="text-3xl font-bold">My Sales</h2>
-                <Button onClick={() => setShowNewSaleDialog(true)}>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div>
+                  <h2 className="text-2xl sm:text-3xl font-bold">My Sales</h2>
+                  <p className="text-sm sm:text-base text-muted-foreground">View the history of your transactions</p>
+                </div>
+                <Button onClick={() => setShowNewSaleDialog(true)} size="lg" className="w-full sm:w-auto">
                   <Plus className="w-4 h-4 mr-2" />
                   New Sale
                 </Button>
@@ -545,45 +552,64 @@ export default function AgentDashboard() {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>All Sales</CardTitle>
-                  <CardDescription>Complete history of your transactions</CardDescription>
+                  <CardTitle className="text-lg sm:text-xl">Sales History</CardTitle>
+                  <CardDescription className="text-sm">All your commission-earning transactions</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  {orders.length === 0 ? (
-                    <div className="text-center py-12 text-muted-foreground">
-                      <ShoppingCart className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                      <p>No sales yet</p>
+                  <div className="overflow-x-auto -mx-4 sm:mx-0">
+                    <div className="inline-block min-w-full align-middle">
+                      <Table className="min-w-full">
+                        <TableHeader>
+                          <TableRow>
+                            <TableHead>Customer</TableHead>
+                            <TableHead>Phone</TableHead>
+                            <TableHead>Type</TableHead>
+                            <TableHead>Commission</TableHead>
+                            <TableHead>Date</TableHead>
+                            <TableHead>Actions</TableHead>
+                          </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                          {orders.length === 0 ? (
+                            <TableRow>
+                              <TableCell colSpan={6} className="text-center py-12 text-muted-foreground">
+                                <ShoppingCart className="w-12 h-12 mx-auto mb-4 opacity-50" />
+                                <p>No sales yet</p>
+                              </TableCell>
+                            </TableRow>
+                          ) : (
+                            orders.map((order) => (
+                              <TableRow key={order._id}>
+                                <TableCell>
+                                  <p className="font-medium">{order.customerEmail}</p>
+                                </TableCell>
+                                <TableCell>
+                                  <p className="text-sm text-muted-foreground">{order.customerPhone}</p>
+                                </TableCell>
+                                <TableCell>
+                                  <Badge variant="outline">{order.type}</Badge>
+                                </TableCell>
+                                <TableCell className="font-semibold text-emerald-600 text-lg">
+                                  +${order.commissionAmount?.toFixed(2) || "0.00"}
+                                </TableCell>
+                                <TableCell>
+                                  <span className="text-xs text-muted-foreground">
+                                    {new Date(order.createdAt).toLocaleString()}
+                                  </span>
+                                </TableCell>
+                                <TableCell>
+                                  <Button size="sm" variant="outline" onClick={() => handleViewOrderDetails(order._id)}>
+                                    <Eye className="w-4 h-4 mr-1" />
+                                    View Details
+                                  </Button>
+                                </TableCell>
+                              </TableRow>
+                            ))
+                          )}
+                        </TableBody>
+                      </Table>
                     </div>
-                  ) : (
-                    <div className="space-y-3">
-                      {orders.map((order) => (
-                        <div key={order._id} className="flex items-center justify-between p-4 border rounded-lg">
-                          <div className="flex-1">
-                            <p className="font-medium">{order.customerEmail}</p>
-                            <p className="text-sm text-muted-foreground">{order.customerPhone}</p>
-                            <div className="flex items-center gap-2 mt-1">
-                              <Badge variant="outline">{order.type}</Badge>
-                              <span className="text-xs text-muted-foreground">
-                                {new Date(order.createdAt).toLocaleString()}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="text-right flex items-center gap-3">
-                            <div>
-                              <p className="font-semibold text-emerald-600 text-lg">
-                                +${order.commissionAmount?.toFixed(2) || "0.00"}
-                              </p>
-                              <p className="text-sm text-muted-foreground">Commission</p>
-                            </div>
-                            <Button size="sm" variant="outline" onClick={() => handleViewOrderDetails(order._id)}>
-                              <Eye className="w-4 h-4 mr-1" />
-                              View Details
-                            </Button>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                  </div>
                 </CardContent>
               </Card>
             </div>
@@ -592,15 +618,23 @@ export default function AgentDashboard() {
           {/* Wallet Tab */}
           {selectedTab === "wallet" && (
             <div className="space-y-6">
-              <div className="flex items-center justify-between">
-                <h2 className="text-3xl font-bold">Wallet</h2>
-                <Button onClick={() => setShowSettlementDialog(true)}>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div>
+                  <h2 className="text-2xl sm:text-3xl font-bold">Wallet</h2>
+                  <p className="text-sm sm:text-base text-muted-foreground">Manage your earnings and withdrawals</p>
+                </div>
+                <Button
+                  onClick={() => setShowRequestSettlementDialog(true)}
+                  variant="default"
+                  size="lg"
+                  className="w-full sm:w-auto"
+                >
                   <DollarSign className="w-4 h-4 mr-2" />
                   Request Payout
                 </Button>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <Card className="bg-gradient-to-br from-emerald-500 to-emerald-600 text-white border-0">
                   <CardHeader>
                     <CardDescription className="text-emerald-100">Available Balance</CardDescription>
@@ -637,12 +671,12 @@ export default function AgentDashboard() {
           {/* Settings Tab */}
           {selectedTab === "settings" && (
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold">Settings</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold">Settings</h2>
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Payout Details</CardTitle>
-                  <CardDescription>Configure how you receive payments</CardDescription>
+                  <CardTitle className="text-lg sm:text-xl">Payout Details</CardTitle>
+                  <CardDescription className="text-sm">Configure how you receive payments</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <form
@@ -692,8 +726,8 @@ export default function AgentDashboard() {
                       </Select>
                     </div>
 
-                    <div className="grid gap-4">
-                      <div className="space-y-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="space-y-2 sm:col-span-2">
                         <Label>Bank Name</Label>
                         <Input
                           name="bankName"
@@ -717,7 +751,7 @@ export default function AgentDashboard() {
                           placeholder="Account Number"
                         />
                       </div>
-                      <div className="space-y-2">
+                      <div className="space-y-2 sm:col-span-2">
                         <Label>SWIFT/BIC Code (for international)</Label>
                         <Input
                           name="swiftCode"
@@ -740,7 +774,7 @@ export default function AgentDashboard() {
 
       {/* New Sale Dialog */}
       <Dialog open={showNewSaleDialog} onOpenChange={setShowNewSaleDialog}>
-        <DialogContent className="max-w-md">
+        <DialogContent className="max-w-md w-[95vw] sm:w-full max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle>Create New Sale</DialogTitle>
             <DialogDescription>Choose a plan and enter customer details</DialogDescription>

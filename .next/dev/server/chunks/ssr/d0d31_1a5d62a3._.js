@@ -18421,8 +18421,10 @@ const configEnv = ("TURBOPACK compile-time value", {
     "path": ("TURBOPACK compile-time value", "/_next/image"),
     "loader": ("TURBOPACK compile-time value", "default"),
     "dangerouslyAllowSVG": ("TURBOPACK compile-time value", false),
-    "unoptimized": ("TURBOPACK compile-time value", true),
-    "domains": ("TURBOPACK compile-time value", []),
+    "unoptimized": ("TURBOPACK compile-time value", false),
+    "domains": ("TURBOPACK compile-time value", [
+        ("TURBOPACK compile-time value", "res.cloudinary.com")
+    ]),
     "remotePatterns": ("TURBOPACK compile-time value", []),
     "localPatterns": ("TURBOPACK compile-time value", [
         ("TURBOPACK compile-time value", {
@@ -18774,8 +18776,10 @@ function getImageProps(imgProps) {
             "path": ("TURBOPACK compile-time value", "/_next/image"),
             "loader": ("TURBOPACK compile-time value", "default"),
             "dangerouslyAllowSVG": ("TURBOPACK compile-time value", false),
-            "unoptimized": ("TURBOPACK compile-time value", true),
-            "domains": ("TURBOPACK compile-time value", []),
+            "unoptimized": ("TURBOPACK compile-time value", false),
+            "domains": ("TURBOPACK compile-time value", [
+                ("TURBOPACK compile-time value", "res.cloudinary.com")
+            ]),
             "remotePatterns": ("TURBOPACK compile-time value", []),
             "localPatterns": ("TURBOPACK compile-time value", [
                 ("TURBOPACK compile-time value", {

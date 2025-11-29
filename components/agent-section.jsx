@@ -82,27 +82,27 @@ export function AgentSection() {
             </div>
 
             {/* Stats */}
-            <div className="flex flex-wrap gap-8 pt-4">
+            {/* <div className="flex flex-wrap gap-8 pt-4">
               <div className="space-y-1">
-                <div className="text-2xl font-bold text-primary">5,000+</div>
+                <div className="text-sm md:text-2xl font-bold text-primary">5,000+</div>
                 <div className="text-sm text-muted-foreground">Active Agents</div>
               </div>
               <div className="space-y-1">
-                <div className="text-2xl font-bold text-primary">$500K+</div>
+                <div className="text-sm md:text-2xl font-bold text-primary">$500K+</div>
                 <div className="text-sm text-muted-foreground">Paid in Commissions</div>
               </div>
               <div className="space-y-1">
-                <div className="text-2xl font-bold text-primary">50+</div>
+                <div className="text-sm md:text-2xl font-bold text-primary">50+</div>
                 <div className="text-sm text-muted-foreground">Countries</div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Image */}
-          <div className="relative">
+          <div className="relative p-8">
             <div className="relative z-10">
-              <Card className="overflow-hidden border-border/50 shadow-2xl">
-                <CardContent className="p-0">
+              <div className="overflow-hidden border-border/50 shadow-2xl">
+                <div className="p-0">
                   <Image
                     src="/professional-taxi-driver-with-smartphone-helping-t.jpg"
                     alt="Agent selling eSIM to traveler"
@@ -110,36 +110,36 @@ export function AgentSection() {
                     height={600}
                     className="w-full h-auto"
                   />
-                </CardContent>
-              </Card>
+                </div>
+              </div>
 
               {/* Floating Stat Cards */}
-              <Card className="absolute -top-6 -left-6 p-4 shadow-xl border-border/50 backdrop-blur-sm bg-card/90 animate-float">
+              <div className="absolute -top-6 -left-6 p-2 md:p-4 shadow-xl border-border/50 backdrop-blur-sm bg-card/90 animate-float">
                 <div className="flex items-center gap-3">
-                  <div className="h-12 w-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                    <TrendingUp className="h-6 w-6 text-primary-foreground" />
+                  <div className="h-6 w-6 md:h-12 md:w-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                    <TrendingUp className="h-3 w-3 md:h-6 md:w-6 text-primary-foreground" />
                   </div>
                   <div>
-                    <div className="text-2xl font-bold">25%</div>
+                    <div className="text-sm md:text-2xl font-bold">25%</div>
                     <div className="text-xs text-muted-foreground">Commission Rate</div>
                   </div>
                 </div>
-              </Card>
+              </div>
 
-              <Card
-                className="absolute -bottom-6 -right-6 p-4 shadow-xl border-border/50 backdrop-blur-sm bg-card/90 animate-float"
+              <div
+                className="absolute -bottom-6 -right-6 p-2 md:p-4 shadow-xl border-border/50 backdrop-blur-sm bg-card/90 animate-float"
                 style={{ animationDelay: "1s" }}
               >
                 <div className="flex items-center gap-3">
-                  <div className="h-12 w-12 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center">
-                    <Wallet className="h-6 w-6 text-primary" />
+                  <div className="h-6 w-6 md:h-12 md:w-12 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center">
+                    <Wallet className="h-3 w-3 md:h-6 md:w-6 text-primary" />
                   </div>
                   <div>
-                    <div className="text-2xl font-bold">$2.5K</div>
+                    <div className="text-sm md:text-2xl font-bold">$2.5K</div>
                     <div className="text-xs text-muted-foreground">Avg Monthly</div>
                   </div>
                 </div>
-              </Card>
+              </div>
             </div>
 
             {/* Background Decorative Elements */}

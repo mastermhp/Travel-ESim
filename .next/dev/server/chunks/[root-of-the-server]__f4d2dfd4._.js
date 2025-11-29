@@ -363,6 +363,7 @@ async function POST(request) {
         const token = __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$travel$2d$e$2d$sim$2d$system$2f$node_modules$2f$jsonwebtoken$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].sign({
             id: agent._id,
             agentId: agent.agentId,
+            agentMongoId: agent._id.toString(),
             email: agent.email,
             role: "agent"
         }, process.env.JWT_SECRET || "your-secret-key", {

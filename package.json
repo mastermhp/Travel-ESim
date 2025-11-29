@@ -11,7 +11,8 @@
     "seed:admin": "node scripts/seed-admin.js",
     "worker:provision": "node lib/workers/provision-worker.js",
     "worker:notification": "node lib/workers/notification-worker.js",
-    "workers": "npm run worker:provision & npm run worker:notification"
+    "workers": "npm run worker:provision & npm run worker:notification",
+    "test:email": "node scripts/test-email.js"
   },
   "dependencies": {
     "@aws-sdk/credential-providers": "latest",
@@ -80,6 +81,7 @@
     "react-hook-form": "^7.60.0",
     "react-resizable-panels": "^2.1.7",
     "recharts": "2.15.4",
+    "resend": "^6.5.2",
     "snappy": "latest",
     "socks": "latest",
     "sonner": "^1.7.4",
