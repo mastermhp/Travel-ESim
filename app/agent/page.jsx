@@ -20,6 +20,7 @@ import {
   LinkIcon,
   Eye,
   Settings,
+  EyeOff,
 } from "lucide-react"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -37,6 +38,16 @@ export default function AgentDashboard() {
   const [loading, setLoading] = useState(true)
   const [showNewSaleDialog, setShowNewSaleDialog] = useState(false)
   const [showSettlementDialog, setShowSettlementDialog] = useState(false)
+  const [passwordForm, setPasswordForm] = useState({
+    currentPassword: "",
+    newPassword: "",
+    confirmPassword: "",
+  })
+  const [showPasswords, setShowPasswords] = useState({
+    current: false,
+    new: false,
+    confirm: false,
+  })
   const [saleForm, setSaleForm] = useState({
     planId: "",
     customerEmail: "",
@@ -59,6 +70,16 @@ export default function AgentDashboard() {
     checkAuth()
   }, [])
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const urlParams = new URLSearchParams(window.location.search)
+      const tabParam = urlParams.get("tab")
+      if (tabParam) {
+        setSelectedTab(tabParam)
+      }
+    }
+  }, [])
+
   const checkAuth = async () => {
     const token = localStorage.getItem("agentToken")
     const storedAgent = localStorage.getItem("agentData")
@@ -72,6 +93,23 @@ export default function AgentDashboard() {
     try {
       const agent = JSON.parse(storedAgent)
       setAgentData(agent)
+
+      const statusRes = await fetch("/api/v1/agent/profile", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+
+      if (statusRes.ok) {
+        const statusData = await statusRes.json()
+        if (statusData.agent.requirePasswordChange) {
+          setSelectedTab("settings")
+          toast({
+            title: "Password Change Required",
+            description: "Please change your temporary password in the settings below",
+            duration: 6000,
+          })
+        }
+      }
+
       await fetchDashboardData(token, agent.agentId)
     } catch (error) {
       console.error("[v0] Auth error:", error)
@@ -120,6 +158,33 @@ export default function AgentDashboard() {
         description: "Failed to load dashboard data",
       })
       setLoading(false)
+    }
+  }
+
+  // Function to fetch agent data (useful for refreshing after password change)
+  const fetchAgentData = async () => {
+    const token = localStorage.getItem("agentToken")
+    if (!token) {
+      router.push("/agent/login")
+      return
+    }
+    try {
+      const res = await fetch("/api/v1/agent/profile", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      if (res.ok) {
+        const data = await res.json()
+        setAgentData(data.agent)
+      } else {
+        throw new Error("Failed to fetch agent profile")
+      }
+    } catch (error) {
+      console.error("Error fetching agent data:", error)
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Could not refresh agent data.",
+      })
     }
   }
 
@@ -369,7 +434,7 @@ export default function AgentDashboard() {
         {/* Sidebar */}
         <aside
           className={`
-          fixed lg:sticky top-0 left-0 h-screen w-92 bg-white border-r z-40 transition-transform duration-300
+          fixed lg:sticky top-0 left-0 h-screen w-88 bg-white border-r z-40 transition-transform duration-300
           ${sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
         `}
         >
@@ -672,6 +737,161 @@ export default function AgentDashboard() {
           {selectedTab === "settings" && (
             <div className="space-y-6">
               <h2 className="text-2xl sm:text-3xl font-bold">Settings</h2>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg sm:text-xl">Change Password</CardTitle>
+                  <CardDescription className="text-sm">
+                    Update your password to keep your account secure
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <form
+                    className="space-y-4"
+                    onSubmit={async (e) => {
+                      e.preventDefault()
+                      const token = localStorage.getItem("agentToken")
+
+                      // Validate passwords match
+                      if (passwordForm.newPassword !== passwordForm.confirmPassword) {
+                        toast({
+                          variant: "destructive",
+                          title: "Error",
+                          description: "New passwords do not match",
+                        })
+                        return
+                      }
+
+                      // Validate password strength
+                      if (passwordForm.newPassword.length < 8) {
+                        toast({
+                          variant: "destructive",
+                          title: "Error",
+                          description: "Password must be at least 8 characters long",
+                        })
+                        return
+                      }
+
+                      try {
+                        const res = await fetch("/api/v1/agent/change-password", {
+                          method: "POST",
+                          headers: {
+                            "Content-Type": "application/json",
+                            Authorization: `Bearer ${token}`,
+                          },
+                          body: JSON.stringify({
+                            currentPassword: passwordForm.currentPassword,
+                            newPassword: passwordForm.newPassword,
+                          }),
+                        })
+
+                        const data = await res.json()
+
+                        if (!res.ok) {
+                          throw new Error(data.error || "Failed to change password")
+                        }
+
+                        toast({
+                          title: "Success",
+                          description: "Password changed successfully",
+                        })
+
+                        // Reset form
+                        setPasswordForm({
+                          currentPassword: "",
+                          newPassword: "",
+                          confirmPassword: "",
+                        })
+
+                        // Refresh agent data to clear requirePasswordChange flag
+                        fetchAgentData()
+                      } catch (error) {
+                        toast({
+                          variant: "destructive",
+                          title: "Error",
+                          description: error.message,
+                        })
+                      }
+                    }}
+                  >
+                    <div className="space-y-2">
+                      <Label>Current Password</Label>
+                      <div className="relative">
+                        <Input
+                          type={showPasswords.current ? "text" : "password"}
+                          placeholder="Enter current password"
+                          value={passwordForm.currentPassword}
+                          onChange={(e) => setPasswordForm({ ...passwordForm, currentPassword: e.target.value })}
+                          required
+                          className="pr-10"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => setShowPasswords({ ...showPasswords, current: !showPasswords.current })}
+                          className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                        >
+                          {showPasswords.current ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label>New Password</Label>
+                      <div className="relative">
+                        <Input
+                          type={showPasswords.new ? "text" : "password"}
+                          placeholder="Enter new password (min 8 characters)"
+                          value={passwordForm.newPassword}
+                          onChange={(e) => setPasswordForm({ ...passwordForm, newPassword: e.target.value })}
+                          required
+                          minLength={8}
+                          className="pr-10"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => setShowPasswords({ ...showPasswords, new: !showPasswords.new })}
+                          className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                        >
+                          {showPasswords.new ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label>Confirm New Password</Label>
+                      <div className="relative">
+                        <Input
+                          type={showPasswords.confirm ? "text" : "password"}
+                          placeholder="Confirm new password"
+                          value={passwordForm.confirmPassword}
+                          onChange={(e) => setPasswordForm({ ...passwordForm, confirmPassword: e.target.value })}
+                          required
+                          className="pr-10"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => setShowPasswords({ ...showPasswords, confirm: !showPasswords.confirm })}
+                          className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                        >
+                          {showPasswords.confirm ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                        </button>
+                      </div>
+                    </div>
+
+                    {agentData?.requirePasswordChange && (
+                      <div className="p-3 bg-amber-50 border border-amber-200 rounded-lg">
+                        <p className="text-sm text-amber-800 font-medium">
+                          ⚠️ You must change your temporary password before continuing
+                        </p>
+                      </div>
+                    )}
+
+                    <Button type="submit" className="w-full">
+                      Change Password
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
 
               <Card>
                 <CardHeader>

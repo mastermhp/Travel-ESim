@@ -43,6 +43,16 @@ export default function AgentLogin() {
       localStorage.setItem("agentToken", data.token)
       localStorage.setItem("agentData", JSON.stringify(data.agent))
 
+      if (data.requirePasswordChange) {
+        toast({
+          title: "Password Change Required",
+          description: "Please change your temporary password to continue",
+          duration: 5000,
+        })
+        router.push("/agent?tab=settings")
+        return
+      }
+
       toast({
         title: "Login Successful",
         description: `Welcome back, ${data.agent.name}!`,

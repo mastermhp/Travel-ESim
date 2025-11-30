@@ -100,6 +100,7 @@ export async function POST(request) {
         name: application.name,
         email: application.email,
         password: hashedPassword,
+        requirePasswordChange: true,
         phone: application.phone,
         country: application.country,
         city: application.city,

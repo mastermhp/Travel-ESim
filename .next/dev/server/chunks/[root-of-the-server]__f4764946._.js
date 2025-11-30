@@ -164,6 +164,13 @@ const agentSchema = new __TURBOPACK__imported__module__$5b$externals$5d2f$mongoo
         type: String,
         required: true
     },
+    requirePasswordChange: {
+        type: Boolean,
+        default: false
+    },
+    lastPasswordChange: {
+        type: Date
+    },
     phone: {
         type: String,
         required: true

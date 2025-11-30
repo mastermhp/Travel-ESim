@@ -371,6 +371,8 @@ __turbopack_context__.s([
     ()=>logSecurityEvent,
     "verifyAccessToken",
     ()=>verifyAccessToken,
+    "verifyAdminAuth",
+    ()=>verifyAdminAuth,
     "verifyToken",
     ()=>verifyToken
 ]);
@@ -445,6 +447,33 @@ function logSecurityEvent(userId, event, details) {
         ...details
     });
 // In production, store in database or send to monitoring service
+}
+async function verifyAdminAuth(request) {
+    const token = extractToken(request);
+    if (!token) {
+        return {
+            isValid: false,
+            error: "No token provided"
+        };
+    }
+    const payload = verifyAccessToken(token);
+    if (!payload) {
+        return {
+            isValid: false,
+            error: "Invalid token"
+        };
+    }
+    // Check if user has admin role
+    if (payload.role !== "admin") {
+        return {
+            isValid: false,
+            error: "Admin access required"
+        };
+    }
+    return {
+        isValid: true,
+        user: payload
+    };
 }
 }),
 "[project]/Downloads/travel-e-sim-system/app/api/v1/auth/login/email/route.js [app-route] (ecmascript)", ((__turbopack_context__) => {

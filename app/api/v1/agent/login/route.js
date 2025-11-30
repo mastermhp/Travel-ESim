@@ -97,6 +97,7 @@ export async function POST(request) {
     return NextResponse.json({
       success: true,
       token,
+      requirePasswordChange: agent.requirePasswordChange || false,
       agent: {
         id: agent._id,
         agentId: agent.agentId,
