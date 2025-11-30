@@ -1,8 +1,12 @@
 {
+  "/admin/login/page": "app/admin/login/page.js",
+  "/admin/page": "app/admin/page.js",
   "/agent/change-password/page": "app/agent/change-password/page.js",
   "/agent/login/page": "app/agent/login/page.js",
   "/agent/page": "app/agent/page.js",
   "/agent/register/page": "app/agent/register/page.js",
+  "/api/v1/admin/dashboard/stats/route": "app/api/v1/admin/dashboard/stats/route.js",
+  "/api/v1/admin/init/route": "app/api/v1/admin/init/route.js",
   "/api/v1/agent/change-password/route": "app/api/v1/agent/change-password/route.js",
   "/api/v1/agent/login/route": "app/api/v1/agent/login/route.js",
   "/api/v1/agent/orders/[orderId]/route": "app/api/v1/agent/orders/[orderId]/route.js",

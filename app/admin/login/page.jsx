@@ -154,14 +154,14 @@ export default function AdminLogin() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-2 p-3 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+              {/* <div className="flex items-start gap-2 p-3 bg-blue-500/10 border border-blue-500/20 rounded-lg">
                 <AlertCircle className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" />
                 <div className="text-xs text-blue-200">
                   <p className="font-semibold mb-1">Default Credentials:</p>
                   <p>Email: admin@travelesim.com</p>
                   <p>Password: Admin@123</p>
                 </div>
-              </div>
+              </div> */}
 
               <Button
                 type="submit"
