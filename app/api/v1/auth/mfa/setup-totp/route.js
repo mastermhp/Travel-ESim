@@ -4,7 +4,7 @@ import { NextResponse } from "next/server"
 import { getCurrentUser } from "@/lib/auth"
 import { findUserById, updateUser } from "@/lib/models/user"
 import QRCode from "qrcode"
-import { authenticator } from "otplib"
+import { authenticator } from "otplib/authenticator.js"
 
 export async function POST(request) {
   try {
