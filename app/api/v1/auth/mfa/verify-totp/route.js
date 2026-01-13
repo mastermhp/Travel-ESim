@@ -1,6 +1,6 @@
 // TOTP verification endpoint
 import { NextResponse } from "next/server"
-import { authenticator } from "otplib"
+import { authenticator } from "otplib/authenticator"
 import { getCurrentUser } from "@/lib/auth"
 import { findUserById, updateUser } from "@/lib/models/user"
 
