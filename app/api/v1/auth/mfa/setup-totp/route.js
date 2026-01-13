@@ -1,10 +1,14 @@
+export const runtime = "nodejs"
+
+
+
 // TOTP MFA setup endpoint
 import { NextResponse } from "next/server"
 // import { authenticator } from "otplib/authenticator"
 import { getCurrentUser } from "@/lib/auth"
 import { findUserById, updateUser } from "@/lib/models/user"
 import QRCode from "qrcode"
-import { authenticator } from "otplib/authenticator.js"
+import { authenticator } from "otplib"
 
 export async function POST(request) {
   try {
